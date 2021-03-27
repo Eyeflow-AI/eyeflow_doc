@@ -11,7 +11,7 @@ enableGitInfo = true
 
 # Language settings
 contentDir = "content/pt"
-defaultContentLanguage = "pt"
+defaultContentLanguage = "pt-br"
 defaultContentLanguageInSubdir = false
 # Useful when translating.
 enableMissingTranslationPlaceholders = true
@@ -55,14 +55,15 @@ id = "UA-00000000-0"
 [languages.en]
 title = "Eyeflow.AI Docs"
 description = "Eyeflow.AI Documentation"
-languageName ="English"
+languageName = "English"
+contentDir = "content/en"
 # Weight used for sorting.
 weight = 1
-[languages.pt]
+[languages.pt-br]
 title = "Eyeflow.AI Docs"
 description = "Documentação do Eyeflow.AI"
-languageName ="Português"
-contentDir = "content/pt"
+languageName = "Português"
+contentDir = "content/pt-br"
 time_format_default = "02/01/2006"
 time_format_blog = "02/01/2006"
 
