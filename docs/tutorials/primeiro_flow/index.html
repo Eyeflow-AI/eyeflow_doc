@@ -1,0 +1,1431 @@
+<!doctype html>
+<html lang="pt-br" class="no-js">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.82.0" /><META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+
+
+<link rel="shortcut icon" href="/favicons/favicon.ico" >
+<link rel="apple-touch-icon" href="/favicons/apple-touch-icon-180x180.png" sizes="180x180">
+<link rel="icon" type="image/png" href="/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/favicons/android-36x36.png" sizes="36x36">
+<link rel="icon" type="image/png" href="/favicons/android-48x48.png" sizes="48x48">
+<link rel="icon" type="image/png" href="/favicons/android-72x72.png" sizes="72x72">
+<link rel="icon" type="image/png" href="/favicons/android-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
+<link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
+
+<title>Primeiro Flow | Eyeflow.AI Docs</title><meta property="og:title" content="Primeiro Flow" />
+<meta property="og:description" content="Tutorial 1 - Construa seu primeiro flow
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/docs/tutorials/primeiro_flow/" /><meta property="article:section" content="docs" />
+<meta property="article:published_time" content="2021-03-26T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2021-03-26T00:00:00&#43;00:00" /><meta property="og:site_name" content="Eyeflow.AI Docs" />
+
+<meta itemprop="name" content="Primeiro Flow">
+<meta itemprop="description" content="Tutorial 1 - Construa seu primeiro flow
+"><meta itemprop="datePublished" content="2021-03-26T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2021-03-26T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="1353">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Primeiro Flow"/>
+<meta name="twitter:description" content="Tutorial 1 - Construa seu primeiro flow
+"/>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-00000000-0', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+<link rel="preload" href="/scss/main.min.ac0063411fe78d136ba4542d07957ba8f37593d6f775a519095995a04a05a1a6.css" as="style">
+<link href="/scss/main.min.ac0063411fe78d136ba4542d07957ba8f37593d6f775a519095995a04a05a1a6.css" rel="stylesheet" integrity="">
+
+
+<script
+  src="https://code.jquery.com/jquery-3.5.1.min.js"
+  integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+  crossorigin="anonymous"></script>
+
+
+
+
+  </head>
+  <body class="td-page">
+    <header>
+      
+<nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+        <a class="navbar-brand" href="/">
+		<span class="navbar-logo"><svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 500 500" style="enable-background:new 0 0 500 500"><g><path style="fill:#fff" d="M116.8525 421.9722c-5.7041.0-10.3442-4.3127-10.3442-9.6129V88.183c0-5.3002 4.6401-9.6117 10.3442-9.6117H320.858c3.0347.0 9.3959.5498 11.7506 2.6302l.3545.3442 58.905 63.2912c2.3101 2.491 2.9202 8.4928 2.9202 11.3184v256.2039c0 5.3002-4.6407 9.6129-10.3436 9.6129H116.8525z"/><g><g><g><path style="fill:#767676" d="M384.4445 423.2066H116.852c-6.3839.0-11.5786-4.8658-11.5786-10.8474V88.1831c0-5.9804 5.1947-10.8461 11.5786-10.8461h204.0062c.377.0 9.2786.0329 12.568 2.9389l.3947.3833 58.9508 63.337c3.2135 3.4652 3.2514 11.7924 3.2514 12.1593v256.2036C396.0231 418.3408 390.8284 423.2066 384.4445 423.2066zM116.5079 411.9189c.0848.0278.1999.0531.3441.0531h267.5925c.1442.0.2581-.0253.3441-.0531V156.1556c-.0076-.9033-.3593-3.7347-.7034-5.0037l-57.6527-61.9416c-1.4651-.3176-4.4533-.6389-5.5742-.6389H116.852c-.143.0-.2594.024-.3441.0531V411.9189zm267.4533-261.149zM327.0321 89.371v.0013V89.371z"/></g></g></g><g><g><path style="fill:#5b7fc0" d="M189.0874 210.1754l.0012-.0012c7.7751.0012 15.0295 4.1862 18.932 10.9234 1.9177 3.3159 2.9305 7.1011 2.9293 10.9378.0 5.8394-2.2733 11.3304-6.4032 15.4604-4.1288 4.1288-9.6186 6.4032-15.458 6.4032s-11.328-2.2733-15.458-6.4032-6.4032-9.6186-6.4056-15.4628c.0012-6.025 2.454-11.4897 6.4116-15.4473C177.5953 212.627 183.0601 210.1742 189.0874 210.1754zm7.993 21.8576c.0012-1.4042-.3687-2.7868-1.063-3.9887-1.4293-2.4684-4.0833-3.9995-6.9299-4.0019-4.4077.0024-7.993 3.5877-7.993 7.993.0 2.1356.832 4.1431 2.3427 5.6539 1.5083 1.5083 3.5159 2.3403 5.6503 2.3415 2.1356.0 4.1443-.8308 5.6539-2.3403S197.0816 234.1722 197.0804 232.033z"/><path style="opacity:.3;fill:#fff" d="M189.0898 210.176c7.7763.0 15.0283 4.1826 18.926 10.9151 1.9201 3.3136 2.9377 7.0988 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8613-12.0547.0024-21.8636-9.8066-21.8612-21.8613.0-6.0285 2.4516-11.4921 6.4116-15.452C177.5977 212.6276 183.0612 210.176 189.0898 210.176zm7.9941 21.8612c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.1861 236.239 197.0839 234.2399 197.0839 232.0372z"/><g><defs><path id="SVGID_1_" d="M194.7376 237.6875c-1.4461 1.4461-3.4452 2.3439-5.6479 2.3439-4.4077-.0024-7.9918-3.5865-7.9942-7.9942.0024-4.4125 3.5937-7.999 7.9942-7.9942 2.8443.0 5.497 1.5323 6.924 3.9983.6991 1.2067 1.0702 2.5881 1.0702 3.9959C197.0839 234.2399 196.1861 236.239 194.7376 237.6875z"/></defs><clipPath id="SVGID_2_"><use xlink:href="#SVGID_1_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_2_);fill:#fff" d="M190.0704 225.0237c-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0011 1.9546.7088 3.7452 1.8782 5.1354-1.7447-1.4674-2.8575-3.663-2.8588-6.116.0024-4.4125 3.5936-7.999 7.9942-7.9942 2.3802-1e-4 4.616 1.0833 6.1218 2.8788C193.7885 225.7247 191.9774 225.0237 190.0704 225.0237z"/><path style="opacity:.13;clip-path:url(#SVGID_2_);fill:#020202" d="M190.0704 225.0237c-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0011 1.9546.7088 3.7452 1.8782 5.1354-1.7447-1.4674-2.8575-3.663-2.8588-6.116.0024-4.4125 3.5936-7.999 7.9942-7.9942 2.3802-1e-4 4.616 1.0833 6.1218 2.8788C193.7885 225.7247 191.9774 225.0237 190.0704 225.0237z"/></g><g><defs><path id="SVGID_3_" d="M189.0898 210.176c7.7763.0 15.0283 4.1826 18.926 10.9151 1.9201 3.3136 2.9377 7.0988 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8613-12.0547.0024-21.8636-9.8066-21.8612-21.8613.0-6.0285 2.4516-11.4921 6.4116-15.452C177.5977 212.6276 183.0612 210.176 189.0898 210.176zm7.9941 21.8612c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.1861 236.239 197.0839 234.2399 197.0839 232.0372z"/></defs><clipPath id="SVGID_4_"><use xlink:href="#SVGID_3_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_4_);fill:#5b7fc0" d="M172.6595 215.6045c-3.96 3.96-6.4116 9.4235-6.4116 15.452-.0024 12.0547 9.8066 21.8636 21.8613 21.8612 12.0547.0024 21.8636-9.797 21.8613-21.8612.0024-3.8475-1.0151-7.6326-2.9353-10.9462-3.8977-6.7324-11.1497-10.9151-18.926-10.9151C182.0806 209.1953 176.6171 211.647 172.6595 215.6045z"/></g></g><rect x="198.8952" y="225.1043" style="fill:#5b7fc0" width="122.6266" height="13.8671"/></g><g><path style="fill:#d95140" d="M189.0874 155.7611l.0012-.0012c7.7751.0012 15.0295 4.1862 18.932 10.9234 1.9177 3.3159 2.9305 7.1011 2.9293 10.9378.0 5.8394-2.2733 11.3304-6.4032 15.4604-4.1288 4.1288-9.6186 6.4032-15.458 6.4032s-11.328-2.2733-15.458-6.4032-6.4032-9.6186-6.4056-15.4628c.0012-6.0249 2.454-11.4897 6.4116-15.4473C177.5953 158.2128 183.0601 155.7599 189.0874 155.7611zm7.993 21.8577c.0012-1.4042-.3687-2.7868-1.063-3.9887-1.4293-2.4684-4.0833-3.9995-6.9299-4.0019-4.4077.0024-7.993 3.5877-7.993 7.993.0 2.1356.832 4.1431 2.3427 5.6539 1.5083 1.5083 3.5159 2.3403 5.6503 2.3415 2.1356.0 4.1443-.8308 5.6539-2.3403C196.2508 181.7667 197.0816 179.758 197.0804 177.6188z"/><path style="opacity:.3;fill:#fff" d="M189.0898 155.7617c7.7763.0 15.0283 4.1826 18.926 10.9151 1.9201 3.3135 2.9377 7.0987 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8613-12.0547.0024-21.8636-9.8066-21.8612-21.8613.0-6.0285 2.4516-11.4921 6.4116-15.452C177.5977 158.2134 183.0612 155.7617 189.0898 155.7617zm7.9941 21.8613c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.1861 181.8248 197.0839 179.8256 197.0839 177.623z"/><g><defs><path id="SVGID_5_" d="M194.7376 183.2733c-1.4461 1.4461-3.4452 2.3439-5.6479 2.3439-4.4077-.0024-7.9918-3.5865-7.9942-7.9942.0024-4.4125 3.5937-7.9989 7.9942-7.9942 2.8443.0 5.497 1.5323 6.924 3.9983.6991 1.2067 1.0702 2.5881 1.0702 3.9959C197.0839 179.8256 196.1861 181.8248 194.7376 183.2733z"/></defs><clipPath id="SVGID_6_"><use xlink:href="#SVGID_5_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_6_);fill:#fff" d="M190.0704 170.6095c-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0011 1.9546.7088 3.7452 1.8782 5.1354-1.7447-1.4674-2.8575-3.663-2.8588-6.116.0024-4.4125 3.5936-7.999 7.9942-7.9942 2.3802-1e-4 4.616 1.0833 6.1218 2.8788C193.7885 171.3104 191.9774 170.6095 190.0704 170.6095z"/><path style="opacity:.13;clip-path:url(#SVGID_6_);fill:#020202" d="M190.0704 170.6095c-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0011 1.9546.7088 3.7452 1.8782 5.1354-1.7447-1.4674-2.8575-3.663-2.8588-6.116.0024-4.4125 3.5936-7.999 7.9942-7.9942 2.3802-1e-4 4.616 1.0833 6.1218 2.8788C193.7885 171.3104 191.9774 170.6095 190.0704 170.6095z"/></g><g><defs><path id="SVGID_7_" d="M189.0898 155.7617c7.7763.0 15.0283 4.1826 18.926 10.9151 1.9201 3.3135 2.9377 7.0987 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8613-12.0547.0024-21.8636-9.8066-21.8612-21.8613.0-6.0285 2.4516-11.4921 6.4116-15.452C177.5977 158.2134 183.0612 155.7617 189.0898 155.7617zm7.9941 21.8613c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.1861 181.8248 197.0839 179.8256 197.0839 177.623z"/></defs><clipPath id="SVGID_8_"><use xlink:href="#SVGID_7_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_8_);fill:#d95140" d="M172.6595 161.1903c-3.96 3.96-6.4116 9.4235-6.4116 15.452-.0024 12.0547 9.8066 21.8636 21.8613 21.8613 12.0547.0024 21.8636-9.797 21.8613-21.8613.0024-3.8474-1.0151-7.6326-2.9353-10.9462-3.8977-6.7324-11.1497-10.9151-18.926-10.9151C182.0806 154.7811 176.6171 157.2327 172.6595 161.1903z"/></g><rect x="198.8952" y="170.69" style="fill:#d95140" width="122.6266" height="13.8671"/></g><g><g><path style="fill:#56a55c" d="M189.5379 264.6147l.0012-.0012c7.7751.0012 15.0294 4.1862 18.932 10.9235 1.9177 3.3159 2.9305 7.1011 2.9293 10.9378.0 5.8394-2.2733 11.3304-6.4032 15.4604-4.1288 4.1288-9.6186 6.4032-15.458 6.4032-5.8394.0-11.3281-2.2733-15.458-6.4032-4.13-4.13-6.4032-9.6186-6.4056-15.4628.0012-6.0249 2.454-11.4897 6.4116-15.4472C178.0458 267.0663 183.5105 264.6135 189.5379 264.6147zm7.993 21.8576c.0012-1.4042-.3687-2.7868-1.063-3.9887-1.4293-2.4684-4.0833-3.9995-6.9299-4.0019-4.4077.0024-7.993 3.5877-7.993 7.993.0 2.1356.832 4.1431 2.3427 5.6538 1.5083 1.5083 3.5159 2.3403 5.6503 2.3415 2.1356.0 4.1443-.8308 5.6539-2.3403C196.7013 290.6202 197.5321 288.6115 197.5309 286.4723z"/><path style="opacity:.3;fill:#fff" d="M189.5403 264.6153c7.7763.0 15.0283 4.1826 18.926 10.9151 1.9201 3.3135 2.9377 7.0987 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8613-12.0547.0024-21.8636-9.8065-21.8612-21.8613.0-6.0285 2.4516-11.492 6.4116-15.452C178.0482 267.0669 183.5117 264.6153 189.5403 264.6153zm7.9941 21.8612c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9941.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.6366 290.6783 197.5344 288.6792 197.5344 286.4765z"/><g><defs><path id="SVGID_9_" d="M195.1881 292.1268c-1.4461 1.4461-3.4452 2.3439-5.6479 2.3439-4.4077-.0024-7.9918-3.5865-7.9942-7.9942.0024-4.4125 3.5937-7.9989 7.9942-7.9941 2.8443.0 5.497 1.5323 6.924 3.9983.6991 1.2067 1.0702 2.5881 1.0702 3.9959C197.5344 288.6792 196.6366 290.6783 195.1881 292.1268z"/></defs><clipPath id="SVGID_10_"><use xlink:href="#SVGID_9_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_10_);fill:#fff" d="M190.5209 279.463c-4.4005-.0048-7.9918 3.5817-7.9942 7.9941.0011 1.9547.7088 3.7452 1.8782 5.1354-1.7446-1.4674-2.8575-3.6631-2.8588-6.1161.0024-4.4125 3.5936-7.999 7.9942-7.9941 2.3802-1e-4 4.616 1.0833 6.1218 2.8788C194.239 280.164 192.4279 279.463 190.5209 279.463z"/><path style="opacity:.13;clip-path:url(#SVGID_10_);fill:#020202" d="M190.5209 279.463c-4.4005-.0048-7.9918 3.5817-7.9942 7.9941.0011 1.9547.7088 3.7452 1.8782 5.1354-1.7446-1.4674-2.8575-3.6631-2.8588-6.1161.0024-4.4125 3.5936-7.999 7.9942-7.9941 2.3802-1e-4 4.616 1.0833 6.1218 2.8788C194.239 280.164 192.4279 279.463 190.5209 279.463z"/></g><g><defs><path id="SVGID_11_" d="M189.5403 264.6153c7.7763.0 15.0283 4.1826 18.926 10.9151 1.9201 3.3135 2.9377 7.0987 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8613-12.0547.0024-21.8636-9.8065-21.8612-21.8613.0-6.0285 2.4516-11.492 6.4116-15.452C178.0482 267.0669 183.5117 264.6153 189.5403 264.6153zm7.9941 21.8612c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9941.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.6366 290.6783 197.5344 288.6792 197.5344 286.4765z"/></defs><clipPath id="SVGID_12_"><use xlink:href="#SVGID_11_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_12_);fill:#56a55c" d="M173.11 270.0439c-3.96 3.96-6.4116 9.4235-6.4116 15.452-.0024 12.0547 9.8066 21.8636 21.8613 21.8613 12.0547.0024 21.8636-9.797 21.8613-21.8613.0024-3.8474-1.0151-7.6326-2.9353-10.9462-3.8977-6.7325-11.1497-10.9151-18.926-10.9151C182.5311 263.6346 177.0676 266.0863 173.11 270.0439z"/></g></g><rect x="199.3456" y="279.5436" style="fill:#56a55c" width="122.6266" height="13.8671"/></g><g><g><path style="fill:#f1bc42" d="M189.0874 318.7208l.0012-.0012c7.7751.0012 15.0295 4.1862 18.932 10.9234 1.9177 3.3159 2.9305 7.1011 2.9293 10.9378.0 5.8394-2.2733 11.3305-6.4032 15.4604-4.1288 4.1288-9.6186 6.4032-15.458 6.4032s-11.328-2.2733-15.458-6.4032-6.4032-9.6186-6.4056-15.4628c.0012-6.025 2.454-11.4897 6.4116-15.4472C177.5953 321.1724 183.0601 318.7196 189.0874 318.7208zm7.993 21.8576c.0012-1.4042-.3687-2.7868-1.063-3.9887-1.4293-2.4684-4.0833-3.9995-6.9299-4.0019-4.4077.0024-7.993 3.5877-7.993 7.993.0 2.1356.832 4.1431 2.3427 5.6539 1.5083 1.5083 3.5159 2.3403 5.6503 2.3415 2.1356.0 4.1443-.8308 5.6539-2.3403S197.0816 342.7176 197.0804 340.5784z"/><path style="opacity:.3;fill:#fff" d="M189.0898 318.7214c7.7763.0 15.0283 4.1826 18.926 10.915 1.9201 3.3136 2.9377 7.0988 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8612-12.0547.0024-21.8636-9.8065-21.8612-21.8612.0-6.0285 2.4516-11.4921 6.4116-15.452C177.5977 321.173 183.0612 318.7214 189.0898 318.7214zm7.9941 21.8612c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.1861 344.7844 197.0839 342.7853 197.0839 340.5826z"/><g><defs><path id="SVGID_13_" d="M194.7376 346.2329c-1.4461 1.4461-3.4452 2.3439-5.6479 2.3439-4.4077-.0024-7.9918-3.5865-7.9942-7.9942.0024-4.4125 3.5937-7.999 7.9942-7.9942 2.8443.0 5.497 1.5323 6.924 3.9983.6991 1.2067 1.0702 2.5881 1.0702 3.9959C197.0839 342.7853 196.1861 344.7844 194.7376 346.2329z"/></defs><clipPath id="SVGID_14_"><use xlink:href="#SVGID_13_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_14_);fill:#fff" d="M190.0704 333.5691c-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0011 1.9547.7088 3.7452 1.8782 5.1354-1.7447-1.4674-2.8575-3.6631-2.8588-6.1161.0024-4.4125 3.5936-7.999 7.9942-7.9942 2.3802-1e-4 4.616 1.0834 6.1218 2.8788C193.7885 334.2701 191.9774 333.5691 190.0704 333.5691z"/><path style="opacity:.13;clip-path:url(#SVGID_14_);fill:#020202" d="M190.0704 333.5691c-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0011 1.9547.7088 3.7452 1.8782 5.1354-1.7447-1.4674-2.8575-3.6631-2.8588-6.1161.0024-4.4125 3.5936-7.999 7.9942-7.9942 2.3802-1e-4 4.616 1.0834 6.1218 2.8788C193.7885 334.2701 191.9774 333.5691 190.0704 333.5691z"/></g><g><defs><path id="SVGID_15_" d="M189.0898 318.7214c7.7763.0 15.0283 4.1826 18.926 10.915 1.9201 3.3136 2.9377 7.0988 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8612-12.0547.0024-21.8636-9.8065-21.8612-21.8612.0-6.0285 2.4516-11.4921 6.4116-15.452C177.5977 321.173 183.0612 318.7214 189.0898 318.7214zm7.9941 21.8612c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.1861 344.7844 197.0839 342.7853 197.0839 340.5826z"/></defs><clipPath id="SVGID_16_"><use xlink:href="#SVGID_15_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_16_);fill:#f1bc42" d="M172.6595 324.15c-3.96 3.96-6.4116 9.4235-6.4116 15.452-.0024 12.0547 9.8066 21.8636 21.8613 21.8612 12.0547.0024 21.8636-9.797 21.8613-21.8612.0024-3.8474-1.0151-7.6327-2.9353-10.9462-3.8977-6.7324-11.1497-10.9151-18.926-10.9151C182.0806 317.7407 176.6171 320.1924 172.6595 324.15z"/></g></g><rect x="198.8952" y="333.6497" style="fill:#f1bc42" width="122.6266" height="13.8671"/></g></g></svg></span><span class="text-uppercase font-weight-bold">Eyeflow.AI Docs</span>
+	</a>
+	<div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a  class="nav-link active" href="/docs/" ><span class="active">Documentação</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a  class="nav-link" href="/blog/" ><span>Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a  class="nav-link" href="/community/" ><span>Community</span></a>
+			</li>
+			
+			
+			
+			<li class="nav-item dropdown d-none d-lg-block">
+				
+
+<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	Português
+</a>
+<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+	
+	<a class="dropdown-item" href="/en/">English</a>
+	
+</div>
+			</li>
+			
+		</ul>
+	</div>
+	<div class="navbar-nav d-none d-lg-block">
+<input type="search" class="form-control td-search-input" placeholder="&#xf002 Buscar no site…" aria-label="Buscar no site…" autocomplete="off">
+
+</div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <div class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+            
+
+
+
+
+<div id="td-sidebar-menu" class="td-sidebar__inner">
+  
+  <form class="td-sidebar__search d-flex align-items-center d-lg-none">
+    
+<input type="search" class="form-control td-search-input" placeholder="&#xf002 Buscar no site…" aria-label="Buscar no site…" autocomplete="off">
+
+
+    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    </button>
+  </form>
+  
+  <nav class="collapse td-sidebar-nav" id="td-section-nav">
+    
+    <div class="nav-item dropdown d-block d-lg-none">
+      
+
+<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	Português
+</a>
+<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+	
+	<a class="dropdown-item" href="/en/">English</a>
+	
+</div>
+    </div>
+    
+    
+    
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Documentação</a>
+  </li>
+  <ul>
+    <li class="collapse show" id="docs">
+      
+      
+      
+      
+        
+          
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/overview/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Overview</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsoverview">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+        
+      
+      
+      
+        
+          
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/getting-started/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Getting Started</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsgetting-started">
+      
+      
+      
+      
+        
+          
+          
+          <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgetting-startedexample-page" href="/docs/getting-started/example-page/">Example Page</a>
+        
+      
+      
+    </li>
+  </ul>
+</ul>
+
+        
+      
+      
+      
+        
+          
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Examples</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamples">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+        
+      
+      
+      
+        
+          
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/concepts/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Conceitos</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsconcepts">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+        
+      
+      
+      
+        
+          
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/tasks/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Core Tasks</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docstasks">
+      
+      
+      
+      
+        
+          
+          
+          <a class="td-sidebar-link td-sidebar-link__page " id="m-docstasksbeds" href="/docs/tasks/beds/">Bed and Chair Metrics</a>
+        
+      
+      
+      
+        
+          
+          
+          <a class="td-sidebar-link td-sidebar-link__page " id="m-docstasksporridge" href="/docs/tasks/porridge/">Porridge Assessment</a>
+        
+      
+      
+      
+        
+          
+          
+          <a class="td-sidebar-link td-sidebar-link__page " id="m-docstaskstask" href="/docs/tasks/task/">Another Task</a>
+        
+      
+      
+      
+        
+          
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/tasks/ponycopters/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Working with Ponycopters</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docstasksponycopters">
+      
+      
+      
+      
+        
+          
+          
+          <a class="td-sidebar-link td-sidebar-link__page " id="m-docstasksponycoptersconfiguring-ponycopters" href="/docs/tasks/ponycopters/configuring-ponycopters/">Configuring Ponycopters</a>
+        
+      
+      
+      
+        
+          
+          
+          <a class="td-sidebar-link td-sidebar-link__page " id="m-docstasksponycopterslaunching-ponycopters" href="/docs/tasks/ponycopters/launching-ponycopters/">Launching Ponycopters</a>
+        
+      
+      
+    </li>
+  </ul>
+</ul>
+
+        
+      
+      
+    </li>
+  </ul>
+</ul>
+
+        
+      
+      
+      
+        
+          
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/tutorials/" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">Tutorials</a>
+  </li>
+  <ul>
+    <li class="collapse show" id="docstutorials">
+      
+      
+      
+      
+        
+          
+          
+          <a class="td-sidebar-link td-sidebar-link__page  active" id="m-docstutorialsprimeiro_flow" href="/docs/tutorials/primeiro_flow/">Primeiro Flow</a>
+        
+      
+      
+      
+        
+          
+          
+          <a class="td-sidebar-link td-sidebar-link__page " id="m-docstutorialsmulti-bear" href="/docs/tutorials/multi-bear/">Multi-Bear Domicile Setup</a>
+        
+      
+      
+      
+        
+          
+          
+          <a class="td-sidebar-link td-sidebar-link__page " id="m-docstutorialstutorial2" href="/docs/tutorials/tutorial2/">Another Tutorial</a>
+        
+      
+      
+    </li>
+  </ul>
+</ul>
+
+        
+      
+      
+      
+        
+          
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/reference/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Reference</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsreference">
+      
+      
+      
+      
+        
+          
+          
+          <a class="td-sidebar-link td-sidebar-link__page " id="m-docsreferenceparameter-reference" href="/docs/reference/parameter-reference/">Parameter Reference</a>
+        
+      
+      
+    </li>
+  </ul>
+</ul>
+
+        
+      
+      
+      
+        
+          
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/contribution-guidelines/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Contribution Guidelines</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docscontribution-guidelines">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+        
+      
+      
+    </li>
+  </ul>
+</ul>
+
+  </nav>
+</div>
+
+
+
+
+          </div>
+          <div class="d-none d-xl-block col-xl-2 td-toc d-print-none">
+            
+
+
+
+
+
+
+<div class="td-page-meta ml-2 pb-1 pt-2 mb-0">
+
+
+
+
+
+
+
+
+
+
+
+<a href="https://github.com/siliconlife-ai/eyeflow_doc/edit/master/content/pt-br/docs/Tutorials/primeiro_flow.md" target="_blank"><i class="fa fa-edit fa-fw"></i> Editar essa página</a>
+<a href="https://github.com/siliconlife-ai/eyeflow_doc/new/master/content/pt-br/docs/Tutorials/primeiro_flow.md?filename=change-me.md&amp;value=---%0Atitle%3A&#43;%22Long&#43;Page&#43;Title%22%0AlinkTitle%3A&#43;%22Short&#43;Nav&#43;Title%22%0Aweight%3A&#43;100%0Adescription%3A&#43;%3E-%0A&#43;&#43;&#43;&#43;&#43;Page&#43;description&#43;for&#43;heading&#43;and&#43;indexes.%0A---%0A%0A%23%23&#43;Heading%0A%0AEdit&#43;this&#43;template&#43;to&#43;create&#43;your&#43;new&#43;page.%0A%0A%2A&#43;Give&#43;it&#43;a&#43;good&#43;name%2C&#43;ending&#43;in&#43;%60.md%60&#43;-&#43;e.g.&#43;%60getting-started.md%60%0A%2A&#43;Edit&#43;the&#43;%22front&#43;matter%22&#43;section&#43;at&#43;the&#43;top&#43;of&#43;the&#43;page&#43;%28weight&#43;controls&#43;how&#43;its&#43;ordered&#43;amongst&#43;other&#43;pages&#43;in&#43;the&#43;same&#43;directory%3B&#43;lowest&#43;number&#43;first%29.%0A%2A&#43;Add&#43;a&#43;good&#43;commit&#43;message&#43;at&#43;the&#43;bottom&#43;of&#43;the&#43;page&#43;%28%3C80&#43;characters%3B&#43;use&#43;the&#43;extended&#43;description&#43;field&#43;for&#43;more&#43;detail%29.%0A%2A&#43;Create&#43;a&#43;new&#43;branch&#43;so&#43;you&#43;can&#43;preview&#43;your&#43;new&#43;file&#43;and&#43;request&#43;a&#43;review&#43;via&#43;Pull&#43;Request.%0A" target="_blank"><i class="fa fa-edit fa-fw"></i> Criar página filha</a>
+<a href="https://github.com/siliconlife-ai/eyeflow_doc/issues/new?title=Primeiro%20Flow" target="_blank"><i class="fab fa-github fa-fw"></i> Relatar um problema de documentação</a>
+
+
+<a href="https://github.com/siliconlife-ai/eyeflow_sdk/issues/new" target="_blank"><i class="fas fa-tasks fa-fw"></i> Relatar um problema no projeto</a>
+
+
+
+<a id="print" href="/docs/tutorials/_print/"><i class="fa fa-print fa-fw"></i> Imprimir seção inteira</a>
+
+
+
+</div>
+
+
+
+
+
+
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#visão-geral-da-plataforma-eyeflow">Visão Geral da Plataforma EyeFlow</a>
+      <ul>
+        <li><a href="#como-funciona">Como funciona?</a></li>
+        <li><a href="#flow-icon-3672795screenshots036889fd1c08813042e32d9fe50439a9pngflow"><img src="/screenshots/036889fd1c08813042e32d9fe50439a9.png" alt="flow Icon 3672795">Flow</a></li>
+        <li><a href="#upload-icon-3738519screenshots13526a42e6cba74c2ca123581f41d23dpngupload"><img src="/screenshots/13526a42e6cba74c2ca123581f41d23d.png" alt="Upload Icon 3738519">Upload</a></li>
+        <li><a href="#pictures-icon-2518756screenshotse11aa076d81124afd80c34d4cdfe8d09pngdataset"><img src="/screenshots/e11aa076d81124afd80c34d4cdfe8d09.png" alt="pictures Icon 2518756">Dataset</a></li>
+        <li><a href="#marcação">Marcação</a></li>
+        <li><a href="#running-man-icon-429544screenshots3b897c90fad29c16aea0f2675bbe949bpngtreinamento"><img src="/screenshots/3b897c90fad29c16aea0f2675bbe949b.png" alt="Running Man Icon 429544">Treinamento</a></li>
+        <li><a href="#teste">Teste</a></li>
+        <li><a href="#entrega">Entrega</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#atividade">Atividade</a></li>
+      </ul>
+    </li>
+    <li><a href="#login--entre-na-plataforma-eyeflow">Login – Entre na plataforma EyeFlow</a></li>
+    <li><a href="#diretório">diretório</a></li>
+    <li><a href="#aplicação">Aplicação</a></li>
+    <li><a href="#fluxo">Fluxo</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#upload">Upload</a></li>
+    <li><a href="#datasetpictures-icon-2518756screenshotse11aa076d81124afd80c34d4cdfe8d09pngupload-icon-3738519screenshots13526a42e6cba74c2ca123581f41d23dpngflow-icon-3672795screenshots036889fd1c08813042e32d9fe50439a9png">Dataset<img src="/screenshots/e11aa076d81124afd80c34d4cdfe8d09.png" alt="pictures Icon 2518756"><img src="/screenshots/13526a42e6cba74c2ca123581f41d23d.png" alt="Upload Icon 3738519"><img src="/screenshots/036889fd1c08813042e32d9fe50439a9.png" alt="flow Icon 3672795"></a>
+      <ul>
+        <li><a href="#edição-de-parâmetros-para-treinamento-da-rede-neural">Edição de Parâmetros para treinamento da rede neural</a></li>
+      </ul>
+    </li>
+    <li><a href="#screenshots8f54bde44fd3300b8923ce16c7d6bafcpngupload-icon-3738519screenshots13526a42e6cba74c2ca123581f41d23dpngflow-icon-3672795screenshots036889fd1c08813042e32d9fe50439a9pngtreinamento-da-rede-neural"><img src="/screenshots/8f54bde44fd3300b8923ce16c7d6bafc.png" alt=""><img src="/screenshots/13526a42e6cba74c2ca123581f41d23d.png" alt="Upload Icon 3738519"><img src="/screenshots/036889fd1c08813042e32d9fe50439a9.png" alt="flow Icon 3672795">Treinamento da rede neural</a></li>
+    <li><a href="#teste--resultado">Teste -resultado</a>
+      <ul>
+        <li><a href="#validação-no-vídeo">Validação no vídeo</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+          </div>
+          <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">
+            
+  
+
+            <nav aria-label="breadcrumb" class="d-none d-md-block d-print-none">
+	<ol class="breadcrumb spb-1">
+		
+
+
+
+
+
+
+
+
+
+
+<li class="breadcrumb-item" >
+	<a href="/docs/">Documentação</a>
+</li>
+
+
+
+
+<li class="breadcrumb-item" >
+	<a href="/docs/tutorials/">Tutorials</a>
+</li>
+
+
+
+
+<li class="breadcrumb-item active" aria-current="page">
+	<a href="/docs/tutorials/primeiro_flow/">Primeiro Flow</a>
+</li>
+
+	</ol>
+</nav	>
+
+            
+<div class="td-content">
+	<h1>Primeiro Flow</h1>
+    <div class="lead">Tutorial 1 - Construa seu primeiro flow</div>
+	       
+	<blockquote>
+<p><strong>Treinamento EyeFlow</strong></p>
+</blockquote>
+<blockquote>
+<p><strong>SERPRO</strong></p>
+</blockquote>
+<blockquote>
+<p>Agenda</p>
+</blockquote>
+<ol>
+<li>
+<p>A solução</p>
+<ol>
+<li>Como funciona?</li>
+</ol>
+</li>
+<li>
+<p>Login</p>
+</li>
+<li>
+<p>Flow</p>
+<ol>
+<li>
+<p>Componentes</p>
+</li>
+<li>
+<p>Entrada</p>
+</li>
+<li>
+<p>Saída</p>
+</li>
+<li>
+<p>Seleção</p>
+</li>
+</ol>
+</li>
+<li>
+<p>Upload vídeo</p>
+<ol>
+<li>Anotar</li>
+</ol>
+</li>
+<li>
+<p>Dataset</p>
+<ol>
+<li>
+<p>Edição de dataset</p>
+</li>
+<li>
+<p>Edição parâmetros da rede neural</p>
+</li>
+</ol>
+</li>
+<li>
+<p>Treinamento</p>
+</li>
+<li>
+<p>Dashboard</p>
+</li>
+<li>
+<p>Teste Vídeo</p>
+</li>
+<li>
+<p>Deploy</p>
+</li>
+</ol>
+<h1 id="a-solução">A solução</h1>
+<h2 id="visão-geral-da-plataforma-eyeflow">Visão Geral da Plataforma EyeFlow</h2>
+<blockquote>
+<p>A plataforma de vídeo analytics desenvolvida pela SiliconLife foi construída
+para possibilitar a criação de aplicações de mercado utilizando Inteligência
+Artificial de uma maneira prática e ágil.</p>
+</blockquote>
+<blockquote>
+<p>Nossa solução oferece diversas funcionalidades nativas:</p>
+</blockquote>
+<ul>
+<li>
+<p>Condições de detecção configuráveis e modulares</p>
+</li>
+<li>
+<p>Interface amigável:</p>
+<ul>
+<li>
+<p>Construção de fluxos operacionais com <em>drag’n’drop</em> de componentes de AI</p>
+</li>
+<li>
+<p>Ambiente de desenvolvimento completo para novas aplicações</p>
+</li>
+<li>
+<p>Extensibilidade para adição/desenvolvimento de novos componentes</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Gerenciamento ágil de novos requisitos de dados e processos de negócios</p>
+</li>
+<li>
+<p>Integração simplificada com outras plataformas</p>
+</li>
+<li>
+<p>Integração de maneira simples e consistente com sistemas de dados legados</p>
+</li>
+<li>
+<p>Design modular, orquestrado para grandes volumes de chamadas</p>
+</li>
+<li>
+<p>Facilidade de integração de componentes de software aberto, novos algoritmos
+de AI ou com serviços de nuvem</p>
+</li>
+<li>
+<p>Configuração de diversos tipos de alarmes e relatórios</p>
+</li>
+<li>
+<p>Integração com <em>Data Lake</em> corporativo</p>
+<p>O EyeFlow oferece acessos simplificados às soluções Inteligência Artificial
+para vídeo analytics de forma simples, possibilitando a sua utilização por
+pessoas de áreas distintas. Esta solução também possibilita aos
+desenvolvedores de IA utilizar os seus códigos como componente do fluxo, no
+EYeFlow, possibilitando a utilização deste componente como parte da
+ferramenta, o que garante utilização de todas as facilidades disponíveis
+possibilitando uma entrega de maneira prática e ágil</p>
+</li>
+</ul>
+<h3 id="como-funciona">Como funciona?</h3>
+<blockquote>
+<p><img src="/screenshots/2edd9b0175960780ed479291d0adc6d8.png" alt=""></p>
+</blockquote>
+<h3 id="flow-icon-3672795screenshots036889fd1c08813042e32d9fe50439a9pngflow"><img src="/screenshots/036889fd1c08813042e32d9fe50439a9.png" alt="flow Icon 3672795">Flow</h3>
+<blockquote>
+<p>Interface intuitiva para montagem de fluxos de processamento, defini passo a
+passo das etapas a serem realizadas. O Fluxo é construído utilizando os
+componentes previamente criados utilizando componentes próprios e de
+terceiros para tratamento de dados. A interface dispõe da tecnologia Drag
+And Drop, facilitando a criação do fluxo. Esta interface disponibiliza
+componentes para classificar, detectar, realizar OCR, realizar processos
+analíticos de pessoas, medição entre outros.</p>
+</blockquote>
+<h3 id="upload-icon-3738519screenshots13526a42e6cba74c2ca123581f41d23dpngupload"><img src="/screenshots/13526a42e6cba74c2ca123581f41d23d.png" alt="Upload Icon 3738519">Upload</h3>
+<blockquote>
+<p><img src="/screenshots/8f54bde44fd3300b8923ce16c7d6bafc.png" alt="">Interface disponível na
+ferramenta para carregar o vídeo para o treinamento da Rede Neural,
+disponibilizando frames retirado do vídeo para construção do Dataset</p>
+</blockquote>
+<h3 id="pictures-icon-2518756screenshotse11aa076d81124afd80c34d4cdfe8d09pngdataset"><img src="/screenshots/e11aa076d81124afd80c34d4cdfe8d09.png" alt="pictures Icon 2518756">Dataset</h3>
+<blockquote>
+<p>Interface para seleção de frames do vídeo carregado na etapa anterior,
+parametrização e customização dos atributos para o treinamento na Rede
+Neural,</p>
+</blockquote>
+<h3 id="marcação">Marcação</h3>
+<blockquote>
+<p><img src="/screenshots/2cbc01d87ccb578ccf41bce161e9b13a.png" alt="">Ferramenta disponível dentro
+da seção do Dataset para marcação das áreas de interesse no frame</p>
+</blockquote>
+<h3 id="running-man-icon-429544screenshots3b897c90fad29c16aea0f2675bbe949bpngtreinamento"><img src="/screenshots/3b897c90fad29c16aea0f2675bbe949b.png" alt="Running Man Icon 429544">Treinamento</h3>
+<blockquote>
+<p>Seção disponível no Dataset para submeter treinamento da Rede Neural,
+executando os passos definido no fluxo criado.</p>
+</blockquote>
+<h3 id="teste">Teste</h3>
+<blockquote>
+<p><img src="/screenshots/43412dcb99e664fe196d1f168404a4ae.png" alt="Video Icon 2529300">Valida o
+resultado da rede neural, através da interface de dashboard e através da
+execução do vídeo carregado, caso o resultado não seja satisfatório, a
+solução deverá ser submetida a um novo treinamento, objetivando um
+aprimoramento do aprendizado da rede neural.</p>
+</blockquote>
+<h3 id="entrega">Entrega</h3>
+<blockquote>
+<p><img src="/screenshots/50064beae7ef575ef6ab69b87deda608.png" alt="Deploy Icon2715693">Disponibiliza o Flow
+para uso, a rede neural já está treinada, pronta para ser entregue para
+Operação</p>
+</blockquote>
+<h1 id="treinamento">Treinamento</h1>
+<blockquote>
+<p><strong>Este treinamento será baseado em um caso de uso, para este caso, está
+disponível um vídeo para ser utilizado para treinamento da rede neural, que
+terá o objetivo de detecção do elemento Porca, identificando suas faces
+(face lisa e face prospecção)</strong>,</p>
+</blockquote>
+<h3 id="atividade">Atividade</h3>
+<blockquote>
+<p><strong>Caso Uso: Detecção e Identificação da Face das Porcas.</strong></p>
+</blockquote>
+<blockquote>
+<p>Objetivo: identificar a face das porcas, informando se a face é lisa ou se a
+face é prospecção</p>
+</blockquote>
+<blockquote>
+<p><img src="/screenshots/ec5e47ae04a38e9fdf615ecc47ccb97d.png" alt="">
+<img src="/screenshots/5801a2ce81fee943c1a839d20dc38c53.png" alt=""></p>
+</blockquote>
+<blockquote>
+<p>Face Porca Lisa Face Porca Prospecção</p>
+</blockquote>
+<blockquote>
+<p>Siga os passos abaixo:</p>
+</blockquote>
+<h2 id="login--entre-na-plataforma-eyeflow">Login – Entre na plataforma EyeFlow</h2>
+<blockquote>
+<p>Acesse:</p>
+</blockquote>
+<blockquote>
+<p><a href="https://app.eyeflow.ai">https://app.eyeflow.ai</a></p>
+</blockquote>
+<blockquote>
+<p><img src="/screenshots/54452b239b80e31c2b115e38884a828f.png" alt=""></p>
+</blockquote>
+<blockquote>
+<p><strong>Usuario</strong>: treinamento</p>
+</blockquote>
+<blockquote>
+<p><strong>Senha</strong>: Teste</p>
+</blockquote>
+<h2 id="diretório">diretório</h2>
+<blockquote>
+<p>Quando o usuário acessar a ferramenta, este terá acesso ao seu domínio, este
+domínio é chamado de Diretório.</p>
+</blockquote>
+<blockquote>
+<p>Diretório é uma subdivisão lógica da ferramenta que permite ao usuário uma
+determinada área de uso, obedecendo os critérios e os padrões de segurança
+de acesso.</p>
+</blockquote>
+<h2 id="aplicação">Aplicação</h2>
+<blockquote>
+<p>Aplicação é um subdiretório, área disponibilizada na ferramenta, em que o
+usuário pode criar seus projetos(aplicações) para executar na rede neural.</p>
+</blockquote>
+<blockquote>
+<p>Click na Aba de Aplicação, vide Figura 2</p>
+</blockquote>
+<blockquote>
+<p><strong><img src="/screenshots/278595a445b84611c12da54e179d4a85.png" alt="">Figura 2</strong></p>
+</blockquote>
+<blockquote>
+<p>Crie uma nova aplicação, pressionando o botão &lt; + &gt;, vide figura 3</p>
+</blockquote>
+<blockquote>
+<p><strong>Figura 3</strong></p>
+</blockquote>
+<blockquote>
+<p><strong><img src="/screenshots/8aa5d0c1d01eab46d7f83cfcf61a024e.png" alt=""></strong></p>
+</blockquote>
+<blockquote>
+<p>Crie uma Aplicação com nome &lt;SERPRO.nome do aluno&gt;, vide Figura 4</p>
+</blockquote>
+<blockquote>
+<p><strong>Figura 4</strong></p>
+</blockquote>
+<blockquote>
+<p><img src="/screenshots/5aeb0464310d01fd998a3330b34ab08a.png" alt=""></p>
+</blockquote>
+<h2 id="fluxo">Fluxo</h2>
+<blockquote>
+<p>A solução permite ao usuário criar o fluxo para execução da rede neural.
+Esta solução baseia-se em uma ferramenta Drag and Drop (Arrastar e Soltar)
+de fácil manuseio onde os usuários podem utilizar os componentes dispostos
+em seu Menu.</p>
+</blockquote>
+<blockquote>
+<p>Click na Aba Fluxo, vide Figura 5</p>
+</blockquote>
+<blockquote>
+<p><strong>Figura 5</strong></p>
+</blockquote>
+<blockquote>
+<p><strong><img src="/screenshots/9624b3918209942bbedc3281fe844f9e.png" alt=""></strong></p>
+</blockquote>
+<blockquote>
+<p>Antes de Criar fluxo vamos conhecer os componentes existentes na Ferramenta,
+na figura 6 faremos uma breve descrição:</p>
+</blockquote>
+<blockquote>
+<p><strong>Figura 6</strong></p>
+</blockquote>
+<blockquote>
+<p><img src="/screenshots/b9ee846a7bef5d5a7d875987ec191d01.png" alt=""></p>
+</blockquote>
+<blockquote>
+<p><img src="/screenshots/86ee8dc27659b8a3a46be6ca58af2a22.png" alt=""></p>
+</blockquote>
+<blockquote>
+<p><strong><img src="/screenshots/ee5978b24eedb262e89aeb7872e05661.jpeg" alt="Câmera IP tipo Box - PlanetEllo">Imagens dos modelos
+cameras informados:</strong></p>
+</blockquote>
+<blockquote>
+<p><img src="/screenshots/e47655b354ef9adf5ab04391acf39f75.png" alt=""></p>
+</blockquote>
+<blockquote>
+<p><img src="/screenshots/6fe5ed6c4580c42d994e0f89ab9e8daf.png" alt="Flea3 USB3 \| FLIR Systems"></p>
+</blockquote>
+<blockquote>
+<p><img src="/screenshots/66934571ab2954b852cd3f5c3cc311ab.jpeg" alt="5MP Camera for NVIDIA Jetson Xavier NX / Nano developerkit"></p>
+</blockquote>
+<blockquote>
+<p><img src="/screenshots/a1b0663d945545f97c22c6ccdc81b022.png" alt=""></p>
+</blockquote>
+<blockquote>
+<p><img src="/screenshots/26680cdce30aa9c375711fa8faa957e6.png" alt=""></p>
+</blockquote>
+<h4 id="construa-seu-fluxo">Construa seu Fluxo</h4>
+<blockquote>
+<p><strong>Input</strong></p>
+</blockquote>
+<p>CAMERA IP – Arraste o componente para o fluxo, vide figura 7</p>
+<p><strong>Figura 7</strong></p>
+<p><img src="/screenshots/bcaa17768ffda276bfd23eb259fc2126.png" alt=""></p>
+<blockquote>
+<p>Double Click no componente CAMERA IP, aparecerá a tela da figura 8
+demonstrada abaixo:</p>
+</blockquote>
+<blockquote>
+<p><strong>Figura 8</strong></p>
+</blockquote>
+<blockquote>
+<p><img src="/screenshots/cff838b4aeabb285995b06346a14e70e.png" alt=""></p>
+</blockquote>
+<blockquote>
+<p><strong>Seletor</strong></p>
+</blockquote>
+<p>ROI CUTTER – Arraste o componente para o Fluxo, vide Figura 9</p>
+<p><strong>Figura 9</strong></p>
+<blockquote>
+<p><img src="/screenshots/21d08445d07222cf875416ca0b88be0a.png" alt=""></p>
+</blockquote>
+<ul>
+<li>
+<p>Double Click no componente ROI CUTTER, aparecerá na tela a figura 10
+demonstrada abaixo:</p>
+<p><strong>Figura 10</strong></p>
+<p><img src="/screenshots/337b7304a836759447829c0218facd79.png" alt=""></p>
+<p><strong>Siga os passos da figura 11</strong></p>
+<p><strong>Figura 11</strong></p>
+<p><img src="/screenshots/8f0d29dda6f9f27221d1e211c5dd27b8.png" alt=""></p>
+<p>Crie uma nova Classe, seguindo passo representado na figura 12 abaixo:</p>
+<p><strong>Figura 12</strong></p>
+<p><img src="/screenshots/b58b2a563154be20185941b41f43cf6d.png" alt=""></p>
+</li>
+</ul>
+<p>Aparecerá a figura 13 demonstrada abaixo, nesta etapa estaremos adicionando duas
+novas classes</p>
+<blockquote>
+<p><strong>Figura 13</strong></p>
+</blockquote>
+<blockquote>
+<p><img src="/screenshots/07fba474794f9334206980b7b17e212a.png" alt=""></p>
+</blockquote>
+<blockquote>
+<p>Save as configurações realizadas no componente ROI CUTTER, vide figura</p>
+</blockquote>
+<blockquote>
+<p>Figura</p>
+</blockquote>
+<blockquote>
+<p><img src="/screenshots/e6a94df39e040762c7292296b673e677.png" alt=""></p>
+</blockquote>
+<p>Faça a comunicação entre a CÂMARA IP com ROI CUTTER no fluxo, conforme figura 14
+abaixo:</p>
+<blockquote>
+<p><strong>Figuro 14</strong></p>
+</blockquote>
+<blockquote>
+<p><img src="/screenshots/55b2a4a94b260d0d95d41a746cf6320f.png" alt=""></p>
+</blockquote>
+<blockquote>
+<p>Salve o Flow: Click no botão &lt;Save Flow&gt; conforme figura 15 abaixo:</p>
+</blockquote>
+<blockquote>
+<p><strong>Figura 15</strong></p>
+</blockquote>
+<blockquote>
+<p><img src="/screenshots/c6d71a06358b7b35cfa5d3ecf4340ea0.png" alt=""></p>
+</blockquote>
+<h2 id="upload">Upload</h2>
+<blockquote>
+<p>Para este treinamento foi disponibilizado um vídeo teste:</p>
+</blockquote>
+<blockquote>
+<p>Endereço do vídeo para Download</p>
+</blockquote>
+<blockquote>
+<p>C:Tets\bbi\nnn</p>
+</blockquote>
+<blockquote>
+<p><img src="/screenshots/13526a42e6cba74c2ca123581f41d23d.png" alt="Upload Icon 3738519"><img src="/screenshots/036889fd1c08813042e32d9fe50439a9.png" alt="flowIcon3672795"><img src="/screenshots/8f54bde44fd3300b8923ce16c7d6bafc.png" alt=""></p>
+</blockquote>
+<blockquote>
+<p>Carregue o vídeo</p>
+</blockquote>
+<blockquote>
+<p>Click no botão &lt;Teste Vídeo&gt;, conforme figura 16 abaixo:</p>
+</blockquote>
+<blockquote>
+<p><strong>Figura 16</strong></p>
+</blockquote>
+<blockquote>
+<p><img src="/screenshots/4beaed025791a12acf13245f6156b0d7.png" alt=""></p>
+</blockquote>
+<blockquote>
+<p>Faça o upload de Video teste, click no botão &lt;UPLOAD VIDEO&gt; vide Figura 17</p>
+</blockquote>
+<blockquote>
+<p><strong>Figura 17</strong></p>
+</blockquote>
+<blockquote>
+<p><img src="/screenshots/6ff411258db74b91e1ecacf0db27e66e.png" alt=""></p>
+</blockquote>
+<blockquote>
+<p>Arraste o vídeo para o local informado na figura 18 abaixo:</p>
+</blockquote>
+<blockquote>
+<p><strong>Figura 18</strong></p>
+</blockquote>
+<blockquote>
+<p><img src="/screenshots/2d4a53d3b31d9783e49fc511c615004c.png" alt=""></p>
+</blockquote>
+<blockquote>
+<p>Neste momento aparecerá uma barra demonstrando a carga do vídeo na
+ferramenta, vide Figura 19</p>
+</blockquote>
+<blockquote>
+<p><strong>Figura 19</strong></p>
+</blockquote>
+<blockquote>
+<p><img src="/screenshots/626a6c42c6b044d26f05fd704fe91eac.png" alt=""></p>
+</blockquote>
+<blockquote>
+<p>Neste momento a solução estará executando o seu fluxo criado e
+disponibilizando novos exemplos(frames) para seu Dataset.</p>
+</blockquote>
+<h2 id="datasetpictures-icon-2518756screenshotse11aa076d81124afd80c34d4cdfe8d09pngupload-icon-3738519screenshots13526a42e6cba74c2ca123581f41d23dpngflow-icon-3672795screenshots036889fd1c08813042e32d9fe50439a9png">Dataset<img src="/screenshots/e11aa076d81124afd80c34d4cdfe8d09.png" alt="pictures Icon 2518756"><img src="/screenshots/13526a42e6cba74c2ca123581f41d23d.png" alt="Upload Icon 3738519"><img src="/screenshots/036889fd1c08813042e32d9fe50439a9.png" alt="flow Icon 3672795"></h2>
+<blockquote>
+<p><img src="/screenshots/8f54bde44fd3300b8923ce16c7d6bafc.png" alt=""></p>
+</blockquote>
+<blockquote>
+<p>Entre na Aba DATASETS, vide Figura 20</p>
+</blockquote>
+<blockquote>
+<p><strong>Figura 20</strong></p>
+</blockquote>
+<blockquote>
+<p><img src="/screenshots/cb0d9f16e443fad19887ac227943415c.png" alt=""></p>
+</blockquote>
+<blockquote>
+<p>Abrirá a pasta do Dataset, vide Figura 21</p>
+</blockquote>
+<blockquote>
+<p><strong>Figura 21</strong></p>
+</blockquote>
+<blockquote>
+<p><img src="/screenshots/2c258bb34ea7d868a9c67fb6a019439d.png" alt=""></p>
+</blockquote>
+<blockquote>
+<p>Selecione frames/imagens para ser treinadas no Dataset, click nos botões de
+seleção, conforme a figura 22 abaixo:</p>
+</blockquote>
+<blockquote>
+<p><strong>Figura 22</strong></p>
+</blockquote>
+<blockquote>
+<p><img src="/screenshots/911c7bcf7b17c08f3c2da836c62e6165.png" alt=""></p>
+</blockquote>
+<blockquote>
+<p>Insira os novos exemplos selecionados, click no botão &lt;Insira novos
+exemplos&gt;, vide Figura 23</p>
+</blockquote>
+<blockquote>
+<p><strong>Figura 23</strong></p>
+</blockquote>
+<blockquote>
+<p><img src="/screenshots/94702afc11390778519bb29e9439d074.png" alt=""></p>
+</blockquote>
+<blockquote>
+<p>Retorne para a Aba Dataset, vide Figura 24</p>
+</blockquote>
+<blockquote>
+<p><strong>Figura 24</strong></p>
+</blockquote>
+<blockquote>
+<p><img src="/screenshots/a3ac82b770d68bce6bb087659a597bce.png" alt=""></p>
+</blockquote>
+<blockquote>
+<p>Click no seu Dataset criado, vide Figura 25</p>
+</blockquote>
+<blockquote>
+<p><strong>Figura 25</strong></p>
+</blockquote>
+<blockquote>
+<p><img src="/screenshots/8f36879c60fbf6b59200f537e27f2605.png" alt=""></p>
+</blockquote>
+<blockquote>
+<p>Marque as regiões de interesse, selecionando a Porca com a Face Lisa e com a
+Face Projeção, conforme a Figura 26 abaixo</p>
+</blockquote>
+<blockquote>
+<p><strong>Figura 26</strong></p>
+</blockquote>
+<blockquote>
+<p><img src="/screenshots/c55290311d8113c5c93a917cd5cef3e3.png" alt=""></p>
+</blockquote>
+<blockquote>
+<p>Após a marcação de todos os frames selecionados click no botão &lt;Painel de
+Treino&gt;, conforme Figura 25</p>
+</blockquote>
+<blockquote>
+<p><strong>Figura 27</strong></p>
+</blockquote>
+<blockquote>
+<p><img src="/screenshots/18e3818244e9afbe876baf9392c69560.png" alt=""></p>
+</blockquote>
+<h3 id="edição-de-parâmetros-para-treinamento-da-rede-neural">Edição de Parâmetros para treinamento da rede neural</h3>
+<blockquote>
+<p>Siga os passos da figura 28, representada abaixo:</p>
+</blockquote>
+<blockquote>
+<p><strong>Figura 28</strong></p>
+</blockquote>
+<blockquote>
+<p><img src="/screenshots/16b5d277d6395f1288ab844a59fbc686.png" alt=""></p>
+</blockquote>
+<blockquote>
+<p>Aparecerá figura 29 demonstrada abaixo:</p>
+</blockquote>
+<blockquote>
+<p><strong>Figura 29</strong></p>
+</blockquote>
+<blockquote>
+<p>Descrição dos parâmetros na ferramenta</p>
+</blockquote>
+<blockquote>
+<p><img src="/screenshots/22c40d8d1c363711e6f5e3a39b924112.png" alt=""></p>
+</blockquote>
+<blockquote>
+<p>*Ao final do treinamento você encontrará o Glossário com algumas definições
+dos parâmetros da rede neural</p>
+</blockquote>
+<h2 id="screenshots8f54bde44fd3300b8923ce16c7d6bafcpngupload-icon-3738519screenshots13526a42e6cba74c2ca123581f41d23dpngflow-icon-3672795screenshots036889fd1c08813042e32d9fe50439a9pngtreinamento-da-rede-neural"><img src="/screenshots/8f54bde44fd3300b8923ce16c7d6bafc.png" alt=""><img src="/screenshots/13526a42e6cba74c2ca123581f41d23d.png" alt="Upload Icon 3738519"><img src="/screenshots/036889fd1c08813042e32d9fe50439a9.png" alt="flow Icon 3672795">Treinamento da rede neural</h2>
+<blockquote>
+<p><img src="/screenshots/e11aa076d81124afd80c34d4cdfe8d09.png" alt="pictures Icon2518756"><img src="/screenshots/3b897c90fad29c16aea0f2675bbe949b.png" alt="Running Man Icon429544"></p>
+</blockquote>
+<blockquote>
+<p>Após edição dos parâmetros da rede neural, vamos submeter os seus frames
+marcados para treinamento, onde executará o fluxo criado.</p>
+</blockquote>
+<blockquote>
+<p>Siga os passos representado na figura 30 abaixo:</p>
+</blockquote>
+<blockquote>
+<p><strong>Figura 30</strong></p>
+</blockquote>
+<blockquote>
+<p><img src="/screenshots/ee2abb31954fea2099d8790c8dd0429d.png" alt=""></p>
+</blockquote>
+<blockquote>
+<p>Aparecerá um pop-up na tela com o pedido de confirmação, vide figura 31</p>
+</blockquote>
+<blockquote>
+<p><strong>Figura 31</strong></p>
+</blockquote>
+<blockquote>
+<p><img src="/screenshots/646bc2a77c289b3e681f03f328ecae5a.png" alt=""></p>
+</blockquote>
+<blockquote>
+<p>Após esta etapa, aparecerá uma tela com o andamento do treinamento, vide
+Figura 32</p>
+</blockquote>
+<blockquote>
+<p><strong>Figura 32</strong></p>
+</blockquote>
+<blockquote>
+<p><strong><img src="/screenshots/33e934dfaa47afa81bcff852189c6b34.png" alt=""></strong></p>
+</blockquote>
+<h2 id="teste--resultado">Teste -resultado</h2>
+<blockquote>
+<p>Após o treinamento da rede neural, você poderá ver o resultado do
+treinamento no relatório demonstrado na figura 33, você também poderá
+executar o vídeo carregado e observar o resultado que alcançou, caso o
+resultado não seja satisfatório, a rede neural deverá realizar um novo
+treinamento, para este caso, devemos submeter novos exemplos no Datasets,
+com o objetivo de melhorar o aprendizado da rede neural</p>
+</blockquote>
+<blockquote>
+<p><strong>Figura 33</strong></p>
+</blockquote>
+<blockquote>
+<p><img src="/screenshots/b3810a2f7f2f9724e96680b013bb77ed.png" alt=""></p>
+</blockquote>
+<h3 id="validação-no-vídeo">Validação no vídeo</h3>
+<blockquote>
+<p>Conforme visto anteriormente no item Flow, a ferramenta disponibiliza a
+opção de teste no vídeo carregado.</p>
+</blockquote>
+<blockquote>
+<p>Siga os passos descrito na figura 34 abaixo:</p>
+</blockquote>
+<blockquote>
+<p>Click na Aba&lt; Flow&gt;</p>
+</blockquote>
+<blockquote>
+<p><strong>Figura 34</strong></p>
+</blockquote>
+<blockquote>
+<p><img src="/screenshots/ef0e2286e9d11d6f3a8292ad4bfb8c08.png" alt=""></p>
+</blockquote>
+<blockquote>
+<p>Siga os passos representados na figura 35</p>
+</blockquote>
+<blockquote>
+<p><strong>Figura 35</strong></p>
+</blockquote>
+<blockquote>
+<p><strong><img src="/screenshots/db80a153eac05e2394fdd281d30392ed.png" alt=""></strong></p>
+</blockquote>
+<blockquote>
+<p>Siga os passos representados na figura 31</p>
+</blockquote>
+<blockquote>
+<p><strong>Figura 36</strong></p>
+</blockquote>
+<blockquote>
+<p><strong><img src="/screenshots/949318d213279ca64c1db3fe43563b42.png" alt=""></strong></p>
+</blockquote>
+<blockquote>
+<p>Após esta etapa você poderá verifica no vídeo o resultado do seu Projeto, se
+o resultado não for satisfatório, a rede neural deverá ser submetida a um
+novo treinamento, para isso você deverá executar os passos informados no
+item Datasets, este processo deve ocorrer até a rede neural encontrar o
+resultado satisfatório.</p>
+</blockquote>
+
+	
+		<style>
+  .feedback--answer {
+    display: inline-block;
+  }
+  .feedback--answer-no {
+    margin-left: 1em;
+  }
+  .feedback--response {
+    display: none;
+    margin-top: 1em;
+  }
+  .feedback--response__visible {
+    display: block;
+  }
+</style>
+<div class="d-print-none">
+<h2 class="feedback--title">Feedback</h2>
+<p class="feedback--question">Was this page helpful?</p>
+<button class="feedback--answer feedback--answer-yes">Yes</button>
+<button class="feedback--answer feedback--answer-no">No</button>
+<p class="feedback--response feedback--response-yes">
+  Glad to hear it! Please <a href="https://github.com/siliconlife-ai/eyeflow_doc/issues/new">tell us how we can improve</a>.
+</p>
+<p class="feedback--response feedback--response-no">
+  Sorry to hear that. Please <a href="https://github.com/siliconlife-ai/eyeflow_doc/issues/new">tell us how we can improve</a>.
+</p>
+</div>
+<script>
+  const yesButton = document.querySelector('.feedback--answer-yes');
+  const noButton = document.querySelector('.feedback--answer-no');
+  const yesResponse = document.querySelector('.feedback--response-yes');
+  const noResponse = document.querySelector('.feedback--response-no');
+  const disableButtons = () => {
+    yesButton.disabled = true;
+    noButton.disabled = true;
+  };
+  const sendFeedback = (value) => {
+    if (typeof ga !== 'function') return;
+    const args = {
+      command: 'send',
+      hitType: 'event',
+      category: 'Helpful',
+      action: 'click',
+      label: window.location.pathname,
+      value: value
+    };
+    ga(args.command, args.hitType, args.category, args.action, args.label, args.value);
+  };
+  yesButton.addEventListener('click', () => {
+    yesResponse.classList.add('feedback--response__visible');
+    disableButtons();
+    sendFeedback(1);
+  });
+  noButton.addEventListener('click', () => {
+    noResponse.classList.add('feedback--response__visible');
+    disableButtons();
+    sendFeedback(0);
+  });
+</script>
+
+		<br />
+	
+	
+	<div class="text-muted mt-5 pt-3 border-top">Última modificação 26/03/2021
+</div>
+</div>
+
+
+          </main>
+        </div>
+      </div>
+      
+<footer class="bg-dark py-5 row d-print-none">
+  <div class="container-fluid mx-sm-5">
+    <div class="row">
+      <div class="col-6 col-sm-4 text-xs-center order-sm-2">
+        
+        
+        
+<ul class="list-inline mb-0">
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="User mailing list" aria-label="User mailing list">
+    <a class="text-white" target="_blank" rel="noopener noreferrer" href="https://example.org/mail">
+      <i class="fa fa-envelope"></i>
+    </a>
+  </li>
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="Twitter" aria-label="Twitter">
+    <a class="text-white" target="_blank" rel="noopener noreferrer" href="https://example.org/twitter">
+      <i class="fab fa-twitter"></i>
+    </a>
+  </li>
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="Stack Overflow" aria-label="Stack Overflow">
+    <a class="text-white" target="_blank" rel="noopener noreferrer" href="https://example.org/stack">
+      <i class="fab fa-stack-overflow"></i>
+    </a>
+  </li>
+  
+</ul>
+
+        
+        
+      </div>
+      <div class="col-6 col-sm-4 text-right text-xs-center order-sm-3">
+        
+        
+        
+<ul class="list-inline mb-0">
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="GitHub" aria-label="GitHub">
+    <a class="text-white" target="_blank" rel="noopener noreferrer" href="https://github.com/siliconlife-ai/eyeflow_sdk">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="Slack" aria-label="Slack">
+    <a class="text-white" target="_blank" rel="noopener noreferrer" href="https://example.org/slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="Developer mailing list" aria-label="Developer mailing list">
+    <a class="text-white" target="_blank" rel="noopener noreferrer" href="https://example.org/mail">
+      <i class="fa fa-envelope"></i>
+    </a>
+  </li>
+  
+</ul>
+
+        
+        
+      </div>
+      <div class="col-12 col-sm-4 text-center py-2 order-sm-2">
+        <small class="text-white">&copy; 2021 The Docsy Authors Todos os direitos reservados</small>
+        <small class="ml-1"><a href="https://policies.google.com/privacy" target="_blank">Política de Privacidade</a></small>
+	
+		
+	
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    </div>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+
+
+
+<script src="/js/main.min.5c74b870c6953931a705f390a49c7e4c0a842ec5c83b24354758dd674343ed0d.js" integrity="sha256-XHS4cMaVOTGnBfOQpJx&#43;TAqELsXIOyQ1R1jdZ0ND7Q0=" crossorigin="anonymous"></script>
+
+
+
+
+  </body>
+</html>
