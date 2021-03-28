@@ -19,16 +19,16 @@
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
 <title>Conceitos | Eyeflow.AI Docs</title><meta property="og:title" content="Conceitos" />
-<meta property="og:description" content="Entenda os principais conceitos do Eyeflow e Vídeo Analytics
+<meta property="og:description" content="Principais conceitos do Eyeflow e Vídeo Analytics
 " />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="/docs/concepts/" /><meta property="og:site_name" content="Eyeflow.AI Docs" />
 
 <meta itemprop="name" content="Conceitos">
-<meta itemprop="description" content="Entenda os principais conceitos do Eyeflow e Vídeo Analytics
+<meta itemprop="description" content="Principais conceitos do Eyeflow e Vídeo Analytics
 "><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Conceitos"/>
-<meta name="twitter:description" content="Entenda os principais conceitos do Eyeflow e Vídeo Analytics
+<meta name="twitter:description" content="Principais conceitos do Eyeflow e Vídeo Analytics
 "/>
 
 
@@ -48,8 +48,8 @@ if (!doNotTrack) {
 
 
 
-<link rel="preload" href="/scss/main.min.ac0063411fe78d136ba4542d07957ba8f37593d6f775a519095995a04a05a1a6.css" as="style">
-<link href="/scss/main.min.ac0063411fe78d136ba4542d07957ba8f37593d6f775a519095995a04a05a1a6.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.min.ce3463a1ef5c917875e1d7fba7e07a173525e77a633bf30508294531f61e7dd6.css" as="style">
+<link href="/scss/main.min.ce3463a1ef5c917875e1d7fba7e07a173525e77a633bf30508294531f61e7dd6.css" rel="stylesheet" integrity="">
 
 
 <script
@@ -99,7 +99,7 @@ if (!doNotTrack) {
 				
 				
 				
-				<a  class="nav-link" href="/community/" ><span>Community</span></a>
+				<a  class="nav-link" href="/community/" ><span>Communidade</span></a>
 			</li>
 			
 			
@@ -152,7 +152,7 @@ Esta é a apresentação imprimível multi-página desta seção.
 
 
 <h1 class="title">Conceitos</h1>
-<div class="lead">Entenda os principais conceitos do Eyeflow e Vídeo Analytics</div>
+<div class="lead">Principais conceitos do Eyeflow e Vídeo Analytics</div>
 
 
 
@@ -165,88 +165,348 @@ Esta é a apresentação imprimível multi-página desta seção.
   
 
   
+    
+    
+	
+<li>1: <a href="#pg-c5d74578d83b9f2882ac6e6033941c0f">Visão Geral</a></li>
+
+
+    
+  
+    
+    
+	
+<li>2: <a href="#pg-7d473224ea4bfc39a535883237df5ec8">Flow</a></li>
+
+
+    
+  
+    
+    
+	
+<li>3: <a href="#pg-b6a5d2943af2cc53e0d47e249ac80d37">Dataset</a></li>
+
+
+    
+  
+    
+    
+	
+<li>4: <a href="#pg-e421da54c95b892b5e0a6ab85be297a1">Treinamento</a></li>
+
+
+    
+  
 
     </ul>
 
 
 <div class="content">
-      <h1 id="conceitos">Conceitos</h1>
+      
+</div>
+</div>
+
+
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="">
+    
+	<h1 id="pg-c5d74578d83b9f2882ac6e6033941c0f">1 - Visão Geral</h1>
+    <div class="lead">Principais conceitos do Eyeflow.AI</div>
+	<h2 id="aplicação">Aplicação</h2>
+<p>Conjunto de elementos que implementam um processo completo de Video Analytics.</p>
+<p>Quando a gente se depara com um problema que envolve visão começamos a pensar em como podemos resolvê-lo
+utilizando o Eyeflow. Na entrada temos a captura de imagens por uma câmera industrial ou um celular, e na saída
+queremos ter essas imagens analisadas e interpretadas, para que ações possam ser tomadas em resposta.
+Essa solução do problema é que chamamos de Aplicação.</p>
+<h2 id="flow">Flow</h2>
+<p>Conjunto de componentes encadeados que implementam uma aplicação.</p>
+<p>No processo de construir uma aplicação o objetivo é transformar uma entrada de vídeo (<em>dados não estruturados</em>)
+em uma ação programada (<em>dados estruturados</em>). Nesse processo iremos usar redes neurais e outros componentes de
+software encadeados para poder decompor e interpretar as imagens de entrada e gerar as saídas desejadas.</p>
+<h2 id="rede-neural">Rede Neural</h2>
+<p>Algorítmo matemático avançado que permite a computação de dados não estruturados.</p>
+<p>As redes neurais são elementos computacionais que vêm sendo desenvolvidos desde os anos 60, inspiradas
+nas pesquisas científicas sobre o funcionamento do cérebro (<em>neurônios</em>).</p>
+<p>A partir de 2010, com avanços nos
+algoritmos de processamento matemático e aproximação de funções algébricas, juntamente com o aumento de
+capacidade dos processadores matemáticos e barateamento pela popularização dos mesmos nas placas gráficas
+para jogos (<em>GPU</em>), as redes neurais evoluíram para utilização de várias camadas (<em>Deep Neural Network</em>).
+Dessa forma começaram a surgir várias novas aplicações dessa tecnologia na solução de problemas complexos,
+em sua maioria relacionados a dados não estruturados, como sons e imagens.
+As redes neurais são os componentes fundamentais do Flow, pois permitem a solução de problemas de visão
+computacional complexos, que antes não eram passíveis de serem resolvidos utilizando algorítmos tradicionais.</p>
+<p>As redes neurais possuem uma capacidade de convergir matematicamente para um modelo computacional que
+identifica os padrões nos dados. Essa capacidade permitiu o surgimento de soluções de Inteligência Artificial
+que aprendem com exemplos que o usuário entrega para a rede.</p>
+<h2 id="dataset">Dataset</h2>
+<p>Conjunto de exemplos que instruem o aprendizado da rede neural.</p>
+<p>Uma rede neural é como uma caixa preta onde vamos inserindo exemplos na entrada e vamos dizendo o que queremos
+ter na saída. Assim, o usuário deve gerar um conjunto desses exemplos, anotados com a saída desejada, que servirão
+de dados para treinamento da rede neural na execução da tarefa.</p>
+<h2 id="treinamento">Treinamento</h2>
+<p>Processo computacional para convergir uma rede neural para o aprendizado dos padrões.</p>
+<p>Depois que temos um dataset anotado colocamos os algorítmos de redes neurais para processar esses exemplos
+até ela aprender a gerar a saída desejada. O treinamento busca reduzir o erro medido entre o que a rede neural
+apresentou na saída em relação à anotação do exemplo feita pelo usuário. Quando esse erro é bem reduzido a
+rede neural estará pronta para processar novos dados.</p>
+<h2 id="modelo">Modelo</h2>
+<p>Rede neural treinada com um dataset.</p>
+<p>Após o processo de treinamento é gerado um modelo, que poderá então ser utilizado no Flow para processamento
+das imagens e geração das saídas desejadas.</p>
+<h2 id="edge--borda">Edge / Borda</h2>
+<p>Dispositivo computacional que executa um flow em produção.</p>
+<p>Depois que um flow está desenvolvido, testado e apresentando bons resultados ele pode ser publicado para
+execução em um dispositivo que passará a funcionar em produção, como por exemplo a detecção de um defeito
+na linha de manufatura.</p>
+<h2 id="para-onde-devo-ir-agora">Para onde devo ir agora?</h2>
 <ul>
-<li>
-<p><strong>Epoch</strong> in terms of artificial neural networks, an epoch refers to one
-cycle through the full training dataset. Usually, training a neural network
-takes more than a few epochs. &hellip; With a neural network, the goal of the
-model is generally to classify or generate material which is right or wrong.</p>
-</li>
-<li>
-<p><strong>steps_per_epoch</strong> the number of batch iterations before a training epoch
-is considered finished. If you have a training set of fixed size you can
-ignore it but it may be useful if you have a huge data set or if you are
-generating random data augmentations on the fly, i.e. if your training set
-has a (generated) infinite size. If you have the time to go through your
-whole training data set I recommend to skip this parameter.</p>
-</li>
-<li>
-<p><strong>batch_size</strong> determines the number of samples in each mini batch. Its
-maximum is the number of all samples, which makes gradient descent accurate,
-the loss will decrease towards the minimum if the learning rate is small
-enough, but iterations are slower. Its minimum is 1, resulting in stochastic
-gradient descent: Fast but the direction of the gradient step is based only
-on one example, the loss may jump around. batch_size allows to adjust
-between the two extremes: accurate gradient direction and fast iteration.
-Also, the maximum value for batch_size may be limited if your model + data
-set does not fit into the available (GPU) memory.</p>
-</li>
-<li>
-<p><strong>validation_steps</strong> similar to steps_per_epoch but on the validation data
-set instead on the training data. If you have the time to go through your
-whole validation data set I recommend to skip this parameter.</p>
-</li>
-<li>
-<p><strong>Stop condition:</strong> In order to support both distributed and non-distributed
-configuration reliably, the only supported stop condition for model training
-is train_spec.max_steps. If train_spec.max_steps is None, the model is
-trained forever. Use with care if model stop condition is different. For
-example, assume that the model is expected to be trained with one epoch of
-training data, and the training input_fn is configured to throw
-OutOfRangeError after going through one epoch, which stops the
-Estimator.train. For a three-training-worker distributed configuration, each
-training worker is likely to go through the whole epoch independently. So,
-the model will be trained with three epochs of training data instead of one
-epoch.</p>
-</li>
-<li>
-<p><strong>Max Boxes -</strong> Maximum number of boxes in detection</p>
-</li>
-<li>
-<p><strong>Test Size -</strong> Percent of exemples selected for final test</p>
-</li>
-<li>
-<p><strong>Expand Boxes -</strong> Percent to expand size of boxes in detection</p>
-</li>
-<li>
-<p><strong>Val Size -</strong> Percent of exemples selected for Validation</p>
-</li>
-<li>
-<p><strong>IoU Detection Threshold -</strong> Minimum threshold for IoU detection</p>
-</li>
-<li>
-<p><strong>Confidence Threshold –</strong> Minimum confidence threshold for valid detection</p>
-</li>
+<li><a href="/docs/Concepts/dataset/">Dataset</a>: Anotando Datasets</li>
+<li><a href="/docs/Concepts/flow/">Flow</a>: Criando o Flow</li>
 </ul>
 
 </div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-7d473224ea4bfc39a535883237df5ec8">2 - Flow</h1>
+    <div class="lead">Diagrama de fluxos para processamento das imagens e tomadas de decisões</div>
+	<p>O Flow é um programa no formato low-code, construído com componentes de código, orientado para a decomposição de dados de imagens
+(<em>não estruturados</em>) em dados de saída (<em>estruturados</em>).</p>
+<p><strong>O Flow é estruturado como um processo de entrada-saída.</strong></p>
+<p>A entrada é um fluxo de imagens, como por exemplo:</p>
+<ul>
+<li>Câmera: Industrial, Segurança, IP</li>
+<li>Celular</li>
+<li>Arquivo de Vídeo</li>
+</ul>
+<p>A saída pode ser para qualquer outro sistema de dados como:</p>
+<ul>
+<li>Arquivos: JSON, CSV, TXT</li>
+<li>Bancos de dados: MongoDB, Postgres</li>
+<li>Filas de mensagem: RabbitMQ, AMQP</li>
+<li>Controladores: CLP, IC, TCP, RS-232</li>
+<li>Envio de alarmes: E-mail, SMS, Notificações</li>
+</ul>
+<p>Como o Eyeflow é uma plataforma extensível, não existe limites para criação de componentes. É possível criar rapidamente um componente
+em Python e usá-lo no Flow para executar a função desejada.</p>
+<p>Entre a entrada e a saída o processamento das imagens é feito em componentes de Redes Neurais. Cada componente desses estará ligado a
+um dataset, e irá usar o modelo treinado com o dataset para executar em produção.</p>
+<p>É possível também utilizar componentes que enviam as imagens para processamento em serviços de provedores de cloud. Por exemplo, usar um
+componente que pega a imagem de um documento e envia para o reconhecimento de caracteres do Google, e daí processar a resposta para
+digitalizar esse documento.</p>
+<p>Criar um Flow é um processo bem simples.</p>
+<h4 id="clique-na-aba-flow-na-barra-de-navegação">Clique na aba Flow na barra de navegação</h4>
+<p>Abrirá a tela para carregar um Flow ou Criar um novo.
+Ao clicar em <strong>Novo Flow</strong> irá abrir uma tela para entrar com os dados. É só preencher os dados e pronto, o Flow será criado.</p>
+<p><img src="/screenshots/pt-br_create_flow.jpg#bordered" alt="Criar Flow" title="Criar Flow"></p>
+<p>Após a criação do Flow vamos adicionar alguns componentes para criar um flow simples que identifica de o Pet na imagem.</p>
+<h3 id="vamos-adicionar-3-componentes-nesse-flow">Vamos adicionar 3 componentes nesse Flow:</h3>
+<h4 id="input-câmera-ip---coloque-localhost-como-url">Input Câmera IP - Coloque <code>localhost</code> como URL</h4>
+<p><img src="/screenshots/pt-br_flow_camera_ip.jpg#bordered" alt="Componente Camera IP" title="Componente Camera IP"></p>
+<h4 id="roi-cutter---coloque-o-nome-identifica-pet-e-escolha-o-dataset-gatos-e-cachorros">ROI Cutter - Coloque o <code>nome</code> Identifica Pet e escolha o dataset <code>Gatos e Cachorros</code></h4>
+<p><img src="/screenshots/pt-br_flow_roi_cutter.jpg#bordered" alt="Componente ROI Cutter" title="Componente ROI Cutter"></p>
+<h4 id="output-json-file-save---preencha-filename-como-testjson">Output JSON File Save - Preencha <code>filename</code> como <code>test.json</code></h4>
+<p><img src="/screenshots/pt-br_flow_file_save.jpg#bordered" alt="Componente File Save" title="Componente File Save"></p>
+<h4 id="ligue-as-saídas-de-cada-componente-na-entrada-do-próximo">Ligue as saídas de cada componente na entrada do próximo</h4>
+<p><img src="/screenshots/pt-br_flow_basic.jpg#bordered" alt="Flow Completo" title="Flow Completo"></p>
+<p><strong>Pronto! O Flow está completo.</strong></p>
+<p>Uma das grandes vantagens da plataforma EyeFlow.AI é que ela é um ambiente integrado completo para o desenvolvimento de aplicações
+de Video Analytics. O processo de redes neurais exige uma razoável quantidade de exemplos anotados para poder aprender, e a
+maneira mais fácil de conseguir esses exemplos é utilizando vídeos.</p>
+<p>Então, o processo de desenvolvimento envolve um ciclo de atividades:</p>
+<ol>
+<li>Testa o vídeo no Flow observando se a aplicação está marcando o vídeo corretamente</li>
+<li>Identifica os erros que a aplicação está cometendo e vai nos datasets</li>
+<li>Na tela de <strong>Novos Exemplos</strong> procura por quadros onde a rede neural não identificou o objeto corretamente</li>
+<li>Adiciona vários exemplos de erro (de 30 a 50 em cada ciclo é um bom número)</li>
+<li>Anota os novos exemplos corrigindo os erros</li>
+<li>Treina a rede neural e verifica os indicadores de assertividade para ver se a rede está aprendendo bem</li>
+<li>Após os treinamentos volta para testar novamente o vídeo</li>
+</ol>
+<p>Após termos bons resultados nas anotações dos vídeos nosso Flow já está pronto para publicarmos na borda.</p>
+<h2 id="para-onde-devo-ir-agora">Para onde devo ir agora?</h2>
+<ul>
+<li><a href="/docs/concepts/dataset/">Dataset</a>: Anotando Datasets</li>
+<li><a href="/docs/concepts/training/">Treinamento</a>: Treinando a rede neural</li>
+</ul>
+
 </div>
 
 
-  
-  
-  
-  
 
+    
+	
   
-  
+    
+    
+	
+    
 
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-b6a5d2943af2cc53e0d47e249ac80d37">3 - Dataset</h1>
+    <div class="lead">Conjunto de exemplos anotados para treinamento das redes neurais</div>
+	<!-- <blockquote class="note callout">
+    <div><strong>Observação:</strong> </div>
+</blockquote> -->
+<p>Um dataset é um conjunto de exemplos anotados que servem para instruir uma rede neural sobre o que é desejado
+que seja reconhecido nas imagens.
+No conjunto de imagens do dataset iremos ter vários exemplos diferentes dos objetos que desejamos identificar
+ou reconhecer. Esses exemplos irão alimentar o treinamento da rede neural para que possa ser identificado o padrão
+comum entre eles.</p>
+<h2 id="tipos-de-dataset">Tipos de dataset</h2>
+<p>Os datasets podem ser de vários tipos. Os mais utilizados no Eyeflow são:</p>
+<ul>
+<li><a href="#objectdetection">ObjectDetection</a></li>
+<li><a href="#classification">Classification</a></li>
+<li><a href="#anomallydetection">AnomallyDetection</a></li>
+<li><a href="#instancesegmentation">InstanceSegmentation</a></li>
+</ul>
+<p>Cada tipo de dataset possui uma anotação diferente, e um diferente tipo de saída.</p>
+<h3 id="objectdetection">ObjectDetection</h3>
+<p>Os datasets ObjectDetection costumam ser os mais utilizados pela sua versatilidade e facilidade de anotação.
+O objetivo é identificar um objeto específico em uma imagem ampla, delimitando uma área retangular ao redor do objeto.
+Sua anotação costuma ser bem simples e rápida, pois basta clicar e arrastar um retângulo (<em>box</em>) e definir qual a
+classe do objeto.
+É executado por um tipo de rede neural que pode ser bastante otimizada para execução na borda, podendo chegar a
+centenas de FPS em tempo real.</p>
+<h3 id="classification">Classification</h3>
+<p>Os datasets de Classification são os mais comuns, e foram os primeiros a surgir no universo de DeepLearning.
+Basicamente identifica uma imagem como sendo uma de N classes. Por exemplo, se tiver uma lista de imagens de gato
+pode-se definir qual a raça de cada um, e a rede neural irá aprender a identificar a raça em qualquer imagem.</p>
+<h3 id="anomallydetection">AnomallyDetection</h3>
+<p><blockquote class="note callout">
+    <div><strong>Observação:</strong> Este é um dataset ainda em fase experimental.</div>
+</blockquote>
+O dataset AnomallyDetection é orientado para identificar anomalias em imagens de um mesmo objeto. A ideia é
+alimentar o dataset com muitas imagens do objeto &ldquo;correto&rdquo; e assim a rede neural aprender o padrão bom.
+Quando a rede neural for apresentada a uma imagem de um objeto que tem uma diferença do padrão bom (anomalia),
+ela irá apontar a anomalia.</p>
+<h3 id="instancesegmentation">InstanceSegmentation</h3>
+<p><blockquote class="note callout">
+    <div><strong>Observação:</strong> Este é um dataset ainda em fase experimental.</div>
+</blockquote>
+InstanceSegmentation é um dataset que se popularizou nos últimos anos devido a sua intensa utilização nos sistemas
+de veículos autônomos e sistemas de IA para medicina. Trata-de de identificar o objeto, juntamente com todo seu contorno
+pixel a pixel. Sua saída é bastante impressionante, pois permite &ldquo;recortar&rdquo; detalhadamente o objeto do fundo da imagem,
+porém, sua anotação é extremamente trabalhosa, geralmente demandando uma grande equipe de pessoas para gerar um
+conjunto adequado de imagens anotadas para treinamento.</p>
+<h2 id="criando-um-dataset">Criando um dataset</h2>
+<h4 id="criar-dataset-é-uma-tarefa-bem-simples-basta-clicar-no-menu-lateral-em-novo-dataset">Criar dataset é uma tarefa bem simples. Basta clicar no menu lateral em <strong>Novo Dataset</strong>.</h4>
+<p><img src="/screenshots/pt-br_create_dataset.jpg#bordered" alt="Criar Dataset" title="Criar Dataset"></p>
+<h4 id="irá-abrir-uma-tela-para-entrar-com-os-dados-do-dataset">Irá abrir uma tela para entrar com os dados do dataset.</h4>
+<p><img src="/screenshots/pt-br_create_dataset_modal.jpg#bordered" alt="Criar Dataset" title="Criar Dataset"></p>
+<p>É só preencher o Nome e Descrição, escolher o tipo e definir a qual Aplicação o dataset pertence.
+Depois é preciso adicionar pelo menos uma classe.</p>
+<h2 id="classes">Classes</h2>
+<p>O objetivo da rede neural será identificar um padrão na imagem, e dar saída disso em formato de dados. Assim, criamos
+classes no dataset para poder usarmos para marcar as imagens, e assim ensinar a rede neural a reconhecer esses padrões
+e nos informar qual foi a classe reconhecida.
+Por exemplo, se temos várias imagens de exemplos de cachorros e gatos, e queremos saber se trata-se de um ou outro na
+imagem, criamos duas classes:</p>
+<p><img src="/screenshots/pt-br_create_classes_modal.jpg#bordered" alt="Criar Classes" title="Criar Classes"></p>
+<p>As cores escolhidas servirão para ajudar na anotação do dataset, e irão aparecer na anotação dos vídeos.</p>
+<h2 id="exemplos">Exemplos</h2>
+<p>Exemplos são imagens anotadas que irão instruir a rede neural no aprendizado do reconhecimento dos padrões. Inserimos
+várias imagens no dataset a partir de quadros de um video ou fotos, e depois anotamos em cada uma dessas imagens
+aquilo que é desejado ser reconhecido.
+A maneira mais simples e rápida de adicionar novos exemplos é extraindo de vídeos de exemplo. Ao passar um vídeo em
+um Flow a ferramenta extrai alguns dos quadros do vídeo e os disponibiliza na tela de Novos Exemplos.</p>
+<p><img src="/screenshots/pt-br_menu_new_examples.jpg#bordered" alt="Menu Novos Exemplos" title="Menu Novos Exemplos"></p>
+<p>Nessa tela também é possivel subir novos exemplos a partir de imagens localizadas no computador.</p>
+<p><img src="/screenshots/pt-br_insert_new_examples.jpg#bordered" alt="Inserir Novos Exemplos" title="Inserir Novos Exemplos"></p>
+<blockquote class="note callout">
+    <div> <h5 style="color:mediumblue"><i class="fas fa-lightbulb"></i>&nbspImportante!</h5> Para que uma rede neural aprenda bem é importante que haja uma boa diversidade
+de exemplos. Inserir várias imagens muito parecidas, ou inserir muitas imagens de uma classe e poucas das outras
+irá fazer com que o dataset fique desbalanceado e a rede não aprende bem</div>
+</blockquote>
+<h2 id="anotação">Anotação</h2>
+<p>Anotação é o processo onde o usuário marca na imagem o objeto que deseja que seja identificado, gerando assim um exemplo
+que será utilizado no treinamento da rede neural.</p>
+<p>As anotações são diferentes para cada tipo de dataset. Em um dataset <a href="#objectdetection">ObjectDetection</a> o usuário clica e
+arrasta o mouse para desenhar uma caixa ao redor do objeto, e depois define a qual classe esse objeto pertence.</p>
+<p><img src="/screenshots/pt-br_annotate_example.jpg#bordered" alt="Anotar Exemplo" title="Anotar Exemplo"></p>
+<h2 id="para-onde-devo-ir-agora">Para onde devo ir agora?</h2>
+<ul>
+<li><a href="/docs/concepts/training/">Treinamento</a>: Treinando a rede neural</li>
+<li><a href="/docs/concepts/flow/">Flow</a>: Criando o Flow</li>
+</ul>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-e421da54c95b892b5e0a6ab85be297a1">4 - Treinamento</h1>
+    <div class="lead">Processo de aprendizado das redes neurais</div>
+	<p>Treinamento é o processo onde os exemplos do dataset são alimentados na rede neural para aprendizado dos
+padrões e geração do modelo.
+É um processo matemático/algorítmico complexo, que exige uma grande capacidade computacional e necessita
+rodar em servidores com placas gráficas GPU ou TPU no caso da cloud Google.</p>
+<p>Esse processo é executado de forma iterativa buscando minimizar o erro medido entre o que a rede neural
+apresentou na saída e a anotação feita no exemplo pelo usuário.
+Ao longo do processo de minimização do erro é medida a assertividade da rede neural, e assim o usuário
+pode verificar se a rede neural realmente aprendeu a identificar os padrões.</p>
+<p>O processo de treinamento das redes neurais é bastante complexo, e dominar bem esse processo costuma demandar
+bastante tempo, estudo e experimentação.</p>
+<p>Felizmente, o Eyeflow.AI oferece um ambiente completo para acelerar e automatizar todas as tarefas para o desenvolvimento
+de redes neurais, e possui sugestões de construção e parametrização, fruto de longos anos de experiência de uso
+de redes neurais para solução de problemas reais.</p>
+<h3 id="generalização">Generalização</h3>
+<h1 id="dashboard-de-treinamento">Dashboard de Treinamento</h1>
+<h2 id="indicadores">Indicadores</h2>
+<h2 id="gráficos">Gráficos</h2>
+<h2 id="imagens-de-testes">Imagens de Testes</h2>
+<h2 id="resultados-finais">Resultados Finais</h2>
+<h2 id="histórico-de-treinamentos">Histórico de Treinamentos</h2>
+<h1 id="parâmetros-de-treinamento">Parâmetros de Treinamento</h1>
+<h2 id="iterações">Iterações</h2>
+<h2 id="parametrização-das-redes-neurais">Parametrização das Redes Neurais</h2>
+<h2 id="data-augmentation">Data Augmentation</h2>
+<h2 id="para-onde-devo-ir-agora">Para onde devo ir agora?</h2>
+<ul>
+<li><a href="/docs/concepts/dataset/">Dataset</a>: Anotando Datasets</li>
+<li><a href="/docs/concepts/training/">Treinamento</a>: Treinando a rede neural</li>
+</ul>
+
+</div>
+
+
+
+    
+	
   
 
 
