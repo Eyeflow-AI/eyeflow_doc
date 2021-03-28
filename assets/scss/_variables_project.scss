@@ -4,3 +4,69 @@ Add styles or override variables from the theme here.
 
 */
 
+$announcement-size-adjustment: 8px;
+
+$blue: #3371e3;
+$light-grey: #f7f7f7;
+$dark-grey: #303030;
+$medium-grey: #4c4c4c;
+$white: #ffffff;
+
+
+// Modificadores para imagens
+img[src*="#icon"] {
+  width:1em;
+  height:1em;
+}
+
+img[src*="#button"] {
+  width:8em;
+  height:3em;
+}
+
+img[src*="#icon_button"] {
+  width:3em;
+  height:3em;
+}
+
+
+img[src*="#thumbnail"] {
+  width:150px;
+  height:100px;
+}
+
+img[src*="#bordered"] {
+  border: 1px solid black;
+}
+
+// blockquotes and callouts
+
+.td-content, body {
+  blockquote.callout {
+    padding: 0.4rem 0.4rem 0.4rem 1rem;
+    border: 1px solid #eee;
+    border-left-width: 0.5em;
+    background: #fff;
+    color: #000;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
+  blockquote.callout {
+    border-radius: calc(1em/3);
+  }
+  .callout.caution {
+    border-left-color: #f0ad4e;
+  }
+
+  .callout.note {
+    border-left-color: #428bca;
+  }
+
+  .callout.warning {
+    border-left-color: #d9534f;
+  }
+
+  h1:first-of-type + blockquote.callout {
+    margin-top: 1.5em;
+  }
+}

@@ -1,9 +1,9 @@
 ---
-title: "Getting Started"
-linkTitle: "Getting Started"
+title: "Para começar"
+linkTitle: "Para começar"
 weight: 2
 description: >
-  What does your user need to know to try your project?
+  Primeiros passos para construir sua aplicação
 ---
 
 {{% pageinfo %}}

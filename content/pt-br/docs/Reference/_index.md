@@ -1,9 +1,9 @@
 ---
-title: "Reference"
-linkTitle: "Reference"
+title: "Referência"
+linkTitle: "Referência"
 weight: 9
 description: >
-  Low level reference docs for your project.
+  Guia de referência
 ---
 
 {{% pageinfo %}}
