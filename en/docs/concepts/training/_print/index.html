@@ -1,0 +1,1593 @@
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.82.0" /><link rel="canonical" type="text/html" href="/en/docs/concepts/training/">
+<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+
+
+<link rel="shortcut icon" href="/favicons/favicon.ico" >
+<link rel="apple-touch-icon" href="/favicons/apple-touch-icon-180x180.png" sizes="180x180">
+<link rel="icon" type="image/png" href="/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/favicons/android-36x36.png" sizes="36x36">
+<link rel="icon" type="image/png" href="/favicons/android-48x48.png" sizes="48x48">
+<link rel="icon" type="image/png" href="/favicons/android-72x72.png" sizes="72x72">
+<link rel="icon" type="image/png" href="/favicons/android-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
+<link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
+
+<title>Treinamento | Eyeflow.AI Docs</title><meta property="og:title" content="Treinamento" />
+<meta property="og:description" content="Processo de aprendizado das redes neurais
+" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="/en/docs/concepts/training/" /><meta property="og:site_name" content="Eyeflow.AI Docs" />
+
+<meta itemprop="name" content="Treinamento">
+<meta itemprop="description" content="Processo de aprendizado das redes neurais
+"><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Treinamento"/>
+<meta name="twitter:description" content="Processo de aprendizado das redes neurais
+"/>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-00000000-0', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+<link rel="preload" href="/scss/main.min.ce3463a1ef5c917875e1d7fba7e07a173525e77a633bf30508294531f61e7dd6.css" as="style">
+<link href="/scss/main.min.ce3463a1ef5c917875e1d7fba7e07a173525e77a633bf30508294531f61e7dd6.css" rel="stylesheet" integrity="">
+
+
+<script
+  src="https://code.jquery.com/jquery-3.5.1.min.js"
+  integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+  crossorigin="anonymous"></script>
+
+
+
+
+  </head>
+  <body class="td-section">
+    <header>
+      
+<nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+        <a class="navbar-brand" href="/en/">
+		<span class="navbar-logo"><svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 500 500" style="enable-background:new 0 0 500 500"><g><path style="fill:#fff" d="M116.8525 421.9722c-5.7041.0-10.3442-4.3127-10.3442-9.6129V88.183c0-5.3002 4.6401-9.6117 10.3442-9.6117H320.858c3.0347.0 9.3959.5498 11.7506 2.6302l.3545.3442 58.905 63.2912c2.3101 2.491 2.9202 8.4928 2.9202 11.3184v256.2039c0 5.3002-4.6407 9.6129-10.3436 9.6129H116.8525z"/><g><g><g><path style="fill:#767676" d="M384.4445 423.2066H116.852c-6.3839.0-11.5786-4.8658-11.5786-10.8474V88.1831c0-5.9804 5.1947-10.8461 11.5786-10.8461h204.0062c.377.0 9.2786.0329 12.568 2.9389l.3947.3833 58.9508 63.337c3.2135 3.4652 3.2514 11.7924 3.2514 12.1593v256.2036C396.0231 418.3408 390.8284 423.2066 384.4445 423.2066zM116.5079 411.9189c.0848.0278.1999.0531.3441.0531h267.5925c.1442.0.2581-.0253.3441-.0531V156.1556c-.0076-.9033-.3593-3.7347-.7034-5.0037l-57.6527-61.9416c-1.4651-.3176-4.4533-.6389-5.5742-.6389H116.852c-.143.0-.2594.024-.3441.0531V411.9189zm267.4533-261.149zM327.0321 89.371v.0013V89.371z"/></g></g></g><g><g><path style="fill:#5b7fc0" d="M189.0874 210.1754l.0012-.0012c7.7751.0012 15.0295 4.1862 18.932 10.9234 1.9177 3.3159 2.9305 7.1011 2.9293 10.9378.0 5.8394-2.2733 11.3304-6.4032 15.4604-4.1288 4.1288-9.6186 6.4032-15.458 6.4032s-11.328-2.2733-15.458-6.4032-6.4032-9.6186-6.4056-15.4628c.0012-6.025 2.454-11.4897 6.4116-15.4473C177.5953 212.627 183.0601 210.1742 189.0874 210.1754zm7.993 21.8576c.0012-1.4042-.3687-2.7868-1.063-3.9887-1.4293-2.4684-4.0833-3.9995-6.9299-4.0019-4.4077.0024-7.993 3.5877-7.993 7.993.0 2.1356.832 4.1431 2.3427 5.6539 1.5083 1.5083 3.5159 2.3403 5.6503 2.3415 2.1356.0 4.1443-.8308 5.6539-2.3403S197.0816 234.1722 197.0804 232.033z"/><path style="opacity:.3;fill:#fff" d="M189.0898 210.176c7.7763.0 15.0283 4.1826 18.926 10.9151 1.9201 3.3136 2.9377 7.0988 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8613-12.0547.0024-21.8636-9.8066-21.8612-21.8613.0-6.0285 2.4516-11.4921 6.4116-15.452C177.5977 212.6276 183.0612 210.176 189.0898 210.176zm7.9941 21.8612c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.1861 236.239 197.0839 234.2399 197.0839 232.0372z"/><g><defs><path id="SVGID_1_" d="M194.7376 237.6875c-1.4461 1.4461-3.4452 2.3439-5.6479 2.3439-4.4077-.0024-7.9918-3.5865-7.9942-7.9942.0024-4.4125 3.5937-7.999 7.9942-7.9942 2.8443.0 5.497 1.5323 6.924 3.9983.6991 1.2067 1.0702 2.5881 1.0702 3.9959C197.0839 234.2399 196.1861 236.239 194.7376 237.6875z"/></defs><clipPath id="SVGID_2_"><use xlink:href="#SVGID_1_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_2_);fill:#fff" d="M190.0704 225.0237c-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0011 1.9546.7088 3.7452 1.8782 5.1354-1.7447-1.4674-2.8575-3.663-2.8588-6.116.0024-4.4125 3.5936-7.999 7.9942-7.9942 2.3802-1e-4 4.616 1.0833 6.1218 2.8788C193.7885 225.7247 191.9774 225.0237 190.0704 225.0237z"/><path style="opacity:.13;clip-path:url(#SVGID_2_);fill:#020202" d="M190.0704 225.0237c-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0011 1.9546.7088 3.7452 1.8782 5.1354-1.7447-1.4674-2.8575-3.663-2.8588-6.116.0024-4.4125 3.5936-7.999 7.9942-7.9942 2.3802-1e-4 4.616 1.0833 6.1218 2.8788C193.7885 225.7247 191.9774 225.0237 190.0704 225.0237z"/></g><g><defs><path id="SVGID_3_" d="M189.0898 210.176c7.7763.0 15.0283 4.1826 18.926 10.9151 1.9201 3.3136 2.9377 7.0988 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8613-12.0547.0024-21.8636-9.8066-21.8612-21.8613.0-6.0285 2.4516-11.4921 6.4116-15.452C177.5977 212.6276 183.0612 210.176 189.0898 210.176zm7.9941 21.8612c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.1861 236.239 197.0839 234.2399 197.0839 232.0372z"/></defs><clipPath id="SVGID_4_"><use xlink:href="#SVGID_3_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_4_);fill:#5b7fc0" d="M172.6595 215.6045c-3.96 3.96-6.4116 9.4235-6.4116 15.452-.0024 12.0547 9.8066 21.8636 21.8613 21.8612 12.0547.0024 21.8636-9.797 21.8613-21.8612.0024-3.8475-1.0151-7.6326-2.9353-10.9462-3.8977-6.7324-11.1497-10.9151-18.926-10.9151C182.0806 209.1953 176.6171 211.647 172.6595 215.6045z"/></g></g><rect x="198.8952" y="225.1043" style="fill:#5b7fc0" width="122.6266" height="13.8671"/></g><g><path style="fill:#d95140" d="M189.0874 155.7611l.0012-.0012c7.7751.0012 15.0295 4.1862 18.932 10.9234 1.9177 3.3159 2.9305 7.1011 2.9293 10.9378.0 5.8394-2.2733 11.3304-6.4032 15.4604-4.1288 4.1288-9.6186 6.4032-15.458 6.4032s-11.328-2.2733-15.458-6.4032-6.4032-9.6186-6.4056-15.4628c.0012-6.0249 2.454-11.4897 6.4116-15.4473C177.5953 158.2128 183.0601 155.7599 189.0874 155.7611zm7.993 21.8577c.0012-1.4042-.3687-2.7868-1.063-3.9887-1.4293-2.4684-4.0833-3.9995-6.9299-4.0019-4.4077.0024-7.993 3.5877-7.993 7.993.0 2.1356.832 4.1431 2.3427 5.6539 1.5083 1.5083 3.5159 2.3403 5.6503 2.3415 2.1356.0 4.1443-.8308 5.6539-2.3403C196.2508 181.7667 197.0816 179.758 197.0804 177.6188z"/><path style="opacity:.3;fill:#fff" d="M189.0898 155.7617c7.7763.0 15.0283 4.1826 18.926 10.9151 1.9201 3.3135 2.9377 7.0987 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8613-12.0547.0024-21.8636-9.8066-21.8612-21.8613.0-6.0285 2.4516-11.4921 6.4116-15.452C177.5977 158.2134 183.0612 155.7617 189.0898 155.7617zm7.9941 21.8613c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.1861 181.8248 197.0839 179.8256 197.0839 177.623z"/><g><defs><path id="SVGID_5_" d="M194.7376 183.2733c-1.4461 1.4461-3.4452 2.3439-5.6479 2.3439-4.4077-.0024-7.9918-3.5865-7.9942-7.9942.0024-4.4125 3.5937-7.9989 7.9942-7.9942 2.8443.0 5.497 1.5323 6.924 3.9983.6991 1.2067 1.0702 2.5881 1.0702 3.9959C197.0839 179.8256 196.1861 181.8248 194.7376 183.2733z"/></defs><clipPath id="SVGID_6_"><use xlink:href="#SVGID_5_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_6_);fill:#fff" d="M190.0704 170.6095c-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0011 1.9546.7088 3.7452 1.8782 5.1354-1.7447-1.4674-2.8575-3.663-2.8588-6.116.0024-4.4125 3.5936-7.999 7.9942-7.9942 2.3802-1e-4 4.616 1.0833 6.1218 2.8788C193.7885 171.3104 191.9774 170.6095 190.0704 170.6095z"/><path style="opacity:.13;clip-path:url(#SVGID_6_);fill:#020202" d="M190.0704 170.6095c-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0011 1.9546.7088 3.7452 1.8782 5.1354-1.7447-1.4674-2.8575-3.663-2.8588-6.116.0024-4.4125 3.5936-7.999 7.9942-7.9942 2.3802-1e-4 4.616 1.0833 6.1218 2.8788C193.7885 171.3104 191.9774 170.6095 190.0704 170.6095z"/></g><g><defs><path id="SVGID_7_" d="M189.0898 155.7617c7.7763.0 15.0283 4.1826 18.926 10.9151 1.9201 3.3135 2.9377 7.0987 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8613-12.0547.0024-21.8636-9.8066-21.8612-21.8613.0-6.0285 2.4516-11.4921 6.4116-15.452C177.5977 158.2134 183.0612 155.7617 189.0898 155.7617zm7.9941 21.8613c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.1861 181.8248 197.0839 179.8256 197.0839 177.623z"/></defs><clipPath id="SVGID_8_"><use xlink:href="#SVGID_7_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_8_);fill:#d95140" d="M172.6595 161.1903c-3.96 3.96-6.4116 9.4235-6.4116 15.452-.0024 12.0547 9.8066 21.8636 21.8613 21.8613 12.0547.0024 21.8636-9.797 21.8613-21.8613.0024-3.8474-1.0151-7.6326-2.9353-10.9462-3.8977-6.7324-11.1497-10.9151-18.926-10.9151C182.0806 154.7811 176.6171 157.2327 172.6595 161.1903z"/></g><rect x="198.8952" y="170.69" style="fill:#d95140" width="122.6266" height="13.8671"/></g><g><g><path style="fill:#56a55c" d="M189.5379 264.6147l.0012-.0012c7.7751.0012 15.0294 4.1862 18.932 10.9235 1.9177 3.3159 2.9305 7.1011 2.9293 10.9378.0 5.8394-2.2733 11.3304-6.4032 15.4604-4.1288 4.1288-9.6186 6.4032-15.458 6.4032-5.8394.0-11.3281-2.2733-15.458-6.4032-4.13-4.13-6.4032-9.6186-6.4056-15.4628.0012-6.0249 2.454-11.4897 6.4116-15.4472C178.0458 267.0663 183.5105 264.6135 189.5379 264.6147zm7.993 21.8576c.0012-1.4042-.3687-2.7868-1.063-3.9887-1.4293-2.4684-4.0833-3.9995-6.9299-4.0019-4.4077.0024-7.993 3.5877-7.993 7.993.0 2.1356.832 4.1431 2.3427 5.6538 1.5083 1.5083 3.5159 2.3403 5.6503 2.3415 2.1356.0 4.1443-.8308 5.6539-2.3403C196.7013 290.6202 197.5321 288.6115 197.5309 286.4723z"/><path style="opacity:.3;fill:#fff" d="M189.5403 264.6153c7.7763.0 15.0283 4.1826 18.926 10.9151 1.9201 3.3135 2.9377 7.0987 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8613-12.0547.0024-21.8636-9.8065-21.8612-21.8613.0-6.0285 2.4516-11.492 6.4116-15.452C178.0482 267.0669 183.5117 264.6153 189.5403 264.6153zm7.9941 21.8612c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9941.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.6366 290.6783 197.5344 288.6792 197.5344 286.4765z"/><g><defs><path id="SVGID_9_" d="M195.1881 292.1268c-1.4461 1.4461-3.4452 2.3439-5.6479 2.3439-4.4077-.0024-7.9918-3.5865-7.9942-7.9942.0024-4.4125 3.5937-7.9989 7.9942-7.9941 2.8443.0 5.497 1.5323 6.924 3.9983.6991 1.2067 1.0702 2.5881 1.0702 3.9959C197.5344 288.6792 196.6366 290.6783 195.1881 292.1268z"/></defs><clipPath id="SVGID_10_"><use xlink:href="#SVGID_9_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_10_);fill:#fff" d="M190.5209 279.463c-4.4005-.0048-7.9918 3.5817-7.9942 7.9941.0011 1.9547.7088 3.7452 1.8782 5.1354-1.7446-1.4674-2.8575-3.6631-2.8588-6.1161.0024-4.4125 3.5936-7.999 7.9942-7.9941 2.3802-1e-4 4.616 1.0833 6.1218 2.8788C194.239 280.164 192.4279 279.463 190.5209 279.463z"/><path style="opacity:.13;clip-path:url(#SVGID_10_);fill:#020202" d="M190.5209 279.463c-4.4005-.0048-7.9918 3.5817-7.9942 7.9941.0011 1.9547.7088 3.7452 1.8782 5.1354-1.7446-1.4674-2.8575-3.6631-2.8588-6.1161.0024-4.4125 3.5936-7.999 7.9942-7.9941 2.3802-1e-4 4.616 1.0833 6.1218 2.8788C194.239 280.164 192.4279 279.463 190.5209 279.463z"/></g><g><defs><path id="SVGID_11_" d="M189.5403 264.6153c7.7763.0 15.0283 4.1826 18.926 10.9151 1.9201 3.3135 2.9377 7.0987 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8613-12.0547.0024-21.8636-9.8065-21.8612-21.8613.0-6.0285 2.4516-11.492 6.4116-15.452C178.0482 267.0669 183.5117 264.6153 189.5403 264.6153zm7.9941 21.8612c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9941.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.6366 290.6783 197.5344 288.6792 197.5344 286.4765z"/></defs><clipPath id="SVGID_12_"><use xlink:href="#SVGID_11_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_12_);fill:#56a55c" d="M173.11 270.0439c-3.96 3.96-6.4116 9.4235-6.4116 15.452-.0024 12.0547 9.8066 21.8636 21.8613 21.8613 12.0547.0024 21.8636-9.797 21.8613-21.8613.0024-3.8474-1.0151-7.6326-2.9353-10.9462-3.8977-6.7325-11.1497-10.9151-18.926-10.9151C182.5311 263.6346 177.0676 266.0863 173.11 270.0439z"/></g></g><rect x="199.3456" y="279.5436" style="fill:#56a55c" width="122.6266" height="13.8671"/></g><g><g><path style="fill:#f1bc42" d="M189.0874 318.7208l.0012-.0012c7.7751.0012 15.0295 4.1862 18.932 10.9234 1.9177 3.3159 2.9305 7.1011 2.9293 10.9378.0 5.8394-2.2733 11.3305-6.4032 15.4604-4.1288 4.1288-9.6186 6.4032-15.458 6.4032s-11.328-2.2733-15.458-6.4032-6.4032-9.6186-6.4056-15.4628c.0012-6.025 2.454-11.4897 6.4116-15.4472C177.5953 321.1724 183.0601 318.7196 189.0874 318.7208zm7.993 21.8576c.0012-1.4042-.3687-2.7868-1.063-3.9887-1.4293-2.4684-4.0833-3.9995-6.9299-4.0019-4.4077.0024-7.993 3.5877-7.993 7.993.0 2.1356.832 4.1431 2.3427 5.6539 1.5083 1.5083 3.5159 2.3403 5.6503 2.3415 2.1356.0 4.1443-.8308 5.6539-2.3403S197.0816 342.7176 197.0804 340.5784z"/><path style="opacity:.3;fill:#fff" d="M189.0898 318.7214c7.7763.0 15.0283 4.1826 18.926 10.915 1.9201 3.3136 2.9377 7.0988 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8612-12.0547.0024-21.8636-9.8065-21.8612-21.8612.0-6.0285 2.4516-11.4921 6.4116-15.452C177.5977 321.173 183.0612 318.7214 189.0898 318.7214zm7.9941 21.8612c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.1861 344.7844 197.0839 342.7853 197.0839 340.5826z"/><g><defs><path id="SVGID_13_" d="M194.7376 346.2329c-1.4461 1.4461-3.4452 2.3439-5.6479 2.3439-4.4077-.0024-7.9918-3.5865-7.9942-7.9942.0024-4.4125 3.5937-7.999 7.9942-7.9942 2.8443.0 5.497 1.5323 6.924 3.9983.6991 1.2067 1.0702 2.5881 1.0702 3.9959C197.0839 342.7853 196.1861 344.7844 194.7376 346.2329z"/></defs><clipPath id="SVGID_14_"><use xlink:href="#SVGID_13_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_14_);fill:#fff" d="M190.0704 333.5691c-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0011 1.9547.7088 3.7452 1.8782 5.1354-1.7447-1.4674-2.8575-3.6631-2.8588-6.1161.0024-4.4125 3.5936-7.999 7.9942-7.9942 2.3802-1e-4 4.616 1.0834 6.1218 2.8788C193.7885 334.2701 191.9774 333.5691 190.0704 333.5691z"/><path style="opacity:.13;clip-path:url(#SVGID_14_);fill:#020202" d="M190.0704 333.5691c-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0011 1.9547.7088 3.7452 1.8782 5.1354-1.7447-1.4674-2.8575-3.6631-2.8588-6.1161.0024-4.4125 3.5936-7.999 7.9942-7.9942 2.3802-1e-4 4.616 1.0834 6.1218 2.8788C193.7885 334.2701 191.9774 333.5691 190.0704 333.5691z"/></g><g><defs><path id="SVGID_15_" d="M189.0898 318.7214c7.7763.0 15.0283 4.1826 18.926 10.915 1.9201 3.3136 2.9377 7.0988 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8612-12.0547.0024-21.8636-9.8065-21.8612-21.8612.0-6.0285 2.4516-11.4921 6.4116-15.452C177.5977 321.173 183.0612 318.7214 189.0898 318.7214zm7.9941 21.8612c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.1861 344.7844 197.0839 342.7853 197.0839 340.5826z"/></defs><clipPath id="SVGID_16_"><use xlink:href="#SVGID_15_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_16_);fill:#f1bc42" d="M172.6595 324.15c-3.96 3.96-6.4116 9.4235-6.4116 15.452-.0024 12.0547 9.8066 21.8636 21.8613 21.8612 12.0547.0024 21.8636-9.797 21.8613-21.8612.0024-3.8474-1.0151-7.6327-2.9353-10.9462-3.8977-6.7324-11.1497-10.9151-18.926-10.9151C182.0806 317.7407 176.6171 320.1924 172.6595 324.15z"/></g></g><rect x="198.8952" y="333.6497" style="fill:#f1bc42" width="122.6266" height="13.8671"/></g></g></svg></span><span class="text-uppercase font-weight-bold">Eyeflow.AI Docs</span>
+	</a>
+	<div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a  class="nav-link active" href="/en/docs/" ><span class="active">Documentation</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a  class="nav-link" href="/en/blog/" ><span>Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a  class="nav-link" href="/en/community/" ><span>Community</span></a>
+			</li>
+			
+			
+			
+			<li class="nav-item dropdown d-none d-lg-block">
+				
+
+<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	English
+</a>
+<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+	
+	<a class="dropdown-item" href="/docs/concepts/training/">Português</a>
+	
+</div>
+			</li>
+			
+		</ul>
+	</div>
+	<div class="navbar-nav d-none d-lg-block">
+<input type="search" class="form-control td-search-input" placeholder="&#xf002 Search this site…" aria-label="Search this site…" autocomplete="off">
+
+</div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <div class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+          </div>
+          <div class="d-none d-xl-block col-xl-2 td-toc d-print-none">
+          </div>
+          <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">
+            
+
+
+
+
+<div class="td-content">
+<div class="pageinfo pageinfo-primary d-print-none">
+<p>
+This the multi-page printable view of this section.
+<a href="#" onclick="print();return false;">Click here to print</a>.
+</p><p>
+<a href="/en/docs/concepts/training/">Return to the regular view of this page</a>.
+</p>
+</div>
+
+
+
+<h1 class="title">Treinamento</h1>
+<div class="lead">Processo de aprendizado das redes neurais</div>
+
+
+
+
+    <ul>
+    
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>1: <a href="#pg-821691bbab1c2ab21c91a76358a6c1c7">Visão Geral</a></li>
+
+
+    
+  
+    
+    
+	
+<li>2: <a href="#pg-cc7704bf22b8c46dbb695f0b4ca5d35f">Dashboard de Treinamento</a></li>
+
+
+    
+  
+    
+    
+	
+<li>3: <a href="#pg-c31b22b7edbbfe49e4d16d2ccdeaba6b">Parâmetros do Treinamento</a></li>
+
+
+    
+  
+    
+    
+	
+<li>4: <a href="#pg-12538f171a6b845bb3b653e76783b790">Parâmetros das Redes Neurais</a></li>
+
+
+    
+  
+    
+    
+	
+<li>5: <a href="#pg-2869d0ba31e7658c3d9261182907e451">Data Augmentation</a></li>
+
+
+    
+  
+
+    </ul>
+
+
+<div class="content">
+      
+</div>
+</div>
+
+
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="">
+    
+	<h1 id="pg-821691bbab1c2ab21c91a76358a6c1c7">1 - Visão Geral</h1>
+    <div class="lead">Visão geral do treinamento</div>
+	<p>Treinamento é o processo onde os exemplos do dataset são alimentados na rede neural para aprendizado dos
+padrões e geração do modelo.
+É um processo matemático/algorítmico complexo, que exige uma grande capacidade computacional e necessita
+rodar em servidores com placas gráficas GPU ou TPU no caso da cloud Google.</p>
+<p>Esse processo é executado de forma iterativa buscando minimizar o erro medido entre o que a rede neural
+apresentou na saída e a anotação feita no exemplo pelo usuário.
+Ao longo do processo de minimização do erro é medida a assertividade da rede neural, e assim o usuário
+pode verificar se a rede neural realmente aprendeu a identificar os padrões.</p>
+<p>O processo de treinamento das redes neurais é bastante complexo, e dominar bem esse processo costuma demandar
+bastante tempo, estudo e experimentação.</p>
+<p>Felizmente, o Eyeflow.AI oferece um ambiente completo para acelerar e automatizar todas as tarefas para o desenvolvimento
+de redes neurais, e possui sugestões de construção e parametrização, fruto de longos anos de experiência de uso
+de redes neurais para solução de problemas reais.</p>
+<h2 id="conceitos-importantes">Conceitos importantes</h2>
+<h3 id="quantidade-de-exemplos">Quantidade de exemplos</h3>
+<p>A quantidade de exemplos de um dataset é um item muito importante para a eficácia das detecções. Para realizar
+um treinamento de uma rede neural é necessário no mínimo 10 exemplos, sendo que um bom dataset para produção
+vai demandar cerca de 1000 exemplos. Contudo, não adianta simplesmente lotar um dataset de exemplos sem testar
+sua eficácia com casos reais, pois um excesso de exemplos semelhantes pode desbalancear o aprendizado e fazer com que seu
+modelo fique enviesado e não tenha boa performance em produção.</p>
+<p>Outro ponto importante é que deve-se manter uma quantidade similar de exemplos de cada classe, também para evitar
+o desbalanceamento, e consequentemente enviesamento, do modelo. Se o dataset tiver muitos exemplos de uma só
+classe e poucos das outras ele irá tender a detectar tudo como a classe dominante.</p>
+<p>A melhor estratégia para adição de novos exemplos no dataset é testar o mesmo após o treinamento e verificar
+os erros, para adicionar somente os novos exemplos que apresentaram erro, e daí corrigí-los e fazer um novo treinamento.
+A cada iteração dessas o ideal é adicionar de 30 a 50 novos exemplos, e daí rapidamente o treinamento irá aumentar
+a assertividade da detecção.</p>
+<p>Após os testes com vídeos e publicação em produção o Eyeflow oferece um mecanismo para coleta de novos exemplos a
+partir da borda, o que servirá para verificar se o modelo está tendo uma boa assertividade nos casos reais, e daí
+podem ser adicionados os erros para continuar o processo de melhoria do dataset.</p>
+<h3 id="qualidade-dos-exemplos">Qualidade dos exemplos</h3>
+<p>Se a quantidade é importante, a qualidade é fundamental para garantir que a rede neural irá aprender a detectar os
+padrões.</p>
+<p>Para garantir a qualidade dos exemplos alguns pontos devem ser observados:</p>
+<ul>
+<li>O objeto a ser detectado deve estar bem visível na imagem. Se houver dúvidas para anotar o exemplo então a própria
+rede neural terá dificuldades em aprender com esse exemplo.</li>
+<li>Para um dataset do tipo ObjectDetection as caixas não podem ser muito pequenas, nem grandes demais. Os testes de augmentation
+vão indicar se as caixas estão sendo bem detectadas.</li>
+<li>Para um dataset Classification os exemplos precisam ser bem diferentes entre as classes. Será difícil detectar uma diferença
+entre as classes se tal diferença for somente um pequeno detalhe na imagem total.</li>
+<li>Deve-se ter uma boa variedade nos exemplos. A adição de muitos exemplos muito parecidos irá fazer o modelo ficar enviesado
+para detectar só esse tipo de imagem ou classe.</li>
+</ul>
+<h3 id="validação-e-teste">Validação e Teste</h3>
+<p>No processo de treinamento o dataset é dividido em 3 grupos:</p>
+<ul>
+<li>Treino</li>
+<li>Validação</li>
+<li>Teste</li>
+</ul>
+<p>A separação dos exemplos para os grupos é feita de forma aleatória, baseada nos parâmetros definidos para o treinamento.</p>
+<p>O grupo de <strong>Treino</strong> é o que será efetivamente usado para treinar a rede neural. Ele deve ter a maior quantidade de exemplos,
+sendo recomendado pelo menos 80% dos exemplos.</p>
+<p>O grupo de <strong>Validação</strong> é usado para testar o modelo a cada final de época, e serve para verificar se o treino está evoluindo,
+ou se estagnou ou viciou (<em>overfitting</em>). É recomendado que seja 10% dos exemplos até um máximo de 100 exemplos.</p>
+<p>O grupo de <strong>Teste</strong> é usado para testar o modelo ao final do treinamento. Como esses exemplos nunca foram apresentados ao
+dataset então servem como uma avaliação final do aprendizado, definindo qual a assertividade que o modelo apresenta. É o indicador
+se a rede neural efetivamente aprendeu a reconhecer os padrões. É recomendado que seja 10% dos exemplos até um máximo de 100 exemplos.</p>
+<blockquote class="note callout">
+    <div><strong>Note:</strong> O principal objetivo de um treinamento de rede neural é garantir que o modelo final irá <strong>generalizar</strong>, significa que irá
+aprender com os exemplos o padrão para assim poder extrapolar para novos exemplos em situações reais. Muitas vezes o resultado
+fica bom no treino, mas ruim em produção, indicando que o modelo não generalizou bem. Nessas situações deve-se coletar mais
+exemplos de erro em produção para adicionar ao dataset.</div>
+</blockquote>
+<h3 id="loss-e-val-loss">Loss e Val Loss</h3>
+<p>Loss é a medida de erro que no processo de treinamento foi observado entre o que a rede neural detectou (<em>predict</em>) e o que deveria
+ser a saída correta segundo a anotação (<em>ground thruth</em>). O processo matemático/algorítmico de treinamento das redes neurais busca
+a minimização desse erro.</p>
+<p>O Val Loss é a mesma medida, só que feita no grupo de validação ao final de uma época. Serve para acompanhar a evolução do treino
+a cada ciclo de treinamento.</p>
+<h3 id="map-e-accuracy">mAP e Accuracy</h3>
+<p>O indicador de qualidade do treino é uma medida de acerto que leva em consideração todos os elementos de saída. Cada tipo de
+dataset tem sua medida padrão de assertividade.</p>
+<ul>
+<li>Datasets <em>ObjectDetection</em> costumam utilizar o <strong>mAP</strong> (<em>Mean Average Precision</em>) como indicador de assertividade, pois mede o quanto a
+box de saída engloba bem o objeto, indicando a classe correta, pela média de todas as classes.</li>
+<li>Datasets <em>Classification</em> costumam utilizar a <strong>Accuracy</strong>, que é o percentual de exemplos em que a rede neural previu corretamente
+a qual classe o objeto pertence.</li>
+</ul>
+<h3 id="overfitting">Overfitting</h3>
+<p>É um fenômeno que ocorre comumento nos treinamentos. Ocorre no treinamento quando vemos o <em>Loss</em> continuar caindo, mas o <em>Val Loss</em> subir
+ao invés de descer. Isso indica que a rede neural ficou &ldquo;viciada&rdquo; nos exemplos do treinamento e parou de generalizar para novos exemplos,
+ou seja, ela aprendeu muito sobre os exemplos do treino, mas não consegue acertar exemplos novos.</p>
+<h3 id="expansão-dos-exemplos---data-augmentation">Expansão dos exemplos - Data Augmentation</h3>
+<p>É um trabalho demorado e repetitivo anotar os exemplos de um dataset, sendo porém a tarefa mais importante para poder usar uma
+rede neural em uma aplicação real. Muitos projetos de AI estagnam na parte em que precisam reunir muitos milhares de exemplos anotados
+para começar a ter bons resultados com redes neurais, mas a experiência com o Eyeflow.AI indica que é possível ter bons resultados apenas
+com 300 exemplos em um dataset, e ótimos resultados com apenas 1000 exemplos.
+Um dos aspectos chaves dessa performance está no Data Augmentation.</p>
+<p>Data Augmentation é o processo de inserir perturbações nas imagens dos exemplos, no momento do treinamento, para forçar a rede neural
+a aprender os padrões dos objetos, e não ficar &ldquo;viciada&rdquo; nos poucos exemplos que foram apresentados.</p>
+<p>O Eyeflow.AI oferece uma ampla gama de algoritmos para Data Augmentation, que vão desde distorções geométricas e fotométricas nas imagens
+até inserção de ruidos ou elementos estranhos.</p>
+<p>O ponto importante a observar aqui é que não deve-se usar o Data Augumentation para modificar os exemplos deixando-os muito diferentes
+das situação que serão encontradas no ambiente real, pois isto irá dificultar desnecessariamente o aprendizado da rede. Por exemplo, não
+faria sentido em um dataset de carros inserir o <em>Flip Vertical</em>, pois não encontraremos uma situação com o carro de cabeça para baixo.</p>
+<h3 id="datasets-sintéticos">Datasets sintéticos</h3>
+<p>Da mesma forma que o Data Augumentation ajuda a melhorar o aprendizado da rede com poucos exemplos, um Dataset Sintético ajuda a gerar
+exemplos automaticamente para o treinamento da rede.</p>
+<p>São poucas situação em que dá pra usar datasets sintéticos, uma delas é para reconhecimento de caracteres (<em>OCR</em>) por exemplo, mas quando
+é possível os ganhos são enormes, pois dá pra gerar um modelo extremamente robusto e eficaz.</p>
+<p>O Eyeflow.AI é uma plataforma expansível, que permite ao usuário a criação de seus próprios componentes de redes neurais e geração de datasets
+sintéticos.</p>
+<h2 id="para-onde-devo-ir-agora">Para onde devo ir agora?</h2>
+<ul>
+<li><a href="/docs/concepts/dataset/">Dataset</a>: Anotando Datasets</li>
+<li><a href="/docs/concepts/training/">Treinamento</a>: Treinando a rede neural</li>
+</ul>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-cc7704bf22b8c46dbb695f0b4ca5d35f">2 - Dashboard de Treinamento</h1>
+    <div class="lead">Visão geral dos treinamentos</div>
+	<p>O Dashboard de Treinamentos dá uma visão geral de todo processo de treinamento. Nessa tela podemos acompanhar os
+treinamentos em tempo real, bem como avaliar o histórico dos treinamentos anteriores e editar vários parâmetros.</p>
+<p><img src="/screenshots/pt-br_dashboard_overview.jpg#bordered" alt="Visão Geral" title="Visão Geral"></p>
+<h2 id="indicadores">Indicadores</h2>
+<p>Nesses quadros estão os indicadores do treinamento selecionado. A data que foi realizado, duração, e resultados
+finais do treino.
+Temos também uma barra de botões com ações como <em>Download</em> e <em>Publicação</em> do modelo, visualização dos parâmetros
+e visualização das imagens de teste.</p>
+<p><img src="/screenshots/pt-br_dashboard_kpis.jpg#bordered" alt="Indicadores" title="Indicadores"></p>
+<h3 id="resultados-finais-do-treino">Resultados finais do treino</h3>
+<p><img src="/screenshots/pt-br_dashboard_final_results.jpg#bordered" alt="Resultados Finais" title="Resultados Finais"></p>
+<h3 id="imagem-de-teste-de-expansão-de-exemplos---data-augmentation">Imagem de teste de expansão de exemplos - Data Augmentation</h3>
+<p><img src="/screenshots/pt-br_dashboard_test_augmentation.jpg#bordered" alt="Teste de Expansão" title="Teste de Expansão"></p>
+<h3 id="imagem-de-teste-do-final-do-treino">Imagem de teste do final do treino</h3>
+<p><img src="/screenshots/pt-br_dashboard_test_final.jpg#bordered" alt="Teste Final" title="Teste Final"></p>
+<h2 id="gráficos">Gráficos</h2>
+<p>Os gráficos dão uma ideia da progressão do treino, seja em tempo real ou histórico.</p>
+<p><strong>Loss</strong> e <strong>Val Loss</strong> indicam o erro medido no treino, e são indicadores comuns a todos os treinos. Devem ser curvas
+descendentes que se aproximam de 0. Quanto menor o Loss menos a rede neural está errando.</p>
+<p><img src="/screenshots/pt-br_dashboard_graphs.jpg#bordered" alt="Gráficos" title="Gráficos"></p>
+<p>Existem também gráficos de eficácia da rede neural, e para esses quanto maior melhor.</p>
+<ul>
+<li><strong>mAP</strong> para datasets <em>ObjectDetection</em>. Geralmente já é considerado bom acima de 0.6.</li>
+<li><strong>Accuracy</strong> para datasets de <em>Classification</em>. É considerado bom acima de 90%.</li>
+</ul>
+<h2 id="histórico-de-treinamentos">Histórico de Treinamentos</h2>
+<p>É possível também verificar os treinamentos anteriores e assim ter insights sobre se as ações que foram tomadas na
+construção do dataset e parametrização dos treinos surtiram efeitos positivos ou negativos.</p>
+<p><img src="/screenshots/pt-br_dashboard_history.jpg#bordered" alt="Histórico" title="Histórico"></p>
+<h2 id="para-onde-devo-ir-agora">Para onde devo ir agora?</h2>
+<ul>
+<li><a href="/docs/concepts/dataset/">Dataset</a>: Anotando Datasets</li>
+<li><a href="/docs/concepts/training/">Treinamento</a>: Treinando a rede neural</li>
+</ul>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-c31b22b7edbbfe49e4d16d2ccdeaba6b">3 - Parâmetros do Treinamento</h1>
+    <div class="lead">Controle do treinamento</div>
+	<h2 id="iterações">Iterações</h2>
+<p>O processo de treinamento é iterativo, ou seja, realizado em ciclos. Cada ciclo é chamado de <strong>Época</strong>.
+Em cada época todos os exemplos são apresentados para a rede neural, para que sejam aprendidos os padrões. O
+algoritmo de treinamento vai então medindo o erro (<em>Loss</em>) e ajustando a rede neural para ir minizando o mesmo.</p>
+<p>É comum se pensar de que com mais épocas a rede irá aprender mais, mas na prática não é exatamente assim. De acordo
+com a quantidade/qualidade dos exemplos chega-se a um ponto em que o erro não diminui mais e o aprendizado estagna. Outra
+ocorrência comum é o erro (<em>Loss</em>) continuar diminuindo, mas o <em>Val Loss</em> começar a aumentar. Esse fenômeno é conhecido
+como <em>Overfitting</em> e significa que a rede neural ficou viciada nos exemplos do treinamento e não está mais conseguindo
+generalizar para novos exemplos.</p>
+<p>A recomendação é no início setar 5 épocas para o treino enquanto o dataset tiver menos de 100 exemplos, e daí ir subindo.</p>
+<!-- <parm_table> -->
+<h2 id="train-parameters">Train Parameters</h2>
+<p><strong>Parameters for Neural Network Training</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>type</th>
+<th>Min</th>
+<th>Max</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Epochs</td>
+<td>integer</td>
+<td>1</td>
+<td></td>
+<td>5</td>
+<td>Number of epochs for training</td>
+</tr>
+<tr>
+<td>Steps per Epoch</td>
+<td>integer</td>
+<td>50</td>
+<td></td>
+<td>100</td>
+<td>Number of Steps for training in each Epoch</td>
+</tr>
+<tr>
+<td>Batch Size</td>
+<td>integer</td>
+<td>1</td>
+<td>64</td>
+<td>10</td>
+<td>Number of examples in each step</td>
+</tr>
+<tr>
+<td>Val Size</td>
+<td>number</td>
+<td>0.01</td>
+<td>0.9</td>
+<td>0.1</td>
+<td>Percent of examples selected for Validation</td>
+</tr>
+<tr>
+<td>Test Size</td>
+<td>number</td>
+<td>0.01</td>
+<td>0.9</td>
+<td>0.1</td>
+<td>Percent of examples selected for Final Test</td>
+</tr>
+<tr>
+<td>Confidence Threshold</td>
+<td>number</td>
+<td>0.05</td>
+<td>1.0</td>
+<td>0.6</td>
+<td>Minimum confidence threshold for valid detection</td>
+</tr>
+<tr>
+<td>IoU Detection Threshold</td>
+<td>number</td>
+<td>0.05</td>
+<td>1.0</td>
+<td>0.45</td>
+<td>Minimum threshold for IoU detection</td>
+</tr>
+<tr>
+<td>Maximum Boxes</td>
+<td>integer</td>
+<td>0</td>
+<td>300</td>
+<td>30</td>
+<td>Maximum number of boxes in detection</td>
+</tr>
+<tr>
+<td>Expand Boxes</td>
+<td>number</td>
+<td>0</td>
+<td>2</td>
+<td>0</td>
+<td>Percent to expand size of boxes in detection</td>
+</tr>
+</tbody>
+</table>
+<h3 id="input-resolution">Input Resolution</h3>
+<p><strong>Input image dimensions</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>type</th>
+<th>Min</th>
+<th>Max</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Minimum Side</td>
+<td>integer</td>
+<td>20</td>
+<td></td>
+<td>50</td>
+<td>Size of the smaller side</td>
+</tr>
+<tr>
+<td>Maximum Side</td>
+<td>integer</td>
+<td>20</td>
+<td></td>
+<td>80</td>
+<td>Size of the bigger side</td>
+</tr>
+<tr>
+<td>Channels</td>
+<td>enum</td>
+<td></td>
+<td></td>
+<td>1</td>
+<td>Color channels</td>
+</tr>
+</tbody>
+</table>
+<h3 id="optimizer-parameters">Optimizer Parameters</h3>
+<p><strong>Parameters for Train Optimizer</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>type</th>
+<th>Min</th>
+<th>Max</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>beta_2</td>
+<td>number</td>
+<td>0.1</td>
+<td>1.0</td>
+<td>0.999</td>
+<td>Beta 2</td>
+</tr>
+<tr>
+<td>beta_1</td>
+<td>number</td>
+<td>0.1</td>
+<td>1.0</td>
+<td>0.9</td>
+<td>Beta 1</td>
+</tr>
+<tr>
+<td>Learning Rate</td>
+<td>number</td>
+<td>1e-06</td>
+<td>0.1</td>
+<td>0.001</td>
+<td>Optimizer Learning Rate</td>
+</tr>
+<tr>
+<td>amsgrad</td>
+<td>boolean</td>
+<td></td>
+<td></td>
+<td>False</td>
+<td>AMSGrad</td>
+</tr>
+</tbody>
+</table>
+<h3 id="early-stopping">Early Stopping</h3>
+<p><strong>Early stopping for training</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>type</th>
+<th>Min</th>
+<th>Max</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Patience</td>
+<td>integer</td>
+<td>1</td>
+<td></td>
+<td>5</td>
+<td>Num of epochs to wait for progress</td>
+</tr>
+<tr>
+<td>Monitor variable</td>
+<td>enum</td>
+<td></td>
+<td></td>
+<td>val_loss</td>
+<td>Variable to monitor progress</td>
+</tr>
+<tr>
+<td>Minimum Delta</td>
+<td>number</td>
+<td>0</td>
+<td></td>
+<td>0.01</td>
+<td>The minimum variantion in variable</td>
+</tr>
+<tr>
+<td>Evaluation mode</td>
+<td>enum</td>
+<td></td>
+<td></td>
+<td>max</td>
+<td>Monitor decrement or increment of variable value</td>
+</tr>
+</tbody>
+</table>
+<h3 id="reduce-lr-on-plateau">Reduce LR on plateau</h3>
+<p><strong>Reduce Learning Rate on plateau</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>type</th>
+<th>Min</th>
+<th>Max</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Patience</td>
+<td>integer</td>
+<td>1</td>
+<td></td>
+<td>4</td>
+<td>Num of epochs to wait for progress</td>
+</tr>
+<tr>
+<td>Monitor variable</td>
+<td>enum</td>
+<td></td>
+<td></td>
+<td>val_loss</td>
+<td>Variable to monitor for progress</td>
+</tr>
+<tr>
+<td>Minimum Delta</td>
+<td>number</td>
+<td>0</td>
+<td></td>
+<td>0.01</td>
+<td>The minimum variantion in variable</td>
+</tr>
+<tr>
+<td>Reducing factor</td>
+<td>number</td>
+<td>0.1</td>
+<td>0.9</td>
+<td>0.5</td>
+<td>Ammount to reduce</td>
+</tr>
+<tr>
+<td>Cooldown</td>
+<td>number</td>
+<td>0</td>
+<td></td>
+<td>0</td>
+<td>Cool Down</td>
+</tr>
+</tbody>
+</table>
+<h3 id="save-checkpoint">Save Checkpoint</h3>
+<p><strong>Trigger to save model training progress</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>type</th>
+<th>Min</th>
+<th>Max</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Monitor variable</td>
+<td>enum</td>
+<td></td>
+<td></td>
+<td>val_loss</td>
+<td>Variable to monitor for saving</td>
+</tr>
+<tr>
+<td>Evaluation mode</td>
+<td>enum</td>
+<td></td>
+<td></td>
+<td>min</td>
+<td>Save on decrement or increment of variable value</td>
+</tr>
+</tbody>
+</table>
+<!-- </parm_table> -->
+<h2 id="para-onde-devo-ir-agora">Para onde devo ir agora?</h2>
+<ul>
+<li><a href="/docs/concepts/dataset/">Dataset</a>: Anotando Datasets</li>
+<li><a href="/docs/concepts/training/">Treinamento</a>: Treinando a rede neural</li>
+</ul>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-12538f171a6b845bb3b653e76783b790">4 - Parâmetros das Redes Neurais</h1>
+    <div class="lead">Controle das redes neurais</div>
+	<!-- <parm_table> -->
+<h2 id="neural-network-parameters">Neural Network Parameters</h2>
+<p><strong>Parameters for Neural Network</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>type</th>
+<th>Min</th>
+<th>Max</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+</table>
+<h3 id="classification-parameters">Classification Parameters</h3>
+<p><strong>Classification Specific Neural Network Parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>type</th>
+<th>Min</th>
+<th>Max</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Component</td>
+<td>enum</td>
+<td></td>
+<td></td>
+<td>class_cnn</td>
+<td>The DNN component for train model</td>
+</tr>
+<tr>
+<td>Neural Network Depth</td>
+<td>integer</td>
+<td>1</td>
+<td></td>
+<td>3</td>
+<td>Depth (num layers) of Neural Network</td>
+</tr>
+<tr>
+<td>Neural Network Width</td>
+<td>integer</td>
+<td>5</td>
+<td></td>
+<td>20</td>
+<td>Wide (num features) of Neural Network</td>
+</tr>
+<tr>
+<td>Preprocess Mode</td>
+<td>enum</td>
+<td></td>
+<td></td>
+<td>caffe</td>
+<td>Function for image normalize</td>
+</tr>
+<tr>
+<td>Loss Function</td>
+<td>enum</td>
+<td></td>
+<td></td>
+<td>categorical_crossentropy</td>
+<td>Loss function for use in training</td>
+</tr>
+<tr>
+<td>Metrics Functions</td>
+<td>array</td>
+<td></td>
+<td></td>
+<td>[&lsquo;categorical_accuracy&rsquo;]</td>
+<td>Metrics functions for use in evaluation</td>
+</tr>
+<tr>
+<td>Optimizer Function</td>
+<td>enum</td>
+<td></td>
+<td></td>
+<td>adam</td>
+<td>Optimizer function for use in training</td>
+</tr>
+</tbody>
+</table>
+<h3 id="objectdetection-parameters">ObjectDetection Parameters</h3>
+<p><strong>ObjectDetection Specific Neural Network Parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>type</th>
+<th>Min</th>
+<th>Max</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Component</td>
+<td>enum</td>
+<td></td>
+<td></td>
+<td>objdet</td>
+<td>The DNN component for train model</td>
+</tr>
+<tr>
+<td>Neural Network Width</td>
+<td>integer</td>
+<td>5</td>
+<td></td>
+<td>20</td>
+<td>Wide (num features) of Neural Network</td>
+</tr>
+<tr>
+<td>Neural Network backbone</td>
+<td>enum</td>
+<td></td>
+<td></td>
+<td>vgg7</td>
+<td>Backbone architecture to Neural Network</td>
+</tr>
+<tr>
+<td>Preprocess Mode</td>
+<td>enum</td>
+<td></td>
+<td></td>
+<td>caffe</td>
+<td>Function for image normalize</td>
+</tr>
+<tr>
+<td>IoU negative overlap</td>
+<td>number</td>
+<td>0.05</td>
+<td>1.0</td>
+<td>0.3</td>
+<td>Value for minimum overlap of negative boxes</td>
+</tr>
+<tr>
+<td>IoU positive overlap</td>
+<td>number</td>
+<td>0.05</td>
+<td>1.0</td>
+<td>0.45</td>
+<td>Value for minimum overlap of positive boxes</td>
+</tr>
+</tbody>
+</table>
+<h4 id="anchor-parmeters">Anchor parmeters</h4>
+<p><strong>Parameters for boxes anchors</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>type</th>
+<th>Min</th>
+<th>Max</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Boxes sizes</td>
+<td>array</td>
+<td></td>
+<td></td>
+<td>[12, 24, 48, 96, 192]</td>
+<td>Size of boxes in each layer</td>
+</tr>
+<tr>
+<td>Boxes strides</td>
+<td>array</td>
+<td></td>
+<td></td>
+<td>[8, 16, 32, 64, 128]</td>
+<td>Strides of boxes in each layer</td>
+</tr>
+<tr>
+<td>Boxes ratios</td>
+<td>array</td>
+<td></td>
+<td></td>
+<td>[0.5, 1, 2]</td>
+<td>Ratios (height / width) of candidate boxes</td>
+</tr>
+<tr>
+<td>Boxes scales</td>
+<td>array</td>
+<td></td>
+<td></td>
+<td>[1, 1.2, 1.5]</td>
+<td>Scales of candidate boxes</td>
+</tr>
+</tbody>
+</table>
+<!-- </parm_table> -->
+<h2 id="para-onde-devo-ir-agora">Para onde devo ir agora?</h2>
+<ul>
+<li><a href="/docs/concepts/dataset/">Dataset</a>: Anotando Datasets</li>
+<li><a href="/docs/concepts/training/">Treinamento</a>: Treinando a rede neural</li>
+</ul>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-2869d0ba31e7658c3d9261182907e451">5 - Data Augmentation</h1>
+    <div class="lead">Expansão de exemplos nos treinamentos</div>
+	<!-- <parm_table> -->
+<h2 id="data-augmentation-parameters">Data augmentation parameters</h2>
+<p><strong>Parameters for Images Data Augmentation</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>type</th>
+<th>Min</th>
+<th>Max</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Interpolation</td>
+<td>enum</td>
+<td></td>
+<td></td>
+<td>linear</td>
+<td>Interpolation for resize operations</td>
+</tr>
+<tr>
+<td>Fill Mode</td>
+<td>enum</td>
+<td></td>
+<td></td>
+<td>constant</td>
+<td>Fill of null regions</td>
+</tr>
+<tr>
+<td>Border Value</td>
+<td>integer</td>
+<td>0</td>
+<td>255</td>
+<td>0</td>
+<td>The color to fill border regions</td>
+</tr>
+<tr>
+<td>Horizontal flip of image</td>
+<td>number</td>
+<td>0</td>
+<td>1.0</td>
+<td>0.3</td>
+<td>Random horizontal flip of image</td>
+</tr>
+<tr>
+<td>Vertical flip of image</td>
+<td>number</td>
+<td>0</td>
+<td>1.0</td>
+<td>0.3</td>
+<td>Random vertical flip of image</td>
+</tr>
+</tbody>
+</table>
+<h3 id="rotate-image">Rotate image</h3>
+<p><strong>Random rotation of image</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>type</th>
+<th>Min</th>
+<th>Max</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Probability</td>
+<td>number</td>
+<td>0</td>
+<td>1.0</td>
+<td>0.3</td>
+<td>Probability of random rotation</td>
+</tr>
+<tr>
+<td>Maximum angle</td>
+<td>number</td>
+<td>0</td>
+<td>180</td>
+<td>60</td>
+<td>Maximum angle for rotation clockwise</td>
+</tr>
+<tr>
+<td>Minimum angle</td>
+<td>number</td>
+<td>-180</td>
+<td>0</td>
+<td>-60</td>
+<td>Minimum angle for rotation counter-clockwise</td>
+</tr>
+<tr>
+<td>Rescale image</td>
+<td>boolean</td>
+<td></td>
+<td></td>
+<td>True</td>
+<td>If image must be reescaled in rotation</td>
+</tr>
+</tbody>
+</table>
+<h3 id="translate-image">Translate image</h3>
+<p><strong>Random translation of image</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>type</th>
+<th>Min</th>
+<th>Max</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Probability</td>
+<td>number</td>
+<td>0</td>
+<td>1.0</td>
+<td>0.3</td>
+<td>Probability of random translation</td>
+</tr>
+<tr>
+<td>Horizontal translation</td>
+<td>array</td>
+<td></td>
+<td></td>
+<td>[0.03, 0.2]</td>
+<td>Minimum &amp; Maximum for horizontal translation</td>
+</tr>
+<tr>
+<td>Vertical translation</td>
+<td>array</td>
+<td></td>
+<td></td>
+<td>[0.03, 0.2]</td>
+<td>Minimum &amp; Maximum for vertical translation</td>
+</tr>
+<tr>
+<td>Number of trials</td>
+<td>integer</td>
+<td>1</td>
+<td></td>
+<td>3</td>
+<td>Maximum number of trials without degeneration boxes</td>
+</tr>
+</tbody>
+</table>
+<h3 id="shear-image">Shear image</h3>
+<p><strong>Random shear deformation of image</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>type</th>
+<th>Min</th>
+<th>Max</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Probability</td>
+<td>number</td>
+<td>0</td>
+<td>1.0</td>
+<td>0.3</td>
+<td>Probability of random shear</td>
+</tr>
+<tr>
+<td>Shear Minimum</td>
+<td>number</td>
+<td>-180</td>
+<td>0</td>
+<td>-10</td>
+<td>Minimum value for shear angle in degrees</td>
+</tr>
+<tr>
+<td>Shear Maximum</td>
+<td>number</td>
+<td>0</td>
+<td>180</td>
+<td>10</td>
+<td>Maximum value for shear angle in degrees</td>
+</tr>
+</tbody>
+</table>
+<h3 id="scale-image">Scale image</h3>
+<p><strong>Random scale of image</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>type</th>
+<th>Min</th>
+<th>Max</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Probability</td>
+<td>number</td>
+<td>0</td>
+<td>1.0</td>
+<td>0.3</td>
+<td>Probability of random scale</td>
+</tr>
+<tr>
+<td>Minimum scale</td>
+<td>number</td>
+<td>0.1</td>
+<td></td>
+<td>0.8</td>
+<td>Minimum proportion value for scale</td>
+</tr>
+<tr>
+<td>Maximum scale</td>
+<td>number</td>
+<td>1.0</td>
+<td></td>
+<td>1.2</td>
+<td>Maximum proportion value for scale</td>
+</tr>
+</tbody>
+</table>
+<h3 id="random-contrast">Random contrast</h3>
+<p><strong>Random changes in contrast of image</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>type</th>
+<th>Min</th>
+<th>Max</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Probability</td>
+<td>number</td>
+<td>0</td>
+<td>1.0</td>
+<td>0.3</td>
+<td>Probability of random contrast</td>
+</tr>
+<tr>
+<td>Minimum contrast</td>
+<td>number</td>
+<td>0.1</td>
+<td>1.0</td>
+<td>0.8</td>
+<td>Minimum contrast change</td>
+</tr>
+<tr>
+<td>Maximum contrast</td>
+<td>number</td>
+<td>1.0</td>
+<td>2.0</td>
+<td>1.2</td>
+<td>Maximum contrast change</td>
+</tr>
+</tbody>
+</table>
+<h3 id="random-brightness">Random brightness</h3>
+<p><strong>Random changes in brightness of image</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>type</th>
+<th>Min</th>
+<th>Max</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Probability</td>
+<td>number</td>
+<td>0</td>
+<td>1.0</td>
+<td>0.3</td>
+<td>Probability of random brightness</td>
+</tr>
+<tr>
+<td>Minimum brightness</td>
+<td>number</td>
+<td>-1.0</td>
+<td>0</td>
+<td>-0.2</td>
+<td>Minimum brightness change</td>
+</tr>
+<tr>
+<td>Maximum brightness</td>
+<td>number</td>
+<td>0</td>
+<td>1.0</td>
+<td>0.3</td>
+<td>Maximum brightness change</td>
+</tr>
+</tbody>
+</table>
+<h3 id="random-gamma">Random gamma</h3>
+<p><strong>Random changes in gamma of image</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>type</th>
+<th>Min</th>
+<th>Max</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Probability</td>
+<td>number</td>
+<td>0</td>
+<td>1.0</td>
+<td>0.3</td>
+<td>Probability of random gamma</td>
+</tr>
+<tr>
+<td>Minimum gamma</td>
+<td>number</td>
+<td>0.1</td>
+<td>1.0</td>
+<td>0.4</td>
+<td>Minimum gamma change</td>
+</tr>
+<tr>
+<td>Maximum gamma</td>
+<td>number</td>
+<td>0</td>
+<td>12.0</td>
+<td>1.6</td>
+<td>Maximum gamma change</td>
+</tr>
+</tbody>
+</table>
+<h3 id="random-saturation">Random saturation</h3>
+<p><strong>Random changes in saturation of image</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>type</th>
+<th>Min</th>
+<th>Max</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Probability</td>
+<td>number</td>
+<td>0</td>
+<td>1.0</td>
+<td>0.3</td>
+<td>Probability of random saturation</td>
+</tr>
+<tr>
+<td>Minimum saturation</td>
+<td>number</td>
+<td>0.1</td>
+<td>1.0</td>
+<td>0.95</td>
+<td>Minimum saturation change</td>
+</tr>
+<tr>
+<td>Maximum saturation</td>
+<td>number</td>
+<td>1.0</td>
+<td>2.0</td>
+<td>1.05</td>
+<td>Maximum saturation change</td>
+</tr>
+</tbody>
+</table>
+<h3 id="random-hue">Random hue</h3>
+<p><strong>Random changes in hue of image</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>type</th>
+<th>Min</th>
+<th>Max</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Probability</td>
+<td>number</td>
+<td>0</td>
+<td>1.0</td>
+<td>0.3</td>
+<td>Probability of random hue</td>
+</tr>
+<tr>
+<td>Minimum hue</td>
+<td>number</td>
+<td>-1.0</td>
+<td>0</td>
+<td>-0.05</td>
+<td>Minimum hue change</td>
+</tr>
+<tr>
+<td>Maximum hue</td>
+<td>number</td>
+<td>0</td>
+<td>1.0</td>
+<td>0.05</td>
+<td>Maximum hue change</td>
+</tr>
+</tbody>
+</table>
+<h3 id="random-noise">Random noise</h3>
+<p><strong>Random insert of noise of image</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>type</th>
+<th>Min</th>
+<th>Max</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Probability</td>
+<td>number</td>
+<td>0</td>
+<td>1.0</td>
+<td>0.3</td>
+<td>Probability of random noise</td>
+</tr>
+<tr>
+<td>Noise method</td>
+<td>enum</td>
+<td></td>
+<td></td>
+<td>gauss</td>
+<td>Method for noise insertion</td>
+</tr>
+</tbody>
+</table>
+<h3 id="random-blur">Random blur</h3>
+<p><strong>Random blur of image</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>type</th>
+<th>Min</th>
+<th>Max</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Probability</td>
+<td>number</td>
+<td>0</td>
+<td>1.0</td>
+<td>0.3</td>
+<td>Probability of random blur</td>
+</tr>
+<tr>
+<td>Kernel size</td>
+<td>enum</td>
+<td></td>
+<td></td>
+<td>5</td>
+<td>The size of kernel to blur image</td>
+</tr>
+</tbody>
+</table>
+<!-- </parm_table> -->
+<h2 id="para-onde-devo-ir-agora">Para onde devo ir agora?</h2>
+<ul>
+<li><a href="/docs/concepts/dataset/">Dataset</a>: Anotando Datasets</li>
+<li><a href="/docs/concepts/training/">Treinamento</a>: Treinando a rede neural</li>
+</ul>
+
+</div>
+
+
+
+    
+	
+  
+
+
+
+          </main>
+        </div>
+      </div>
+      
+<footer class="bg-dark py-5 row d-print-none">
+  <div class="container-fluid mx-sm-5">
+    <div class="row">
+      <div class="col-6 col-sm-4 text-xs-center order-sm-2">
+        
+        
+        
+<ul class="list-inline mb-0">
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="User mailing list" aria-label="User mailing list">
+    <a class="text-white" target="_blank" rel="noopener noreferrer" href="https://example.org/mail">
+      <i class="fa fa-envelope"></i>
+    </a>
+  </li>
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="Twitter" aria-label="Twitter">
+    <a class="text-white" target="_blank" rel="noopener noreferrer" href="https://example.org/twitter">
+      <i class="fab fa-twitter"></i>
+    </a>
+  </li>
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="Stack Overflow" aria-label="Stack Overflow">
+    <a class="text-white" target="_blank" rel="noopener noreferrer" href="https://example.org/stack">
+      <i class="fab fa-stack-overflow"></i>
+    </a>
+  </li>
+  
+</ul>
+
+        
+        
+      </div>
+      <div class="col-6 col-sm-4 text-right text-xs-center order-sm-3">
+        
+        
+        
+<ul class="list-inline mb-0">
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="GitHub" aria-label="GitHub">
+    <a class="text-white" target="_blank" rel="noopener noreferrer" href="https://github.com/siliconlife-ai/eyeflow_sdk">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="Slack" aria-label="Slack">
+    <a class="text-white" target="_blank" rel="noopener noreferrer" href="https://example.org/slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="Developer mailing list" aria-label="Developer mailing list">
+    <a class="text-white" target="_blank" rel="noopener noreferrer" href="https://example.org/mail">
+      <i class="fa fa-envelope"></i>
+    </a>
+  </li>
+  
+</ul>
+
+        
+        
+      </div>
+      <div class="col-12 col-sm-4 text-center py-2 order-sm-2">
+        <small class="text-white">&copy; 2021 The Docsy Authors All Rights Reserved</small>
+        <small class="ml-1"><a href="https://policies.google.com/privacy" target="_blank">Privacy Policy</a></small>
+	
+		
+	
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    </div>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+
+
+
+<script src="/js/main.min.5c74b870c6953931a705f390a49c7e4c0a842ec5c83b24354758dd674343ed0d.js" integrity="sha256-XHS4cMaVOTGnBfOQpJx&#43;TAqELsXIOyQ1R1jdZ0ND7Q0=" crossorigin="anonymous"></script>
+
+
+
+
+  </body>
+</html>

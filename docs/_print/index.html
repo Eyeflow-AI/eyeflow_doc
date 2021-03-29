@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="pt-br" class="no-js">
+<html lang="pt" class="no-js">
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -269,9 +269,60 @@ Esta é a apresentação imprimível multi-página desta seção.
     
     
 	
-<li>4.4: <a href="#pg-e421da54c95b892b5e0a6ab85be297a1">Treinamento</a></li>
+<li>4.4: <a href="#pg-c4d184857c60a3b1e4c1cc383ba30ff0">Treinamento</a></li>
 
 
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>4.4.1: <a href="#pg-821691bbab1c2ab21c91a76358a6c1c7">Visão Geral</a></li>
+
+
+    
+  
+    
+    
+	
+<li>4.4.2: <a href="#pg-cc7704bf22b8c46dbb695f0b4ca5d35f">Dashboard de Treinamento</a></li>
+
+
+    
+  
+    
+    
+	
+<li>4.4.3: <a href="#pg-c31b22b7edbbfe49e4d16d2ccdeaba6b">Parâmetros do Treinamento</a></li>
+
+
+    
+  
+    
+    
+	
+<li>4.4.4: <a href="#pg-12538f171a6b845bb3b653e76783b790">Parâmetros das Redes Neurais</a></li>
+
+
+    
+  
+    
+    
+	
+<li>4.4.5: <a href="#pg-2869d0ba31e7658c3d9261182907e451">Data Augmentation</a></li>
+
+
+    
+  
+
+    </ul>
     
   
 
@@ -1275,8 +1326,33 @@ arrasta o mouse para desenhar uma caixa ao redor do objeto, e depois define a qu
 
 <div class="td-content" style="page-break-before: always">
     
-	<h1 id="pg-e421da54c95b892b5e0a6ab85be297a1">4.4 - Treinamento</h1>
+	<h1 id="pg-c4d184857c60a3b1e4c1cc383ba30ff0">4.4 - Treinamento</h1>
     <div class="lead">Processo de aprendizado das redes neurais</div>
+	
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="">
+    
+	<h1 id="pg-821691bbab1c2ab21c91a76358a6c1c7">4.4.1 - Visão Geral</h1>
+    <div class="lead">Visão geral do treinamento</div>
 	<p>Treinamento é o processo onde os exemplos do dataset são alimentados na rede neural para aprendizado dos
 padrões e geração do modelo.
 É um processo matemático/algorítmico complexo, que exige uma grande capacidade computacional e necessita
@@ -1290,17 +1366,97 @@ bastante tempo, estudo e experimentação.</p>
 <p>Felizmente, o Eyeflow.AI oferece um ambiente completo para acelerar e automatizar todas as tarefas para o desenvolvimento
 de redes neurais, e possui sugestões de construção e parametrização, fruto de longos anos de experiência de uso
 de redes neurais para solução de problemas reais.</p>
-<h3 id="generalização">Generalização</h3>
-<h1 id="dashboard-de-treinamento">Dashboard de Treinamento</h1>
-<h2 id="indicadores">Indicadores</h2>
-<h2 id="gráficos">Gráficos</h2>
-<h2 id="imagens-de-testes">Imagens de Testes</h2>
-<h2 id="resultados-finais">Resultados Finais</h2>
-<h2 id="histórico-de-treinamentos">Histórico de Treinamentos</h2>
-<h1 id="parâmetros-de-treinamento">Parâmetros de Treinamento</h1>
-<h2 id="iterações">Iterações</h2>
-<h2 id="parametrização-das-redes-neurais">Parametrização das Redes Neurais</h2>
-<h2 id="data-augmentation">Data Augmentation</h2>
+<h2 id="conceitos-importantes">Conceitos importantes</h2>
+<h3 id="quantidade-de-exemplos">Quantidade de exemplos</h3>
+<p>A quantidade de exemplos de um dataset é um item muito importante para a eficácia das detecções. Para realizar
+um treinamento de uma rede neural é necessário no mínimo 10 exemplos, sendo que um bom dataset para produção
+vai demandar cerca de 1000 exemplos. Contudo, não adianta simplesmente lotar um dataset de exemplos sem testar
+sua eficácia com casos reais, pois um excesso de exemplos semelhantes pode desbalancear o aprendizado e fazer com que seu
+modelo fique enviesado e não tenha boa performance em produção.</p>
+<p>Outro ponto importante é que deve-se manter uma quantidade similar de exemplos de cada classe, também para evitar
+o desbalanceamento, e consequentemente enviesamento, do modelo. Se o dataset tiver muitos exemplos de uma só
+classe e poucos das outras ele irá tender a detectar tudo como a classe dominante.</p>
+<p>A melhor estratégia para adição de novos exemplos no dataset é testar o mesmo após o treinamento e verificar
+os erros, para adicionar somente os novos exemplos que apresentaram erro, e daí corrigí-los e fazer um novo treinamento.
+A cada iteração dessas o ideal é adicionar de 30 a 50 novos exemplos, e daí rapidamente o treinamento irá aumentar
+a assertividade da detecção.</p>
+<p>Após os testes com vídeos e publicação em produção o Eyeflow oferece um mecanismo para coleta de novos exemplos a
+partir da borda, o que servirá para verificar se o modelo está tendo uma boa assertividade nos casos reais, e daí
+podem ser adicionados os erros para continuar o processo de melhoria do dataset.</p>
+<h3 id="qualidade-dos-exemplos">Qualidade dos exemplos</h3>
+<p>Se a quantidade é importante, a qualidade é fundamental para garantir que a rede neural irá aprender a detectar os
+padrões.</p>
+<p>Para garantir a qualidade dos exemplos alguns pontos devem ser observados:</p>
+<ul>
+<li>O objeto a ser detectado deve estar bem visível na imagem. Se houver dúvidas para anotar o exemplo então a própria
+rede neural terá dificuldades em aprender com esse exemplo.</li>
+<li>Para um dataset do tipo ObjectDetection as caixas não podem ser muito pequenas, nem grandes demais. Os testes de augmentation
+vão indicar se as caixas estão sendo bem detectadas.</li>
+<li>Para um dataset Classification os exemplos precisam ser bem diferentes entre as classes. Será difícil detectar uma diferença
+entre as classes se tal diferença for somente um pequeno detalhe na imagem total.</li>
+<li>Deve-se ter uma boa variedade nos exemplos. A adição de muitos exemplos muito parecidos irá fazer o modelo ficar enviesado
+para detectar só esse tipo de imagem ou classe.</li>
+</ul>
+<h3 id="validação-e-teste">Validação e Teste</h3>
+<p>No processo de treinamento o dataset é dividido em 3 grupos:</p>
+<ul>
+<li>Treino</li>
+<li>Validação</li>
+<li>Teste</li>
+</ul>
+<p>A separação dos exemplos para os grupos é feita de forma aleatória, baseada nos parâmetros definidos para o treinamento.</p>
+<p>O grupo de <strong>Treino</strong> é o que será efetivamente usado para treinar a rede neural. Ele deve ter a maior quantidade de exemplos,
+sendo recomendado pelo menos 80% dos exemplos.</p>
+<p>O grupo de <strong>Validação</strong> é usado para testar o modelo a cada final de época, e serve para verificar se o treino está evoluindo,
+ou se estagnou ou viciou (<em>overfitting</em>). É recomendado que seja 10% dos exemplos até um máximo de 100 exemplos.</p>
+<p>O grupo de <strong>Teste</strong> é usado para testar o modelo ao final do treinamento. Como esses exemplos nunca foram apresentados ao
+dataset então servem como uma avaliação final do aprendizado, definindo qual a assertividade que o modelo apresenta. É o indicador
+se a rede neural efetivamente aprendeu a reconhecer os padrões. É recomendado que seja 10% dos exemplos até um máximo de 100 exemplos.</p>
+<blockquote class="note callout">
+    <div><strong>Observação:</strong> O principal objetivo de um treinamento de rede neural é garantir que o modelo final irá <strong>generalizar</strong>, significa que irá
+aprender com os exemplos o padrão para assim poder extrapolar para novos exemplos em situações reais. Muitas vezes o resultado
+fica bom no treino, mas ruim em produção, indicando que o modelo não generalizou bem. Nessas situações deve-se coletar mais
+exemplos de erro em produção para adicionar ao dataset.</div>
+</blockquote>
+<h3 id="loss-e-val-loss">Loss e Val Loss</h3>
+<p>Loss é a medida de erro que no processo de treinamento foi observado entre o que a rede neural detectou (<em>predict</em>) e o que deveria
+ser a saída correta segundo a anotação (<em>ground thruth</em>). O processo matemático/algorítmico de treinamento das redes neurais busca
+a minimização desse erro.</p>
+<p>O Val Loss é a mesma medida, só que feita no grupo de validação ao final de uma época. Serve para acompanhar a evolução do treino
+a cada ciclo de treinamento.</p>
+<h3 id="map-e-accuracy">mAP e Accuracy</h3>
+<p>O indicador de qualidade do treino é uma medida de acerto que leva em consideração todos os elementos de saída. Cada tipo de
+dataset tem sua medida padrão de assertividade.</p>
+<ul>
+<li>Datasets <em>ObjectDetection</em> costumam utilizar o <strong>mAP</strong> (<em>Mean Average Precision</em>) como indicador de assertividade, pois mede o quanto a
+box de saída engloba bem o objeto, indicando a classe correta, pela média de todas as classes.</li>
+<li>Datasets <em>Classification</em> costumam utilizar a <strong>Accuracy</strong>, que é o percentual de exemplos em que a rede neural previu corretamente
+a qual classe o objeto pertence.</li>
+</ul>
+<h3 id="overfitting">Overfitting</h3>
+<p>É um fenômeno que ocorre comumento nos treinamentos. Ocorre no treinamento quando vemos o <em>Loss</em> continuar caindo, mas o <em>Val Loss</em> subir
+ao invés de descer. Isso indica que a rede neural ficou &ldquo;viciada&rdquo; nos exemplos do treinamento e parou de generalizar para novos exemplos,
+ou seja, ela aprendeu muito sobre os exemplos do treino, mas não consegue acertar exemplos novos.</p>
+<h3 id="expansão-dos-exemplos---data-augmentation">Expansão dos exemplos - Data Augmentation</h3>
+<p>É um trabalho demorado e repetitivo anotar os exemplos de um dataset, sendo porém a tarefa mais importante para poder usar uma
+rede neural em uma aplicação real. Muitos projetos de AI estagnam na parte em que precisam reunir muitos milhares de exemplos anotados
+para começar a ter bons resultados com redes neurais, mas a experiência com o Eyeflow.AI indica que é possível ter bons resultados apenas
+com 300 exemplos em um dataset, e ótimos resultados com apenas 1000 exemplos.
+Um dos aspectos chaves dessa performance está no Data Augmentation.</p>
+<p>Data Augmentation é o processo de inserir perturbações nas imagens dos exemplos, no momento do treinamento, para forçar a rede neural
+a aprender os padrões dos objetos, e não ficar &ldquo;viciada&rdquo; nos poucos exemplos que foram apresentados.</p>
+<p>O Eyeflow.AI oferece uma ampla gama de algoritmos para Data Augmentation, que vão desde distorções geométricas e fotométricas nas imagens
+até inserção de ruidos ou elementos estranhos.</p>
+<p>O ponto importante a observar aqui é que não deve-se usar o Data Augumentation para modificar os exemplos deixando-os muito diferentes
+das situação que serão encontradas no ambiente real, pois isto irá dificultar desnecessariamente o aprendizado da rede. Por exemplo, não
+faria sentido em um dataset de carros inserir o <em>Flip Vertical</em>, pois não encontraremos uma situação com o carro de cabeça para baixo.</p>
+<h3 id="datasets-sintéticos">Datasets sintéticos</h3>
+<p>Da mesma forma que o Data Augumentation ajuda a melhorar o aprendizado da rede com poucos exemplos, um Dataset Sintético ajuda a gerar
+exemplos automaticamente para o treinamento da rede.</p>
+<p>São poucas situação em que dá pra usar datasets sintéticos, uma delas é para reconhecimento de caracteres (<em>OCR</em>) por exemplo, mas quando
+é possível os ganhos são enormes, pois dá pra gerar um modelo extremamente robusto e eficaz.</p>
+<p>O Eyeflow.AI é uma plataforma expansível, que permite ao usuário a criação de seus próprios componentes de redes neurais e geração de datasets
+sintéticos.</p>
 <h2 id="para-onde-devo-ir-agora">Para onde devo ir agora?</h2>
 <ul>
 <li><a href="/docs/concepts/dataset/">Dataset</a>: Anotando Datasets</li>
@@ -1310,6 +1466,1152 @@ de redes neurais para solução de problemas reais.</p>
 </div>
 
 
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-cc7704bf22b8c46dbb695f0b4ca5d35f">4.4.2 - Dashboard de Treinamento</h1>
+    <div class="lead">Visão geral dos treinamentos</div>
+	<p>O Dashboard de Treinamentos dá uma visão geral de todo processo de treinamento. Nessa tela podemos acompanhar os
+treinamentos em tempo real, bem como avaliar o histórico dos treinamentos anteriores e editar vários parâmetros.</p>
+<p><img src="/screenshots/pt-br_dashboard_overview.jpg#bordered" alt="Visão Geral" title="Visão Geral"></p>
+<h2 id="indicadores">Indicadores</h2>
+<p>Nesses quadros estão os indicadores do treinamento selecionado. A data que foi realizado, duração, e resultados
+finais do treino.
+Temos também uma barra de botões com ações como <em>Download</em> e <em>Publicação</em> do modelo, visualização dos parâmetros
+e visualização das imagens de teste.</p>
+<p><img src="/screenshots/pt-br_dashboard_kpis.jpg#bordered" alt="Indicadores" title="Indicadores"></p>
+<h3 id="resultados-finais-do-treino">Resultados finais do treino</h3>
+<p><img src="/screenshots/pt-br_dashboard_final_results.jpg#bordered" alt="Resultados Finais" title="Resultados Finais"></p>
+<h3 id="imagem-de-teste-de-expansão-de-exemplos---data-augmentation">Imagem de teste de expansão de exemplos - Data Augmentation</h3>
+<p><img src="/screenshots/pt-br_dashboard_test_augmentation.jpg#bordered" alt="Teste de Expansão" title="Teste de Expansão"></p>
+<h3 id="imagem-de-teste-do-final-do-treino">Imagem de teste do final do treino</h3>
+<p><img src="/screenshots/pt-br_dashboard_test_final.jpg#bordered" alt="Teste Final" title="Teste Final"></p>
+<h2 id="gráficos">Gráficos</h2>
+<p>Os gráficos dão uma ideia da progressão do treino, seja em tempo real ou histórico.</p>
+<p><strong>Loss</strong> e <strong>Val Loss</strong> indicam o erro medido no treino, e são indicadores comuns a todos os treinos. Devem ser curvas
+descendentes que se aproximam de 0. Quanto menor o Loss menos a rede neural está errando.</p>
+<p><img src="/screenshots/pt-br_dashboard_graphs.jpg#bordered" alt="Gráficos" title="Gráficos"></p>
+<p>Existem também gráficos de eficácia da rede neural, e para esses quanto maior melhor.</p>
+<ul>
+<li><strong>mAP</strong> para datasets <em>ObjectDetection</em>. Geralmente já é considerado bom acima de 0.6.</li>
+<li><strong>Accuracy</strong> para datasets de <em>Classification</em>. É considerado bom acima de 90%.</li>
+</ul>
+<h2 id="histórico-de-treinamentos">Histórico de Treinamentos</h2>
+<p>É possível também verificar os treinamentos anteriores e assim ter insights sobre se as ações que foram tomadas na
+construção do dataset e parametrização dos treinos surtiram efeitos positivos ou negativos.</p>
+<p><img src="/screenshots/pt-br_dashboard_history.jpg#bordered" alt="Histórico" title="Histórico"></p>
+<h2 id="para-onde-devo-ir-agora">Para onde devo ir agora?</h2>
+<ul>
+<li><a href="/docs/concepts/dataset/">Dataset</a>: Anotando Datasets</li>
+<li><a href="/docs/concepts/training/">Treinamento</a>: Treinando a rede neural</li>
+</ul>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-c31b22b7edbbfe49e4d16d2ccdeaba6b">4.4.3 - Parâmetros do Treinamento</h1>
+    <div class="lead">Controle do treinamento</div>
+	<h2 id="iterações">Iterações</h2>
+<p>O processo de treinamento é iterativo, ou seja, realizado em ciclos. Cada ciclo é chamado de <strong>Época</strong>.
+Em cada época todos os exemplos são apresentados para a rede neural, para que sejam aprendidos os padrões. O
+algoritmo de treinamento vai então medindo o erro (<em>Loss</em>) e ajustando a rede neural para ir minizando o mesmo.</p>
+<p>É comum se pensar de que com mais épocas a rede irá aprender mais, mas na prática não é exatamente assim. De acordo
+com a quantidade/qualidade dos exemplos chega-se a um ponto em que o erro não diminui mais e o aprendizado estagna. Outra
+ocorrência comum é o erro (<em>Loss</em>) continuar diminuindo, mas o <em>Val Loss</em> começar a aumentar. Esse fenômeno é conhecido
+como <em>Overfitting</em> e significa que a rede neural ficou viciada nos exemplos do treinamento e não está mais conseguindo
+generalizar para novos exemplos.</p>
+<p>A recomendação é no início setar 5 épocas para o treino enquanto o dataset tiver menos de 100 exemplos, e daí ir subindo.</p>
+<!-- <parm_table> -->
+<h2 id="parâmetros-de-treinamento">Parâmetros de treinamento</h2>
+<p><strong>Parâmetros para treinamento de rede neural</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>type</th>
+<th>Min</th>
+<th>Max</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Épocas</td>
+<td>integer</td>
+<td>1</td>
+<td></td>
+<td>5</td>
+<td>Número de épocas para treinamento</td>
+</tr>
+<tr>
+<td>Etapas por época</td>
+<td>integer</td>
+<td>50</td>
+<td></td>
+<td>100</td>
+<td>Número de passos para treinamento em cada época</td>
+</tr>
+<tr>
+<td>Tamanho do lote</td>
+<td>integer</td>
+<td>1</td>
+<td>64</td>
+<td>10</td>
+<td>Número de exemplos em cada passo</td>
+</tr>
+<tr>
+<td>Tamanho do Val</td>
+<td>number</td>
+<td>0.01</td>
+<td>0.9</td>
+<td>0.1</td>
+<td>Porcentagem de exemplos selecionados para validação</td>
+</tr>
+<tr>
+<td>Tamanho do Teste</td>
+<td>number</td>
+<td>0.01</td>
+<td>0.9</td>
+<td>0.1</td>
+<td>Porcentagem de exemplos selecionados para o teste final</td>
+</tr>
+<tr>
+<td>Limiar de confiança</td>
+<td>number</td>
+<td>0.05</td>
+<td>1.0</td>
+<td>0.6</td>
+<td>Limite mínimo de confiança para detecção válida</td>
+</tr>
+<tr>
+<td>Limite de detecção de IoU</td>
+<td>number</td>
+<td>0.05</td>
+<td>1.0</td>
+<td>0.45</td>
+<td>Limite mínimo para detecção de IoU</td>
+</tr>
+<tr>
+<td>Máximo de caixas</td>
+<td>integer</td>
+<td>0</td>
+<td>300</td>
+<td>30</td>
+<td>Número máximo de caixas em detecção</td>
+</tr>
+<tr>
+<td>Caixas de expansão</td>
+<td>number</td>
+<td>0</td>
+<td>2</td>
+<td>0</td>
+<td>Porcentagem para expandir o tamanho das caixas na detecção</td>
+</tr>
+</tbody>
+</table>
+<h3 id="resolução-de-entrada">Resolução de entrada</h3>
+<p><strong>Dimensões da imagem de entrada</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>type</th>
+<th>Min</th>
+<th>Max</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Lado mínimo</td>
+<td>integer</td>
+<td>20</td>
+<td></td>
+<td>50</td>
+<td>Tamanho do lado menor</td>
+</tr>
+<tr>
+<td>Lado máximo</td>
+<td>integer</td>
+<td>20</td>
+<td></td>
+<td>80</td>
+<td>Tamanho do lado maior</td>
+</tr>
+<tr>
+<td>Canais</td>
+<td>enum</td>
+<td></td>
+<td></td>
+<td>1</td>
+<td>Canais de cor</td>
+</tr>
+</tbody>
+</table>
+<h3 id="parâmetros-do-otimizador">Parâmetros do Otimizador</h3>
+<p><strong>Parâmetros para Train Optimizer</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>type</th>
+<th>Min</th>
+<th>Max</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>beta_2</td>
+<td>number</td>
+<td>0.1</td>
+<td>1.0</td>
+<td>0.999</td>
+<td>Beta 2</td>
+</tr>
+<tr>
+<td>beta_1</td>
+<td>number</td>
+<td>0.1</td>
+<td>1.0</td>
+<td>0.9</td>
+<td>Beta 1</td>
+</tr>
+<tr>
+<td>Taxa de Aprendizagem</td>
+<td>number</td>
+<td>1e-06</td>
+<td>0.1</td>
+<td>0.001</td>
+<td>Taxa de aprendizagem do otimizador</td>
+</tr>
+<tr>
+<td>amsgrad</td>
+<td>boolean</td>
+<td></td>
+<td></td>
+<td>False</td>
+<td>amsgrad</td>
+</tr>
+</tbody>
+</table>
+<h3 id="parada-antecipada">Parada Antecipada</h3>
+<p><strong>Parada antecipada para treinamento</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>type</th>
+<th>Min</th>
+<th>Max</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Paciência</td>
+<td>integer</td>
+<td>1</td>
+<td></td>
+<td>5</td>
+<td>Número de épocas para esperar pelo progresso</td>
+</tr>
+<tr>
+<td>Variável de monitoramento</td>
+<td>enum</td>
+<td></td>
+<td></td>
+<td>val_loss</td>
+<td>Variável para monitorar o progresso</td>
+</tr>
+<tr>
+<td>Delta Mínimo</td>
+<td>number</td>
+<td>0</td>
+<td></td>
+<td>0.01</td>
+<td>A variação mínima na variável</td>
+</tr>
+<tr>
+<td>Modo de avaliação</td>
+<td>enum</td>
+<td></td>
+<td></td>
+<td>max</td>
+<td>Monitor do decréscimo ou incremento do valor da variável</td>
+</tr>
+</tbody>
+</table>
+<h3 id="reduzir-lr-no-platô">Reduzir LR no platô</h3>
+<p><strong>Reduza a taxa de aprendizagem no platô</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>type</th>
+<th>Min</th>
+<th>Max</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Paciência</td>
+<td>integer</td>
+<td>1</td>
+<td></td>
+<td>4</td>
+<td>Número de épocas para esperar pelo progresso</td>
+</tr>
+<tr>
+<td>Variável de monitoramento</td>
+<td>enum</td>
+<td></td>
+<td></td>
+<td>val_loss</td>
+<td>Variável para monitorar o progresso</td>
+</tr>
+<tr>
+<td>Delta Mínimo</td>
+<td>number</td>
+<td>0</td>
+<td></td>
+<td>0.01</td>
+<td>A variação mínima na variável</td>
+</tr>
+<tr>
+<td>Fator de redução</td>
+<td>number</td>
+<td>0.1</td>
+<td>0.9</td>
+<td>0.5</td>
+<td>Quantidade a reduzir</td>
+</tr>
+<tr>
+<td>Esfriar</td>
+<td>number</td>
+<td>0</td>
+<td></td>
+<td>0</td>
+<td>Esfriar</td>
+</tr>
+</tbody>
+</table>
+<h3 id="salvar-ponto-de-verificação">Salvar ponto de verificação</h3>
+<p><strong>Gatilho para salvar o progresso do treinamento do modelo</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>type</th>
+<th>Min</th>
+<th>Max</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Variável de monitoramento</td>
+<td>enum</td>
+<td></td>
+<td></td>
+<td>val_loss</td>
+<td>Variável para monitorar para salvar</td>
+</tr>
+<tr>
+<td>Modo de avaliação</td>
+<td>enum</td>
+<td></td>
+<td></td>
+<td>min</td>
+<td>Salvar ao diminuir ou aumentar o valor da variável</td>
+</tr>
+</tbody>
+</table>
+<!-- </parm_table> -->
+<h2 id="para-onde-devo-ir-agora">Para onde devo ir agora?</h2>
+<ul>
+<li><a href="/docs/concepts/training/train_parms">Parâmetros de Treinamento</a>: Parâmetros gerais para treinamento da rede neural</li>
+<li><a href="/docs/concepts/training/dnn_parms">Parâmetros de Redes Neurais</a>: Parâmetros específicos da rede neural</li>
+<li><a href="/docs/concepts/training/data_augmentation_parms">Parâmetros de Expansão de Dados</a>: Parâmetros para expansão de dados - Data Augmentation</li>
+</ul>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-12538f171a6b845bb3b653e76783b790">4.4.4 - Parâmetros das Redes Neurais</h1>
+    <div class="lead">Controle das redes neurais</div>
+	<!-- <parm_table> -->
+<h2 id="parâmetros-de-rede-neural">Parâmetros de rede neural</h2>
+<p><strong>Parâmetros para rede neural</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>type</th>
+<th>Min</th>
+<th>Max</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+</table>
+<h3 id="parâmetros-de-classificação">Parâmetros de Classificação</h3>
+<p><strong>Parâmetros de rede neural específicos de classificação</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>type</th>
+<th>Min</th>
+<th>Max</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Componente</td>
+<td>enum</td>
+<td></td>
+<td></td>
+<td>class_cnn</td>
+<td>O componente DNN para o modelo de treinamento</td>
+</tr>
+<tr>
+<td>Profundidade da Rede Neural</td>
+<td>integer</td>
+<td>1</td>
+<td></td>
+<td>3</td>
+<td>Profundidade (núm camadas) da rede neural</td>
+</tr>
+<tr>
+<td>Largura da rede neural</td>
+<td>integer</td>
+<td>5</td>
+<td></td>
+<td>20</td>
+<td>Largura (núm features) da Rede Neural</td>
+</tr>
+<tr>
+<td>Modo de pré-processamento</td>
+<td>enum</td>
+<td></td>
+<td></td>
+<td>caffe</td>
+<td>Função para normalizar imagem</td>
+</tr>
+<tr>
+<td>Função de perda</td>
+<td>enum</td>
+<td></td>
+<td></td>
+<td>categorical_crossentropy</td>
+<td>Função de perda para uso em treinamento</td>
+</tr>
+<tr>
+<td>Funções de métricas</td>
+<td>array</td>
+<td></td>
+<td></td>
+<td>[&lsquo;categorical_accuracy&rsquo;]</td>
+<td>Funções de métricas para uso em avaliação</td>
+</tr>
+<tr>
+<td>Função Otimizador</td>
+<td>enum</td>
+<td></td>
+<td></td>
+<td>adam</td>
+<td>Funções de métricas para uso em avaliação</td>
+</tr>
+</tbody>
+</table>
+<h3 id="parâmetros-objectdetection">Parâmetros ObjectDetection</h3>
+<p><strong>Parâmetros de rede neural específicos de detecção de objeto</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>type</th>
+<th>Min</th>
+<th>Max</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Componente</td>
+<td>enum</td>
+<td></td>
+<td></td>
+<td>objdet</td>
+<td>O componente DNN para o modelo de treinamento</td>
+</tr>
+<tr>
+<td>Largura da rede neural</td>
+<td>integer</td>
+<td>5</td>
+<td></td>
+<td>20</td>
+<td>Largura (núm features) da Rede Neural</td>
+</tr>
+<tr>
+<td>Backbone de rede neural</td>
+<td>enum</td>
+<td></td>
+<td></td>
+<td>vgg7</td>
+<td>Arquitetura de backbone para rede neural</td>
+</tr>
+<tr>
+<td>Modo de pré-processamento</td>
+<td>enum</td>
+<td></td>
+<td></td>
+<td>caffe</td>
+<td>Função para normalizar imagem</td>
+</tr>
+<tr>
+<td>Sobreposição negativa IoU</td>
+<td>number</td>
+<td>0.05</td>
+<td>1.0</td>
+<td>0.3</td>
+<td>Valor para sobreposição mínima de caixas negativas</td>
+</tr>
+<tr>
+<td>Sobreposição positiva IoU</td>
+<td>number</td>
+<td>0.05</td>
+<td>1.0</td>
+<td>0.45</td>
+<td>Valor para sobreposição mínima de caixas positivas</td>
+</tr>
+</tbody>
+</table>
+<h4 id="parâmetros-de-âncora">Parâmetros de âncora</h4>
+<p><strong>Parâmetros para âncoras de caixas</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>type</th>
+<th>Min</th>
+<th>Max</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tamanhos de caixas</td>
+<td>array</td>
+<td></td>
+<td></td>
+<td>[12, 24, 48, 96, 192]</td>
+<td>Tamanho das caixas em cada camada</td>
+</tr>
+<tr>
+<td>Boxes strides</td>
+<td>array</td>
+<td></td>
+<td></td>
+<td>[8, 16, 32, 64, 128]</td>
+<td>Strides de caixas em cada camada</td>
+</tr>
+<tr>
+<td>Razões das caixas</td>
+<td>array</td>
+<td></td>
+<td></td>
+<td>[0.5, 1, 2]</td>
+<td>Proporções (altura / largura) das caixas candidatas</td>
+</tr>
+<tr>
+<td>Escalas de caixas</td>
+<td>array</td>
+<td></td>
+<td></td>
+<td>[1, 1.2, 1.5]</td>
+<td>Escalas de caixas candidatas</td>
+</tr>
+</tbody>
+</table>
+<!-- </parm_table> -->
+<h2 id="para-onde-devo-ir-agora">Para onde devo ir agora?</h2>
+<ul>
+<li><a href="/docs/concepts/training/train_parms">Parâmetros de Treinamento</a>: Parâmetros gerais para treinamento da rede neural</li>
+<li><a href="/docs/concepts/training/dnn_parms">Parâmetros de Redes Neurais</a>: Parâmetros específicos da rede neural</li>
+<li><a href="/docs/concepts/training/data_augmentation_parms">Parâmetros de Expansão de Dados</a>: Parâmetros para expansão de dados - Data Augmentation</li>
+</ul>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-2869d0ba31e7658c3d9261182907e451">4.4.5 - Data Augmentation</h1>
+    <div class="lead">Expansão de exemplos nos treinamentos</div>
+	<!-- <parm_table> -->
+<h2 id="parâmetros-para-expansão-de-dataset">Parâmetros para expansão de dataset</h2>
+<p><strong>Parâmetros para expansão de dataset</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>type</th>
+<th>Min</th>
+<th>Max</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Interpolação</td>
+<td>enum</td>
+<td></td>
+<td></td>
+<td>linear</td>
+<td>Interpolação para operações de redimensionamento</td>
+</tr>
+<tr>
+<td>Modo de Preenchimento</td>
+<td>enum</td>
+<td></td>
+<td></td>
+<td>constant</td>
+<td>Preenchimento de regiões nulas</td>
+</tr>
+<tr>
+<td>Valor da borda</td>
+<td>integer</td>
+<td>0</td>
+<td>255</td>
+<td>0</td>
+<td>A cor para preencher as regiões limítrofes</td>
+</tr>
+<tr>
+<td>Virada horizontal da imagem</td>
+<td>number</td>
+<td>0</td>
+<td>1.0</td>
+<td>0.3</td>
+<td>Virada horizontal aleatória da imagem</td>
+</tr>
+<tr>
+<td>Virada vertical da imagem</td>
+<td>number</td>
+<td>0</td>
+<td>1.0</td>
+<td>0.3</td>
+<td>Virada vertical aleatória da imagem</td>
+</tr>
+</tbody>
+</table>
+<h3 id="rotacionar-imagem">Rotacionar imagem</h3>
+<p><strong>Rotação aleatória da imagem</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>type</th>
+<th>Min</th>
+<th>Max</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Probabilidade</td>
+<td>number</td>
+<td>0</td>
+<td>1.0</td>
+<td>0.3</td>
+<td>Probabilidade de rotação aleatória</td>
+</tr>
+<tr>
+<td>Ângulo máximo</td>
+<td>number</td>
+<td>0</td>
+<td>180</td>
+<td>60</td>
+<td>Ângulo máximo para rotação no sentido horário</td>
+</tr>
+<tr>
+<td>Angulo minimo</td>
+<td>number</td>
+<td>-180</td>
+<td>0</td>
+<td>-60</td>
+<td>Ângulo mínimo para rotação no sentido anti-horário</td>
+</tr>
+<tr>
+<td>Redimensionar imagem</td>
+<td>boolean</td>
+<td></td>
+<td></td>
+<td>True</td>
+<td>Se a imagem deve ser redimensionada em rotação</td>
+</tr>
+</tbody>
+</table>
+<h3 id="transladar-imagem">Transladar imagem</h3>
+<p><strong>Translação aleatória de imagem</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>type</th>
+<th>Min</th>
+<th>Max</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Probabilidade</td>
+<td>number</td>
+<td>0</td>
+<td>1.0</td>
+<td>0.3</td>
+<td>Probabilidade de mudança de translação</td>
+</tr>
+<tr>
+<td>Translação horizontal</td>
+<td>array</td>
+<td></td>
+<td></td>
+<td>[0.03, 0.2]</td>
+<td>Mín. E Máx. Para translação horizontal</td>
+</tr>
+<tr>
+<td>Translação vertical</td>
+<td>array</td>
+<td></td>
+<td></td>
+<td>[0.03, 0.2]</td>
+<td>Mín. E Máx. Para translação vertical</td>
+</tr>
+<tr>
+<td>Número de Tentativas</td>
+<td>integer</td>
+<td>1</td>
+<td></td>
+<td>3</td>
+<td>Número máximo de tentativas sem degenerar caixas</td>
+</tr>
+</tbody>
+</table>
+<h3 id="cortar-imagem">Cortar imagem</h3>
+<p><strong>Deformação por cisalhamento aleatório da imagem</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>type</th>
+<th>Min</th>
+<th>Max</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Probabilidade</td>
+<td>number</td>
+<td>0</td>
+<td>1.0</td>
+<td>0.3</td>
+<td>Probabilidade de mudança de cisalhamento</td>
+</tr>
+<tr>
+<td>Mínimo de cisalhamento</td>
+<td>number</td>
+<td>-180</td>
+<td>0</td>
+<td>-10</td>
+<td>Valor mínimo para ângulo de cisalhamento em graus</td>
+</tr>
+<tr>
+<td>Cisalhamento máximo</td>
+<td>number</td>
+<td>0</td>
+<td>180</td>
+<td>10</td>
+<td>Valor máximo para ângulo de cisalhamento em graus</td>
+</tr>
+</tbody>
+</table>
+<h3 id="imagem-em-escala">Imagem em escala</h3>
+<p><strong>Escala aleatória da imagem</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>type</th>
+<th>Min</th>
+<th>Max</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Probabilidade</td>
+<td>number</td>
+<td>0</td>
+<td>1.0</td>
+<td>0.3</td>
+<td>Probabilidade de escala aleatória</td>
+</tr>
+<tr>
+<td>Escala mínima</td>
+<td>number</td>
+<td>0.1</td>
+<td></td>
+<td>0.8</td>
+<td>Valor de proporção mínima para escala</td>
+</tr>
+<tr>
+<td>Escala máxima</td>
+<td>number</td>
+<td>1.0</td>
+<td></td>
+<td>1.2</td>
+<td>Valor de proporção máxima para escala</td>
+</tr>
+</tbody>
+</table>
+<h3 id="contraste-aleatório">Contraste aleatório</h3>
+<p><strong>Mudanças aleatórias no contraste da imagem</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>type</th>
+<th>Min</th>
+<th>Max</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Probabilidade</td>
+<td>number</td>
+<td>0</td>
+<td>1.0</td>
+<td>0.3</td>
+<td>Probabilidade de mudança de contraste</td>
+</tr>
+<tr>
+<td>Contraste mínimo</td>
+<td>number</td>
+<td>0.1</td>
+<td>1.0</td>
+<td>0.8</td>
+<td>Mudança mínima de contraste</td>
+</tr>
+<tr>
+<td>Contraste máximo</td>
+<td>number</td>
+<td>1.0</td>
+<td>2.0</td>
+<td>1.2</td>
+<td>Mudança máxima de contraste</td>
+</tr>
+</tbody>
+</table>
+<h3 id="brilho-aleatório">Brilho aleatório</h3>
+<p><strong>Mudanças aleatórias no brilho da imagem</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>type</th>
+<th>Min</th>
+<th>Max</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Probabilidade</td>
+<td>number</td>
+<td>0</td>
+<td>1.0</td>
+<td>0.3</td>
+<td>Probabilidade de mudança de brilho</td>
+</tr>
+<tr>
+<td>Brilho mínimo</td>
+<td>number</td>
+<td>-1.0</td>
+<td>0</td>
+<td>-0.2</td>
+<td>Mudança mínima de brilho</td>
+</tr>
+<tr>
+<td>Brilho máximo</td>
+<td>number</td>
+<td>0</td>
+<td>1.0</td>
+<td>0.3</td>
+<td>Mudança máxima de brilho</td>
+</tr>
+</tbody>
+</table>
+<h3 id="gama-aleatória">Gama aleatória</h3>
+<p><strong>Mudanças aleatórias na gama da imagem</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>type</th>
+<th>Min</th>
+<th>Max</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Probabilidade</td>
+<td>number</td>
+<td>0</td>
+<td>1.0</td>
+<td>0.3</td>
+<td>Probabilidade de gama aleatória</td>
+</tr>
+<tr>
+<td>Gama mínima</td>
+<td>number</td>
+<td>0.1</td>
+<td>1.0</td>
+<td>0.4</td>
+<td>Mudança mínima de gama</td>
+</tr>
+<tr>
+<td>Gama máxima</td>
+<td>number</td>
+<td>0</td>
+<td>12.0</td>
+<td>1.6</td>
+<td>Mudança máxima de gama</td>
+</tr>
+</tbody>
+</table>
+<h3 id="saturação-aleatória">Saturação aleatória</h3>
+<p><strong>Mudanças aleatórias na saturação da imagem</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>type</th>
+<th>Min</th>
+<th>Max</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Probabilidade</td>
+<td>number</td>
+<td>0</td>
+<td>1.0</td>
+<td>0.3</td>
+<td>Probabilidade de mudança de saturação</td>
+</tr>
+<tr>
+<td>Saturação mínima</td>
+<td>number</td>
+<td>0.1</td>
+<td>1.0</td>
+<td>0.95</td>
+<td>Mudança de saturação mínima</td>
+</tr>
+<tr>
+<td>Saturação máxima</td>
+<td>number</td>
+<td>1.0</td>
+<td>2.0</td>
+<td>1.05</td>
+<td>Mudança máxima de saturação</td>
+</tr>
+</tbody>
+</table>
+<h3 id="matiz-aleatório">Matiz aleatório</h3>
+<p><strong>Mudanças aleatórias no matiz da imagem</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>type</th>
+<th>Min</th>
+<th>Max</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Probabilidade</td>
+<td>number</td>
+<td>0</td>
+<td>1.0</td>
+<td>0.3</td>
+<td>Probabilidade de matiz aleatório</td>
+</tr>
+<tr>
+<td>Matiz mínimo</td>
+<td>number</td>
+<td>-1.0</td>
+<td>0</td>
+<td>-0.05</td>
+<td>Mudança mínima de matiz</td>
+</tr>
+<tr>
+<td>Matiz máximo</td>
+<td>number</td>
+<td>0</td>
+<td>1.0</td>
+<td>0.05</td>
+<td>Mudança máxima de matiz</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ruído-aleatório">Ruído aleatório</h3>
+<p><strong>Inserção aleatória de ruído de imagem</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>type</th>
+<th>Min</th>
+<th>Max</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Probabilidade</td>
+<td>number</td>
+<td>0</td>
+<td>1.0</td>
+<td>0.3</td>
+<td>Probabilidade de inserção de ruído</td>
+</tr>
+<tr>
+<td>Método de ruído</td>
+<td>enum</td>
+<td></td>
+<td></td>
+<td>gauss</td>
+<td>Método para inserção de ruído</td>
+</tr>
+</tbody>
+</table>
+<h3 id="desfoque-aleatório">Desfoque aleatório</h3>
+<p><strong>Desfoque aleatório da imagem</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>type</th>
+<th>Min</th>
+<th>Max</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Probabilidade</td>
+<td>number</td>
+<td>0</td>
+<td>1.0</td>
+<td>0.3</td>
+<td>Probabilidade de desfoque aleatório</td>
+</tr>
+<tr>
+<td>Tamanho do kernel</td>
+<td>enum</td>
+<td></td>
+<td></td>
+<td>5</td>
+<td>O tamanho do kernel para desfocar a imagem</td>
+</tr>
+</tbody>
+</table>
+<!-- </parm_table> -->
+<h2 id="para-onde-devo-ir-agora">Para onde devo ir agora?</h2>
+<ul>
+<li><a href="/docs/concepts/training/train_parms">Parâmetros de Treinamento</a>: Parâmetros gerais para treinamento da rede neural</li>
+<li><a href="/docs/concepts/training/dnn_parms">Parâmetros de Redes Neurais</a>: Parâmetros específicos da rede neural</li>
+<li><a href="/docs/concepts/training/data_augmentation_parms">Parâmetros de Expansão de Dados</a>: Parâmetros para expansão de dados - Data Augmentation</li>
+</ul>
+
+</div>
+
+
+
+    
+	
+  
 
     
 	
