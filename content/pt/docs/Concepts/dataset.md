@@ -37,6 +37,7 @@ pode-se definir qual a raça de cada um, e a rede neural irá aprender a identif
 
 ### AnomallyDetection
 {{< note >}} Este é um dataset ainda em fase experimental. {{< /note >}}
+
 O dataset AnomallyDetection é orientado para identificar anomalias em imagens de um mesmo objeto. A ideia é
 alimentar o dataset com muitas imagens do objeto "correto" e assim a rede neural aprender o padrão bom.
 Quando a rede neural for apresentada a uma imagem de um objeto que tem uma diferença do padrão bom (anomalia),
@@ -44,6 +45,7 @@ ela irá apontar a anomalia.
 
 ### InstanceSegmentation
 {{< note >}} Este é um dataset ainda em fase experimental. {{< /note >}}
+
 InstanceSegmentation é um dataset que se popularizou nos últimos anos devido a sua intensa utilização nos sistemas
 de veículos autônomos e sistemas de IA para medicina. Trata-de de identificar o objeto, juntamente com todo seu contorno
 pixel a pixel. Sua saída é bastante impressionante, pois permite "recortar" detalhadamente o objeto do fundo da imagem,

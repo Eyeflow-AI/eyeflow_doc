@@ -1,8 +1,5 @@
-
 ---
-title: "New Releases"
+title: "Novos Releases"
 linkTitle: "Releases"
 weight: 20
 ---
-
-

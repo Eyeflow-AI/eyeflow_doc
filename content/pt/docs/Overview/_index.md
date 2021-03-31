@@ -3,49 +3,35 @@ title: "Visão Geral"
 linkTitle: "Visão Geral"
 weight: 1
 description: >
-  Entenda todos os elementos que irá utilizar para construir sua aplicação
+ Entenda todos os elementos que irá utilizar para construir sua aplicação
 ---
 
-#  Visão Geral da Plataforma EyeFlow
-
->   A plataforma de vídeo analytics desenvolvida pela SiliconLife foi construída
->   para possibilitar a criação de aplicações de mercado utilizando Inteligência
->   Artificial de uma maneira prática e ágil.
+A plataforma de Vídeo Analytics Eyeflow.AI foi desenvolvida pela SiliconLife para possibilitar a
+criação de aplicações de mercado utilizando Inteligência Artificial de uma maneira prática e ágil.
 
 ## Diversas funcionalidades nativas:
 
--   Condições de detecção configuráveis e modulares
+- Condições de detecção configuráveis e modulares
+- Interface amigável:
+  - Construção de fluxos operacionais com *drag’n’drop* de componentes de AI
+  - Ambiente de desenvolvimento completo para novas aplicações
+  - Extensibilidade para adição/desenvolvimento de novos componentes
+- Gerenciamento ágil de novos requisitos de dados e processos de negócios
+- Integração simplificada com outras plataformas
+- Integração de maneira simples e consistente com sistemas de dados legados
+- Design modular, orquestrado para grandes volumes de chamadas
+- Facilidade de integração de componentes de software aberto, novos algoritmos
+  de AI ou com serviços de nuvem
+- Configuração de diversos tipos de alarmes e relatórios
+- Integração com *Data Lake* corporativo
 
--   Interface amigável:
-
-    -   Construção de fluxos operacionais com *drag’n’drop* de componentes de AI
-
-    -   Ambiente de desenvolvimento completo para novas aplicações
-
-    -   Extensibilidade para adição/desenvolvimento de novos componentes
-
--   Gerenciamento ágil de novos requisitos de dados e processos de negócios
-
--   Integração simplificada com outras plataformas
-
--   Integração de maneira simples e consistente com sistemas de dados legados
-
--   Design modular, orquestrado para grandes volumes de chamadas
-
--   Facilidade de integração de componentes de software aberto, novos algoritmos
-    de AI ou com serviços de nuvem
-
--   Configuração de diversos tipos de alarmes e relatórios
-
--   Integração com *Data Lake* corporativo
-
->   O EyeFlow oferece acessos simplificados às soluções Inteligência Artificial
->   para vídeo analytics de forma simples, possibilitando a sua utilização por
->   pessoas de áreas distintas. Esta solução também possibilita aos
->   desenvolvedores de IA utilizar os seus códigos como componente do fluxo, no
->   EYeFlow, possibilitando a utilização deste componente como parte da
->   ferramenta, o que garante utilização de todas as facilidades disponíveis
->   possibilitando uma entrega de maneira prática e ágil
+O EyeFlow oferece acessos simplificados às soluções Inteligência Artificial
+para vídeo analytics de forma simples, possibilitando a sua utilização por
+pessoas de áreas distintas. Esta solução também possibilita aos
+desenvolvedores de IA utilizar os seus códigos como componente do fluxo, no
+EYeFlow, possibilitando a utilização deste componente como parte da
+ferramenta, o que garante utilização de todas as facilidades disponíveis
+possibilitando uma entrega de maneira prática e ágil
 
 # Como funciona?
 
@@ -53,7 +39,7 @@ description: >
 
 ## ![Flow](/screenshots/036889fd1c08813042e32d9fe50439a9.png#icon) Flow
 
-Interface intuitiva para montagem de fluxos de processamento, defini passo a
+Interface intuitiva para montagem de fluxos de processamento, define passo a
 passo das etapas a serem realizadas. O Fluxo é construído utilizando os
 componentes previamente criados utilizando componentes próprios e de
 terceiros para tratamento de dados. A interface dispõe da tecnologia Drag

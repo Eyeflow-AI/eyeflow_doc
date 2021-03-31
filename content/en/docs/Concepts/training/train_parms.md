@@ -26,28 +26,28 @@ A recomendação é no início setar 5 épocas para o treino enquanto o dataset 
 
 **Parameters for Neural Network Training**
 
-|Parameter|type|Min|Max|Default|Description|
-|---------|----|---|---|-------|-----------|
-|Epochs|integer|1||5|Number of epochs for training|
-|Steps per Epoch|integer|50||100|Number of Steps for training in each Epoch|
-|Batch Size|integer|1|64|10|Number of examples in each step|
-|Val Size|number|0.01|0.9|0.1|Percent of examples selected for Validation|
-|Test Size|number|0.01|0.9|0.1|Percent of examples selected for Final Test|
-|Confidence Threshold|number|0.05|1.0|0.6|Minimum confidence threshold for valid detection|
-|IoU Detection Threshold|number|0.05|1.0|0.45|Minimum threshold for IoU detection|
-|Maximum Boxes|integer|0|300|30|Maximum number of boxes in detection|
-|Expand Boxes|number|0|2|0|Percent to expand size of boxes in detection|
+|Parameter|Values|Default|Description|
+|---------|------|-------|-----------|
+|Epochs|int [1 - ]|5|Number of epochs for training|
+|Steps per Epoch|int [50 - ]|100|Number of Steps for training in each Epoch|
+|Batch Size|int [1 - 64]|10|Number of examples in each step|
+|Val Size|number [0.01 - 0.9]|0.1|Percent of examples selected for Validation|
+|Test Size|number [0.01 - 0.9]|0.1|Percent of examples selected for Final Test|
+|Confidence Threshold|number [0.05 - 1.0]|0.6|Minimum confidence threshold for valid detection|
+|IoU Detection Threshold|number [0.05 - 1.0]|0.45|Minimum threshold for IoU detection|
+|Maximum Boxes|int [0 - 300]|30|Maximum number of boxes in detection|
+|Expand Boxes|number [0 - 2]|0|Percent to expand size of boxes in detection|
 
 
 ### Input Resolution
 
 **Input image dimensions**
 
-|Parameter|type|Min|Max|Default|Description|
-|---------|----|---|---|-------|-----------|
-|Minimum Side|integer|20||50|Size of the smaller side|
-|Maximum Side|integer|20||80|Size of the bigger side|
-|Channels|enum|||1|Color channels|
+|Parameter|Values|Default|Description|
+|---------|------|-------|-----------|
+|Minimum Side|int [20 - ]|50|Size of the smaller side|
+|Maximum Side|int [20 - ]|80|Size of the bigger side|
+|Channels|choice [1, 3]|1|Color channels|
 
 
 
@@ -56,12 +56,12 @@ A recomendação é no início setar 5 épocas para o treino enquanto o dataset 
 
 **Parameters for Train Optimizer**
 
-|Parameter|type|Min|Max|Default|Description|
-|---------|----|---|---|-------|-----------|
-|beta_2|number|0.1|1.0|0.999|Beta 2|
-|beta_1|number|0.1|1.0|0.9|Beta 1|
-|Learning Rate|number|1e-06|0.1|0.001|Optimizer Learning Rate|
-|amsgrad|boolean|||False|AMSGrad|
+|Parameter|Values|Default|Description|
+|---------|------|-------|-----------|
+|beta_2|number [0.1 - 1.0]|0.999|Beta 2|
+|beta_1|number [0.1 - 1.0]|0.9|Beta 1|
+|Learning Rate|number [1e-06 - 0.1]|0.001|Optimizer Learning Rate|
+|amsgrad|bool [True - False]|False|AMSGrad|
 
 
 
@@ -70,12 +70,12 @@ A recomendação é no início setar 5 épocas para o treino enquanto o dataset 
 
 **Early stopping for training**
 
-|Parameter|type|Min|Max|Default|Description|
-|---------|----|---|---|-------|-----------|
-|Patience|integer|1||5|Num of epochs to wait for progress|
-|Monitor variable|enum|||val_loss|Variable to monitor progress|
-|Minimum Delta|number|0||0.01|The minimum variantion in variable|
-|Evaluation mode|enum|||max|Monitor decrement or increment of variable value|
+|Parameter|Values|Default|Description|
+|---------|------|-------|-----------|
+|Patience|int [1 - ]|5|Num of epochs to wait for progress|
+|Monitor variable|choice ['val_loss', 'loss', 'categorical_accuracy', 'val_categorical_accuracy']|val_loss|Variable to monitor progress|
+|Minimum Delta|number [0 - ]|0.01|The minimum variantion in variable|
+|Evaluation mode|choice ['min', 'max', 'auto']|max|Monitor decrement or increment of variable value|
 
 
 
@@ -84,13 +84,13 @@ A recomendação é no início setar 5 épocas para o treino enquanto o dataset 
 
 **Reduce Learning Rate on plateau**
 
-|Parameter|type|Min|Max|Default|Description|
-|---------|----|---|---|-------|-----------|
-|Patience|integer|1||4|Num of epochs to wait for progress|
-|Monitor variable|enum|||val_loss|Variable to monitor for progress|
-|Minimum Delta|number|0||0.01|The minimum variantion in variable|
-|Reducing factor|number|0.1|0.9|0.5|Ammount to reduce|
-|Cooldown|number|0||0|Cool Down|
+|Parameter|Values|Default|Description|
+|---------|------|-------|-----------|
+|Patience|int [1 - ]|4|Num of epochs to wait for progress|
+|Monitor variable|choice ['val_loss', 'loss', 'categorical_accuracy', 'val_categorical_accuracy']|val_loss|Variable to monitor for progress|
+|Minimum Delta|number [0 - ]|0.01|The minimum variantion in variable|
+|Reducing factor|number [0.1 - 0.9]|0.5|Ammount to reduce|
+|Cooldown|number [0 - ]|0|Cool Down|
 
 
 
@@ -99,10 +99,10 @@ A recomendação é no início setar 5 épocas para o treino enquanto o dataset 
 
 **Trigger to save model training progress**
 
-|Parameter|type|Min|Max|Default|Description|
-|---------|----|---|---|-------|-----------|
-|Monitor variable|enum|||val_loss|Variable to monitor for saving|
-|Evaluation mode|enum|||min|Save on decrement or increment of variable value|
+|Parameter|Values|Default|Description|
+|---------|------|-------|-----------|
+|Monitor variable|choice ['val_loss', 'loss', 'categorical_accuracy', 'val_categorical_accuracy']|val_loss|Variable to monitor for saving|
+|Evaluation mode|choice ['min', 'max', 'auto']|min|Save on decrement or increment of variable value|
 
 
 

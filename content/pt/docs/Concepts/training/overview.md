@@ -135,5 +135,6 @@ sintéticos.
 
 ## Para onde devo ir agora?
 
-* [Dataset](/docs/concepts/dataset/): Anotando Datasets
-* [Treinamento](/docs/concepts/training/): Treinando a rede neural
+* [Parâmetros de Treinamento](/docs/concepts/training/train_parms): Parâmetros gerais para treinamento da rede neural
+* [Parâmetros de Redes Neurais](/docs/concepts/training/dnn_parms): Parâmetros específicos da rede neural
+* [Parâmetros de Expansão de Dados](/docs/concepts/training/data_augmentation_parms): Parâmetros para expansão de dados - Data Augmentation
