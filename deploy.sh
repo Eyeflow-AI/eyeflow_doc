@@ -14,4 +14,17 @@
 #
 rm -rf public/
 HUGO_ENV="production" hugo --gc || exit 1
-s3deploy -source=public/ -region=eu-west-1 -bucket=bep.is -distribution-id=E8OKNT7W9ZYZ2 -path temp/td
+
+PRESERVE="CNAME"
+
+for fname in ../eyeflow_doc_public/*;
+do
+    if [[ $PRESERVE =~ (^|[[:space:]])$(basename "$fname")($|[[:space:]]) ]] ; then
+        echo "Preserve: $fname"
+    else
+        echo "Remove: $fname"
+        rm -rf $fname
+    fi
+done
+
+cp -r ./public/* ../eyeflow_doc_public/.
