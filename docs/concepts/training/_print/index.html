@@ -339,8 +339,9 @@ exemplos automaticamente para o treinamento da rede.</p>
 sintéticos.</p>
 <h2 id="para-onde-devo-ir-agora">Para onde devo ir agora?</h2>
 <ul>
-<li><a href="/docs/concepts/dataset/">Dataset</a>: Anotando Datasets</li>
-<li><a href="/docs/concepts/training/">Treinamento</a>: Treinando a rede neural</li>
+<li><a href="/docs/concepts/training/train_parms">Parâmetros de Treinamento</a>: Parâmetros gerais para treinamento da rede neural</li>
+<li><a href="/docs/concepts/training/dnn_parms">Parâmetros de Redes Neurais</a>: Parâmetros específicos da rede neural</li>
+<li><a href="/docs/concepts/training/data_augmentation_parms">Parâmetros de Expansão de Dados</a>: Parâmetros para expansão de dados - Data Augmentation</li>
 </ul>
 
 </div>
@@ -420,6 +421,11 @@ ocorrência comum é o erro (<em>Loss</em>) continuar diminuindo, mas o <em>Val 
 como <em>Overfitting</em> e significa que a rede neural ficou viciada nos exemplos do treinamento e não está mais conseguindo
 generalizar para novos exemplos.</p>
 <p>A recomendação é no início setar 5 épocas para o treino enquanto o dataset tiver menos de 100 exemplos, e daí ir subindo.</p>
+<p>Na sequência temos vários outros parâmetros que governam o processo de treinamento e todos podem influir positiva ou negativamente
+no resultado final do aprendizado da rede. Não se amedronte com a quantidade, nem com a complexidade dos mesmos, é natural
+levar bastante tempo até adquirir domínio sobre todo proceso.</p>
+<p>Fique tranquilo, o Eyeflow.AI tem um ótimo set de defaults para os parâmetros que resolvem as necessidades de boa parte das
+necessidades. Além disso, nosso time está à disposição para tirar dúvidas e dar dicas em nosso Fórum.</p>
 <!-- <parm_table> -->
 <h2 id="parâmetros-de-treinamento">Parâmetros de treinamento</h2>
 <p><strong>Parâmetros para treinamento de rede neural</strong></p>
@@ -427,9 +433,7 @@ generalizar para novos exemplos.</p>
 <thead>
 <tr>
 <th>Parameter</th>
-<th>type</th>
-<th>Min</th>
-<th>Max</th>
+<th>Values</th>
 <th>Default</th>
 <th>Description</th>
 </tr>
@@ -437,73 +441,55 @@ generalizar para novos exemplos.</p>
 <tbody>
 <tr>
 <td>Épocas</td>
-<td>integer</td>
-<td>1</td>
-<td></td>
+<td>int [1 - ]</td>
 <td>5</td>
 <td>Número de épocas para treinamento</td>
 </tr>
 <tr>
 <td>Etapas por época</td>
-<td>integer</td>
-<td>50</td>
-<td></td>
+<td>int [50 - ]</td>
 <td>100</td>
 <td>Número de passos para treinamento em cada época</td>
 </tr>
 <tr>
 <td>Tamanho do lote</td>
-<td>integer</td>
-<td>1</td>
-<td>64</td>
+<td>int [1 - 64]</td>
 <td>10</td>
 <td>Número de exemplos em cada passo</td>
 </tr>
 <tr>
 <td>Tamanho do Val</td>
-<td>number</td>
-<td>0.01</td>
-<td>0.9</td>
+<td>number [0.01 - 0.9]</td>
 <td>0.1</td>
 <td>Porcentagem de exemplos selecionados para validação</td>
 </tr>
 <tr>
 <td>Tamanho do Teste</td>
-<td>number</td>
-<td>0.01</td>
-<td>0.9</td>
+<td>number [0.01 - 0.9]</td>
 <td>0.1</td>
 <td>Porcentagem de exemplos selecionados para o teste final</td>
 </tr>
 <tr>
 <td>Limiar de confiança</td>
-<td>number</td>
-<td>0.05</td>
-<td>1.0</td>
+<td>number [0.05 - 1.0]</td>
 <td>0.6</td>
 <td>Limite mínimo de confiança para detecção válida</td>
 </tr>
 <tr>
 <td>Limite de detecção de IoU</td>
-<td>number</td>
-<td>0.05</td>
-<td>1.0</td>
+<td>number [0.05 - 1.0]</td>
 <td>0.45</td>
 <td>Limite mínimo para detecção de IoU</td>
 </tr>
 <tr>
 <td>Máximo de caixas</td>
-<td>integer</td>
-<td>0</td>
-<td>300</td>
+<td>int [0 - 300]</td>
 <td>30</td>
 <td>Número máximo de caixas em detecção</td>
 </tr>
 <tr>
 <td>Caixas de expansão</td>
-<td>number</td>
-<td>0</td>
-<td>2</td>
+<td>number [0 - 2]</td>
 <td>0</td>
 <td>Porcentagem para expandir o tamanho das caixas na detecção</td>
 </tr>
@@ -515,9 +501,7 @@ generalizar para novos exemplos.</p>
 <thead>
 <tr>
 <th>Parameter</th>
-<th>type</th>
-<th>Min</th>
-<th>Max</th>
+<th>Values</th>
 <th>Default</th>
 <th>Description</th>
 </tr>
@@ -525,25 +509,19 @@ generalizar para novos exemplos.</p>
 <tbody>
 <tr>
 <td>Lado mínimo</td>
-<td>integer</td>
-<td>20</td>
-<td></td>
+<td>int [20 - ]</td>
 <td>50</td>
 <td>Tamanho do lado menor</td>
 </tr>
 <tr>
 <td>Lado máximo</td>
-<td>integer</td>
-<td>20</td>
-<td></td>
+<td>int [20 - ]</td>
 <td>80</td>
 <td>Tamanho do lado maior</td>
 </tr>
 <tr>
 <td>Canais</td>
-<td>enum</td>
-<td></td>
-<td></td>
+<td>choice [1, 3]</td>
 <td>1</td>
 <td>Canais de cor</td>
 </tr>
@@ -555,9 +533,7 @@ generalizar para novos exemplos.</p>
 <thead>
 <tr>
 <th>Parameter</th>
-<th>type</th>
-<th>Min</th>
-<th>Max</th>
+<th>Values</th>
 <th>Default</th>
 <th>Description</th>
 </tr>
@@ -565,33 +541,25 @@ generalizar para novos exemplos.</p>
 <tbody>
 <tr>
 <td>beta_2</td>
-<td>number</td>
-<td>0.1</td>
-<td>1.0</td>
+<td>number [0.1 - 1.0]</td>
 <td>0.999</td>
 <td>Beta 2</td>
 </tr>
 <tr>
 <td>beta_1</td>
-<td>number</td>
-<td>0.1</td>
-<td>1.0</td>
+<td>number [0.1 - 1.0]</td>
 <td>0.9</td>
 <td>Beta 1</td>
 </tr>
 <tr>
 <td>Taxa de Aprendizagem</td>
-<td>number</td>
-<td>1e-06</td>
-<td>0.1</td>
+<td>number [1e-06 - 0.1]</td>
 <td>0.001</td>
 <td>Taxa de aprendizagem do otimizador</td>
 </tr>
 <tr>
 <td>amsgrad</td>
-<td>boolean</td>
-<td></td>
-<td></td>
+<td>bool [True - False]</td>
 <td>False</td>
 <td>amsgrad</td>
 </tr>
@@ -603,9 +571,7 @@ generalizar para novos exemplos.</p>
 <thead>
 <tr>
 <th>Parameter</th>
-<th>type</th>
-<th>Min</th>
-<th>Max</th>
+<th>Values</th>
 <th>Default</th>
 <th>Description</th>
 </tr>
@@ -613,33 +579,25 @@ generalizar para novos exemplos.</p>
 <tbody>
 <tr>
 <td>Paciência</td>
-<td>integer</td>
-<td>1</td>
-<td></td>
+<td>int [1 - ]</td>
 <td>5</td>
 <td>Número de épocas para esperar pelo progresso</td>
 </tr>
 <tr>
 <td>Variável de monitoramento</td>
-<td>enum</td>
-<td></td>
-<td></td>
+<td>choice [&lsquo;val_loss&rsquo;, &lsquo;loss&rsquo;, &lsquo;categorical_accuracy&rsquo;, &lsquo;val_categorical_accuracy&rsquo;]</td>
 <td>val_loss</td>
 <td>Variável para monitorar o progresso</td>
 </tr>
 <tr>
 <td>Delta Mínimo</td>
-<td>number</td>
-<td>0</td>
-<td></td>
+<td>number [0 - ]</td>
 <td>0.01</td>
 <td>A variação mínima na variável</td>
 </tr>
 <tr>
 <td>Modo de avaliação</td>
-<td>enum</td>
-<td></td>
-<td></td>
+<td>choice [&lsquo;min&rsquo;, &lsquo;max&rsquo;, &lsquo;auto&rsquo;]</td>
 <td>max</td>
 <td>Monitor do decréscimo ou incremento do valor da variável</td>
 </tr>
@@ -651,9 +609,7 @@ generalizar para novos exemplos.</p>
 <thead>
 <tr>
 <th>Parameter</th>
-<th>type</th>
-<th>Min</th>
-<th>Max</th>
+<th>Values</th>
 <th>Default</th>
 <th>Description</th>
 </tr>
@@ -661,41 +617,31 @@ generalizar para novos exemplos.</p>
 <tbody>
 <tr>
 <td>Paciência</td>
-<td>integer</td>
-<td>1</td>
-<td></td>
+<td>int [1 - ]</td>
 <td>4</td>
 <td>Número de épocas para esperar pelo progresso</td>
 </tr>
 <tr>
 <td>Variável de monitoramento</td>
-<td>enum</td>
-<td></td>
-<td></td>
+<td>choice [&lsquo;val_loss&rsquo;, &lsquo;loss&rsquo;, &lsquo;categorical_accuracy&rsquo;, &lsquo;val_categorical_accuracy&rsquo;]</td>
 <td>val_loss</td>
 <td>Variável para monitorar o progresso</td>
 </tr>
 <tr>
 <td>Delta Mínimo</td>
-<td>number</td>
-<td>0</td>
-<td></td>
+<td>number [0 - ]</td>
 <td>0.01</td>
 <td>A variação mínima na variável</td>
 </tr>
 <tr>
 <td>Fator de redução</td>
-<td>number</td>
-<td>0.1</td>
-<td>0.9</td>
+<td>number [0.1 - 0.9]</td>
 <td>0.5</td>
 <td>Quantidade a reduzir</td>
 </tr>
 <tr>
 <td>Esfriar</td>
-<td>number</td>
-<td>0</td>
-<td></td>
+<td>number [0 - ]</td>
 <td>0</td>
 <td>Esfriar</td>
 </tr>
@@ -707,9 +653,7 @@ generalizar para novos exemplos.</p>
 <thead>
 <tr>
 <th>Parameter</th>
-<th>type</th>
-<th>Min</th>
-<th>Max</th>
+<th>Values</th>
 <th>Default</th>
 <th>Description</th>
 </tr>
@@ -717,17 +661,13 @@ generalizar para novos exemplos.</p>
 <tbody>
 <tr>
 <td>Variável de monitoramento</td>
-<td>enum</td>
-<td></td>
-<td></td>
+<td>choice [&lsquo;val_loss&rsquo;, &lsquo;loss&rsquo;, &lsquo;categorical_accuracy&rsquo;, &lsquo;val_categorical_accuracy&rsquo;]</td>
 <td>val_loss</td>
 <td>Variável para monitorar para salvar</td>
 </tr>
 <tr>
 <td>Modo de avaliação</td>
-<td>enum</td>
-<td></td>
-<td></td>
+<td>choice [&lsquo;min&rsquo;, &lsquo;max&rsquo;, &lsquo;auto&rsquo;]</td>
 <td>min</td>
 <td>Salvar ao diminuir ou aumentar o valor da variável</td>
 </tr>
@@ -757,30 +697,23 @@ generalizar para novos exemplos.</p>
     
 	<h1 id="pg-12538f171a6b845bb3b653e76783b790">4 - Parâmetros das Redes Neurais</h1>
     <div class="lead">Controle das redes neurais</div>
-	<!-- <parm_table> -->
+	<p>Nesse conjunto de parâmetros são controlados os aspectos relacionados à arquitetura das redes neurais que irão
+aprender com os exemplos do dataset no treinamento.</p>
+<p>Cada tipo de rede neural tem sua própria arquitetura, parâmetros peso e performance. O Eyeflow.AI é uma plataforma
+extensível, que permite se trabalhar com as mais diversas arquiteturas. Entretanto, nossa experiência de vários
+projetos já nos ensinou sobre várias arquiteturas que funcionam bem em produção, e é essa experiência que
+buscamos trazer para a plataforma, e assim simplificar a vida dos usuários.</p>
+<p>Nessa fase Beta temos 2 principais componentes que usamos para solucionar todos os problemas que temos encontrado.</p>
+<!-- <parm_table> -->
 <h2 id="parâmetros-de-rede-neural">Parâmetros de rede neural</h2>
 <p><strong>Parâmetros para rede neural</strong></p>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>type</th>
-<th>Min</th>
-<th>Max</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead>
-</table>
 <h3 id="parâmetros-de-classificação">Parâmetros de Classificação</h3>
 <p><strong>Parâmetros de rede neural específicos de classificação</strong></p>
 <table>
 <thead>
 <tr>
 <th>Parameter</th>
-<th>type</th>
-<th>Min</th>
-<th>Max</th>
+<th>Values</th>
 <th>Default</th>
 <th>Description</th>
 </tr>
@@ -788,57 +721,43 @@ generalizar para novos exemplos.</p>
 <tbody>
 <tr>
 <td>Componente</td>
-<td>enum</td>
-<td></td>
-<td></td>
+<td>choice [&lsquo;class_cnn&rsquo;]</td>
 <td>class_cnn</td>
 <td>O componente DNN para o modelo de treinamento</td>
 </tr>
 <tr>
 <td>Profundidade da Rede Neural</td>
-<td>integer</td>
-<td>1</td>
-<td></td>
+<td>int [1 - ]</td>
 <td>3</td>
 <td>Profundidade (núm camadas) da rede neural</td>
 </tr>
 <tr>
 <td>Largura da rede neural</td>
-<td>integer</td>
-<td>5</td>
-<td></td>
+<td>int [5 - ]</td>
 <td>20</td>
 <td>Largura (núm features) da Rede Neural</td>
 </tr>
 <tr>
 <td>Modo de pré-processamento</td>
-<td>enum</td>
-<td></td>
-<td></td>
+<td>choice [&lsquo;caffe&rsquo;, &lsquo;tf&rsquo;]</td>
 <td>caffe</td>
 <td>Função para normalizar imagem</td>
 </tr>
 <tr>
 <td>Função de perda</td>
-<td>enum</td>
-<td></td>
-<td></td>
+<td>choice [&lsquo;categorical_crossentropy&rsquo;, &lsquo;binary_crossentropy&rsquo;]</td>
 <td>categorical_crossentropy</td>
 <td>Função de perda para uso em treinamento</td>
 </tr>
 <tr>
 <td>Funções de métricas</td>
-<td>array</td>
-<td></td>
-<td></td>
+<td>Array of string</td>
 <td>[&lsquo;categorical_accuracy&rsquo;]</td>
 <td>Funções de métricas para uso em avaliação</td>
 </tr>
 <tr>
 <td>Função Otimizador</td>
-<td>enum</td>
-<td></td>
-<td></td>
+<td>choice [&lsquo;adam&rsquo;]</td>
 <td>adam</td>
 <td>Funções de métricas para uso em avaliação</td>
 </tr>
@@ -850,9 +769,7 @@ generalizar para novos exemplos.</p>
 <thead>
 <tr>
 <th>Parameter</th>
-<th>type</th>
-<th>Min</th>
-<th>Max</th>
+<th>Values</th>
 <th>Default</th>
 <th>Description</th>
 </tr>
@@ -860,49 +777,37 @@ generalizar para novos exemplos.</p>
 <tbody>
 <tr>
 <td>Componente</td>
-<td>enum</td>
-<td></td>
-<td></td>
+<td>choice [&lsquo;objdet&rsquo;, &lsquo;retinanet&rsquo;]</td>
 <td>objdet</td>
 <td>O componente DNN para o modelo de treinamento</td>
 </tr>
 <tr>
 <td>Largura da rede neural</td>
-<td>integer</td>
-<td>5</td>
-<td></td>
+<td>int [5 - ]</td>
 <td>20</td>
 <td>Largura (núm features) da Rede Neural</td>
 </tr>
 <tr>
 <td>Backbone de rede neural</td>
-<td>enum</td>
-<td></td>
-<td></td>
+<td>choice [&lsquo;vgg7&rsquo;, &lsquo;vgg16&rsquo;, &lsquo;vgg19&rsquo;, &lsquo;resnet18&rsquo;, &lsquo;resnet34&rsquo;, &lsquo;resnet50&rsquo;, &lsquo;resnet101&rsquo;, &lsquo;resnet152&rsquo;, &lsquo;mobilenet128&rsquo;, &lsquo;mobilenet160&rsquo;, &lsquo;mobilenet192&rsquo;, &lsquo;mobilenet224&rsquo;, &lsquo;densenet121&rsquo;, &lsquo;densenet169&rsquo;, &lsquo;densenet201&rsquo;]</td>
 <td>vgg7</td>
 <td>Arquitetura de backbone para rede neural</td>
 </tr>
 <tr>
 <td>Modo de pré-processamento</td>
-<td>enum</td>
-<td></td>
-<td></td>
+<td>choice [&lsquo;caffe&rsquo;, &lsquo;tf&rsquo;]</td>
 <td>caffe</td>
 <td>Função para normalizar imagem</td>
 </tr>
 <tr>
 <td>Sobreposição negativa IoU</td>
-<td>number</td>
-<td>0.05</td>
-<td>1.0</td>
+<td>number [0.05 - 1.0]</td>
 <td>0.3</td>
 <td>Valor para sobreposição mínima de caixas negativas</td>
 </tr>
 <tr>
 <td>Sobreposição positiva IoU</td>
-<td>number</td>
-<td>0.05</td>
-<td>1.0</td>
+<td>number [0.05 - 1.0]</td>
 <td>0.45</td>
 <td>Valor para sobreposição mínima de caixas positivas</td>
 </tr>
@@ -914,9 +819,7 @@ generalizar para novos exemplos.</p>
 <thead>
 <tr>
 <th>Parameter</th>
-<th>type</th>
-<th>Min</th>
-<th>Max</th>
+<th>Values</th>
 <th>Default</th>
 <th>Description</th>
 </tr>
@@ -924,33 +827,25 @@ generalizar para novos exemplos.</p>
 <tbody>
 <tr>
 <td>Tamanhos de caixas</td>
-<td>array</td>
-<td></td>
-<td></td>
+<td>Array of integer</td>
 <td>[12, 24, 48, 96, 192]</td>
 <td>Tamanho das caixas em cada camada</td>
 </tr>
 <tr>
 <td>Boxes strides</td>
-<td>array</td>
-<td></td>
-<td></td>
+<td>Array of integer</td>
 <td>[8, 16, 32, 64, 128]</td>
 <td>Strides de caixas em cada camada</td>
 </tr>
 <tr>
 <td>Razões das caixas</td>
-<td>array</td>
-<td></td>
-<td></td>
+<td>Array of number</td>
 <td>[0.5, 1, 2]</td>
 <td>Proporções (altura / largura) das caixas candidatas</td>
 </tr>
 <tr>
 <td>Escalas de caixas</td>
-<td>array</td>
-<td></td>
-<td></td>
+<td>Array of number</td>
 <td>[1, 1.2, 1.5]</td>
 <td>Escalas de caixas candidatas</td>
 </tr>
@@ -980,16 +875,38 @@ generalizar para novos exemplos.</p>
     
 	<h1 id="pg-2869d0ba31e7658c3d9261182907e451">5 - Data Augmentation</h1>
     <div class="lead">Expansão de exemplos nos treinamentos</div>
-	<!-- <parm_table> -->
+	<p>Para um bom resultado em um treinamento de redes neurais a regra é apresentar um grande número de exemplos diferentes
+para que a rede neural possa aprender o padrão nos dados.
+Porém, conseguir e anotar milhares de exemplos é uma tarefa árdua e demorada, podendo consumir centenas de horas de um
+projeto.</p>
+<p>Para facilitar esse processo o Eyeflow.AI oferece uma extensa gama de algorítmos de Expansão de Dados (<em>Data Augmentation</em>).
+Trata-se de inserir perturbações nas imagens na hora em que estão sendo apresentadas para a rede neural no treinamento,
+forçando assim que a rede neural aprenda a reconhecer os padrões, sem ficar dependendo somente dos exemplos estáticos
+que existem no dataset.</p>
+<p>Trata-se de alterações diversas como:</p>
+<ul>
+<li>Alterações na óptica como brilho, contraste, cor, gama</li>
+<li>Alterações na forma como rotações, deformações, posições</li>
+<li>Alterações na qualidade como desfoque e ruído</li>
+</ul>
+<blockquote class="note callout">
+    <div> <h5 style="color:mediumblue"><i class="fas fa-lightbulb"></i>&nbspImportante!</h5> As alterações nas imagens não podem ser muito altas a ponto de o objeto de interesse não poder ser mais reconhecido.
+Para isso o Eyeflow.AI disponibiliza um exemplo dessas alterações para que o operador verifique se as alterações não
+estão exageradas. O que não puder ser visto nesses exemplos, não poderá ser aprendido pela rede neural.</div>
+</blockquote>
+<blockquote class="note callout">
+    <div> <h5 style="color:mediumblue"><i class="fas fa-lightbulb"></i>&nbspImportante!</h5> Também não adianta estressar as mudanças e gerar casos que não acontecem na operação real.
+De nada adianta apresentar pro aprendizado da rede neural uma imagem invertida, de cabeça para baixo, por exemplo, se
+na operação real essa situação nunca irá acontecer.</div>
+</blockquote>
+<!-- <parm_table> -->
 <h2 id="parâmetros-para-expansão-de-dataset">Parâmetros para expansão de dataset</h2>
 <p><strong>Parâmetros para expansão de dataset</strong></p>
 <table>
 <thead>
 <tr>
 <th>Parameter</th>
-<th>type</th>
-<th>Min</th>
-<th>Max</th>
+<th>Values</th>
 <th>Default</th>
 <th>Description</th>
 </tr>
@@ -997,41 +914,31 @@ generalizar para novos exemplos.</p>
 <tbody>
 <tr>
 <td>Interpolação</td>
-<td>enum</td>
-<td></td>
-<td></td>
+<td>choice [&lsquo;linear&rsquo;, &lsquo;nearest&rsquo;, &lsquo;cubic&rsquo;, &lsquo;area&rsquo;, &lsquo;lanczos4&rsquo;]</td>
 <td>linear</td>
 <td>Interpolação para operações de redimensionamento</td>
 </tr>
 <tr>
 <td>Modo de Preenchimento</td>
-<td>enum</td>
-<td></td>
-<td></td>
+<td>choice [&lsquo;constant&rsquo;, &lsquo;nearest&rsquo;, &lsquo;reflect&rsquo;, &lsquo;wrap&rsquo;]</td>
 <td>constant</td>
 <td>Preenchimento de regiões nulas</td>
 </tr>
 <tr>
 <td>Valor da borda</td>
-<td>integer</td>
-<td>0</td>
-<td>255</td>
+<td>int [0 - 255]</td>
 <td>0</td>
 <td>A cor para preencher as regiões limítrofes</td>
 </tr>
 <tr>
 <td>Virada horizontal da imagem</td>
-<td>number</td>
-<td>0</td>
-<td>1.0</td>
+<td>number [0 - 1.0]</td>
 <td>0.3</td>
 <td>Virada horizontal aleatória da imagem</td>
 </tr>
 <tr>
 <td>Virada vertical da imagem</td>
-<td>number</td>
-<td>0</td>
-<td>1.0</td>
+<td>number [0 - 1.0]</td>
 <td>0.3</td>
 <td>Virada vertical aleatória da imagem</td>
 </tr>
@@ -1043,9 +950,7 @@ generalizar para novos exemplos.</p>
 <thead>
 <tr>
 <th>Parameter</th>
-<th>type</th>
-<th>Min</th>
-<th>Max</th>
+<th>Values</th>
 <th>Default</th>
 <th>Description</th>
 </tr>
@@ -1053,33 +958,25 @@ generalizar para novos exemplos.</p>
 <tbody>
 <tr>
 <td>Probabilidade</td>
-<td>number</td>
-<td>0</td>
-<td>1.0</td>
+<td>number [0 - 1.0]</td>
 <td>0.3</td>
 <td>Probabilidade de rotação aleatória</td>
 </tr>
 <tr>
 <td>Ângulo máximo</td>
-<td>number</td>
-<td>0</td>
-<td>180</td>
+<td>number [0 - 180]</td>
 <td>60</td>
 <td>Ângulo máximo para rotação no sentido horário</td>
 </tr>
 <tr>
 <td>Angulo minimo</td>
-<td>number</td>
-<td>-180</td>
-<td>0</td>
+<td>number [-180 - 0]</td>
 <td>-60</td>
 <td>Ângulo mínimo para rotação no sentido anti-horário</td>
 </tr>
 <tr>
 <td>Redimensionar imagem</td>
-<td>boolean</td>
-<td></td>
-<td></td>
+<td>bool [True - False]</td>
 <td>True</td>
 <td>Se a imagem deve ser redimensionada em rotação</td>
 </tr>
@@ -1091,9 +988,7 @@ generalizar para novos exemplos.</p>
 <thead>
 <tr>
 <th>Parameter</th>
-<th>type</th>
-<th>Min</th>
-<th>Max</th>
+<th>Values</th>
 <th>Default</th>
 <th>Description</th>
 </tr>
@@ -1101,33 +996,25 @@ generalizar para novos exemplos.</p>
 <tbody>
 <tr>
 <td>Probabilidade</td>
-<td>number</td>
-<td>0</td>
-<td>1.0</td>
+<td>number [0 - 1.0]</td>
 <td>0.3</td>
 <td>Probabilidade de mudança de translação</td>
 </tr>
 <tr>
 <td>Translação horizontal</td>
-<td>array</td>
-<td></td>
-<td></td>
+<td>Array of number</td>
 <td>[0.03, 0.2]</td>
 <td>Mín. E Máx. Para translação horizontal</td>
 </tr>
 <tr>
 <td>Translação vertical</td>
-<td>array</td>
-<td></td>
-<td></td>
+<td>Array of number</td>
 <td>[0.03, 0.2]</td>
 <td>Mín. E Máx. Para translação vertical</td>
 </tr>
 <tr>
 <td>Número de Tentativas</td>
-<td>integer</td>
-<td>1</td>
-<td></td>
+<td>int [1 - ]</td>
 <td>3</td>
 <td>Número máximo de tentativas sem degenerar caixas</td>
 </tr>
@@ -1139,9 +1026,7 @@ generalizar para novos exemplos.</p>
 <thead>
 <tr>
 <th>Parameter</th>
-<th>type</th>
-<th>Min</th>
-<th>Max</th>
+<th>Values</th>
 <th>Default</th>
 <th>Description</th>
 </tr>
@@ -1149,25 +1034,19 @@ generalizar para novos exemplos.</p>
 <tbody>
 <tr>
 <td>Probabilidade</td>
-<td>number</td>
-<td>0</td>
-<td>1.0</td>
+<td>number [0 - 1.0]</td>
 <td>0.3</td>
 <td>Probabilidade de mudança de cisalhamento</td>
 </tr>
 <tr>
 <td>Mínimo de cisalhamento</td>
-<td>number</td>
-<td>-180</td>
-<td>0</td>
+<td>number [-180 - 0]</td>
 <td>-10</td>
 <td>Valor mínimo para ângulo de cisalhamento em graus</td>
 </tr>
 <tr>
 <td>Cisalhamento máximo</td>
-<td>number</td>
-<td>0</td>
-<td>180</td>
+<td>number [0 - 180]</td>
 <td>10</td>
 <td>Valor máximo para ângulo de cisalhamento em graus</td>
 </tr>
@@ -1179,9 +1058,7 @@ generalizar para novos exemplos.</p>
 <thead>
 <tr>
 <th>Parameter</th>
-<th>type</th>
-<th>Min</th>
-<th>Max</th>
+<th>Values</th>
 <th>Default</th>
 <th>Description</th>
 </tr>
@@ -1189,25 +1066,19 @@ generalizar para novos exemplos.</p>
 <tbody>
 <tr>
 <td>Probabilidade</td>
-<td>number</td>
-<td>0</td>
-<td>1.0</td>
+<td>number [0 - 1.0]</td>
 <td>0.3</td>
 <td>Probabilidade de escala aleatória</td>
 </tr>
 <tr>
 <td>Escala mínima</td>
-<td>number</td>
-<td>0.1</td>
-<td></td>
+<td>number [0.1 - ]</td>
 <td>0.8</td>
 <td>Valor de proporção mínima para escala</td>
 </tr>
 <tr>
 <td>Escala máxima</td>
-<td>number</td>
-<td>1.0</td>
-<td></td>
+<td>number [1.0 - ]</td>
 <td>1.2</td>
 <td>Valor de proporção máxima para escala</td>
 </tr>
@@ -1219,9 +1090,7 @@ generalizar para novos exemplos.</p>
 <thead>
 <tr>
 <th>Parameter</th>
-<th>type</th>
-<th>Min</th>
-<th>Max</th>
+<th>Values</th>
 <th>Default</th>
 <th>Description</th>
 </tr>
@@ -1229,25 +1098,19 @@ generalizar para novos exemplos.</p>
 <tbody>
 <tr>
 <td>Probabilidade</td>
-<td>number</td>
-<td>0</td>
-<td>1.0</td>
+<td>number [0 - 1.0]</td>
 <td>0.3</td>
 <td>Probabilidade de mudança de contraste</td>
 </tr>
 <tr>
 <td>Contraste mínimo</td>
-<td>number</td>
-<td>0.1</td>
-<td>1.0</td>
+<td>number [0.1 - 1.0]</td>
 <td>0.8</td>
 <td>Mudança mínima de contraste</td>
 </tr>
 <tr>
 <td>Contraste máximo</td>
-<td>number</td>
-<td>1.0</td>
-<td>2.0</td>
+<td>number [1.0 - 2.0]</td>
 <td>1.2</td>
 <td>Mudança máxima de contraste</td>
 </tr>
@@ -1259,9 +1122,7 @@ generalizar para novos exemplos.</p>
 <thead>
 <tr>
 <th>Parameter</th>
-<th>type</th>
-<th>Min</th>
-<th>Max</th>
+<th>Values</th>
 <th>Default</th>
 <th>Description</th>
 </tr>
@@ -1269,25 +1130,19 @@ generalizar para novos exemplos.</p>
 <tbody>
 <tr>
 <td>Probabilidade</td>
-<td>number</td>
-<td>0</td>
-<td>1.0</td>
+<td>number [0 - 1.0]</td>
 <td>0.3</td>
 <td>Probabilidade de mudança de brilho</td>
 </tr>
 <tr>
 <td>Brilho mínimo</td>
-<td>number</td>
-<td>-1.0</td>
-<td>0</td>
+<td>number [-1.0 - 0]</td>
 <td>-0.2</td>
 <td>Mudança mínima de brilho</td>
 </tr>
 <tr>
 <td>Brilho máximo</td>
-<td>number</td>
-<td>0</td>
-<td>1.0</td>
+<td>number [0 - 1.0]</td>
 <td>0.3</td>
 <td>Mudança máxima de brilho</td>
 </tr>
@@ -1299,9 +1154,7 @@ generalizar para novos exemplos.</p>
 <thead>
 <tr>
 <th>Parameter</th>
-<th>type</th>
-<th>Min</th>
-<th>Max</th>
+<th>Values</th>
 <th>Default</th>
 <th>Description</th>
 </tr>
@@ -1309,25 +1162,19 @@ generalizar para novos exemplos.</p>
 <tbody>
 <tr>
 <td>Probabilidade</td>
-<td>number</td>
-<td>0</td>
-<td>1.0</td>
+<td>number [0 - 1.0]</td>
 <td>0.3</td>
 <td>Probabilidade de gama aleatória</td>
 </tr>
 <tr>
 <td>Gama mínima</td>
-<td>number</td>
-<td>0.1</td>
-<td>1.0</td>
+<td>number [0.1 - 1.0]</td>
 <td>0.4</td>
 <td>Mudança mínima de gama</td>
 </tr>
 <tr>
 <td>Gama máxima</td>
-<td>number</td>
-<td>0</td>
-<td>12.0</td>
+<td>number [0 - 12.0]</td>
 <td>1.6</td>
 <td>Mudança máxima de gama</td>
 </tr>
@@ -1339,9 +1186,7 @@ generalizar para novos exemplos.</p>
 <thead>
 <tr>
 <th>Parameter</th>
-<th>type</th>
-<th>Min</th>
-<th>Max</th>
+<th>Values</th>
 <th>Default</th>
 <th>Description</th>
 </tr>
@@ -1349,25 +1194,19 @@ generalizar para novos exemplos.</p>
 <tbody>
 <tr>
 <td>Probabilidade</td>
-<td>number</td>
-<td>0</td>
-<td>1.0</td>
+<td>number [0 - 1.0]</td>
 <td>0.3</td>
 <td>Probabilidade de mudança de saturação</td>
 </tr>
 <tr>
 <td>Saturação mínima</td>
-<td>number</td>
-<td>0.1</td>
-<td>1.0</td>
+<td>number [0.1 - 1.0]</td>
 <td>0.95</td>
 <td>Mudança de saturação mínima</td>
 </tr>
 <tr>
 <td>Saturação máxima</td>
-<td>number</td>
-<td>1.0</td>
-<td>2.0</td>
+<td>number [1.0 - 2.0]</td>
 <td>1.05</td>
 <td>Mudança máxima de saturação</td>
 </tr>
@@ -1379,9 +1218,7 @@ generalizar para novos exemplos.</p>
 <thead>
 <tr>
 <th>Parameter</th>
-<th>type</th>
-<th>Min</th>
-<th>Max</th>
+<th>Values</th>
 <th>Default</th>
 <th>Description</th>
 </tr>
@@ -1389,25 +1226,19 @@ generalizar para novos exemplos.</p>
 <tbody>
 <tr>
 <td>Probabilidade</td>
-<td>number</td>
-<td>0</td>
-<td>1.0</td>
+<td>number [0 - 1.0]</td>
 <td>0.3</td>
 <td>Probabilidade de matiz aleatório</td>
 </tr>
 <tr>
 <td>Matiz mínimo</td>
-<td>number</td>
-<td>-1.0</td>
-<td>0</td>
+<td>number [-1.0 - 0]</td>
 <td>-0.05</td>
 <td>Mudança mínima de matiz</td>
 </tr>
 <tr>
 <td>Matiz máximo</td>
-<td>number</td>
-<td>0</td>
-<td>1.0</td>
+<td>number [0 - 1.0]</td>
 <td>0.05</td>
 <td>Mudança máxima de matiz</td>
 </tr>
@@ -1419,9 +1250,7 @@ generalizar para novos exemplos.</p>
 <thead>
 <tr>
 <th>Parameter</th>
-<th>type</th>
-<th>Min</th>
-<th>Max</th>
+<th>Values</th>
 <th>Default</th>
 <th>Description</th>
 </tr>
@@ -1429,17 +1258,13 @@ generalizar para novos exemplos.</p>
 <tbody>
 <tr>
 <td>Probabilidade</td>
-<td>number</td>
-<td>0</td>
-<td>1.0</td>
+<td>number [0 - 1.0]</td>
 <td>0.3</td>
 <td>Probabilidade de inserção de ruído</td>
 </tr>
 <tr>
 <td>Método de ruído</td>
-<td>enum</td>
-<td></td>
-<td></td>
+<td>choice [&lsquo;gauss&rsquo;, &lsquo;poisson&rsquo;, &lsquo;speckle&rsquo;]</td>
 <td>gauss</td>
 <td>Método para inserção de ruído</td>
 </tr>
@@ -1451,9 +1276,7 @@ generalizar para novos exemplos.</p>
 <thead>
 <tr>
 <th>Parameter</th>
-<th>type</th>
-<th>Min</th>
-<th>Max</th>
+<th>Values</th>
 <th>Default</th>
 <th>Description</th>
 </tr>
@@ -1461,17 +1284,13 @@ generalizar para novos exemplos.</p>
 <tbody>
 <tr>
 <td>Probabilidade</td>
-<td>number</td>
-<td>0</td>
-<td>1.0</td>
+<td>number [0 - 1.0]</td>
 <td>0.3</td>
 <td>Probabilidade de desfoque aleatório</td>
 </tr>
 <tr>
 <td>Tamanho do kernel</td>
-<td>enum</td>
-<td></td>
-<td></td>
+<td>choice [3, 5, 7, 9]</td>
 <td>5</td>
 <td>O tamanho do kernel para desfocar a imagem</td>
 </tr>

@@ -23,13 +23,13 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/docs/concepts/training/data_augmentation_parms/" /><meta property="article:section" content="docs" />
 
-<meta property="article:modified_time" content="2021-03-29T01:19:26-03:00" /><meta property="og:site_name" content="Eyeflow.AI Docs" />
+<meta property="article:modified_time" content="2021-03-31T00:46:39-03:00" /><meta property="og:site_name" content="Eyeflow.AI Docs" />
 
 <meta itemprop="name" content="Data Augmentation">
 <meta itemprop="description" content="Expansão de exemplos nos treinamentos
 ">
-<meta itemprop="dateModified" content="2021-03-29T01:19:26-03:00" />
-<meta itemprop="wordCount" content="611">
+<meta itemprop="dateModified" content="2021-03-31T00:46:39-03:00" />
+<meta itemprop="wordCount" content="882">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Data Augmentation"/>
 <meta name="twitter:description" content="Expansão de exemplos nos treinamentos
@@ -225,14 +225,6 @@ if (!doNotTrack) {
       
       
       
-      
-        
-          
-          
-          <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgetting-startedexample-page" href="/docs/getting-started/example-page/">Example Page</a>
-        
-      
-      
     </li>
   </ul>
 </ul>
@@ -397,71 +389,6 @@ if (!doNotTrack) {
       
       
       
-      
-        
-          
-          
-          <a class="td-sidebar-link td-sidebar-link__page " id="m-docstasksbeds" href="/docs/tasks/beds/">Bed and Chair Metrics</a>
-        
-      
-      
-      
-        
-          
-          
-          <a class="td-sidebar-link td-sidebar-link__page " id="m-docstasksporridge" href="/docs/tasks/porridge/">Porridge Assessment</a>
-        
-      
-      
-      
-        
-          
-          
-          <a class="td-sidebar-link td-sidebar-link__page " id="m-docstaskstask" href="/docs/tasks/task/">Another Task</a>
-        
-      
-      
-      
-        
-          
-
-
-
-
-
-
-<ul class="td-sidebar-nav__section pr-md-3">
-  <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/tasks/ponycopters/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Working with Ponycopters</a>
-  </li>
-  <ul>
-    <li class="collapse " id="docstasksponycopters">
-      
-      
-      
-      
-        
-          
-          
-          <a class="td-sidebar-link td-sidebar-link__page " id="m-docstasksponycoptersconfiguring-ponycopters" href="/docs/tasks/ponycopters/configuring-ponycopters/">Configuring Ponycopters</a>
-        
-      
-      
-      
-        
-          
-          
-          <a class="td-sidebar-link td-sidebar-link__page " id="m-docstasksponycopterslaunching-ponycopters" href="/docs/tasks/ponycopters/launching-ponycopters/">Launching Ponycopters</a>
-        
-      
-      
-    </li>
-  </ul>
-</ul>
-
-        
-      
-      
     </li>
   </ul>
 </ul>
@@ -491,23 +418,7 @@ if (!doNotTrack) {
         
           
           
-          <a class="td-sidebar-link td-sidebar-link__page " id="m-docstutorialsprimeiro_flow" href="/docs/tutorials/primeiro_flow/">Primeiro Flow</a>
-        
-      
-      
-      
-        
-          
-          
-          <a class="td-sidebar-link td-sidebar-link__page " id="m-docstutorialsmulti-bear" href="/docs/tutorials/multi-bear/">Multi-Bear Domicile Setup</a>
-        
-      
-      
-      
-        
-          
-          
-          <a class="td-sidebar-link td-sidebar-link__page " id="m-docstutorialstutorial2" href="/docs/tutorials/tutorial2/">Another Tutorial</a>
+          <a class="td-sidebar-link td-sidebar-link__page " id="m-docstutorialsfirst_flow" href="/docs/tutorials/first_flow/">Primeiro Flow</a>
         
       
       
@@ -533,39 +444,6 @@ if (!doNotTrack) {
   </li>
   <ul>
     <li class="collapse " id="docsreference">
-      
-      
-      
-      
-        
-          
-          
-          <a class="td-sidebar-link td-sidebar-link__page " id="m-docsreferenceparameter-reference" href="/docs/reference/parameter-reference/">Parameter Reference</a>
-        
-      
-      
-    </li>
-  </ul>
-</ul>
-
-        
-      
-      
-      
-        
-          
-
-
-
-
-
-
-<ul class="td-sidebar-nav__section pr-md-3">
-  <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/contribution-guidelines/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Guia para Contribuição</a>
-  </li>
-  <ul>
-    <li class="collapse " id="docscontribution-guidelines">
       
       
       
@@ -704,16 +582,38 @@ if (!doNotTrack) {
 	<h1>Data Augmentation</h1>
     <div class="lead">Expansão de exemplos nos treinamentos</div>
 	       
-	<!-- <parm_table> -->
+	<p>Para um bom resultado em um treinamento de redes neurais a regra é apresentar um grande número de exemplos diferentes
+para que a rede neural possa aprender o padrão nos dados.
+Porém, conseguir e anotar milhares de exemplos é uma tarefa árdua e demorada, podendo consumir centenas de horas de um
+projeto.</p>
+<p>Para facilitar esse processo o Eyeflow.AI oferece uma extensa gama de algorítmos de Expansão de Dados (<em>Data Augmentation</em>).
+Trata-se de inserir perturbações nas imagens na hora em que estão sendo apresentadas para a rede neural no treinamento,
+forçando assim que a rede neural aprenda a reconhecer os padrões, sem ficar dependendo somente dos exemplos estáticos
+que existem no dataset.</p>
+<p>Trata-se de alterações diversas como:</p>
+<ul>
+<li>Alterações na óptica como brilho, contraste, cor, gama</li>
+<li>Alterações na forma como rotações, deformações, posições</li>
+<li>Alterações na qualidade como desfoque e ruído</li>
+</ul>
+<blockquote class="note callout">
+    <div> <h5 style="color:mediumblue"><i class="fas fa-lightbulb"></i>&nbspImportante!</h5> As alterações nas imagens não podem ser muito altas a ponto de o objeto de interesse não poder ser mais reconhecido.
+Para isso o Eyeflow.AI disponibiliza um exemplo dessas alterações para que o operador verifique se as alterações não
+estão exageradas. O que não puder ser visto nesses exemplos, não poderá ser aprendido pela rede neural.</div>
+</blockquote>
+<blockquote class="note callout">
+    <div> <h5 style="color:mediumblue"><i class="fas fa-lightbulb"></i>&nbspImportante!</h5> Também não adianta estressar as mudanças e gerar casos que não acontecem na operação real.
+De nada adianta apresentar pro aprendizado da rede neural uma imagem invertida, de cabeça para baixo, por exemplo, se
+na operação real essa situação nunca irá acontecer.</div>
+</blockquote>
+<!-- <parm_table> -->
 <h2 id="parâmetros-para-expansão-de-dataset">Parâmetros para expansão de dataset</h2>
 <p><strong>Parâmetros para expansão de dataset</strong></p>
 <table>
 <thead>
 <tr>
 <th>Parameter</th>
-<th>type</th>
-<th>Min</th>
-<th>Max</th>
+<th>Values</th>
 <th>Default</th>
 <th>Description</th>
 </tr>
@@ -721,41 +621,31 @@ if (!doNotTrack) {
 <tbody>
 <tr>
 <td>Interpolação</td>
-<td>enum</td>
-<td></td>
-<td></td>
+<td>choice [&lsquo;linear&rsquo;, &lsquo;nearest&rsquo;, &lsquo;cubic&rsquo;, &lsquo;area&rsquo;, &lsquo;lanczos4&rsquo;]</td>
 <td>linear</td>
 <td>Interpolação para operações de redimensionamento</td>
 </tr>
 <tr>
 <td>Modo de Preenchimento</td>
-<td>enum</td>
-<td></td>
-<td></td>
+<td>choice [&lsquo;constant&rsquo;, &lsquo;nearest&rsquo;, &lsquo;reflect&rsquo;, &lsquo;wrap&rsquo;]</td>
 <td>constant</td>
 <td>Preenchimento de regiões nulas</td>
 </tr>
 <tr>
 <td>Valor da borda</td>
-<td>integer</td>
-<td>0</td>
-<td>255</td>
+<td>int [0 - 255]</td>
 <td>0</td>
 <td>A cor para preencher as regiões limítrofes</td>
 </tr>
 <tr>
 <td>Virada horizontal da imagem</td>
-<td>number</td>
-<td>0</td>
-<td>1.0</td>
+<td>number [0 - 1.0]</td>
 <td>0.3</td>
 <td>Virada horizontal aleatória da imagem</td>
 </tr>
 <tr>
 <td>Virada vertical da imagem</td>
-<td>number</td>
-<td>0</td>
-<td>1.0</td>
+<td>number [0 - 1.0]</td>
 <td>0.3</td>
 <td>Virada vertical aleatória da imagem</td>
 </tr>
@@ -767,9 +657,7 @@ if (!doNotTrack) {
 <thead>
 <tr>
 <th>Parameter</th>
-<th>type</th>
-<th>Min</th>
-<th>Max</th>
+<th>Values</th>
 <th>Default</th>
 <th>Description</th>
 </tr>
@@ -777,33 +665,25 @@ if (!doNotTrack) {
 <tbody>
 <tr>
 <td>Probabilidade</td>
-<td>number</td>
-<td>0</td>
-<td>1.0</td>
+<td>number [0 - 1.0]</td>
 <td>0.3</td>
 <td>Probabilidade de rotação aleatória</td>
 </tr>
 <tr>
 <td>Ângulo máximo</td>
-<td>number</td>
-<td>0</td>
-<td>180</td>
+<td>number [0 - 180]</td>
 <td>60</td>
 <td>Ângulo máximo para rotação no sentido horário</td>
 </tr>
 <tr>
 <td>Angulo minimo</td>
-<td>number</td>
-<td>-180</td>
-<td>0</td>
+<td>number [-180 - 0]</td>
 <td>-60</td>
 <td>Ângulo mínimo para rotação no sentido anti-horário</td>
 </tr>
 <tr>
 <td>Redimensionar imagem</td>
-<td>boolean</td>
-<td></td>
-<td></td>
+<td>bool [True - False]</td>
 <td>True</td>
 <td>Se a imagem deve ser redimensionada em rotação</td>
 </tr>
@@ -815,9 +695,7 @@ if (!doNotTrack) {
 <thead>
 <tr>
 <th>Parameter</th>
-<th>type</th>
-<th>Min</th>
-<th>Max</th>
+<th>Values</th>
 <th>Default</th>
 <th>Description</th>
 </tr>
@@ -825,33 +703,25 @@ if (!doNotTrack) {
 <tbody>
 <tr>
 <td>Probabilidade</td>
-<td>number</td>
-<td>0</td>
-<td>1.0</td>
+<td>number [0 - 1.0]</td>
 <td>0.3</td>
 <td>Probabilidade de mudança de translação</td>
 </tr>
 <tr>
 <td>Translação horizontal</td>
-<td>array</td>
-<td></td>
-<td></td>
+<td>Array of number</td>
 <td>[0.03, 0.2]</td>
 <td>Mín. E Máx. Para translação horizontal</td>
 </tr>
 <tr>
 <td>Translação vertical</td>
-<td>array</td>
-<td></td>
-<td></td>
+<td>Array of number</td>
 <td>[0.03, 0.2]</td>
 <td>Mín. E Máx. Para translação vertical</td>
 </tr>
 <tr>
 <td>Número de Tentativas</td>
-<td>integer</td>
-<td>1</td>
-<td></td>
+<td>int [1 - ]</td>
 <td>3</td>
 <td>Número máximo de tentativas sem degenerar caixas</td>
 </tr>
@@ -863,9 +733,7 @@ if (!doNotTrack) {
 <thead>
 <tr>
 <th>Parameter</th>
-<th>type</th>
-<th>Min</th>
-<th>Max</th>
+<th>Values</th>
 <th>Default</th>
 <th>Description</th>
 </tr>
@@ -873,25 +741,19 @@ if (!doNotTrack) {
 <tbody>
 <tr>
 <td>Probabilidade</td>
-<td>number</td>
-<td>0</td>
-<td>1.0</td>
+<td>number [0 - 1.0]</td>
 <td>0.3</td>
 <td>Probabilidade de mudança de cisalhamento</td>
 </tr>
 <tr>
 <td>Mínimo de cisalhamento</td>
-<td>number</td>
-<td>-180</td>
-<td>0</td>
+<td>number [-180 - 0]</td>
 <td>-10</td>
 <td>Valor mínimo para ângulo de cisalhamento em graus</td>
 </tr>
 <tr>
 <td>Cisalhamento máximo</td>
-<td>number</td>
-<td>0</td>
-<td>180</td>
+<td>number [0 - 180]</td>
 <td>10</td>
 <td>Valor máximo para ângulo de cisalhamento em graus</td>
 </tr>
@@ -903,9 +765,7 @@ if (!doNotTrack) {
 <thead>
 <tr>
 <th>Parameter</th>
-<th>type</th>
-<th>Min</th>
-<th>Max</th>
+<th>Values</th>
 <th>Default</th>
 <th>Description</th>
 </tr>
@@ -913,25 +773,19 @@ if (!doNotTrack) {
 <tbody>
 <tr>
 <td>Probabilidade</td>
-<td>number</td>
-<td>0</td>
-<td>1.0</td>
+<td>number [0 - 1.0]</td>
 <td>0.3</td>
 <td>Probabilidade de escala aleatória</td>
 </tr>
 <tr>
 <td>Escala mínima</td>
-<td>number</td>
-<td>0.1</td>
-<td></td>
+<td>number [0.1 - ]</td>
 <td>0.8</td>
 <td>Valor de proporção mínima para escala</td>
 </tr>
 <tr>
 <td>Escala máxima</td>
-<td>number</td>
-<td>1.0</td>
-<td></td>
+<td>number [1.0 - ]</td>
 <td>1.2</td>
 <td>Valor de proporção máxima para escala</td>
 </tr>
@@ -943,9 +797,7 @@ if (!doNotTrack) {
 <thead>
 <tr>
 <th>Parameter</th>
-<th>type</th>
-<th>Min</th>
-<th>Max</th>
+<th>Values</th>
 <th>Default</th>
 <th>Description</th>
 </tr>
@@ -953,25 +805,19 @@ if (!doNotTrack) {
 <tbody>
 <tr>
 <td>Probabilidade</td>
-<td>number</td>
-<td>0</td>
-<td>1.0</td>
+<td>number [0 - 1.0]</td>
 <td>0.3</td>
 <td>Probabilidade de mudança de contraste</td>
 </tr>
 <tr>
 <td>Contraste mínimo</td>
-<td>number</td>
-<td>0.1</td>
-<td>1.0</td>
+<td>number [0.1 - 1.0]</td>
 <td>0.8</td>
 <td>Mudança mínima de contraste</td>
 </tr>
 <tr>
 <td>Contraste máximo</td>
-<td>number</td>
-<td>1.0</td>
-<td>2.0</td>
+<td>number [1.0 - 2.0]</td>
 <td>1.2</td>
 <td>Mudança máxima de contraste</td>
 </tr>
@@ -983,9 +829,7 @@ if (!doNotTrack) {
 <thead>
 <tr>
 <th>Parameter</th>
-<th>type</th>
-<th>Min</th>
-<th>Max</th>
+<th>Values</th>
 <th>Default</th>
 <th>Description</th>
 </tr>
@@ -993,25 +837,19 @@ if (!doNotTrack) {
 <tbody>
 <tr>
 <td>Probabilidade</td>
-<td>number</td>
-<td>0</td>
-<td>1.0</td>
+<td>number [0 - 1.0]</td>
 <td>0.3</td>
 <td>Probabilidade de mudança de brilho</td>
 </tr>
 <tr>
 <td>Brilho mínimo</td>
-<td>number</td>
-<td>-1.0</td>
-<td>0</td>
+<td>number [-1.0 - 0]</td>
 <td>-0.2</td>
 <td>Mudança mínima de brilho</td>
 </tr>
 <tr>
 <td>Brilho máximo</td>
-<td>number</td>
-<td>0</td>
-<td>1.0</td>
+<td>number [0 - 1.0]</td>
 <td>0.3</td>
 <td>Mudança máxima de brilho</td>
 </tr>
@@ -1023,9 +861,7 @@ if (!doNotTrack) {
 <thead>
 <tr>
 <th>Parameter</th>
-<th>type</th>
-<th>Min</th>
-<th>Max</th>
+<th>Values</th>
 <th>Default</th>
 <th>Description</th>
 </tr>
@@ -1033,25 +869,19 @@ if (!doNotTrack) {
 <tbody>
 <tr>
 <td>Probabilidade</td>
-<td>number</td>
-<td>0</td>
-<td>1.0</td>
+<td>number [0 - 1.0]</td>
 <td>0.3</td>
 <td>Probabilidade de gama aleatória</td>
 </tr>
 <tr>
 <td>Gama mínima</td>
-<td>number</td>
-<td>0.1</td>
-<td>1.0</td>
+<td>number [0.1 - 1.0]</td>
 <td>0.4</td>
 <td>Mudança mínima de gama</td>
 </tr>
 <tr>
 <td>Gama máxima</td>
-<td>number</td>
-<td>0</td>
-<td>12.0</td>
+<td>number [0 - 12.0]</td>
 <td>1.6</td>
 <td>Mudança máxima de gama</td>
 </tr>
@@ -1063,9 +893,7 @@ if (!doNotTrack) {
 <thead>
 <tr>
 <th>Parameter</th>
-<th>type</th>
-<th>Min</th>
-<th>Max</th>
+<th>Values</th>
 <th>Default</th>
 <th>Description</th>
 </tr>
@@ -1073,25 +901,19 @@ if (!doNotTrack) {
 <tbody>
 <tr>
 <td>Probabilidade</td>
-<td>number</td>
-<td>0</td>
-<td>1.0</td>
+<td>number [0 - 1.0]</td>
 <td>0.3</td>
 <td>Probabilidade de mudança de saturação</td>
 </tr>
 <tr>
 <td>Saturação mínima</td>
-<td>number</td>
-<td>0.1</td>
-<td>1.0</td>
+<td>number [0.1 - 1.0]</td>
 <td>0.95</td>
 <td>Mudança de saturação mínima</td>
 </tr>
 <tr>
 <td>Saturação máxima</td>
-<td>number</td>
-<td>1.0</td>
-<td>2.0</td>
+<td>number [1.0 - 2.0]</td>
 <td>1.05</td>
 <td>Mudança máxima de saturação</td>
 </tr>
@@ -1103,9 +925,7 @@ if (!doNotTrack) {
 <thead>
 <tr>
 <th>Parameter</th>
-<th>type</th>
-<th>Min</th>
-<th>Max</th>
+<th>Values</th>
 <th>Default</th>
 <th>Description</th>
 </tr>
@@ -1113,25 +933,19 @@ if (!doNotTrack) {
 <tbody>
 <tr>
 <td>Probabilidade</td>
-<td>number</td>
-<td>0</td>
-<td>1.0</td>
+<td>number [0 - 1.0]</td>
 <td>0.3</td>
 <td>Probabilidade de matiz aleatório</td>
 </tr>
 <tr>
 <td>Matiz mínimo</td>
-<td>number</td>
-<td>-1.0</td>
-<td>0</td>
+<td>number [-1.0 - 0]</td>
 <td>-0.05</td>
 <td>Mudança mínima de matiz</td>
 </tr>
 <tr>
 <td>Matiz máximo</td>
-<td>number</td>
-<td>0</td>
-<td>1.0</td>
+<td>number [0 - 1.0]</td>
 <td>0.05</td>
 <td>Mudança máxima de matiz</td>
 </tr>
@@ -1143,9 +957,7 @@ if (!doNotTrack) {
 <thead>
 <tr>
 <th>Parameter</th>
-<th>type</th>
-<th>Min</th>
-<th>Max</th>
+<th>Values</th>
 <th>Default</th>
 <th>Description</th>
 </tr>
@@ -1153,17 +965,13 @@ if (!doNotTrack) {
 <tbody>
 <tr>
 <td>Probabilidade</td>
-<td>number</td>
-<td>0</td>
-<td>1.0</td>
+<td>number [0 - 1.0]</td>
 <td>0.3</td>
 <td>Probabilidade de inserção de ruído</td>
 </tr>
 <tr>
 <td>Método de ruído</td>
-<td>enum</td>
-<td></td>
-<td></td>
+<td>choice [&lsquo;gauss&rsquo;, &lsquo;poisson&rsquo;, &lsquo;speckle&rsquo;]</td>
 <td>gauss</td>
 <td>Método para inserção de ruído</td>
 </tr>
@@ -1175,9 +983,7 @@ if (!doNotTrack) {
 <thead>
 <tr>
 <th>Parameter</th>
-<th>type</th>
-<th>Min</th>
-<th>Max</th>
+<th>Values</th>
 <th>Default</th>
 <th>Description</th>
 </tr>
@@ -1185,17 +991,13 @@ if (!doNotTrack) {
 <tbody>
 <tr>
 <td>Probabilidade</td>
-<td>number</td>
-<td>0</td>
-<td>1.0</td>
+<td>number [0 - 1.0]</td>
 <td>0.3</td>
 <td>Probabilidade de desfoque aleatório</td>
 </tr>
 <tr>
 <td>Tamanho do kernel</td>
-<td>enum</td>
-<td></td>
-<td></td>
+<td>choice [3, 5, 7, 9]</td>
 <td>5</td>
 <td>O tamanho do kernel para desfocar a imagem</td>
 </tr>
@@ -1273,7 +1075,7 @@ if (!doNotTrack) {
 		<br />
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Última modificação 29/03/2021: <a  href="https://github.com/siliconlife-ai/eyeflow_doc/commit/75ee844414db7622f1c281e92f96b85b2da136d9">Exportação dos parâmetros (75ee844)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Última modificação 31/03/2021: <a  href="https://github.com/siliconlife-ai/eyeflow_doc/commit/e8e66062af65cd5c5844a2fa0708636e756fc86e">Início da tradução (e8e6606)</a>
 </div>
 </div>
 

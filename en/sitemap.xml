@@ -2,21 +2,8 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>/en/docs/overview/</loc>
-    <lastmod>2021-03-26T21:21:43-03:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt"
-                href="/docs/overview/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/en/docs/overview/"
-                />
-  </url><url>
     <loc>/en/docs/concepts/overview/</loc>
-    <lastmod>2021-03-29T01:19:26-03:00</lastmod>
+    <lastmod>2021-04-02T00:34:21-03:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
@@ -29,7 +16,7 @@
                 />
   </url><url>
     <loc>/en/docs/concepts/training/overview/</loc>
-    <lastmod>2021-03-29T01:19:26-03:00</lastmod>
+    <lastmod>2021-04-02T00:34:21-03:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
@@ -41,47 +28,27 @@
                 href="/en/docs/concepts/training/overview/"
                 />
   </url><url>
-    <loc>/en/docs/tasks/beds/</loc>
-    <lastmod>2021-03-26T21:21:43-03:00</lastmod>
+    <loc>/en/docs/overview/</loc>
+    <lastmod>2021-04-02T00:34:21-03:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
-                href="/docs/tasks/beds/"
+                href="/docs/overview/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/docs/tasks/beds/"
+                href="/en/docs/overview/"
                 />
+  </url><url>
+    <loc>/en/docs/tasks/beds/</loc>
+    <lastmod>2021-03-26T21:21:43-03:00</lastmod>
   </url><url>
     <loc>/en/docs/tasks/ponycopters/configuring-ponycopters/</loc>
     <lastmod>2021-03-26T21:21:43-03:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt"
-                href="/docs/tasks/ponycopters/configuring-ponycopters/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/en/docs/tasks/ponycopters/configuring-ponycopters/"
-                />
-  </url><url>
-    <loc>/en/docs/concepts/training/dashboard/</loc>
-    <lastmod>2021-03-29T01:19:26-03:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt"
-                href="/docs/concepts/training/dashboard/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/en/docs/concepts/training/dashboard/"
-                />
   </url><url>
     <loc>/en/docs/concepts/flow/</loc>
-    <lastmod>2021-03-29T01:19:26-03:00</lastmod>
+    <lastmod>2021-04-02T00:34:21-03:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
@@ -94,7 +61,7 @@
                 />
   </url><url>
     <loc>/en/docs/getting-started/</loc>
-    <lastmod>2021-03-26T21:21:43-03:00</lastmod>
+    <lastmod>2021-04-02T00:34:21-03:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
@@ -106,8 +73,21 @@
                 href="/en/docs/getting-started/"
                 />
   </url><url>
+    <loc>/en/docs/concepts/training/dashboard/</loc>
+    <lastmod>2021-04-02T00:34:21-03:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="/docs/concepts/training/dashboard/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/docs/concepts/training/dashboard/"
+                />
+  </url><url>
     <loc>/en/docs/examples/</loc>
-    <lastmod>2021-03-26T21:21:43-03:00</lastmod>
+    <lastmod>2021-04-02T00:34:21-03:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
@@ -121,19 +101,9 @@
   </url><url>
     <loc>/en/docs/tasks/ponycopters/launching-ponycopters/</loc>
     <lastmod>2021-03-26T21:21:43-03:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt"
-                href="/docs/tasks/ponycopters/launching-ponycopters/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/en/docs/tasks/ponycopters/launching-ponycopters/"
-                />
   </url><url>
     <loc>/en/docs/concepts/dataset/</loc>
-    <lastmod>2021-03-29T01:19:26-03:00</lastmod>
+    <lastmod>2021-04-02T00:34:21-03:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
@@ -146,7 +116,7 @@
                 />
   </url><url>
     <loc>/en/docs/concepts/training/train_parms/</loc>
-    <lastmod>2021-03-29T01:19:26-03:00</lastmod>
+    <lastmod>2021-04-02T00:34:21-03:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
@@ -158,34 +128,27 @@
                 href="/en/docs/concepts/training/train_parms/"
                 />
   </url><url>
-    <loc>/en/docs/tutorials/multi-bear/</loc>
-    <lastmod>2021-03-26T21:21:43-03:00</lastmod>
+    <loc>/en/docs/tutorials/first_flow/</loc>
+    <lastmod>2021-04-02T00:34:21-03:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
-                href="/docs/tutorials/multi-bear/"
+                href="/docs/tutorials/first_flow/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/docs/tutorials/multi-bear/"
+                href="/en/docs/tutorials/first_flow/"
                 />
+  </url><url>
+    <loc>/en/docs/tutorials/multi-bear/</loc>
+    <lastmod>2021-03-26T21:21:43-03:00</lastmod>
   </url><url>
     <loc>/en/docs/tasks/porridge/</loc>
     <lastmod>2021-03-26T21:21:43-03:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt"
-                href="/docs/tasks/porridge/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/en/docs/tasks/porridge/"
-                />
   </url><url>
     <loc>/en/docs/concepts/</loc>
-    <lastmod>2021-03-29T01:19:26-03:00</lastmod>
+    <lastmod>2021-04-02T00:34:21-03:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
@@ -198,7 +161,7 @@
                 />
   </url><url>
     <loc>/en/docs/concepts/training/dnn_parms/</loc>
-    <lastmod>2021-03-29T01:19:26-03:00</lastmod>
+    <lastmod>2021-04-02T00:34:21-03:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
@@ -211,7 +174,7 @@
                 />
   </url><url>
     <loc>/en/docs/concepts/training/</loc>
-    <lastmod>2021-03-29T01:19:26-03:00</lastmod>
+    <lastmod>2021-04-02T00:34:21-03:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
@@ -225,32 +188,12 @@
   </url><url>
     <loc>/en/docs/tasks/task/</loc>
     <lastmod>2021-03-26T21:21:43-03:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt"
-                href="/docs/tasks/task/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/en/docs/tasks/task/"
-                />
   </url><url>
     <loc>/en/docs/tutorials/tutorial2/</loc>
     <lastmod>2021-03-26T21:21:43-03:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt"
-                href="/docs/tutorials/tutorial2/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/en/docs/tutorials/tutorial2/"
-                />
   </url><url>
     <loc>/en/docs/concepts/training/data_augmentation_parms/</loc>
-    <lastmod>2021-03-29T01:19:26-03:00</lastmod>
+    <lastmod>2021-04-02T00:34:21-03:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
@@ -263,7 +206,7 @@
                 />
   </url><url>
     <loc>/en/docs/tasks/</loc>
-    <lastmod>2021-03-26T21:21:43-03:00</lastmod>
+    <lastmod>2021-04-02T00:34:21-03:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
@@ -276,7 +219,7 @@
                 />
   </url><url>
     <loc>/en/docs/tutorials/</loc>
-    <lastmod>2021-03-26T21:21:43-03:00</lastmod>
+    <lastmod>2021-04-02T00:34:21-03:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
@@ -289,7 +232,7 @@
                 />
   </url><url>
     <loc>/en/docs/reference/</loc>
-    <lastmod>2021-03-26T21:21:43-03:00</lastmod>
+    <lastmod>2021-04-02T00:34:21-03:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
@@ -303,19 +246,9 @@
   </url><url>
     <loc>/en/docs/contribution-guidelines/</loc>
     <lastmod>2021-03-26T21:21:43-03:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt"
-                href="/docs/contribution-guidelines/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/en/docs/contribution-guidelines/"
-                />
   </url><url>
     <loc>/en/docs/</loc>
-    <lastmod>2021-03-26T21:21:43-03:00</lastmod>
+    <lastmod>2021-04-02T00:34:21-03:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
@@ -358,7 +291,7 @@
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
-                href="/blog/2018/10/06/easy-documentation-with-docsy/"
+                href="/blog/2021/03/31/lan%C3%A7amento-do-eyeflow.ai-beta/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -381,55 +314,15 @@
   </url><url>
     <loc>/en/blog/2018/01/04/another-great-release/</loc>
     <lastmod>2021-03-26T21:21:43-03:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt"
-                href="/blog/2018/01/04/another-great-release/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/en/blog/2018/01/04/another-great-release/"
-                />
   </url><url>
     <loc>/en/docs/getting-started/example-page/</loc>
     <lastmod>2021-03-26T21:21:43-03:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt"
-                href="/docs/getting-started/example-page/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/en/docs/getting-started/example-page/"
-                />
   </url><url>
     <loc>/en/docs/reference/parameter-reference/</loc>
     <lastmod>2021-03-26T21:21:43-03:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt"
-                href="/docs/reference/parameter-reference/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/en/docs/reference/parameter-reference/"
-                />
   </url><url>
     <loc>/en/docs/tasks/ponycopters/</loc>
     <lastmod>2021-03-26T21:21:43-03:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt"
-                href="/docs/tasks/ponycopters/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/en/docs/tasks/ponycopters/"
-                />
   </url><url>
     <loc>/en/blog/</loc>
     <lastmod>2021-03-26T21:21:43-03:00</lastmod>

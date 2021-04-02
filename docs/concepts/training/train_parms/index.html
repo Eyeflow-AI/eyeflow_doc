@@ -23,13 +23,13 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/docs/concepts/training/train_parms/" /><meta property="article:section" content="docs" />
 
-<meta property="article:modified_time" content="2021-03-29T01:19:26-03:00" /><meta property="og:site_name" content="Eyeflow.AI Docs" />
+<meta property="article:modified_time" content="2021-03-31T00:46:39-03:00" /><meta property="og:site_name" content="Eyeflow.AI Docs" />
 
 <meta itemprop="name" content="Parâmetros do Treinamento">
 <meta itemprop="description" content="Controle do treinamento
 ">
-<meta itemprop="dateModified" content="2021-03-29T01:19:26-03:00" />
-<meta itemprop="wordCount" content="585">
+<meta itemprop="dateModified" content="2021-03-31T00:46:39-03:00" />
+<meta itemprop="wordCount" content="712">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Parâmetros do Treinamento"/>
 <meta name="twitter:description" content="Controle do treinamento
@@ -225,14 +225,6 @@ if (!doNotTrack) {
       
       
       
-      
-        
-          
-          
-          <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgetting-startedexample-page" href="/docs/getting-started/example-page/">Example Page</a>
-        
-      
-      
     </li>
   </ul>
 </ul>
@@ -397,71 +389,6 @@ if (!doNotTrack) {
       
       
       
-      
-        
-          
-          
-          <a class="td-sidebar-link td-sidebar-link__page " id="m-docstasksbeds" href="/docs/tasks/beds/">Bed and Chair Metrics</a>
-        
-      
-      
-      
-        
-          
-          
-          <a class="td-sidebar-link td-sidebar-link__page " id="m-docstasksporridge" href="/docs/tasks/porridge/">Porridge Assessment</a>
-        
-      
-      
-      
-        
-          
-          
-          <a class="td-sidebar-link td-sidebar-link__page " id="m-docstaskstask" href="/docs/tasks/task/">Another Task</a>
-        
-      
-      
-      
-        
-          
-
-
-
-
-
-
-<ul class="td-sidebar-nav__section pr-md-3">
-  <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/tasks/ponycopters/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Working with Ponycopters</a>
-  </li>
-  <ul>
-    <li class="collapse " id="docstasksponycopters">
-      
-      
-      
-      
-        
-          
-          
-          <a class="td-sidebar-link td-sidebar-link__page " id="m-docstasksponycoptersconfiguring-ponycopters" href="/docs/tasks/ponycopters/configuring-ponycopters/">Configuring Ponycopters</a>
-        
-      
-      
-      
-        
-          
-          
-          <a class="td-sidebar-link td-sidebar-link__page " id="m-docstasksponycopterslaunching-ponycopters" href="/docs/tasks/ponycopters/launching-ponycopters/">Launching Ponycopters</a>
-        
-      
-      
-    </li>
-  </ul>
-</ul>
-
-        
-      
-      
     </li>
   </ul>
 </ul>
@@ -491,23 +418,7 @@ if (!doNotTrack) {
         
           
           
-          <a class="td-sidebar-link td-sidebar-link__page " id="m-docstutorialsprimeiro_flow" href="/docs/tutorials/primeiro_flow/">Primeiro Flow</a>
-        
-      
-      
-      
-        
-          
-          
-          <a class="td-sidebar-link td-sidebar-link__page " id="m-docstutorialsmulti-bear" href="/docs/tutorials/multi-bear/">Multi-Bear Domicile Setup</a>
-        
-      
-      
-      
-        
-          
-          
-          <a class="td-sidebar-link td-sidebar-link__page " id="m-docstutorialstutorial2" href="/docs/tutorials/tutorial2/">Another Tutorial</a>
+          <a class="td-sidebar-link td-sidebar-link__page " id="m-docstutorialsfirst_flow" href="/docs/tutorials/first_flow/">Primeiro Flow</a>
         
       
       
@@ -533,39 +444,6 @@ if (!doNotTrack) {
   </li>
   <ul>
     <li class="collapse " id="docsreference">
-      
-      
-      
-      
-        
-          
-          
-          <a class="td-sidebar-link td-sidebar-link__page " id="m-docsreferenceparameter-reference" href="/docs/reference/parameter-reference/">Parameter Reference</a>
-        
-      
-      
-    </li>
-  </ul>
-</ul>
-
-        
-      
-      
-      
-        
-          
-
-
-
-
-
-
-<ul class="td-sidebar-nav__section pr-md-3">
-  <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/contribution-guidelines/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Guia para Contribuição</a>
-  </li>
-  <ul>
-    <li class="collapse " id="docscontribution-guidelines">
       
       
       
@@ -709,6 +587,11 @@ ocorrência comum é o erro (<em>Loss</em>) continuar diminuindo, mas o <em>Val 
 como <em>Overfitting</em> e significa que a rede neural ficou viciada nos exemplos do treinamento e não está mais conseguindo
 generalizar para novos exemplos.</p>
 <p>A recomendação é no início setar 5 épocas para o treino enquanto o dataset tiver menos de 100 exemplos, e daí ir subindo.</p>
+<p>Na sequência temos vários outros parâmetros que governam o processo de treinamento e todos podem influir positiva ou negativamente
+no resultado final do aprendizado da rede. Não se amedronte com a quantidade, nem com a complexidade dos mesmos, é natural
+levar bastante tempo até adquirir domínio sobre todo proceso.</p>
+<p>Fique tranquilo, o Eyeflow.AI tem um ótimo set de defaults para os parâmetros que resolvem as necessidades de boa parte das
+necessidades. Além disso, nosso time está à disposição para tirar dúvidas e dar dicas em nosso Fórum.</p>
 <!-- <parm_table> -->
 <h2 id="parâmetros-de-treinamento">Parâmetros de treinamento</h2>
 <p><strong>Parâmetros para treinamento de rede neural</strong></p>
@@ -716,9 +599,7 @@ generalizar para novos exemplos.</p>
 <thead>
 <tr>
 <th>Parameter</th>
-<th>type</th>
-<th>Min</th>
-<th>Max</th>
+<th>Values</th>
 <th>Default</th>
 <th>Description</th>
 </tr>
@@ -726,73 +607,55 @@ generalizar para novos exemplos.</p>
 <tbody>
 <tr>
 <td>Épocas</td>
-<td>integer</td>
-<td>1</td>
-<td></td>
+<td>int [1 - ]</td>
 <td>5</td>
 <td>Número de épocas para treinamento</td>
 </tr>
 <tr>
 <td>Etapas por época</td>
-<td>integer</td>
-<td>50</td>
-<td></td>
+<td>int [50 - ]</td>
 <td>100</td>
 <td>Número de passos para treinamento em cada época</td>
 </tr>
 <tr>
 <td>Tamanho do lote</td>
-<td>integer</td>
-<td>1</td>
-<td>64</td>
+<td>int [1 - 64]</td>
 <td>10</td>
 <td>Número de exemplos em cada passo</td>
 </tr>
 <tr>
 <td>Tamanho do Val</td>
-<td>number</td>
-<td>0.01</td>
-<td>0.9</td>
+<td>number [0.01 - 0.9]</td>
 <td>0.1</td>
 <td>Porcentagem de exemplos selecionados para validação</td>
 </tr>
 <tr>
 <td>Tamanho do Teste</td>
-<td>number</td>
-<td>0.01</td>
-<td>0.9</td>
+<td>number [0.01 - 0.9]</td>
 <td>0.1</td>
 <td>Porcentagem de exemplos selecionados para o teste final</td>
 </tr>
 <tr>
 <td>Limiar de confiança</td>
-<td>number</td>
-<td>0.05</td>
-<td>1.0</td>
+<td>number [0.05 - 1.0]</td>
 <td>0.6</td>
 <td>Limite mínimo de confiança para detecção válida</td>
 </tr>
 <tr>
 <td>Limite de detecção de IoU</td>
-<td>number</td>
-<td>0.05</td>
-<td>1.0</td>
+<td>number [0.05 - 1.0]</td>
 <td>0.45</td>
 <td>Limite mínimo para detecção de IoU</td>
 </tr>
 <tr>
 <td>Máximo de caixas</td>
-<td>integer</td>
-<td>0</td>
-<td>300</td>
+<td>int [0 - 300]</td>
 <td>30</td>
 <td>Número máximo de caixas em detecção</td>
 </tr>
 <tr>
 <td>Caixas de expansão</td>
-<td>number</td>
-<td>0</td>
-<td>2</td>
+<td>number [0 - 2]</td>
 <td>0</td>
 <td>Porcentagem para expandir o tamanho das caixas na detecção</td>
 </tr>
@@ -804,9 +667,7 @@ generalizar para novos exemplos.</p>
 <thead>
 <tr>
 <th>Parameter</th>
-<th>type</th>
-<th>Min</th>
-<th>Max</th>
+<th>Values</th>
 <th>Default</th>
 <th>Description</th>
 </tr>
@@ -814,25 +675,19 @@ generalizar para novos exemplos.</p>
 <tbody>
 <tr>
 <td>Lado mínimo</td>
-<td>integer</td>
-<td>20</td>
-<td></td>
+<td>int [20 - ]</td>
 <td>50</td>
 <td>Tamanho do lado menor</td>
 </tr>
 <tr>
 <td>Lado máximo</td>
-<td>integer</td>
-<td>20</td>
-<td></td>
+<td>int [20 - ]</td>
 <td>80</td>
 <td>Tamanho do lado maior</td>
 </tr>
 <tr>
 <td>Canais</td>
-<td>enum</td>
-<td></td>
-<td></td>
+<td>choice [1, 3]</td>
 <td>1</td>
 <td>Canais de cor</td>
 </tr>
@@ -844,9 +699,7 @@ generalizar para novos exemplos.</p>
 <thead>
 <tr>
 <th>Parameter</th>
-<th>type</th>
-<th>Min</th>
-<th>Max</th>
+<th>Values</th>
 <th>Default</th>
 <th>Description</th>
 </tr>
@@ -854,33 +707,25 @@ generalizar para novos exemplos.</p>
 <tbody>
 <tr>
 <td>beta_2</td>
-<td>number</td>
-<td>0.1</td>
-<td>1.0</td>
+<td>number [0.1 - 1.0]</td>
 <td>0.999</td>
 <td>Beta 2</td>
 </tr>
 <tr>
 <td>beta_1</td>
-<td>number</td>
-<td>0.1</td>
-<td>1.0</td>
+<td>number [0.1 - 1.0]</td>
 <td>0.9</td>
 <td>Beta 1</td>
 </tr>
 <tr>
 <td>Taxa de Aprendizagem</td>
-<td>number</td>
-<td>1e-06</td>
-<td>0.1</td>
+<td>number [1e-06 - 0.1]</td>
 <td>0.001</td>
 <td>Taxa de aprendizagem do otimizador</td>
 </tr>
 <tr>
 <td>amsgrad</td>
-<td>boolean</td>
-<td></td>
-<td></td>
+<td>bool [True - False]</td>
 <td>False</td>
 <td>amsgrad</td>
 </tr>
@@ -892,9 +737,7 @@ generalizar para novos exemplos.</p>
 <thead>
 <tr>
 <th>Parameter</th>
-<th>type</th>
-<th>Min</th>
-<th>Max</th>
+<th>Values</th>
 <th>Default</th>
 <th>Description</th>
 </tr>
@@ -902,33 +745,25 @@ generalizar para novos exemplos.</p>
 <tbody>
 <tr>
 <td>Paciência</td>
-<td>integer</td>
-<td>1</td>
-<td></td>
+<td>int [1 - ]</td>
 <td>5</td>
 <td>Número de épocas para esperar pelo progresso</td>
 </tr>
 <tr>
 <td>Variável de monitoramento</td>
-<td>enum</td>
-<td></td>
-<td></td>
+<td>choice [&lsquo;val_loss&rsquo;, &lsquo;loss&rsquo;, &lsquo;categorical_accuracy&rsquo;, &lsquo;val_categorical_accuracy&rsquo;]</td>
 <td>val_loss</td>
 <td>Variável para monitorar o progresso</td>
 </tr>
 <tr>
 <td>Delta Mínimo</td>
-<td>number</td>
-<td>0</td>
-<td></td>
+<td>number [0 - ]</td>
 <td>0.01</td>
 <td>A variação mínima na variável</td>
 </tr>
 <tr>
 <td>Modo de avaliação</td>
-<td>enum</td>
-<td></td>
-<td></td>
+<td>choice [&lsquo;min&rsquo;, &lsquo;max&rsquo;, &lsquo;auto&rsquo;]</td>
 <td>max</td>
 <td>Monitor do decréscimo ou incremento do valor da variável</td>
 </tr>
@@ -940,9 +775,7 @@ generalizar para novos exemplos.</p>
 <thead>
 <tr>
 <th>Parameter</th>
-<th>type</th>
-<th>Min</th>
-<th>Max</th>
+<th>Values</th>
 <th>Default</th>
 <th>Description</th>
 </tr>
@@ -950,41 +783,31 @@ generalizar para novos exemplos.</p>
 <tbody>
 <tr>
 <td>Paciência</td>
-<td>integer</td>
-<td>1</td>
-<td></td>
+<td>int [1 - ]</td>
 <td>4</td>
 <td>Número de épocas para esperar pelo progresso</td>
 </tr>
 <tr>
 <td>Variável de monitoramento</td>
-<td>enum</td>
-<td></td>
-<td></td>
+<td>choice [&lsquo;val_loss&rsquo;, &lsquo;loss&rsquo;, &lsquo;categorical_accuracy&rsquo;, &lsquo;val_categorical_accuracy&rsquo;]</td>
 <td>val_loss</td>
 <td>Variável para monitorar o progresso</td>
 </tr>
 <tr>
 <td>Delta Mínimo</td>
-<td>number</td>
-<td>0</td>
-<td></td>
+<td>number [0 - ]</td>
 <td>0.01</td>
 <td>A variação mínima na variável</td>
 </tr>
 <tr>
 <td>Fator de redução</td>
-<td>number</td>
-<td>0.1</td>
-<td>0.9</td>
+<td>number [0.1 - 0.9]</td>
 <td>0.5</td>
 <td>Quantidade a reduzir</td>
 </tr>
 <tr>
 <td>Esfriar</td>
-<td>number</td>
-<td>0</td>
-<td></td>
+<td>number [0 - ]</td>
 <td>0</td>
 <td>Esfriar</td>
 </tr>
@@ -996,9 +819,7 @@ generalizar para novos exemplos.</p>
 <thead>
 <tr>
 <th>Parameter</th>
-<th>type</th>
-<th>Min</th>
-<th>Max</th>
+<th>Values</th>
 <th>Default</th>
 <th>Description</th>
 </tr>
@@ -1006,17 +827,13 @@ generalizar para novos exemplos.</p>
 <tbody>
 <tr>
 <td>Variável de monitoramento</td>
-<td>enum</td>
-<td></td>
-<td></td>
+<td>choice [&lsquo;val_loss&rsquo;, &lsquo;loss&rsquo;, &lsquo;categorical_accuracy&rsquo;, &lsquo;val_categorical_accuracy&rsquo;]</td>
 <td>val_loss</td>
 <td>Variável para monitorar para salvar</td>
 </tr>
 <tr>
 <td>Modo de avaliação</td>
-<td>enum</td>
-<td></td>
-<td></td>
+<td>choice [&lsquo;min&rsquo;, &lsquo;max&rsquo;, &lsquo;auto&rsquo;]</td>
 <td>min</td>
 <td>Salvar ao diminuir ou aumentar o valor da variável</td>
 </tr>
@@ -1094,7 +911,7 @@ generalizar para novos exemplos.</p>
 		<br />
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Última modificação 29/03/2021: <a  href="https://github.com/siliconlife-ai/eyeflow_doc/commit/75ee844414db7622f1c281e92f96b85b2da136d9">Exportação dos parâmetros (75ee844)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Última modificação 31/03/2021: <a  href="https://github.com/siliconlife-ai/eyeflow_doc/commit/e8e66062af65cd5c5844a2fa0708636e756fc86e">Início da tradução (e8e6606)</a>
 </div>
 </div>
 

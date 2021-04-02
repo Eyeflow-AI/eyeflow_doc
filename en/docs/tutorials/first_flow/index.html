@@ -1,10 +1,9 @@
 <!doctype html>
-<html lang="pt" class="no-js">
+<html lang="en" class="no-js">
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.82.0" /><link rel="alternate" type="text/html" href="/docs/contribution-guidelines/_print/">
-<META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+<meta name="generator" content="Hugo 0.82.0" /><META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
 
 <link rel="shortcut icon" href="/favicons/favicon.ico" >
@@ -18,17 +17,22 @@
 <link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
-<title>Guia para Contribuição | Eyeflow.AI Docs</title><meta property="og:title" content="Guia para Contribuição" />
-<meta property="og:description" content="Como contribuir para a documentação
+<title>First Flow | Eyeflow.AI Docs</title><meta property="og:title" content="First Flow" />
+<meta property="og:description" content="Tutorial 1 - Build your first flow
 " />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="/docs/contribution-guidelines/" /><meta property="og:site_name" content="Eyeflow.AI Docs" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/en/docs/tutorials/first_flow/" /><meta property="article:section" content="docs" />
+<meta property="article:published_time" content="2021-03-26T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2021-04-02T00:34:21-03:00" /><meta property="og:site_name" content="Eyeflow.AI Docs" />
 
-<meta itemprop="name" content="Guia para Contribuição">
-<meta itemprop="description" content="Como contribuir para a documentação
-"><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Guia para Contribuição"/>
-<meta name="twitter:description" content="Como contribuir para a documentação
+<meta itemprop="name" content="First Flow">
+<meta itemprop="description" content="Tutorial 1 - Build your first flow
+"><meta itemprop="datePublished" content="2021-03-26T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2021-04-02T00:34:21-03:00" />
+<meta itemprop="wordCount" content="693">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="First Flow"/>
+<meta name="twitter:description" content="Tutorial 1 - Build your first flow
 "/>
 
 
@@ -61,11 +65,11 @@ if (!doNotTrack) {
 
 
   </head>
-  <body class="td-section">
+  <body class="td-page">
     <header>
       
 <nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
-        <a class="navbar-brand" href="/">
+        <a class="navbar-brand" href="/en/">
 		<span class="navbar-logo"><svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 500 500" style="enable-background:new 0 0 500 500"><g><path style="fill:#fff" d="M116.8525 421.9722c-5.7041.0-10.3442-4.3127-10.3442-9.6129V88.183c0-5.3002 4.6401-9.6117 10.3442-9.6117H320.858c3.0347.0 9.3959.5498 11.7506 2.6302l.3545.3442 58.905 63.2912c2.3101 2.491 2.9202 8.4928 2.9202 11.3184v256.2039c0 5.3002-4.6407 9.6129-10.3436 9.6129H116.8525z"/><g><g><g><path style="fill:#767676" d="M384.4445 423.2066H116.852c-6.3839.0-11.5786-4.8658-11.5786-10.8474V88.1831c0-5.9804 5.1947-10.8461 11.5786-10.8461h204.0062c.377.0 9.2786.0329 12.568 2.9389l.3947.3833 58.9508 63.337c3.2135 3.4652 3.2514 11.7924 3.2514 12.1593v256.2036C396.0231 418.3408 390.8284 423.2066 384.4445 423.2066zM116.5079 411.9189c.0848.0278.1999.0531.3441.0531h267.5925c.1442.0.2581-.0253.3441-.0531V156.1556c-.0076-.9033-.3593-3.7347-.7034-5.0037l-57.6527-61.9416c-1.4651-.3176-4.4533-.6389-5.5742-.6389H116.852c-.143.0-.2594.024-.3441.0531V411.9189zm267.4533-261.149zM327.0321 89.371v.0013V89.371z"/></g></g></g><g><g><path style="fill:#5b7fc0" d="M189.0874 210.1754l.0012-.0012c7.7751.0012 15.0295 4.1862 18.932 10.9234 1.9177 3.3159 2.9305 7.1011 2.9293 10.9378.0 5.8394-2.2733 11.3304-6.4032 15.4604-4.1288 4.1288-9.6186 6.4032-15.458 6.4032s-11.328-2.2733-15.458-6.4032-6.4032-9.6186-6.4056-15.4628c.0012-6.025 2.454-11.4897 6.4116-15.4473C177.5953 212.627 183.0601 210.1742 189.0874 210.1754zm7.993 21.8576c.0012-1.4042-.3687-2.7868-1.063-3.9887-1.4293-2.4684-4.0833-3.9995-6.9299-4.0019-4.4077.0024-7.993 3.5877-7.993 7.993.0 2.1356.832 4.1431 2.3427 5.6539 1.5083 1.5083 3.5159 2.3403 5.6503 2.3415 2.1356.0 4.1443-.8308 5.6539-2.3403S197.0816 234.1722 197.0804 232.033z"/><path style="opacity:.3;fill:#fff" d="M189.0898 210.176c7.7763.0 15.0283 4.1826 18.926 10.9151 1.9201 3.3136 2.9377 7.0988 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8613-12.0547.0024-21.8636-9.8066-21.8612-21.8613.0-6.0285 2.4516-11.4921 6.4116-15.452C177.5977 212.6276 183.0612 210.176 189.0898 210.176zm7.9941 21.8612c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.1861 236.239 197.0839 234.2399 197.0839 232.0372z"/><g><defs><path id="SVGID_1_" d="M194.7376 237.6875c-1.4461 1.4461-3.4452 2.3439-5.6479 2.3439-4.4077-.0024-7.9918-3.5865-7.9942-7.9942.0024-4.4125 3.5937-7.999 7.9942-7.9942 2.8443.0 5.497 1.5323 6.924 3.9983.6991 1.2067 1.0702 2.5881 1.0702 3.9959C197.0839 234.2399 196.1861 236.239 194.7376 237.6875z"/></defs><clipPath id="SVGID_2_"><use xlink:href="#SVGID_1_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_2_);fill:#fff" d="M190.0704 225.0237c-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0011 1.9546.7088 3.7452 1.8782 5.1354-1.7447-1.4674-2.8575-3.663-2.8588-6.116.0024-4.4125 3.5936-7.999 7.9942-7.9942 2.3802-1e-4 4.616 1.0833 6.1218 2.8788C193.7885 225.7247 191.9774 225.0237 190.0704 225.0237z"/><path style="opacity:.13;clip-path:url(#SVGID_2_);fill:#020202" d="M190.0704 225.0237c-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0011 1.9546.7088 3.7452 1.8782 5.1354-1.7447-1.4674-2.8575-3.663-2.8588-6.116.0024-4.4125 3.5936-7.999 7.9942-7.9942 2.3802-1e-4 4.616 1.0833 6.1218 2.8788C193.7885 225.7247 191.9774 225.0237 190.0704 225.0237z"/></g><g><defs><path id="SVGID_3_" d="M189.0898 210.176c7.7763.0 15.0283 4.1826 18.926 10.9151 1.9201 3.3136 2.9377 7.0988 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8613-12.0547.0024-21.8636-9.8066-21.8612-21.8613.0-6.0285 2.4516-11.4921 6.4116-15.452C177.5977 212.6276 183.0612 210.176 189.0898 210.176zm7.9941 21.8612c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.1861 236.239 197.0839 234.2399 197.0839 232.0372z"/></defs><clipPath id="SVGID_4_"><use xlink:href="#SVGID_3_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_4_);fill:#5b7fc0" d="M172.6595 215.6045c-3.96 3.96-6.4116 9.4235-6.4116 15.452-.0024 12.0547 9.8066 21.8636 21.8613 21.8612 12.0547.0024 21.8636-9.797 21.8613-21.8612.0024-3.8475-1.0151-7.6326-2.9353-10.9462-3.8977-6.7324-11.1497-10.9151-18.926-10.9151C182.0806 209.1953 176.6171 211.647 172.6595 215.6045z"/></g></g><rect x="198.8952" y="225.1043" style="fill:#5b7fc0" width="122.6266" height="13.8671"/></g><g><path style="fill:#d95140" d="M189.0874 155.7611l.0012-.0012c7.7751.0012 15.0295 4.1862 18.932 10.9234 1.9177 3.3159 2.9305 7.1011 2.9293 10.9378.0 5.8394-2.2733 11.3304-6.4032 15.4604-4.1288 4.1288-9.6186 6.4032-15.458 6.4032s-11.328-2.2733-15.458-6.4032-6.4032-9.6186-6.4056-15.4628c.0012-6.0249 2.454-11.4897 6.4116-15.4473C177.5953 158.2128 183.0601 155.7599 189.0874 155.7611zm7.993 21.8577c.0012-1.4042-.3687-2.7868-1.063-3.9887-1.4293-2.4684-4.0833-3.9995-6.9299-4.0019-4.4077.0024-7.993 3.5877-7.993 7.993.0 2.1356.832 4.1431 2.3427 5.6539 1.5083 1.5083 3.5159 2.3403 5.6503 2.3415 2.1356.0 4.1443-.8308 5.6539-2.3403C196.2508 181.7667 197.0816 179.758 197.0804 177.6188z"/><path style="opacity:.3;fill:#fff" d="M189.0898 155.7617c7.7763.0 15.0283 4.1826 18.926 10.9151 1.9201 3.3135 2.9377 7.0987 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8613-12.0547.0024-21.8636-9.8066-21.8612-21.8613.0-6.0285 2.4516-11.4921 6.4116-15.452C177.5977 158.2134 183.0612 155.7617 189.0898 155.7617zm7.9941 21.8613c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.1861 181.8248 197.0839 179.8256 197.0839 177.623z"/><g><defs><path id="SVGID_5_" d="M194.7376 183.2733c-1.4461 1.4461-3.4452 2.3439-5.6479 2.3439-4.4077-.0024-7.9918-3.5865-7.9942-7.9942.0024-4.4125 3.5937-7.9989 7.9942-7.9942 2.8443.0 5.497 1.5323 6.924 3.9983.6991 1.2067 1.0702 2.5881 1.0702 3.9959C197.0839 179.8256 196.1861 181.8248 194.7376 183.2733z"/></defs><clipPath id="SVGID_6_"><use xlink:href="#SVGID_5_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_6_);fill:#fff" d="M190.0704 170.6095c-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0011 1.9546.7088 3.7452 1.8782 5.1354-1.7447-1.4674-2.8575-3.663-2.8588-6.116.0024-4.4125 3.5936-7.999 7.9942-7.9942 2.3802-1e-4 4.616 1.0833 6.1218 2.8788C193.7885 171.3104 191.9774 170.6095 190.0704 170.6095z"/><path style="opacity:.13;clip-path:url(#SVGID_6_);fill:#020202" d="M190.0704 170.6095c-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0011 1.9546.7088 3.7452 1.8782 5.1354-1.7447-1.4674-2.8575-3.663-2.8588-6.116.0024-4.4125 3.5936-7.999 7.9942-7.9942 2.3802-1e-4 4.616 1.0833 6.1218 2.8788C193.7885 171.3104 191.9774 170.6095 190.0704 170.6095z"/></g><g><defs><path id="SVGID_7_" d="M189.0898 155.7617c7.7763.0 15.0283 4.1826 18.926 10.9151 1.9201 3.3135 2.9377 7.0987 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8613-12.0547.0024-21.8636-9.8066-21.8612-21.8613.0-6.0285 2.4516-11.4921 6.4116-15.452C177.5977 158.2134 183.0612 155.7617 189.0898 155.7617zm7.9941 21.8613c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.1861 181.8248 197.0839 179.8256 197.0839 177.623z"/></defs><clipPath id="SVGID_8_"><use xlink:href="#SVGID_7_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_8_);fill:#d95140" d="M172.6595 161.1903c-3.96 3.96-6.4116 9.4235-6.4116 15.452-.0024 12.0547 9.8066 21.8636 21.8613 21.8613 12.0547.0024 21.8636-9.797 21.8613-21.8613.0024-3.8474-1.0151-7.6326-2.9353-10.9462-3.8977-6.7324-11.1497-10.9151-18.926-10.9151C182.0806 154.7811 176.6171 157.2327 172.6595 161.1903z"/></g><rect x="198.8952" y="170.69" style="fill:#d95140" width="122.6266" height="13.8671"/></g><g><g><path style="fill:#56a55c" d="M189.5379 264.6147l.0012-.0012c7.7751.0012 15.0294 4.1862 18.932 10.9235 1.9177 3.3159 2.9305 7.1011 2.9293 10.9378.0 5.8394-2.2733 11.3304-6.4032 15.4604-4.1288 4.1288-9.6186 6.4032-15.458 6.4032-5.8394.0-11.3281-2.2733-15.458-6.4032-4.13-4.13-6.4032-9.6186-6.4056-15.4628.0012-6.0249 2.454-11.4897 6.4116-15.4472C178.0458 267.0663 183.5105 264.6135 189.5379 264.6147zm7.993 21.8576c.0012-1.4042-.3687-2.7868-1.063-3.9887-1.4293-2.4684-4.0833-3.9995-6.9299-4.0019-4.4077.0024-7.993 3.5877-7.993 7.993.0 2.1356.832 4.1431 2.3427 5.6538 1.5083 1.5083 3.5159 2.3403 5.6503 2.3415 2.1356.0 4.1443-.8308 5.6539-2.3403C196.7013 290.6202 197.5321 288.6115 197.5309 286.4723z"/><path style="opacity:.3;fill:#fff" d="M189.5403 264.6153c7.7763.0 15.0283 4.1826 18.926 10.9151 1.9201 3.3135 2.9377 7.0987 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8613-12.0547.0024-21.8636-9.8065-21.8612-21.8613.0-6.0285 2.4516-11.492 6.4116-15.452C178.0482 267.0669 183.5117 264.6153 189.5403 264.6153zm7.9941 21.8612c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9941.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.6366 290.6783 197.5344 288.6792 197.5344 286.4765z"/><g><defs><path id="SVGID_9_" d="M195.1881 292.1268c-1.4461 1.4461-3.4452 2.3439-5.6479 2.3439-4.4077-.0024-7.9918-3.5865-7.9942-7.9942.0024-4.4125 3.5937-7.9989 7.9942-7.9941 2.8443.0 5.497 1.5323 6.924 3.9983.6991 1.2067 1.0702 2.5881 1.0702 3.9959C197.5344 288.6792 196.6366 290.6783 195.1881 292.1268z"/></defs><clipPath id="SVGID_10_"><use xlink:href="#SVGID_9_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_10_);fill:#fff" d="M190.5209 279.463c-4.4005-.0048-7.9918 3.5817-7.9942 7.9941.0011 1.9547.7088 3.7452 1.8782 5.1354-1.7446-1.4674-2.8575-3.6631-2.8588-6.1161.0024-4.4125 3.5936-7.999 7.9942-7.9941 2.3802-1e-4 4.616 1.0833 6.1218 2.8788C194.239 280.164 192.4279 279.463 190.5209 279.463z"/><path style="opacity:.13;clip-path:url(#SVGID_10_);fill:#020202" d="M190.5209 279.463c-4.4005-.0048-7.9918 3.5817-7.9942 7.9941.0011 1.9547.7088 3.7452 1.8782 5.1354-1.7446-1.4674-2.8575-3.6631-2.8588-6.1161.0024-4.4125 3.5936-7.999 7.9942-7.9941 2.3802-1e-4 4.616 1.0833 6.1218 2.8788C194.239 280.164 192.4279 279.463 190.5209 279.463z"/></g><g><defs><path id="SVGID_11_" d="M189.5403 264.6153c7.7763.0 15.0283 4.1826 18.926 10.9151 1.9201 3.3135 2.9377 7.0987 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8613-12.0547.0024-21.8636-9.8065-21.8612-21.8613.0-6.0285 2.4516-11.492 6.4116-15.452C178.0482 267.0669 183.5117 264.6153 189.5403 264.6153zm7.9941 21.8612c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9941.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.6366 290.6783 197.5344 288.6792 197.5344 286.4765z"/></defs><clipPath id="SVGID_12_"><use xlink:href="#SVGID_11_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_12_);fill:#56a55c" d="M173.11 270.0439c-3.96 3.96-6.4116 9.4235-6.4116 15.452-.0024 12.0547 9.8066 21.8636 21.8613 21.8613 12.0547.0024 21.8636-9.797 21.8613-21.8613.0024-3.8474-1.0151-7.6326-2.9353-10.9462-3.8977-6.7325-11.1497-10.9151-18.926-10.9151C182.5311 263.6346 177.0676 266.0863 173.11 270.0439z"/></g></g><rect x="199.3456" y="279.5436" style="fill:#56a55c" width="122.6266" height="13.8671"/></g><g><g><path style="fill:#f1bc42" d="M189.0874 318.7208l.0012-.0012c7.7751.0012 15.0295 4.1862 18.932 10.9234 1.9177 3.3159 2.9305 7.1011 2.9293 10.9378.0 5.8394-2.2733 11.3305-6.4032 15.4604-4.1288 4.1288-9.6186 6.4032-15.458 6.4032s-11.328-2.2733-15.458-6.4032-6.4032-9.6186-6.4056-15.4628c.0012-6.025 2.454-11.4897 6.4116-15.4472C177.5953 321.1724 183.0601 318.7196 189.0874 318.7208zm7.993 21.8576c.0012-1.4042-.3687-2.7868-1.063-3.9887-1.4293-2.4684-4.0833-3.9995-6.9299-4.0019-4.4077.0024-7.993 3.5877-7.993 7.993.0 2.1356.832 4.1431 2.3427 5.6539 1.5083 1.5083 3.5159 2.3403 5.6503 2.3415 2.1356.0 4.1443-.8308 5.6539-2.3403S197.0816 342.7176 197.0804 340.5784z"/><path style="opacity:.3;fill:#fff" d="M189.0898 318.7214c7.7763.0 15.0283 4.1826 18.926 10.915 1.9201 3.3136 2.9377 7.0988 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8612-12.0547.0024-21.8636-9.8065-21.8612-21.8612.0-6.0285 2.4516-11.4921 6.4116-15.452C177.5977 321.173 183.0612 318.7214 189.0898 318.7214zm7.9941 21.8612c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.1861 344.7844 197.0839 342.7853 197.0839 340.5826z"/><g><defs><path id="SVGID_13_" d="M194.7376 346.2329c-1.4461 1.4461-3.4452 2.3439-5.6479 2.3439-4.4077-.0024-7.9918-3.5865-7.9942-7.9942.0024-4.4125 3.5937-7.999 7.9942-7.9942 2.8443.0 5.497 1.5323 6.924 3.9983.6991 1.2067 1.0702 2.5881 1.0702 3.9959C197.0839 342.7853 196.1861 344.7844 194.7376 346.2329z"/></defs><clipPath id="SVGID_14_"><use xlink:href="#SVGID_13_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_14_);fill:#fff" d="M190.0704 333.5691c-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0011 1.9547.7088 3.7452 1.8782 5.1354-1.7447-1.4674-2.8575-3.6631-2.8588-6.1161.0024-4.4125 3.5936-7.999 7.9942-7.9942 2.3802-1e-4 4.616 1.0834 6.1218 2.8788C193.7885 334.2701 191.9774 333.5691 190.0704 333.5691z"/><path style="opacity:.13;clip-path:url(#SVGID_14_);fill:#020202" d="M190.0704 333.5691c-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0011 1.9547.7088 3.7452 1.8782 5.1354-1.7447-1.4674-2.8575-3.6631-2.8588-6.1161.0024-4.4125 3.5936-7.999 7.9942-7.9942 2.3802-1e-4 4.616 1.0834 6.1218 2.8788C193.7885 334.2701 191.9774 333.5691 190.0704 333.5691z"/></g><g><defs><path id="SVGID_15_" d="M189.0898 318.7214c7.7763.0 15.0283 4.1826 18.926 10.915 1.9201 3.3136 2.9377 7.0988 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8612-12.0547.0024-21.8636-9.8065-21.8612-21.8612.0-6.0285 2.4516-11.4921 6.4116-15.452C177.5977 321.173 183.0612 318.7214 189.0898 318.7214zm7.9941 21.8612c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.1861 344.7844 197.0839 342.7853 197.0839 340.5826z"/></defs><clipPath id="SVGID_16_"><use xlink:href="#SVGID_15_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_16_);fill:#f1bc42" d="M172.6595 324.15c-3.96 3.96-6.4116 9.4235-6.4116 15.452-.0024 12.0547 9.8066 21.8636 21.8613 21.8612 12.0547.0024 21.8636-9.797 21.8613-21.8612.0024-3.8474-1.0151-7.6327-2.9353-10.9462-3.8977-6.7324-11.1497-10.9151-18.926-10.9151C182.0806 317.7407 176.6171 320.1924 172.6595 324.15z"/></g></g><rect x="198.8952" y="333.6497" style="fill:#f1bc42" width="122.6266" height="13.8671"/></g></g></svg></span><span class="text-uppercase font-weight-bold">Eyeflow.AI Docs</span>
 	</a>
 	<div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
@@ -79,7 +83,7 @@ if (!doNotTrack) {
 				
 				
 				
-				<a  class="nav-link active" href="/docs/" ><span class="active">Documentação</span></a>
+				<a  class="nav-link active" href="/en/docs/" ><span class="active">Documentation</span></a>
 			</li>
 			
 			<li class="nav-item mr-4 mb-2 mb-lg-0">
@@ -89,7 +93,7 @@ if (!doNotTrack) {
 				
 				
 				
-				<a  class="nav-link" href="/blog/" ><span>Blog</span></a>
+				<a  class="nav-link" href="/en/blog/" ><span>Blog</span></a>
 			</li>
 			
 			<li class="nav-item mr-4 mb-2 mb-lg-0">
@@ -99,7 +103,7 @@ if (!doNotTrack) {
 				
 				
 				
-				<a  class="nav-link" href="/community/" ><span>Communidade</span></a>
+				<a  class="nav-link" href="/en/community/" ><span>Community</span></a>
 			</li>
 			
 			
@@ -108,11 +112,11 @@ if (!doNotTrack) {
 				
 
 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-	Português
+	English
 </a>
 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 	
-	<a class="dropdown-item" href="/en/docs/contribution-guidelines/">English</a>
+	<a class="dropdown-item" href="/docs/tutorials/first_flow/">Português</a>
 	
 </div>
 			</li>
@@ -120,7 +124,7 @@ if (!doNotTrack) {
 		</ul>
 	</div>
 	<div class="navbar-nav d-none d-lg-block">
-<input type="search" class="form-control td-search-input" placeholder="&#xf002 Buscar no site…" aria-label="Buscar no site…" autocomplete="off">
+<input type="search" class="form-control td-search-input" placeholder="&#xf002 Search this site…" aria-label="Search this site…" autocomplete="off">
 
 </div>
 </nav>
@@ -139,7 +143,7 @@ if (!doNotTrack) {
   
   <form class="td-sidebar__search d-flex align-items-center d-lg-none">
     
-<input type="search" class="form-control td-search-input" placeholder="&#xf002 Buscar no site…" aria-label="Buscar no site…" autocomplete="off">
+<input type="search" class="form-control td-search-input" placeholder="&#xf002 Search this site…" aria-label="Search this site…" autocomplete="off">
 
 
     <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
@@ -152,11 +156,11 @@ if (!doNotTrack) {
       
 
 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-	Português
+	English
 </a>
 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 	
-	<a class="dropdown-item" href="/en/docs/contribution-guidelines/">English</a>
+	<a class="dropdown-item" href="/docs/tutorials/first_flow/">Português</a>
 	
 </div>
     </div>
@@ -171,10 +175,10 @@ if (!doNotTrack) {
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Documentação</a>
+    <a  href="/en/docs/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Documentation</a>
   </li>
   <ul>
-    <li class="collapse show" id="docs">
+    <li class="collapse show" id="endocs">
       
       
       
@@ -189,10 +193,10 @@ if (!doNotTrack) {
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/overview/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Visão Geral</a>
+    <a  href="/en/docs/overview/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Overview</a>
   </li>
   <ul>
-    <li class="collapse " id="docsoverview">
+    <li class="collapse " id="endocsoverview">
       
       
       
@@ -214,10 +218,10 @@ if (!doNotTrack) {
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/getting-started/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Para começar</a>
+    <a  href="/en/docs/getting-started/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Getting started</a>
   </li>
   <ul>
-    <li class="collapse " id="docsgetting-started">
+    <li class="collapse " id="endocsgetting-started">
       
       
       
@@ -225,7 +229,7 @@ if (!doNotTrack) {
         
           
           
-          <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgetting-startedexample-page" href="/docs/getting-started/example-page/">Example Page</a>
+          <a class="td-sidebar-link td-sidebar-link__page " id="m-endocsgetting-startedexample-page" href="/en/docs/getting-started/example-page/">Example Page</a>
         
       
       
@@ -247,10 +251,10 @@ if (!doNotTrack) {
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/examples/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Exemplos</a>
+    <a  href="/en/docs/examples/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Examples</a>
   </li>
   <ul>
-    <li class="collapse " id="docsexamples">
+    <li class="collapse " id="endocsexamples">
       
       
       
@@ -272,10 +276,10 @@ if (!doNotTrack) {
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/concepts/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Conceitos</a>
+    <a  href="/en/docs/concepts/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Concepts</a>
   </li>
   <ul>
-    <li class="collapse " id="docsconcepts">
+    <li class="collapse " id="endocsconcepts">
       
       
       
@@ -283,7 +287,7 @@ if (!doNotTrack) {
         
           
           
-          <a class="td-sidebar-link td-sidebar-link__page " id="m-docsconceptsoverview" href="/docs/concepts/overview/">Visão Geral</a>
+          <a class="td-sidebar-link td-sidebar-link__page " id="m-endocsconceptsoverview" href="/en/docs/concepts/overview/">Overview</a>
         
       
       
@@ -291,7 +295,7 @@ if (!doNotTrack) {
         
           
           
-          <a class="td-sidebar-link td-sidebar-link__page " id="m-docsconceptsflow" href="/docs/concepts/flow/">Flow</a>
+          <a class="td-sidebar-link td-sidebar-link__page " id="m-endocsconceptsflow" href="/en/docs/concepts/flow/">Flow</a>
         
       
       
@@ -299,7 +303,7 @@ if (!doNotTrack) {
         
           
           
-          <a class="td-sidebar-link td-sidebar-link__page " id="m-docsconceptsdataset" href="/docs/concepts/dataset/">Dataset</a>
+          <a class="td-sidebar-link td-sidebar-link__page " id="m-endocsconceptsdataset" href="/en/docs/concepts/dataset/">Dataset</a>
         
       
       
@@ -314,10 +318,10 @@ if (!doNotTrack) {
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/concepts/training/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Treinamento</a>
+    <a  href="/en/docs/concepts/training/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Training</a>
   </li>
   <ul>
-    <li class="collapse " id="docsconceptstraining">
+    <li class="collapse " id="endocsconceptstraining">
       
       
       
@@ -325,7 +329,7 @@ if (!doNotTrack) {
         
           
           
-          <a class="td-sidebar-link td-sidebar-link__page " id="m-docsconceptstrainingoverview" href="/docs/concepts/training/overview/">Visão Geral</a>
+          <a class="td-sidebar-link td-sidebar-link__page " id="m-endocsconceptstrainingoverview" href="/en/docs/concepts/training/overview/">Overview</a>
         
       
       
@@ -333,7 +337,7 @@ if (!doNotTrack) {
         
           
           
-          <a class="td-sidebar-link td-sidebar-link__page " id="m-docsconceptstrainingdashboard" href="/docs/concepts/training/dashboard/">Dashboard de Treinamento</a>
+          <a class="td-sidebar-link td-sidebar-link__page " id="m-endocsconceptstrainingdashboard" href="/en/docs/concepts/training/dashboard/">Training Dashboard</a>
         
       
       
@@ -341,7 +345,7 @@ if (!doNotTrack) {
         
           
           
-          <a class="td-sidebar-link td-sidebar-link__page " id="m-docsconceptstrainingtrain_parms" href="/docs/concepts/training/train_parms/">Parâmetros do Treinamento</a>
+          <a class="td-sidebar-link td-sidebar-link__page " id="m-endocsconceptstrainingtrain_parms" href="/en/docs/concepts/training/train_parms/">Training Parameters</a>
         
       
       
@@ -349,7 +353,7 @@ if (!doNotTrack) {
         
           
           
-          <a class="td-sidebar-link td-sidebar-link__page " id="m-docsconceptstrainingdnn_parms" href="/docs/concepts/training/dnn_parms/">Parâmetros das Redes Neurais</a>
+          <a class="td-sidebar-link td-sidebar-link__page " id="m-endocsconceptstrainingdnn_parms" href="/en/docs/concepts/training/dnn_parms/">Parameters of Neural Networks</a>
         
       
       
@@ -357,97 +361,7 @@ if (!doNotTrack) {
         
           
           
-          <a class="td-sidebar-link td-sidebar-link__page " id="m-docsconceptstrainingdata_augmentation_parms" href="/docs/concepts/training/data_augmentation_parms/">Data Augmentation</a>
-        
-      
-      
-    </li>
-  </ul>
-</ul>
-
-        
-      
-      
-    </li>
-  </ul>
-</ul>
-
-        
-      
-      
-      
-        
-          
-
-
-
-
-
-
-<ul class="td-sidebar-nav__section pr-md-3">
-  <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/tasks/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Atividades</a>
-  </li>
-  <ul>
-    <li class="collapse " id="docstasks">
-      
-      
-      
-      
-        
-          
-          
-          <a class="td-sidebar-link td-sidebar-link__page " id="m-docstasksbeds" href="/docs/tasks/beds/">Bed and Chair Metrics</a>
-        
-      
-      
-      
-        
-          
-          
-          <a class="td-sidebar-link td-sidebar-link__page " id="m-docstasksporridge" href="/docs/tasks/porridge/">Porridge Assessment</a>
-        
-      
-      
-      
-        
-          
-          
-          <a class="td-sidebar-link td-sidebar-link__page " id="m-docstaskstask" href="/docs/tasks/task/">Another Task</a>
-        
-      
-      
-      
-        
-          
-
-
-
-
-
-
-<ul class="td-sidebar-nav__section pr-md-3">
-  <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/tasks/ponycopters/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Working with Ponycopters</a>
-  </li>
-  <ul>
-    <li class="collapse " id="docstasksponycopters">
-      
-      
-      
-      
-        
-          
-          
-          <a class="td-sidebar-link td-sidebar-link__page " id="m-docstasksponycoptersconfiguring-ponycopters" href="/docs/tasks/ponycopters/configuring-ponycopters/">Configuring Ponycopters</a>
-        
-      
-      
-      
-        
-          
-          
-          <a class="td-sidebar-link td-sidebar-link__page " id="m-docstasksponycopterslaunching-ponycopters" href="/docs/tasks/ponycopters/launching-ponycopters/">Launching Ponycopters</a>
+          <a class="td-sidebar-link td-sidebar-link__page " id="m-endocsconceptstrainingdata_augmentation_parms" href="/en/docs/concepts/training/data_augmentation_parms/">Data Augmentation</a>
         
       
       
@@ -476,10 +390,10 @@ if (!doNotTrack) {
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/tutorials/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Tutoriais</a>
+    <a  href="/en/docs/tasks/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Activities</a>
   </li>
   <ul>
-    <li class="collapse " id="docstutorials">
+    <li class="collapse " id="endocstasks">
       
       
       
@@ -487,7 +401,7 @@ if (!doNotTrack) {
         
           
           
-          <a class="td-sidebar-link td-sidebar-link__page " id="m-docstutorialsprimeiro_flow" href="/docs/tutorials/primeiro_flow/">Primeiro Flow</a>
+          <a class="td-sidebar-link td-sidebar-link__page " id="m-endocstasksbeds" href="/en/docs/tasks/beds/">Bed and Chair Metrics</a>
         
       
       
@@ -495,7 +409,7 @@ if (!doNotTrack) {
         
           
           
-          <a class="td-sidebar-link td-sidebar-link__page " id="m-docstutorialsmulti-bear" href="/docs/tutorials/multi-bear/">Multi-Bear Domicile Setup</a>
+          <a class="td-sidebar-link td-sidebar-link__page " id="m-endocstasksporridge" href="/en/docs/tasks/porridge/">Porridge Assessment</a>
         
       
       
@@ -503,7 +417,48 @@ if (!doNotTrack) {
         
           
           
-          <a class="td-sidebar-link td-sidebar-link__page " id="m-docstutorialstutorial2" href="/docs/tutorials/tutorial2/">Another Tutorial</a>
+          <a class="td-sidebar-link td-sidebar-link__page " id="m-endocstaskstask" href="/en/docs/tasks/task/">Another Task</a>
+        
+      
+      
+      
+        
+          
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/en/docs/tasks/ponycopters/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Working with Ponycopters</a>
+  </li>
+  <ul>
+    <li class="collapse " id="endocstasksponycopters">
+      
+      
+      
+      
+        
+          
+          
+          <a class="td-sidebar-link td-sidebar-link__page " id="m-endocstasksponycoptersconfiguring-ponycopters" href="/en/docs/tasks/ponycopters/configuring-ponycopters/">Configuring Ponycopters</a>
+        
+      
+      
+      
+        
+          
+          
+          <a class="td-sidebar-link td-sidebar-link__page " id="m-endocstasksponycopterslaunching-ponycopters" href="/en/docs/tasks/ponycopters/launching-ponycopters/">Launching Ponycopters</a>
+        
+      
+      
+    </li>
+  </ul>
+</ul>
+
         
       
       
@@ -525,10 +480,10 @@ if (!doNotTrack) {
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/reference/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Referência</a>
+    <a  href="/en/docs/tutorials/" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">Tutorials</a>
   </li>
   <ul>
-    <li class="collapse " id="docsreference">
+    <li class="collapse show" id="endocstutorials">
       
       
       
@@ -536,7 +491,23 @@ if (!doNotTrack) {
         
           
           
-          <a class="td-sidebar-link td-sidebar-link__page " id="m-docsreferenceparameter-reference" href="/docs/reference/parameter-reference/">Parameter Reference</a>
+          <a class="td-sidebar-link td-sidebar-link__page  active" id="m-endocstutorialsfirst_flow" href="/en/docs/tutorials/first_flow/">First Flow</a>
+        
+      
+      
+      
+        
+          
+          
+          <a class="td-sidebar-link td-sidebar-link__page " id="m-endocstutorialsmulti-bear" href="/en/docs/tutorials/multi-bear/">Multi-Bear Domicile Setup</a>
+        
+      
+      
+      
+        
+          
+          
+          <a class="td-sidebar-link td-sidebar-link__page " id="m-endocstutorialstutorial2" href="/en/docs/tutorials/tutorial2/">Another Tutorial</a>
         
       
       
@@ -558,10 +529,43 @@ if (!doNotTrack) {
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/contribution-guidelines/" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">Guia para Contribuição</a>
+    <a  href="/en/docs/reference/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Reference</a>
   </li>
   <ul>
-    <li class="collapse show" id="docscontribution-guidelines">
+    <li class="collapse " id="endocsreference">
+      
+      
+      
+      
+        
+          
+          
+          <a class="td-sidebar-link td-sidebar-link__page " id="m-endocsreferenceparameter-reference" href="/en/docs/reference/parameter-reference/">Parameter Reference</a>
+        
+      
+      
+    </li>
+  </ul>
+</ul>
+
+        
+      
+      
+      
+        
+          
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/en/docs/contribution-guidelines/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Contribution Guidelines</a>
+  </li>
+  <ul>
+    <li class="collapse " id="endocscontribution-guidelines">
       
       
       
@@ -603,16 +607,16 @@ if (!doNotTrack) {
 
 
 
-<a href="https://github.com/siliconlife-ai/eyeflow_doc/edit/master/content/pt/docs/Contribution%20guidelines/_index.md" target="_blank"><i class="fa fa-edit fa-fw"></i> Editar essa página</a>
-<a href="https://github.com/siliconlife-ai/eyeflow_doc/new/master/content/pt/docs/Contribution%20guidelines/_index.md?filename=change-me.md&amp;value=---%0Atitle%3A&#43;%22Long&#43;Page&#43;Title%22%0AlinkTitle%3A&#43;%22Short&#43;Nav&#43;Title%22%0Aweight%3A&#43;100%0Adescription%3A&#43;%3E-%0A&#43;&#43;&#43;&#43;&#43;Page&#43;description&#43;for&#43;heading&#43;and&#43;indexes.%0A---%0A%0A%23%23&#43;Heading%0A%0AEdit&#43;this&#43;template&#43;to&#43;create&#43;your&#43;new&#43;page.%0A%0A%2A&#43;Give&#43;it&#43;a&#43;good&#43;name%2C&#43;ending&#43;in&#43;%60.md%60&#43;-&#43;e.g.&#43;%60getting-started.md%60%0A%2A&#43;Edit&#43;the&#43;%22front&#43;matter%22&#43;section&#43;at&#43;the&#43;top&#43;of&#43;the&#43;page&#43;%28weight&#43;controls&#43;how&#43;its&#43;ordered&#43;amongst&#43;other&#43;pages&#43;in&#43;the&#43;same&#43;directory%3B&#43;lowest&#43;number&#43;first%29.%0A%2A&#43;Add&#43;a&#43;good&#43;commit&#43;message&#43;at&#43;the&#43;bottom&#43;of&#43;the&#43;page&#43;%28%3C80&#43;characters%3B&#43;use&#43;the&#43;extended&#43;description&#43;field&#43;for&#43;more&#43;detail%29.%0A%2A&#43;Create&#43;a&#43;new&#43;branch&#43;so&#43;you&#43;can&#43;preview&#43;your&#43;new&#43;file&#43;and&#43;request&#43;a&#43;review&#43;via&#43;Pull&#43;Request.%0A" target="_blank"><i class="fa fa-edit fa-fw"></i> Criar página filha</a>
-<a href="https://github.com/siliconlife-ai/eyeflow_doc/issues/new?title=Guia%20para%20Contribui%c3%a7%c3%a3o" target="_blank"><i class="fab fa-github fa-fw"></i> Abra um bug</a>
+<a href="https://github.com/siliconlife-ai/eyeflow_doc/edit/master/content/en/docs/Tutorials/first_flow.md" target="_blank"><i class="fa fa-edit fa-fw"></i> Edit this page</a>
+<a href="https://github.com/siliconlife-ai/eyeflow_doc/new/master/content/en/docs/Tutorials/first_flow.md?filename=change-me.md&amp;value=---%0Atitle%3A&#43;%22Long&#43;Page&#43;Title%22%0AlinkTitle%3A&#43;%22Short&#43;Nav&#43;Title%22%0Aweight%3A&#43;100%0Adescription%3A&#43;%3E-%0A&#43;&#43;&#43;&#43;&#43;Page&#43;description&#43;for&#43;heading&#43;and&#43;indexes.%0A---%0A%0A%23%23&#43;Heading%0A%0AEdit&#43;this&#43;template&#43;to&#43;create&#43;your&#43;new&#43;page.%0A%0A%2A&#43;Give&#43;it&#43;a&#43;good&#43;name%2C&#43;ending&#43;in&#43;%60.md%60&#43;-&#43;e.g.&#43;%60getting-started.md%60%0A%2A&#43;Edit&#43;the&#43;%22front&#43;matter%22&#43;section&#43;at&#43;the&#43;top&#43;of&#43;the&#43;page&#43;%28weight&#43;controls&#43;how&#43;its&#43;ordered&#43;amongst&#43;other&#43;pages&#43;in&#43;the&#43;same&#43;directory%3B&#43;lowest&#43;number&#43;first%29.%0A%2A&#43;Add&#43;a&#43;good&#43;commit&#43;message&#43;at&#43;the&#43;bottom&#43;of&#43;the&#43;page&#43;%28%3C80&#43;characters%3B&#43;use&#43;the&#43;extended&#43;description&#43;field&#43;for&#43;more&#43;detail%29.%0A%2A&#43;Create&#43;a&#43;new&#43;branch&#43;so&#43;you&#43;can&#43;preview&#43;your&#43;new&#43;file&#43;and&#43;request&#43;a&#43;review&#43;via&#43;Pull&#43;Request.%0A" target="_blank"><i class="fa fa-edit fa-fw"></i> Create child page</a>
+<a href="https://github.com/siliconlife-ai/eyeflow_doc/issues/new?title=First%20Flow" target="_blank"><i class="fab fa-github fa-fw"></i> Create an issue</a>
 
 
-<a href="https://github.com/siliconlife-ai/eyeflow_sdk/issues/new" target="_blank"><i class="fas fa-tasks fa-fw"></i> Relatar um problema no projeto</a>
+<a href="https://github.com/siliconlife-ai/eyeflow_sdk/issues/new" target="_blank"><i class="fas fa-tasks fa-fw"></i> Create project issue</a>
 
 
 
-<a id="print" href="/docs/contribution-guidelines/_print/"><i class="fa fa-print fa-fw"></i> Imprimir seção inteira</a>
+<a id="print" href="/en/docs/tutorials/_print/"><i class="fa fa-print fa-fw"></i> Print entire section</a>
 
 
 
@@ -625,11 +629,58 @@ if (!doNotTrack) {
 
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#quick-start-with-netlify">Quick start with Netlify</a></li>
-    <li><a href="#updating-a-single-page">Updating a single page</a></li>
-    <li><a href="#previewing-your-changes-locally">Previewing your changes locally</a></li>
-    <li><a href="#creating-an-issue">Creating an issue</a></li>
-    <li><a href="#useful-resources">Useful resources</a></li>
+    <li><a href="#use-case-detection-and-identification-of-the-face-of-sows">Use Case: Detection and Identification of the Face of Sows</a>
+      <ul>
+        <li><a href="#objective">Objective:</a></li>
+      </ul>
+    </li>
+    <li><a href="#follow-the-steps-below">Follow the steps below</a>
+      <ul>
+        <li><a href="#login---enter-the-eyeflow-platform">Login - Enter the EyeFlow platform</a></li>
+      </ul>
+    </li>
+    <li><a href="#application">Application</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#flow">Flow</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#build-your-flow">Build your Flow</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#upload">Upload</a></li>
+    <li><a href="#upload-video">Upload video</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#dataset">Dataset</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#editing-parameters-for-training-the-neural-network">Editing Parameters for training the neural network</a>
+      <ul>
+        <li><a href="#follow-the-steps-below-1">Follow the steps below</a></li>
+      </ul>
+    </li>
+    <li><a href="#neural-network-training">Neural network training</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#test-result">Test-result</a></li>
+    <li><a href="#video-validation">Video validation</a>
+      <ul>
+        <li><a href="#follow-the-steps-below-3">Follow the steps below</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 
@@ -650,15 +701,25 @@ if (!doNotTrack) {
 
 
 
+
+
+
 <li class="breadcrumb-item" >
-	<a href="/docs/">Documentação</a>
+	<a href="/en/docs/">Documentation</a>
+</li>
+
+
+
+
+<li class="breadcrumb-item" >
+	<a href="/en/docs/tutorials/">Tutorials</a>
 </li>
 
 
 
 
 <li class="breadcrumb-item active" aria-current="page">
-	<a href="/docs/contribution-guidelines/">Guia para Contribuição</a>
+	<a href="/en/docs/tutorials/first_flow/">First Flow</a>
 </li>
 
 	</ol>
@@ -666,149 +727,127 @@ if (!doNotTrack) {
 
             
 <div class="td-content">
-	<h1>Guia para Contribuição</h1>
-        <div class="lead">Como contribuir para a documentação</div>
-	
-	
-
-<div class="pageinfo pageinfo-primary">
-<p>These basic sample guidelines assume that your Docsy site is deployed using Netlify and your files are stored in GitHub. You can use the guidelines &ldquo;as is&rdquo; or adapt them with your own instructions: for example, other deployment options, information about your doc project&rsquo;s file structure, project-specific review guidelines, versioning guidelines, or any other information your users might find useful when updating your site. <a href="https://github.com/kubeflow/website/blob/master/README.md">Kubeflow</a> has a great example.</p>
-<p>Don&rsquo;t forget to link to your own doc repo rather than our example site! Also make sure users can find these guidelines from your doc repo README: either add them there and link to them from this page, add them here and link to them from the README, or include them in both locations.</p>
-
-</div>
-
-<p>We use <a href="https://gohugo.io/">Hugo</a> to format and generate our website, the
-<a href="https://github.com/google/docsy">Docsy</a> theme for styling and site structure,
-and <a href="https://www.netlify.com/">Netlify</a> to manage the deployment of the site.
-Hugo is an open-source static site generator that provides us with templates,
-content organisation in a standard directory structure, and a website generation
-engine. You write the pages in Markdown (or HTML if you want), and Hugo wraps them up into a website.</p>
-<p>All submissions, including submissions by project members, require review. We
-use GitHub pull requests for this purpose. Consult
-<a href="https://help.github.com/articles/about-pull-requests/">GitHub Help</a> for more
-information on using pull requests.</p>
-<h2 id="quick-start-with-netlify">Quick start with Netlify</h2>
-<p>Here&rsquo;s a quick guide to updating the docs. It assumes you&rsquo;re familiar with the
-GitHub workflow and you&rsquo;re happy to use the automated preview of your doc
-updates:</p>
-<ol>
-<li>Fork the <a href="https://github.com/google/docsy-example">Goldydocs repo</a> on GitHub.</li>
-<li>Make your changes and send a pull request (PR).</li>
-<li>If you&rsquo;re not yet ready for a review, add &ldquo;WIP&rdquo; to the PR name to indicate
-it&rsquo;s a work in progress. (<strong>Don&rsquo;t</strong> add the Hugo property
-&ldquo;draft = true&rdquo; to the page front matter, because that prevents the
-auto-deployment of the content preview described in the next point.)</li>
-<li>Wait for the automated PR workflow to do some checks. When it&rsquo;s ready,
-you should see a comment like this: <strong>deploy/netlify — Deploy preview ready!</strong></li>
-<li>Click <strong>Details</strong> to the right of &ldquo;Deploy preview ready&rdquo; to see a preview
-of your updates.</li>
-<li>Continue updating your doc and pushing your changes until you&rsquo;re happy with
-the content.</li>
-<li>When you&rsquo;re ready for a review, add a comment to the PR, and remove any
-&ldquo;WIP&rdquo; markers.</li>
-</ol>
-<h2 id="updating-a-single-page">Updating a single page</h2>
-<p>If you&rsquo;ve just spotted something you&rsquo;d like to change while using the docs, Docsy has a shortcut for you:</p>
-<ol>
-<li>Click <strong>Edit this page</strong> in the top right hand corner of the page.</li>
-<li>If you don&rsquo;t already have an up to date fork of the project repo, you are prompted to get one - click <strong>Fork this repository and propose changes</strong> or <strong>Update your Fork</strong> to get an up to date version of the project to edit. The appropriate page in your fork is displayed in edit mode.</li>
-<li>Follow the rest of the <a href="#quick-start-with-netlify">Quick start with Netlify</a> process above to make, preview, and propose your changes.</li>
-</ol>
-<h2 id="previewing-your-changes-locally">Previewing your changes locally</h2>
-<p>If you want to run your own local Hugo server to preview your changes as you work:</p>
-<ol>
-<li>
-<p>Follow the instructions in <a href="/docs/getting-started">Getting started</a> to install Hugo and any other tools you need. You&rsquo;ll need at least <strong>Hugo version 0.45</strong> (we recommend using the most recent available version), and it must be the <strong>extended</strong> version, which supports SCSS.</p>
-</li>
-<li>
-<p>Fork the <a href="https://github.com/google/docsy-example">Goldydocs repo</a> repo into your own project, then create a local copy using <code>git clone</code>. Don’t forget to use <code>--recurse-submodules</code> or you won’t pull down some of the code you need to generate a working site.</p>
-<pre><code>git clone --recurse-submodules --depth 1 https://github.com/google/docsy-example.git
-</code></pre></li>
-<li>
-<p>Run <code>hugo server</code> in the site root directory. By default your site will be available at http://localhost:1313/. Now that you&rsquo;re serving your site locally, Hugo will watch for changes to the content and automatically refresh your site.</p>
-</li>
-<li>
-<p>Continue with the usual GitHub workflow to edit files, commit them, push the
-changes up to your fork, and create a pull request.</p>
-</li>
-</ol>
-<h2 id="creating-an-issue">Creating an issue</h2>
-<p>If you&rsquo;ve found a problem in the docs, but you&rsquo;re not sure how to fix it yourself, please create an issue in the <a href="https://github.com/google/docsy-example/issues">Goldydocs repo</a>. You can also create an issue about a specific page by clicking the <strong>Create Issue</strong> button in the top right hand corner of the page.</p>
-<h2 id="useful-resources">Useful resources</h2>
-<ul>
-<li><a href="https://www.docsy.dev/docs/">Docsy user guide</a>: All about Docsy, including how it manages navigation, look and feel, and multi-language support.</li>
-<li><a href="https://gohugo.io/documentation/">Hugo documentation</a>: Comprehensive reference for Hugo.</li>
-<li><a href="https://guides.github.com/activities/hello-world/">Github Hello World!</a>: A basic introduction to GitHub concepts and workflow.</li>
-</ul>
-
-        <div class="section-index">
-    
-    
-    
-    
-    
-    <hr class="panel-line">
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-    
-</div>
+	<h1>First Flow</h1>
+    <div class="lead">Tutorial 1 - Build your first flow</div>
+	       
+	<blockquote>
+<p>This training will be based on a use case, for this case, a video is available to be used for training the neural network, which will have the objective of detecting the Nut element, identifying its faces (smooth face and prospecting face)</p>
+</blockquote>
+<h2 id="use-case-detection-and-identification-of-the-face-of-sows">Use Case: Detection and Identification of the Face of Sows</h2>
+<h3 id="objective">Objective:</h3>
+<p>Identify the face of the sows, informing if the face is smooth or if the face is prospecting</p>
+<p><img src="/screenshots/ec5e47ae04a38e9fdf615ecc47ccb97d.png" alt="Porca" title="Porca face lisa"></p>
+<h2 id="follow-the-steps-below">Follow the steps below</h2>
+<h3 id="login---enter-the-eyeflow-platform">Login - Enter the EyeFlow platform</h3>
+<p>Access:</p>
+<pre><code>https://app.eyeflow.ai
+**Usuario**: treinamento
+**Senha**: Teste
+</code></pre><p><img src="/screenshots/54452b239b80e31c2b115e38884a828f.png" alt=""></p>
+<h2 id="application">Application</h2>
+<p>Application is a subdirectory, an area made available in the tool, in which the user can create his projects (applications) to run on the neural network.</p>
+<h4 id="click-on-the-application-tab">Click on the Application Tab</h4>
+<p><img src="/screenshots/278595a445b84611c12da54e179d4a85.png" alt=""></p>
+<h4 id="create-a-new-application-by-pressing-the--lt-gt-button">Create a new application by pressing the \ &lt;+ &amp;gt; button</h4>
+<p><img src="/screenshots/8aa5d0c1d01eab46d7f83cfcf61a024e.png" alt=""></p>
+<h4 id="create-a-named-application-serpronome-do-aluno">Create a Named Application &lt;SERPRO.nome do aluno&gt;</h4>
+<p><img src="/screenshots/5aeb0464310d01fd998a3330b34ab08a.png" alt=""></p>
+<h2 id="flow">Flow</h2>
+<p>The solution allows the user to create the flow for the execution of the neural network. This solution is based on a Drag and Drop (Drag and Drop) tool that is easy to use, where users can use the components displayed in their Menu.</p>
+<h4 id="click-on-the-flow-tab">Click on the Flow Tab</h4>
+<p><img src="/screenshots/9624b3918209942bbedc3281fe844f9e.png" alt=""></p>
+<p>Before creating a flow we will know the existing components in the Tool, in the image we will make a brief description:</p>
+<p><img src="/screenshots/b9ee846a7bef5d5a7d875987ec191d01.png" alt=""></p>
+<p><img src="/screenshots/ee5978b24eedb262e89aeb7872e05661.jpeg" alt="Câmera IP tipo Box - Planet Ello">
+<strong>Images of the informed camera models:</strong></p>
+<p><img src="/screenshots/66934571ab2954b852cd3f5c3cc311ab.jpeg" alt="5MP Camera for NVIDIA Jetson Xavier NX / Nano developer kit">
+<img src="/screenshots/e47655b354ef9adf5ab04391acf39f75.png" alt=""></p>
+<h2 id="build-your-flow">Build your Flow</h2>
+<p><strong>Input</strong></p>
+<h4 id="ip-camera---drag-the-component-into-the-stream">IP CAMERA - Drag the component into the stream</h4>
+<p><img src="/screenshots/bcaa17768ffda276bfd23eb259fc2126.png" alt=""></p>
+<h4 id="double-click-on-the-camera-ip-component-the-screen-below-will-appear">Double Click on the CAMERA IP component, the screen below will appear:</h4>
+<p><img src="/screenshots/cff838b4aeabb285995b06346a14e70e.png" alt=""></p>
+<p><strong>Selector</strong></p>
+<h4 id="roi-cutter---drag-the-component-to-the-flow">ROI CUTTER - Drag the component to the Flow</h4>
+<p><img src="/screenshots/21d08445d07222cf875416ca0b88be0a.png" alt=""></p>
+<h4 id="double-click-on-the-roi-cutter-component-the-screen-below-will-appear">Double Click on the ROI CUTTER component, the screen below will appear:</h4>
+<p><img src="/screenshots/337b7304a836759447829c0218facd79.png" alt=""></p>
+<p><strong>Follow the steps</strong></p>
+<p><img src="/screenshots/8f0d29dda6f9f27221d1e211c5dd27b8.png" alt=""></p>
+<h4 id="create-a-new-class-following-the-step-represented-below">Create a new Class, following the step represented below:</h4>
+<p><img src="/screenshots/b58b2a563154be20185941b41f43cf6d.png" alt=""></p>
+<p>The image below will appear, in this step we will be adding two new classes</p>
+<p><img src="/screenshots/07fba474794f9334206980b7b17e212a.png" alt=""></p>
+<h4 id="save-the-settings-made-in-the-roi-cutter-component">Save the settings made in the ROI CUTTER component</h4>
+<p><img src="/screenshots/e6a94df39e040762c7292296b673e677.png" alt=""></p>
+<h4 id="make-the-communication-between-the-ip-chamber-with-roi-cutter-in-the-flow">Make the communication between the IP CHAMBER with ROI CUTTER in the flow</h4>
+<p><img src="/screenshots/55b2a4a94b260d0d95d41a746cf6320f.png" alt=""></p>
+<h4 id="save-flow-click-on-the--buttonsave-flow">Save Flow: Click on the \ button&lt;Save Flow&gt;</h4>
+<p><img src="/screenshots/c6d71a06358b7b35cfa5d3ecf4340ea0.png" alt=""></p>
+<h2 id="upload">Upload</h2>
+<p><img src="/screenshots/8f54bde44fd3300b8923ce16c7d6bafc.png" alt="">
+<img src="/screenshots/13526a42e6cba74c2ca123581f41d23d.png" alt="Upload"></p>
+<h2 id="upload-video">Upload video</h2>
+<h4 id="click-on-the--buttonteste-vídeo">Click on the \ button&lt;Teste Vídeo&gt;</h4>
+<p><img src="/screenshots/4beaed025791a12acf13245f6156b0d7.png" alt=""></p>
+<h4 id="upload-video-test-click-on-the--buttonupload-video">Upload Video test, click on the \ button&lt;UPLOAD VIDEO&gt;</h4>
+<p><img src="/screenshots/6ff411258db74b91e1ecacf0db27e66e.png" alt=""></p>
+<h4 id="drag-the-video-to-the-location-you-entered">Drag the video to the location you entered</h4>
+<p><img src="/screenshots/2d4a53d3b31d9783e49fc511c615004c.png" alt=""></p>
+<p>At this moment, a bar will appear showing the video load in the tool</p>
+<p><img src="/screenshots/626a6c42c6b044d26f05fd704fe91eac.png" alt=""></p>
+<p>At this point, the solution will be executing its created flow and providing new examples (frames) for its Dataset.</p>
+<h2 id="dataset">Dataset</h2>
+<p><img src="/screenshots/036889fd1c08813042e32d9fe50439a9.png" alt="Flow"><img src="/screenshots/e11aa076d81124afd80c34d4cdfe8d09.png" alt="Dataset"></p>
+<p><img src="/screenshots/8f54bde44fd3300b8923ce16c7d6bafc.png" alt=""></p>
+<h4 id="enter-the-datasets-tab">Enter the DATASETS Tab</h4>
+<p><img src="/screenshots/cb0d9f16e443fad19887ac227943415c.png" alt=""></p>
+<p>The Dataset folder will open</p>
+<p><img src="/screenshots/2c258bb34ea7d868a9c67fb6a019439d.png" alt=""></p>
+<h4 id="select-frames--images-to-be-trained-in-the-dataset-click-on-the-selection-buttons">Select frames / images to be trained in the Dataset, click on the selection buttons</h4>
+<p><img src="/screenshots/911c7bcf7b17c08f3c2da836c62e6165.png" alt=""></p>
+<h4 id="insert-the-new-selected-examples-click-on-the--buttoninsira-novos-exemplos">Insert the new selected examples, click on the \ button&lt;Insira novos exemplos&gt;</h4>
+<p><img src="/screenshots/94702afc11390778519bb29e9439d074.png" alt=""></p>
+<h4 id="return-to-dataset-tab">Return to Dataset Tab</h4>
+<p><img src="/screenshots/a3ac82b770d68bce6bb087659a597bce.png" alt=""></p>
+<h4 id="click-on-your-created-dataset">Click on your created Dataset</h4>
+<p><img src="/screenshots/8f36879c60fbf6b59200f537e27f2605.png" alt=""></p>
+<h4 id="mark-the-regions-of-interest-by-selecting-the-nut-with-the-smooth-face-and-the-projection-face">Mark the regions of interest by selecting the Nut with the Smooth Face and the Projection Face</h4>
+<p><img src="/screenshots/c55290311d8113c5c93a917cd5cef3e3.png" alt=""></p>
+<p>After marking all selected frames click on the \ button&lt;Painel de Treino&gt;</p>
+<p><img src="/screenshots/18e3818244e9afbe876baf9392c69560.png" alt=""></p>
+<h2 id="editing-parameters-for-training-the-neural-network">Editing Parameters for training the neural network</h2>
+<h3 id="follow-the-steps-below-1">Follow the steps below</h3>
+<p><img src="/screenshots/16b5d277d6395f1288ab844a59fbc686.png" alt=""></p>
+<p>The image below will appear</p>
+<blockquote>
+<p>Description of parameters in the tool
+<img src="/screenshots/22c40d8d1c363711e6f5e3a39b924112.png" alt=""></p>
+</blockquote>
+<h2 id="neural-network-training">Neural network training</h2>
+<p><img src="/screenshots/036889fd1c08813042e32d9fe50439a9.png" alt="Flow"><img src="/screenshots/8f54bde44fd3300b8923ce16c7d6bafc.png" alt=""></p>
+<p><img src="/screenshots/e11aa076d81124afd80c34d4cdfe8d09.png" alt="Dataset"></p>
+<p>After editing the parameters of the neural network, we will submit your marked frames for training, where you will execute the flow created.</p>
+<h4 id="follow-the-steps-below-2">Follow the steps below</h4>
+<p><img src="/screenshots/ee2abb31954fea2099d8790c8dd0429d.png" alt=""></p>
+<p>A confirmation pop-up will appear on the screen</p>
+<p><img src="/screenshots/646bc2a77c289b3e681f03f328ecae5a.png" alt=""></p>
+<p>After this step, a screen will appear with the progress of the training</p>
+<p><img src="/screenshots/33e934dfaa47afa81bcff852189c6b34.png" alt=""></p>
+<h2 id="test-result">Test-result</h2>
+<p>After training the neural network, you will be able to see the training result in the report shown in the image, you will also be able to run the loaded video and observe the result you have achieved, if the result is not satisfactory, the neural network must perform a new training, for this case, we must submit new examples in Datasets, in order to improve the learning of the neural network</p>
+<p><img src="/screenshots/b3810a2f7f2f9724e96680b013bb77ed.png" alt=""></p>
+<h2 id="video-validation">Video validation</h2>
+<p>As previously seen in the Flow item, the tool provides a test option on the loaded video.</p>
+<h3 id="follow-the-steps-below-3">Follow the steps below</h3>
+<h4 id="click-on-the-ltltflow-gt-tab">Click on the &lt;&lt;Flow &amp;gt; Tab</h4>
+<p><img src="/screenshots/ef0e2286e9d11d6f3a8292ad4bfb8c08.png" alt=""></p>
+<h4 id="follow-the-steps-below-4">Follow the steps below</h4>
+<p><img src="/screenshots/db80a153eac05e2394fdd281d30392ed.png" alt=""></p>
+<h4 id="follow-the-steps-below-5">Follow the steps below</h4>
+<p><img src="/screenshots/949318d213279ca64c1db3fe43563b42.png" alt=""></p>
+<p>After this step you will be able to check the result of your Project on the video, if the result is not satisfactory, the neural network must be submitted to a new training, for this you must perform the steps informed in the item Datasets, this process must occur until the neural network find the satisfactory result.</p>
 
 	
 		<style>
@@ -874,9 +913,10 @@ changes up to your fork, and create a pull request.</p>
 		<br />
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Última modificação 29/03/2021: <a  href="https://github.com/siliconlife-ai/eyeflow_doc/commit/75ee844414db7622f1c281e92f96b85b2da136d9">Exportação dos parâmetros (75ee844)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified April 2, 2021: <a  href="https://github.com/siliconlife-ai/eyeflow_doc/commit/8ee3b5de9d9f6351a586d92ceeee02ed15bcab08">Tradução automática inglês (8ee3b5d)</a>
 </div>
 </div>
+
 
           </main>
         </div>
@@ -944,8 +984,8 @@ changes up to your fork, and create a pull request.</p>
         
       </div>
       <div class="col-12 col-sm-4 text-center py-2 order-sm-2">
-        <small class="text-white">&copy; 2021 The Docsy Authors Todos os direitos reservados</small>
-        <small class="ml-1"><a href="https://policies.google.com/privacy" target="_blank">Política de Privacidade</a></small>
+        <small class="text-white">&copy; 2021 The Docsy Authors All Rights Reserved</small>
+        <small class="ml-1"><a href="https://policies.google.com/privacy" target="_blank">Privacy Policy</a></small>
 	
 		
 	

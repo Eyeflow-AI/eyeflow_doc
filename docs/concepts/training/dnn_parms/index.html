@@ -23,13 +23,13 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/docs/concepts/training/dnn_parms/" /><meta property="article:section" content="docs" />
 
-<meta property="article:modified_time" content="2021-03-29T01:19:26-03:00" /><meta property="og:site_name" content="Eyeflow.AI Docs" />
+<meta property="article:modified_time" content="2021-03-31T00:46:39-03:00" /><meta property="og:site_name" content="Eyeflow.AI Docs" />
 
 <meta itemprop="name" content="Parâmetros das Redes Neurais">
 <meta itemprop="description" content="Controle das redes neurais
 ">
-<meta itemprop="dateModified" content="2021-03-29T01:19:26-03:00" />
-<meta itemprop="wordCount" content="308">
+<meta itemprop="dateModified" content="2021-03-31T00:46:39-03:00" />
+<meta itemprop="wordCount" content="442">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Parâmetros das Redes Neurais"/>
 <meta name="twitter:description" content="Controle das redes neurais
@@ -225,14 +225,6 @@ if (!doNotTrack) {
       
       
       
-      
-        
-          
-          
-          <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgetting-startedexample-page" href="/docs/getting-started/example-page/">Example Page</a>
-        
-      
-      
     </li>
   </ul>
 </ul>
@@ -397,71 +389,6 @@ if (!doNotTrack) {
       
       
       
-      
-        
-          
-          
-          <a class="td-sidebar-link td-sidebar-link__page " id="m-docstasksbeds" href="/docs/tasks/beds/">Bed and Chair Metrics</a>
-        
-      
-      
-      
-        
-          
-          
-          <a class="td-sidebar-link td-sidebar-link__page " id="m-docstasksporridge" href="/docs/tasks/porridge/">Porridge Assessment</a>
-        
-      
-      
-      
-        
-          
-          
-          <a class="td-sidebar-link td-sidebar-link__page " id="m-docstaskstask" href="/docs/tasks/task/">Another Task</a>
-        
-      
-      
-      
-        
-          
-
-
-
-
-
-
-<ul class="td-sidebar-nav__section pr-md-3">
-  <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/tasks/ponycopters/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Working with Ponycopters</a>
-  </li>
-  <ul>
-    <li class="collapse " id="docstasksponycopters">
-      
-      
-      
-      
-        
-          
-          
-          <a class="td-sidebar-link td-sidebar-link__page " id="m-docstasksponycoptersconfiguring-ponycopters" href="/docs/tasks/ponycopters/configuring-ponycopters/">Configuring Ponycopters</a>
-        
-      
-      
-      
-        
-          
-          
-          <a class="td-sidebar-link td-sidebar-link__page " id="m-docstasksponycopterslaunching-ponycopters" href="/docs/tasks/ponycopters/launching-ponycopters/">Launching Ponycopters</a>
-        
-      
-      
-    </li>
-  </ul>
-</ul>
-
-        
-      
-      
     </li>
   </ul>
 </ul>
@@ -491,23 +418,7 @@ if (!doNotTrack) {
         
           
           
-          <a class="td-sidebar-link td-sidebar-link__page " id="m-docstutorialsprimeiro_flow" href="/docs/tutorials/primeiro_flow/">Primeiro Flow</a>
-        
-      
-      
-      
-        
-          
-          
-          <a class="td-sidebar-link td-sidebar-link__page " id="m-docstutorialsmulti-bear" href="/docs/tutorials/multi-bear/">Multi-Bear Domicile Setup</a>
-        
-      
-      
-      
-        
-          
-          
-          <a class="td-sidebar-link td-sidebar-link__page " id="m-docstutorialstutorial2" href="/docs/tutorials/tutorial2/">Another Tutorial</a>
+          <a class="td-sidebar-link td-sidebar-link__page " id="m-docstutorialsfirst_flow" href="/docs/tutorials/first_flow/">Primeiro Flow</a>
         
       
       
@@ -533,39 +444,6 @@ if (!doNotTrack) {
   </li>
   <ul>
     <li class="collapse " id="docsreference">
-      
-      
-      
-      
-        
-          
-          
-          <a class="td-sidebar-link td-sidebar-link__page " id="m-docsreferenceparameter-reference" href="/docs/reference/parameter-reference/">Parameter Reference</a>
-        
-      
-      
-    </li>
-  </ul>
-</ul>
-
-        
-      
-      
-      
-        
-          
-
-
-
-
-
-
-<ul class="td-sidebar-nav__section pr-md-3">
-  <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/contribution-guidelines/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Guia para Contribuição</a>
-  </li>
-  <ul>
-    <li class="collapse " id="docscontribution-guidelines">
       
       
       
@@ -695,30 +573,23 @@ if (!doNotTrack) {
 	<h1>Parâmetros das Redes Neurais</h1>
     <div class="lead">Controle das redes neurais</div>
 	       
-	<!-- <parm_table> -->
+	<p>Nesse conjunto de parâmetros são controlados os aspectos relacionados à arquitetura das redes neurais que irão
+aprender com os exemplos do dataset no treinamento.</p>
+<p>Cada tipo de rede neural tem sua própria arquitetura, parâmetros peso e performance. O Eyeflow.AI é uma plataforma
+extensível, que permite se trabalhar com as mais diversas arquiteturas. Entretanto, nossa experiência de vários
+projetos já nos ensinou sobre várias arquiteturas que funcionam bem em produção, e é essa experiência que
+buscamos trazer para a plataforma, e assim simplificar a vida dos usuários.</p>
+<p>Nessa fase Beta temos 2 principais componentes que usamos para solucionar todos os problemas que temos encontrado.</p>
+<!-- <parm_table> -->
 <h2 id="parâmetros-de-rede-neural">Parâmetros de rede neural</h2>
 <p><strong>Parâmetros para rede neural</strong></p>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>type</th>
-<th>Min</th>
-<th>Max</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead>
-</table>
 <h3 id="parâmetros-de-classificação">Parâmetros de Classificação</h3>
 <p><strong>Parâmetros de rede neural específicos de classificação</strong></p>
 <table>
 <thead>
 <tr>
 <th>Parameter</th>
-<th>type</th>
-<th>Min</th>
-<th>Max</th>
+<th>Values</th>
 <th>Default</th>
 <th>Description</th>
 </tr>
@@ -726,57 +597,43 @@ if (!doNotTrack) {
 <tbody>
 <tr>
 <td>Componente</td>
-<td>enum</td>
-<td></td>
-<td></td>
+<td>choice [&lsquo;class_cnn&rsquo;]</td>
 <td>class_cnn</td>
 <td>O componente DNN para o modelo de treinamento</td>
 </tr>
 <tr>
 <td>Profundidade da Rede Neural</td>
-<td>integer</td>
-<td>1</td>
-<td></td>
+<td>int [1 - ]</td>
 <td>3</td>
 <td>Profundidade (núm camadas) da rede neural</td>
 </tr>
 <tr>
 <td>Largura da rede neural</td>
-<td>integer</td>
-<td>5</td>
-<td></td>
+<td>int [5 - ]</td>
 <td>20</td>
 <td>Largura (núm features) da Rede Neural</td>
 </tr>
 <tr>
 <td>Modo de pré-processamento</td>
-<td>enum</td>
-<td></td>
-<td></td>
+<td>choice [&lsquo;caffe&rsquo;, &lsquo;tf&rsquo;]</td>
 <td>caffe</td>
 <td>Função para normalizar imagem</td>
 </tr>
 <tr>
 <td>Função de perda</td>
-<td>enum</td>
-<td></td>
-<td></td>
+<td>choice [&lsquo;categorical_crossentropy&rsquo;, &lsquo;binary_crossentropy&rsquo;]</td>
 <td>categorical_crossentropy</td>
 <td>Função de perda para uso em treinamento</td>
 </tr>
 <tr>
 <td>Funções de métricas</td>
-<td>array</td>
-<td></td>
-<td></td>
+<td>Array of string</td>
 <td>[&lsquo;categorical_accuracy&rsquo;]</td>
 <td>Funções de métricas para uso em avaliação</td>
 </tr>
 <tr>
 <td>Função Otimizador</td>
-<td>enum</td>
-<td></td>
-<td></td>
+<td>choice [&lsquo;adam&rsquo;]</td>
 <td>adam</td>
 <td>Funções de métricas para uso em avaliação</td>
 </tr>
@@ -788,9 +645,7 @@ if (!doNotTrack) {
 <thead>
 <tr>
 <th>Parameter</th>
-<th>type</th>
-<th>Min</th>
-<th>Max</th>
+<th>Values</th>
 <th>Default</th>
 <th>Description</th>
 </tr>
@@ -798,49 +653,37 @@ if (!doNotTrack) {
 <tbody>
 <tr>
 <td>Componente</td>
-<td>enum</td>
-<td></td>
-<td></td>
+<td>choice [&lsquo;objdet&rsquo;, &lsquo;retinanet&rsquo;]</td>
 <td>objdet</td>
 <td>O componente DNN para o modelo de treinamento</td>
 </tr>
 <tr>
 <td>Largura da rede neural</td>
-<td>integer</td>
-<td>5</td>
-<td></td>
+<td>int [5 - ]</td>
 <td>20</td>
 <td>Largura (núm features) da Rede Neural</td>
 </tr>
 <tr>
 <td>Backbone de rede neural</td>
-<td>enum</td>
-<td></td>
-<td></td>
+<td>choice [&lsquo;vgg7&rsquo;, &lsquo;vgg16&rsquo;, &lsquo;vgg19&rsquo;, &lsquo;resnet18&rsquo;, &lsquo;resnet34&rsquo;, &lsquo;resnet50&rsquo;, &lsquo;resnet101&rsquo;, &lsquo;resnet152&rsquo;, &lsquo;mobilenet128&rsquo;, &lsquo;mobilenet160&rsquo;, &lsquo;mobilenet192&rsquo;, &lsquo;mobilenet224&rsquo;, &lsquo;densenet121&rsquo;, &lsquo;densenet169&rsquo;, &lsquo;densenet201&rsquo;]</td>
 <td>vgg7</td>
 <td>Arquitetura de backbone para rede neural</td>
 </tr>
 <tr>
 <td>Modo de pré-processamento</td>
-<td>enum</td>
-<td></td>
-<td></td>
+<td>choice [&lsquo;caffe&rsquo;, &lsquo;tf&rsquo;]</td>
 <td>caffe</td>
 <td>Função para normalizar imagem</td>
 </tr>
 <tr>
 <td>Sobreposição negativa IoU</td>
-<td>number</td>
-<td>0.05</td>
-<td>1.0</td>
+<td>number [0.05 - 1.0]</td>
 <td>0.3</td>
 <td>Valor para sobreposição mínima de caixas negativas</td>
 </tr>
 <tr>
 <td>Sobreposição positiva IoU</td>
-<td>number</td>
-<td>0.05</td>
-<td>1.0</td>
+<td>number [0.05 - 1.0]</td>
 <td>0.45</td>
 <td>Valor para sobreposição mínima de caixas positivas</td>
 </tr>
@@ -852,9 +695,7 @@ if (!doNotTrack) {
 <thead>
 <tr>
 <th>Parameter</th>
-<th>type</th>
-<th>Min</th>
-<th>Max</th>
+<th>Values</th>
 <th>Default</th>
 <th>Description</th>
 </tr>
@@ -862,33 +703,25 @@ if (!doNotTrack) {
 <tbody>
 <tr>
 <td>Tamanhos de caixas</td>
-<td>array</td>
-<td></td>
-<td></td>
+<td>Array of integer</td>
 <td>[12, 24, 48, 96, 192]</td>
 <td>Tamanho das caixas em cada camada</td>
 </tr>
 <tr>
 <td>Boxes strides</td>
-<td>array</td>
-<td></td>
-<td></td>
+<td>Array of integer</td>
 <td>[8, 16, 32, 64, 128]</td>
 <td>Strides de caixas em cada camada</td>
 </tr>
 <tr>
 <td>Razões das caixas</td>
-<td>array</td>
-<td></td>
-<td></td>
+<td>Array of number</td>
 <td>[0.5, 1, 2]</td>
 <td>Proporções (altura / largura) das caixas candidatas</td>
 </tr>
 <tr>
 <td>Escalas de caixas</td>
-<td>array</td>
-<td></td>
-<td></td>
+<td>Array of number</td>
 <td>[1, 1.2, 1.5]</td>
 <td>Escalas de caixas candidatas</td>
 </tr>
@@ -966,7 +799,7 @@ if (!doNotTrack) {
 		<br />
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Última modificação 29/03/2021: <a  href="https://github.com/siliconlife-ai/eyeflow_doc/commit/75ee844414db7622f1c281e92f96b85b2da136d9">Exportação dos parâmetros (75ee844)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Última modificação 31/03/2021: <a  href="https://github.com/siliconlife-ai/eyeflow_doc/commit/e8e66062af65cd5c5844a2fa0708636e756fc86e">Início da tradução (e8e6606)</a>
 </div>
 </div>
 
