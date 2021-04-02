@@ -247,19 +247,6 @@
     <loc>/en/docs/contribution-guidelines/</loc>
     <lastmod>2021-03-26T21:21:43-03:00</lastmod>
   </url><url>
-    <loc>/en/docs/</loc>
-    <lastmod>2021-04-02T00:34:21-03:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt"
-                href="/docs/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/en/docs/"
-                />
-  </url><url>
     <loc>/en/blog/news/</loc>
     <lastmod>2021-03-26T21:21:43-03:00</lastmod>
     <xhtml:link
@@ -271,6 +258,19 @@
                 rel="alternate"
                 hreflang="en"
                 href="/en/blog/news/"
+                />
+  </url><url>
+    <loc>/en/docs/</loc>
+    <lastmod>2021-04-02T00:34:21-03:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="/docs/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/docs/"
                 />
   </url><url>
     <loc>/en/blog/releases/</loc>
@@ -286,34 +286,18 @@
                 href="/en/blog/releases/"
                 />
   </url><url>
-    <loc>/en/blog/2018/10/06/easy-documentation-with-docsy/</loc>
+    <loc>/en/blog/2021/04/02/video-analytics-with-deep-learning-can-be-a-easy-task/</loc>
     <lastmod>2021-03-26T21:21:43-03:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
-                href="/blog/2021/03/31/lan%C3%A7amento-do-eyeflow.ai-beta/"
+                href="/blog/2021/04/02/video-analytics-com-deep-learning-pode-ser-simples/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/blog/2018/10/06/easy-documentation-with-docsy/"
+                href="/en/blog/2021/04/02/video-analytics-with-deep-learning-can-be-a-easy-task/"
                 />
-  </url><url>
-    <loc>/en/blog/2018/10/06/the-second-blog-post/</loc>
-    <lastmod>2021-03-26T21:21:43-03:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt"
-                href="/blog/2018/10/06/the-second-blog-post/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/en/blog/2018/10/06/the-second-blog-post/"
-                />
-  </url><url>
-    <loc>/en/blog/2018/01/04/another-great-release/</loc>
-    <lastmod>2021-03-26T21:21:43-03:00</lastmod>
   </url><url>
     <loc>/en/docs/getting-started/example-page/</loc>
     <lastmod>2021-03-26T21:21:43-03:00</lastmod>
