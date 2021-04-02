@@ -12,7 +12,7 @@
     "text": "Exemplos",
     "source_language": "pt-br",
     "en": {
-      "text": "EXAMPLES",
+      "text": "Examples",
       "date": "2021-03-30 21:06:00.497282",
       "approved": false
     }
@@ -66,7 +66,7 @@
     "text": "Construção de fluxos operacionais com *drag’n’drop* de componentes de AI",
     "source_language": "pt-br",
     "en": {
-      "text": "Construction of operational flows with * drag&#39;n&#39;drop * of AI components",
+      "text": "Construction of operational flows with *drag’n’drop* of AI components",
       "date": "2021-03-30 21:06:02.537204",
       "approved": false
     }
@@ -147,7 +147,7 @@
     "text": "Integração com *Data Lake* corporativo",
     "source_language": "pt-br",
     "en": {
-      "text": "Integration with corporate * Data Lake *",
+      "text": "Integration with corporate *Data Lake*",
       "date": "2021-03-30 21:06:04.637070",
       "approved": false
     }
@@ -318,7 +318,7 @@
     "text": "Para começar",
     "source_language": "pt-br",
     "en": {
-      "text": "To begin",
+      "text": "Getting started",
       "date": "2021-03-30 21:06:09.736819",
       "approved": false
     }
@@ -345,7 +345,7 @@
     "text": "O Flow é um programa no formato low-code, construído com componentes de código, orientado para a decomposição de dados de imagens (*não estruturados*) em dados de saída (*estruturados*).",
     "source_language": "pt-br",
     "en": {
-      "text": "Flow is a program in low-code format, built with code components, oriented to the decomposition of image data (* unstructured *) into output data (* structured *).",
+      "text": "Flow is a program in low-code format, built with code components, oriented to the decomposition of image data (*unstructured*) into output data (*structured*).",
       "date": "2021-03-30 21:06:10.509085",
       "approved": false
     }
@@ -354,7 +354,7 @@
     "text": "**O Flow é estruturado como um processo de entrada-saída.**",
     "source_language": "pt-br",
     "en": {
-      "text": "** Flow is structured as an input-output process. **",
+      "text": "**Flow is structured as an input-output process.**",
       "date": "2021-03-30 21:06:10.787252",
       "approved": false
     }
@@ -471,7 +471,7 @@
     "text": "É possível também utilizar componentes que enviam as imagens para processamento em serviços de provedores de cloud. Por exemplo, usar um componente que pega a imagem de um documento e envia para o reconhecimento de caracteres do Google, e daí processar a resposta para digitalizar esse documento.",
     "source_language": "pt-br",
     "en": {
-      "text": "It is also possible to use components that send the images for processing in services of cloud providers. For example, using a component that takes the image of a document and sends it to Google&#39;s character recognition, and then processes the response to scan that document.",
+      "text": "It is also possible to use components that send the images for processing in services of cloud providers. For example, using a component that takes the image of a document and sends it to Google's character recognition API, and then processes the response to scan that document.",
       "date": "2021-03-30 21:06:14.447020",
       "approved": false
     }
@@ -489,7 +489,7 @@
     "text": "Clique na aba Flow na barra de navegação Abrirá a tela para carregar um Flow ou Criar um novo. Ao clicar em **Novo Flow** irá abrir uma tela para entrar com os dados. É só preencher os dados e pronto, o Flow será criado.",
     "source_language": "pt-br",
     "en": {
-      "text": "Click on the Flow tab in the navigation bar. The screen will open to load a Flow or Create a new one. Clicking on ** New Flow ** will open a screen to enter the data. Just fill in the data and that&#39;s it, Flow will be created.",
+      "text": "Click on the Flow tab in the navigation bar. The screen will open to load a Flow or Create a new one. Clicking on **New Flow** will open a screen to enter the data. Just fill in the data and that's it, Flow will be created.",
       "date": "2021-03-30 21:06:15.007787",
       "approved": false
     }
@@ -507,7 +507,7 @@
     "text": "Vamos adicionar 3 componentes nesse Flow:",
     "source_language": "pt-br",
     "en": {
-      "text": "Let&#39;s add 3 components to this Flow:",
+      "text": "Let's add 3 components to this Flow:",
       "date": "2021-03-30 21:06:15.576989",
       "approved": false
     }
@@ -552,7 +552,7 @@
     "text": "**Pronto! O Flow está completo.**",
     "source_language": "pt-br",
     "en": {
-      "text": "**Ready! Flow is complete. **",
+      "text": "**Ready! Flow is complete.**",
       "date": "2021-03-30 21:06:16.906829",
       "approved": false
     }
@@ -570,7 +570,7 @@
     "text": "Então, o processo de desenvolvimento envolve um ciclo de atividades: 1. Testa o vídeo no Flow observando se a aplicação está marcando o vídeo corretamente 2. Identifica os erros que a aplicação está cometendo e vai nos datasets 3. Na tela de **Novos Exemplos** procura por quadros onde a rede neural não identificou o objeto corretamente 4. Adiciona vários exemplos de erro (de 30 a 50 em cada ciclo é um bom número) 5. Anota os novos exemplos corrigindo os erros 6. Treina a rede neural e verifica os indicadores de assertividade para ver se a rede está aprendendo bem 7. Após os treinamentos volta para testar novamente o vídeo",
     "source_language": "pt-br",
     "en": {
-      "text": "So, the development process involves a cycle of activities: 1. Test the video in Flow observing if the application is marking the video correctly 2. Identify the errors that the application is making and go in the datasets 3. In the ** New screen Examples ** search for frames where the neural network did not identify the object correctly 4. Add several examples of errors (30 to 50 in each cycle is a good number) 5. Note the new examples correcting the errors 6. Train the neural network and check the assertiveness indicators to see if the network is learning well 7. After training, go back to test the video again",
+      "text": "So, the development process involves a cycle of activities: 1. Test the video in Flow observing if the application is marking the video correctly 2. Identify the errors that the application is making and go in the datasets 3. In the **New screen Examples** search for frames where the neural network did not identify the object correctly 4. Add several examples of errors (30 to 50 in each cycle is a good number) 5. Note the new examples correcting the errors 6. Train the neural network and check the assertiveness indicators to see if the network is learning well 7. After training, go back to test the video again",
       "date": "2021-03-30 21:06:17.499356",
       "approved": false
     }
@@ -642,7 +642,7 @@
     "text": "No processo de construir uma aplicação o objetivo é transformar uma entrada de vídeo (*dados não estruturados*) em uma ação programada (*dados estruturados*). Nesse processo iremos usar redes neurais e outros componentes de software encadeados para poder decompor e interpretar as imagens de entrada e gerar as saídas desejadas.",
     "source_language": "pt-br",
     "en": {
-      "text": "In the process of building an application the goal is to transform a video input (* unstructured data *) into a programmed action (* structured data *). In this process we will use neural networks and other chained software components to be able to decompose and interpret the input images and generate the desired outputs.",
+      "text": "In the process of building an application the goal is to transform a video input (*unstructured data*) into a programmed action (*structured data*). In this process we will use neural networks and other chained software components to be able to decompose and interpret the input images and generate the desired outputs.",
       "date": "2021-03-30 21:06:19.816867",
       "approved": false
     }
@@ -669,7 +669,7 @@
     "text": "As redes neurais são elementos computacionais que vêm sendo desenvolvidos desde os anos 60, inspiradas nas pesquisas científicas sobre o funcionamento do cérebro (*neurônios*).",
     "source_language": "pt-br",
     "en": {
-      "text": "Neural networks are computational elements that have been developed since the 1960s, inspired by scientific research on the functioning of the brain (* neurons *).",
+      "text": "Neural networks are computational elements that have been developed since the 1960s, inspired by scientific research on the functioning of the brain (*neurons*).",
       "date": "2021-03-30 21:06:20.696842",
       "approved": false
     }
@@ -678,7 +678,7 @@
     "text": "A partir de 2010, com avanços nos algoritmos de processamento matemático e aproximação de funções algébricas, juntamente com o aumento de capacidade dos processadores matemáticos e barateamento pela popularização dos mesmos nas placas gráficas para jogos (*GPU*), as redes neurais evoluíram para utilização de várias camadas (*Deep Neural Network*). Dessa forma começaram a surgir várias novas aplicações dessa tecnologia na solução de problemas complexos, em sua maioria relacionados a dados não estruturados, como sons e imagens. As redes neurais são os componentes fundamentais do Flow, pois permitem a solução de problemas de visão computacional complexos, que antes não eram passíveis de serem resolvidos utilizando algorítmos tradicionais.",
     "source_language": "pt-br",
     "en": {
-      "text": "As of 2010, with advances in mathematical processing algorithms and approximation of algebraic functions, together with the increase in the capacity of mathematical processors and lower prices due to their popularization in graphics cards for games (* GPU *), neural networks have evolved to be used multilayer (* Deep Neural Network *). In this way, several new applications of this technology began to emerge in the solution of complex problems, mostly related to unstructured data, such as sounds and images. Neural networks are the fundamental components of Flow, as they allow the solution of complex computer vision problems, which previously were not amenable to being solved using traditional algorithms.",
+      "text": "As of 2010, with advances in mathematical processing algorithms and approximation of algebraic functions, together with the increase in the capacity of mathematical processors and lower prices due to their popularization in graphics cards for games (*GPU*), neural networks have evolved to be used multilayer (*Deep Neural Network*). In this way, several new applications of this technology began to emerge in the solution of complex problems, mostly related to unstructured data, such as sounds and images. Neural networks are the fundamental components of Flow, as they allow the solution of complex computer vision problems, which previously were not amenable to being solved using traditional algorithms.",
       "date": "2021-03-30 21:06:21.006978",
       "approved": false
     }
@@ -876,7 +876,7 @@
     "text": "Os datasets ObjectDetection costumam ser os mais utilizados pela sua versatilidade e facilidade de anotação. O objetivo é identificar um objeto específico em uma imagem ampla, delimitando uma área retangular ao redor do objeto. Sua anotação costuma ser bem simples e rápida, pois basta clicar e arrastar um retângulo (*box*) e definir qual a classe do objeto. É executado por um tipo de rede neural que pode ser bastante otimizada para execução na borda, podendo chegar a centenas de FPS em tempo real.",
     "source_language": "pt-br",
     "en": {
-      "text": "ObjectDetection datasets are often the most used for their versatility and ease of annotation. The objective is to identify a specific object in a large image, delimiting a rectangular area around the object. Your annotation is usually very simple and quick, as you just click and drag a rectangle (* box *) and define which class of the object. It is executed by a type of neural network that can be quite optimized for execution at the edge, reaching hundreds of FPS in real time.",
+      "text": "ObjectDetection datasets are often the most used for their versatility and ease of annotation. The objective is to identify a specific object in a large image, delimiting a rectangular area around the object. Your annotation is usually very simple and quick, as you just click and drag a rectangle (*box*) and define which class of the object. It is executed by a type of neural network that can be quite optimized for execution at the edge, reaching hundreds of FPS in real time.",
       "date": "2021-03-30 21:06:27.889245",
       "approved": false
     }
@@ -930,7 +930,7 @@
     "text": "Criar dataset é uma tarefa bem simples. Basta clicar no menu lateral em **Novo Dataset**.",
     "source_language": "pt-br",
     "en": {
-      "text": "Creating a dataset is a very simple task. Just click on the side menu in ** New Dataset **.",
+      "text": "Creating a dataset is a very simple task. Just click on the side menu in **New Dataset**.",
       "date": "2021-03-30 21:06:29.636851",
       "approved": false
     }
@@ -995,15 +995,6 @@
     "en": {
       "text": "On this screen it is also possible to upload new examples from images located on the computer.",
       "date": "2021-03-30 21:06:32.207902",
-      "approved": false
-    }
-  },
-  "3258166959342052487": {
-    "text": "{{< tooltip >}} Para que uma rede neural aprenda bem é importante que haja uma boa diversidade de exemplos. Inserir várias imagens muito parecidas, ou inserir muitas imagens de uma classe e poucas das outras irá fazer com que o dataset fique desbalanceado e a rede não aprende bem {{< /tooltip >}}",
-    "source_language": "pt-br",
-    "en": {
-      "text": "{{&lt;tooltip&gt;}} For a neural network to learn well it is important to have a good diversity of examples. Inserting several very similar images, or inserting many images of a class and few of the others will cause the dataset to become unbalanced and the network will not learn well {{&lt;/ tooltip&gt;}}",
-      "date": "2021-03-30 21:06:32.517756",
       "approved": false
     }
   },
@@ -1083,7 +1074,7 @@
     "text": "**Parâmetros para rede neural**",
     "source_language": "pt-br",
     "en": {
-      "text": "** Parameters for neural network **",
+      "text": "**Parameters for neural network**",
       "date": "2021-03-30 21:06:35.697342",
       "approved": false
     }
@@ -1101,7 +1092,7 @@
     "text": "**Parâmetros de rede neural específicos de classificação**",
     "source_language": "pt-br",
     "en": {
-      "text": "** Classification-specific neural network parameters **",
+      "text": "**Classification-specific neural network parameters**",
       "date": "2021-03-30 21:06:36.286923",
       "approved": false
     }
@@ -1119,7 +1110,7 @@
     "text": "**Parâmetros de rede neural específicos de detecção de objeto**",
     "source_language": "pt-br",
     "en": {
-      "text": "** Object-specific neural network parameters **",
+      "text": "**Object-specific neural network parameters**",
       "date": "2021-03-30 21:06:36.827112",
       "approved": false
     }
@@ -1137,7 +1128,7 @@
     "text": "**Parâmetros para âncoras de caixas**",
     "source_language": "pt-br",
     "en": {
-      "text": "** Parameters for box anchors **",
+      "text": "**Parameters for box anchors**",
       "date": "2021-03-30 21:06:37.327777",
       "approved": false
     }
@@ -1398,7 +1389,7 @@
     "text": "O grupo de **Treino** é o que será efetivamente usado para treinar a rede neural. Ele deve ter a maior quantidade de exemplos, sendo recomendado pelo menos 80% dos exemplos.",
     "source_language": "pt-br",
     "en": {
-      "text": "The ** Training ** group is what will be effectively used to train the neural network. It should have the largest number of examples, with at least 80% of the examples recommended.",
+      "text": "The **Training** group is what will be effectively used to train the neural network. It should have the largest number of examples, with at least 80% of the examples recommended.",
       "date": "2021-03-30 21:06:45.486574",
       "approved": false
     }
@@ -1407,7 +1398,7 @@
     "text": "O grupo de **Validação** é usado para testar o modelo a cada final de época, e serve para verificar se o treino está evoluindo, ou se estagnou ou viciou (*overfitting*). É recomendado que seja 10% dos exemplos até um máximo de 100 exemplos.",
     "source_language": "pt-br",
     "en": {
-      "text": "The ** Validation ** group is used to test the model at each end of the season, and is used to check if the training is evolving, or has become stagnant or addictive (* overfitting *). It is recommended that 10% of the examples be up to a maximum of 100 examples.",
+      "text": "The **Validation** group is used to test the model at each end of the season, and is used to check if the training is evolving, or has become stagnant or addictive (*overfitting*). It is recommended that 10% of the examples be up to a maximum of 100 examples.",
       "date": "2021-03-30 21:06:45.756781",
       "approved": false
     }
@@ -1416,7 +1407,7 @@
     "text": "O grupo de **Teste** é usado para testar o modelo ao final do treinamento. Como esses exemplos nunca foram apresentados ao dataset então servem como uma avaliação final do aprendizado, definindo qual a assertividade que o modelo apresenta. É o indicador se a rede neural efetivamente aprendeu a reconhecer os padrões. É recomendado que seja 10% dos exemplos até um máximo de 100 exemplos.",
     "source_language": "pt-br",
     "en": {
-      "text": "The ** Test ** group is used to test the model at the end of training. As these examples were never presented to the dataset, they serve as a final assessment of learning, defining the assertiveness that the model presents. It is an indicator of whether the neural network has effectively learned to recognize patterns. It is recommended that 10% of the examples be up to a maximum of 100 examples.",
+      "text": "The **Test** group is used to test the model at the end of training. As these examples were never presented to the dataset, they serve as a final assessment of learning, defining the assertiveness that the model presents. It is an indicator of whether the neural network has effectively learned to recognize patterns. It is recommended that 10% of the examples be up to a maximum of 100 examples.",
       "date": "2021-03-30 21:06:46.036792",
       "approved": false
     }
@@ -1425,7 +1416,7 @@
     "text": "O principal objetivo de um treinamento de rede neural é garantir que o modelo final irá **generalizar**, significa que irá aprender com os exemplos o padrão para assim poder extrapolar para novos exemplos em situações reais. Muitas vezes o resultado fica bom no treino, mas ruim em produção, indicando que o modelo não generalizou bem. Nessas situações deve-se coletar mais exemplos de erro em produção para adicionar ao dataset.",
     "source_language": "pt-br",
     "en": {
-      "text": "The main objective of a neural network training is to ensure that the final model will ** generalize **, it means that you will learn from the pattern the examples so that you can extrapolate to new examples in real situations. Often the result is good in training, but poor in production, indicating that the model did not generalize well. In these situations, you should collect more examples of errors in production to add to the dataset.",
+      "text": "The main objective of a neural network training is to ensure that the final model will **generalize**, it means that you will learn from the pattern the examples so that you can extrapolate to new examples in real situations. Often the result is good in training, but poor in production, indicating that the model did not generalize well. In these situations, you should collect more examples of errors in production to add to the dataset.",
       "date": "2021-03-30 21:06:46.317415",
       "approved": false
     }
@@ -1443,7 +1434,7 @@
     "text": "Loss é a medida de erro que no processo de treinamento foi observado entre o que a rede neural detectou (*predict*) e o que deveria ser a saída correta segundo a anotação (*ground thruth*). O processo matemático/algorítmico de treinamento das redes neurais busca a minimização desse erro.",
     "source_language": "pt-br",
     "en": {
-      "text": "Loss is the measure of error observed in the training process between what the neural network detected (* predict *) and what should be the correct output according to the annotation (* ground thruth *). The mathematical / algorithmic training process of neural networks seeks to minimize this error.",
+      "text": "Loss is the measure of error observed in the training process between what the neural network detected (*predict*) and what should be the correct output according to the annotation (*ground thruth*). The mathematical / algorithmic training process of neural networks seeks to minimize this error.",
       "date": "2021-03-30 21:06:46.899217",
       "approved": false
     }
@@ -1479,7 +1470,7 @@
     "text": "Datasets *ObjectDetection* costumam utilizar o **mAP** (*Mean Average Precision*) como indicador de assertividade, pois mede o quanto a box de saída engloba bem o objeto, indicando a classe correta, pela média de todas as classes.",
     "source_language": "pt-br",
     "en": {
-      "text": "Datasets * ObjectDetection * usually use ** mAP ** (* Mean Average Precision *) as an assertiveness indicator, as it measures how much the output box encompasses the object well, indicating the correct class, by the average of all classes.",
+      "text": "Datasets *ObjectDetection* usually use **mAP** (*Mean Average Precision*) as an assertiveness indicator, as it measures how much the output box encompasses the object well, indicating the correct class, by the average of all classes.",
       "date": "2021-03-30 21:06:48.097328",
       "approved": false
     }
@@ -1488,7 +1479,7 @@
     "text": "Datasets *Classification* costumam utilizar a **Accuracy**, que é o percentual de exemplos em que a rede neural previu corretamente a qual classe o objeto pertence.",
     "source_language": "pt-br",
     "en": {
-      "text": "Datasets * Classification * usually use ** Accuracy **, which is the percentage of examples in which the neural network correctly predicted which class the object belongs to.",
+      "text": "Datasets *Classification* usually use **Accuracy**, which is the percentage of examples in which the neural network correctly predicted which class the object belongs to.",
       "date": "2021-03-30 21:06:48.376845",
       "approved": false
     }
@@ -1506,7 +1497,7 @@
     "text": "É um fenômeno que ocorre comumento nos treinamentos. Ocorre no treinamento quando vemos o *Loss* continuar caindo, mas o *Val Loss* subir ao invés de descer. Isso indica que a rede neural ficou \"viciada\" nos exemplos do treinamento e parou de generalizar para novos exemplos, ou seja, ela aprendeu muito sobre os exemplos do treino, mas não consegue acertar exemplos novos.",
     "source_language": "pt-br",
     "en": {
-      "text": "It is a phenomenon that occurs with an increase in training. It occurs in training when we see * Loss * continue to fall, but * Val Loss * goes up instead of going down. This indicates that the neural network has become &quot;addicted&quot; to the training examples and has stopped generalizing to new examples, that is, it has learned a lot about the training examples, but is unable to get new examples right.",
+      "text": "It is a phenomenon that occurs with an increase in training. It occurs in training when we see *Loss* continue to fall, but * Val Loss * goes up instead of going down. This indicates that the neural network has become &quot;addicted&quot; to the training examples and has stopped generalizing to new examples, that is, it has learned a lot about the training examples, but is unable to get new examples right.",
       "date": "2021-03-30 21:06:48.917107",
       "approved": false
     }
@@ -1551,7 +1542,7 @@
     "text": "O ponto importante a observar aqui é que não deve-se usar o Data Augumentation para modificar os exemplos deixando-os muito diferentes das situação que serão encontradas no ambiente real, pois isto irá dificultar desnecessariamente o aprendizado da rede. Por exemplo, não faria sentido em um dataset de carros inserir o *Flip Vertical*, pois não encontraremos uma situação com o carro de cabeça para baixo.",
     "source_language": "pt-br",
     "en": {
-      "text": "The important point to note here is that Data Augumentation should not be used to modify the examples, leaving them very different from the situations that will be encountered in the real environment, as this will unnecessarily hamper the learning of the network. For example, it would not make sense in a car dataset to insert the * Flip Vertical *, as we will not find a situation with the car upside down.",
+      "text": "The important point to note here is that Data Augumentation should not be used to modify the examples, leaving them very different from the situations that will be encountered in the real environment, as this will unnecessarily hamper the learning of the network. For example, it would not make sense in a car dataset to insert the *Flip Vertical*, as we will not find a situation with the car upside down.",
       "date": "2021-03-30 21:06:50.522719",
       "approved": false
     }
@@ -1578,7 +1569,7 @@
     "text": "São poucas situação em que dá pra usar datasets sintéticos, uma delas é para reconhecimento de caracteres (*OCR*) por exemplo, mas quando é possível os ganhos são enormes, pois dá pra gerar um modelo extremamente robusto e eficaz.",
     "source_language": "pt-br",
     "en": {
-      "text": "There are few situations in which you can use synthetic datasets, one of them is for character recognition (* OCR *) for example, but when it is possible the gains are enormous, as you can generate an extremely robust and effective model.",
+      "text": "There are few situations in which you can use synthetic datasets, one of them is for character recognition (*OCR*) for example, but when it is possible the gains are enormous, as you can generate an extremely robust and effective model.",
       "date": "2021-03-30 21:06:51.367462",
       "approved": false
     }
@@ -1614,7 +1605,7 @@
     "text": "O processo de treinamento é iterativo, ou seja, realizado em ciclos. Cada ciclo é chamado de **Época**. Em cada época todos os exemplos são apresentados para a rede neural, para que sejam aprendidos os padrões. O algoritmo de treinamento vai então medindo o erro (*Loss*) e ajustando a rede neural para ir minizando o mesmo.",
     "source_language": "pt-br",
     "en": {
-      "text": "The training process is iterative, that is, carried out in cycles. Each cycle is called ** Season **. In each epoch all examples are presented for the neural network, so that the patterns are learned. The training algorithm will then measure the error (* Loss *) and adjust the neural network to minimize it.",
+      "text": "The training process is iterative, that is, carried out in cycles. Each cycle is called **Season**. In each epoch all examples are presented for the neural network, so that the patterns are learned. The training algorithm will then measure the error (*Loss*) and adjust the neural network to minimize it.",
       "date": "2021-03-30 21:06:52.526885",
       "approved": false
     }
@@ -1623,7 +1614,7 @@
     "text": "É comum se pensar de que com mais épocas a rede irá aprender mais, mas na prática não é exatamente assim. De acordo com a quantidade/qualidade dos exemplos chega-se a um ponto em que o erro não diminui mais e o aprendizado estagna. Outra ocorrência comum é o erro (*Loss*) continuar diminuindo, mas o *Val Loss* começar a aumentar. Esse fenômeno é conhecido como *Overfitting* e significa que a rede neural ficou viciada nos exemplos do treinamento e não está mais conseguindo generalizar para novos exemplos.",
     "source_language": "pt-br",
     "en": {
-      "text": "It is common to think that with more times the network will learn more, but in practice it is not exactly like that. Depending on the quantity / quality of the examples, a point is reached where the error no longer decreases and learning stagnates. Another common occurrence is that the error (* Loss *) continues to decrease, but the * Val Loss * starts to increase. This phenomenon is known as * Overfitting * and it means that the neural network has become addicted to the training examples and is no longer able to generalize to new examples.",
+      "text": "It is common to think that with more times the network will learn more, but in practice it is not exactly like that. Depending on the quantity / quality of the examples, a point is reached where the error no longer decreases and learning stagnates. Another common occurrence is that the error (*Loss*) continues to decrease, but the *Val Loss* starts to increase. This phenomenon is known as * Overfitting * and it means that the neural network has become addicted to the training examples and is no longer able to generalize to new examples.",
       "date": "2021-03-30 21:06:52.867049",
       "approved": false
     }
@@ -1668,7 +1659,7 @@
     "text": "**Parâmetros para treinamento de rede neural**",
     "source_language": "pt-br",
     "en": {
-      "text": "** Parameters for neural network training **",
+      "text": "**Parameters for neural network training**",
       "date": "2021-03-30 21:06:54.227967",
       "approved": false
     }
@@ -1686,7 +1677,7 @@
     "text": "**Dimensões da imagem de entrada**",
     "source_language": "pt-br",
     "en": {
-      "text": "** Input image dimensions **",
+      "text": "**Input image dimensions**",
       "date": "2021-03-30 21:06:54.818641",
       "approved": false
     }
@@ -1704,7 +1695,7 @@
     "text": "**Parâmetros para Train Optimizer**",
     "source_language": "pt-br",
     "en": {
-      "text": "** Parameters for Train Optimizer **",
+      "text": "**Parameters for Train Optimizer**",
       "date": "2021-03-30 21:06:55.377076",
       "approved": false
     }
@@ -1722,7 +1713,7 @@
     "text": "**Parada antecipada para treinamento**",
     "source_language": "pt-br",
     "en": {
-      "text": "** Early stop for training **",
+      "text": "**Early stop for training**",
       "date": "2021-03-30 21:06:55.916846",
       "approved": false
     }
@@ -1740,7 +1731,7 @@
     "text": "**Reduza a taxa de aprendizagem no platô**",
     "source_language": "pt-br",
     "en": {
-      "text": "** Reduce the learning rate on the plateau **",
+      "text": "**Reduce the learning rate on the plateau**",
       "date": "2021-03-30 21:06:56.506745",
       "approved": false
     }
@@ -1758,7 +1749,7 @@
     "text": "**Gatilho para salvar o progresso do treinamento do modelo**",
     "source_language": "pt-br",
     "en": {
-      "text": "** Trigger to save model training progress **",
+      "text": "**Trigger to save model training progress**",
       "date": "2021-03-30 21:06:57.087022",
       "approved": false
     }
@@ -1785,7 +1776,7 @@
     "text": "Para facilitar esse processo o Eyeflow.AI oferece uma extensa gama de algorítmos de Expansão de Dados (*Data Augmentation*). Trata-se de inserir perturbações nas imagens na hora em que estão sendo apresentadas para a rede neural no treinamento, forçando assim que a rede neural aprenda a reconhecer os padrões, sem ficar dependendo somente dos exemplos estáticos que existem no dataset.",
     "source_language": "pt-br",
     "en": {
-      "text": "To facilitate this process, Eyeflow.AI offers an extensive range of Data Expansion algorithms (* Data Augmentation *). It is about inserting disturbances in the images when they are being presented to the neural network in training, thus forcing the neural network to learn to recognize the patterns, without depending only on the static examples that exist in the dataset.",
+      "text": "To facilitate this process, Eyeflow.AI offers an extensive range of Data Expansion algorithms (*Data Augmentation*). It is about inserting disturbances in the images when they are being presented to the neural network in training, thus forcing the neural network to learn to recognize the patterns, without depending only on the static examples that exist in the dataset.",
       "date": "2021-03-30 21:06:57.957397",
       "approved": false
     }
@@ -1826,24 +1817,6 @@
       "approved": false
     }
   },
-  "14527609874349632701": {
-    "text": "{{< tooltip >}} As alterações nas imagens não podem ser muito altas a ponto de o objeto de interesse não poder ser mais reconhecido. Para isso o Eyeflow.AI disponibiliza um exemplo dessas alterações para que o operador verifique se as alterações não estão exageradas. O que não puder ser visto nesses exemplos, não poderá ser aprendido pela rede neural. {{< /tooltip >}}",
-    "source_language": "pt-br",
-    "en": {
-      "text": "{{&lt;tooltip&gt;}} The changes in the images cannot be so high that the object of interest can no longer be recognized. For this, Eyeflow.AI provides an example of these changes for the operator to verify that the changes are not exaggerated. What cannot be seen in these examples, cannot be learned by the neural network. {{&lt;/ tooltip&gt;}}",
-      "date": "2021-03-30 21:06:59.966522",
-      "approved": false
-    }
-  },
-  "4800975158431710698": {
-    "text": "{{< tooltip >}} Também não adianta estressar as mudanças e gerar casos que não acontecem na operação real. De nada adianta apresentar pro aprendizado da rede neural uma imagem invertida, de cabeça para baixo, por exemplo, se na operação real essa situação nunca irá acontecer. {{< /tooltip >}}",
-    "source_language": "pt-br",
-    "en": {
-      "text": "{{&lt;tooltip&gt;}} There is also no point in stressing changes and generating cases that do not happen in the actual operation. It is useless to present an inverted image for the learning of the neural network, upside down, for example, if in real operation this situation will never happen. {{&lt;/ tooltip&gt;}}",
-      "date": "2021-03-30 21:07:00.256554",
-      "approved": false
-    }
-  },
   "13422755738581003578": {
     "text": "Parâmetros para expansão de dataset",
     "source_language": "pt-br",
@@ -1857,7 +1830,7 @@
     "text": "**Parâmetros para expansão de dataset**",
     "source_language": "pt-br",
     "en": {
-      "text": "** Parameters for dataset expansion **",
+      "text": "**Parameters for dataset expansion**",
       "date": "2021-03-30 21:07:00.806823",
       "approved": false
     }
@@ -1875,7 +1848,7 @@
     "text": "**Rotação aleatória da imagem**",
     "source_language": "pt-br",
     "en": {
-      "text": "** Random image rotation **",
+      "text": "**Random image rotation**",
       "date": "2021-03-30 21:07:01.356809",
       "approved": false
     }
@@ -1893,7 +1866,7 @@
     "text": "**Translação aleatória de imagem**",
     "source_language": "pt-br",
     "en": {
-      "text": "** Random image translation **",
+      "text": "**Random image translation**",
       "date": "2021-03-30 21:07:01.907043",
       "approved": false
     }
@@ -1911,7 +1884,7 @@
     "text": "**Deformação por cisalhamento aleatório da imagem**",
     "source_language": "pt-br",
     "en": {
-      "text": "** Random shear deformation of the image **",
+      "text": "**Random shear deformation of the image**",
       "date": "2021-03-30 21:07:02.446976",
       "approved": false
     }
@@ -1929,7 +1902,7 @@
     "text": "**Escala aleatória da imagem**",
     "source_language": "pt-br",
     "en": {
-      "text": "** Random image scale **",
+      "text": "**Random image scale**",
       "date": "2021-03-30 21:07:02.987084",
       "approved": false
     }
@@ -1947,7 +1920,7 @@
     "text": "**Mudanças aleatórias no contraste da imagem**",
     "source_language": "pt-br",
     "en": {
-      "text": "** Random changes in image contrast **",
+      "text": "**Random changes in image contrast**",
       "date": "2021-03-30 21:07:03.491667",
       "approved": false
     }
@@ -1965,7 +1938,7 @@
     "text": "**Mudanças aleatórias no brilho da imagem**",
     "source_language": "pt-br",
     "en": {
-      "text": "** Random changes in image brightness **",
+      "text": "**Random changes in image brightness**",
       "date": "2021-03-30 21:07:03.997149",
       "approved": false
     }
@@ -1983,7 +1956,7 @@
     "text": "**Mudanças aleatórias na gama da imagem**",
     "source_language": "pt-br",
     "en": {
-      "text": "** Random changes in image range **",
+      "text": "**Random changes in image range**",
       "date": "2021-03-30 21:07:04.556962",
       "approved": false
     }
@@ -2001,7 +1974,7 @@
     "text": "**Mudanças aleatórias na saturação da imagem**",
     "source_language": "pt-br",
     "en": {
-      "text": "** Random changes in image saturation **",
+      "text": "**Random changes in image saturation**",
       "date": "2021-03-30 21:07:05.086946",
       "approved": false
     }
@@ -2019,7 +1992,7 @@
     "text": "**Mudanças aleatórias no matiz da imagem**",
     "source_language": "pt-br",
     "en": {
-      "text": "** Random changes in image hue **",
+      "text": "**Random changes in image hue**",
       "date": "2021-03-30 21:07:05.647019",
       "approved": false
     }
@@ -2037,7 +2010,7 @@
     "text": "**Inserção aleatória de ruído de imagem**",
     "source_language": "pt-br",
     "en": {
-      "text": "** Random insertion of image noise **",
+      "text": "**Random insertion of image noise**",
       "date": "2021-03-30 21:07:06.167170",
       "approved": false
     }
@@ -2055,7 +2028,7 @@
     "text": "**Desfoque aleatório da imagem**",
     "source_language": "pt-br",
     "en": {
-      "text": "** Random image blur **",
+      "text": "**Random image blur**",
       "date": "2021-03-30 21:07:06.716968",
       "approved": false
     }
@@ -2091,7 +2064,7 @@
     "text": "Nesses quadros estão os indicadores do treinamento selecionado. A data que foi realizado, duração, e resultados finais do treino. Temos também uma barra de botões com ações como *Download* e *Publicação* do modelo, visualização dos parâmetros e visualização das imagens de teste.",
     "source_language": "pt-br",
     "en": {
-      "text": "In these tables are the indicators of the selected training. The date that was performed, duration, and final results of the training. We also have a button bar with actions such as * Download * and * Publication * of the model, visualization of parameters and visualization of test images.",
+      "text": "In these tables are the indicators of the selected training. The date that was performed, duration, and final results of the training. We also have a button bar with actions such as *Download* and * Publication * of the model, visualization of parameters and visualization of test images.",
       "date": "2021-03-30 21:07:07.787035",
       "approved": false
     }
@@ -2145,7 +2118,7 @@
     "text": "**Loss** e **Val Loss** indicam o erro medido no treino, e são indicadores comuns a todos os treinos. Devem ser curvas descendentes que se aproximam de 0. Quanto menor o Loss menos a rede neural está errando.",
     "source_language": "pt-br",
     "en": {
-      "text": "** Loss ** and ** Val Loss ** indicate the error measured in the training, and are common indicators for all training. They must be descending curves that approach 0. The lower the Loss, the less the neural network is missing.",
+      "text": "**Loss** and **Val Loss** indicate the error measured in the training, and are common indicators for all training. They must be descending curves that approach 0. The lower the Loss, the less the neural network is missing.",
       "date": "2021-03-30 21:07:09.427073",
       "approved": false
     }
@@ -2163,7 +2136,7 @@
     "text": "**mAP** para datasets *ObjectDetection*. Geralmente já é considerado bom acima de 0.6.",
     "source_language": "pt-br",
     "en": {
-      "text": "** mAP ** for * ObjectDetection * datasets. It is generally considered good above 0.6.",
+      "text": "**mAP** for *ObjectDetection* datasets. It is generally considered good above 0.6.",
       "date": "2021-03-30 21:07:09.956995",
       "approved": false
     }
@@ -2172,7 +2145,7 @@
     "text": "**Accuracy** para datasets de *Classification*. É considerado bom acima de 90%.",
     "source_language": "pt-br",
     "en": {
-      "text": "** Accuracy ** for * Classification * datasets. It is considered good above 90%.",
+      "text": "**Accuracy** for *Classification* datasets. It is considered good above 90%.",
       "date": "2021-03-30 21:07:10.257240",
       "approved": false
     }
@@ -2214,10 +2187,10 @@
     }
   },
   "8841152523610316497": {
-    "text": "**Este treinamento será baseado em um caso de uso, para este caso, está disponível um vídeo para ser utilizado para treinamento da rede neural, que terá o objetivo de detecção do elemento Porca, identificando suas faces (face lisa e face prospecção)**,",
+    "text": "**Este treinamento será baseado em um caso de uso, para este caso, está disponível um vídeo para ser utilizado para treinamento da rede neural, que terá o objetivo de detecção do elemento Porca, identificando suas faces (face lisa e face prospecção)**",
     "source_language": "pt-br",
     "en": {
-      "text": "** This training will be based on a use case, for this case, a video is available to be used for training the neural network, which will have the objective of detecting the Nut element, identifying its faces (smooth face and prospecting face) * *,",
+      "text": "**This training will be based on a use case, for this case, a video is available to be used for training the neural network, which will have the objective of detecting the Nut element, identifying its faces (smooth face and prospecting face)**",
       "date": "2021-03-30 21:07:11.737097",
       "approved": false
     }
@@ -2343,7 +2316,7 @@
     "text": "**Imagens dos modelos cameras informados:**",
     "source_language": "pt-br",
     "en": {
-      "text": "** Images of the informed camera models: **",
+      "text": "**Images of the informed camera models:**",
       "date": "2021-03-30 21:07:15.617171",
       "approved": false
     }
@@ -2361,7 +2334,7 @@
     "text": "**Input**",
     "source_language": "pt-br",
     "en": {
-      "text": "** Input **",
+      "text": "**Input**",
       "date": "2021-03-30 21:07:16.328040",
       "approved": false
     }
@@ -2388,7 +2361,7 @@
     "text": "**Seletor**",
     "source_language": "pt-br",
     "en": {
-      "text": "** Selector **",
+      "text": "**Selector**",
       "date": "2021-03-30 21:07:17.198657",
       "approved": false
     }
@@ -2415,7 +2388,7 @@
     "text": "**Siga os passos**",
     "source_language": "pt-br",
     "en": {
-      "text": "** Follow the steps **",
+      "text": "**Follow the steps**",
       "date": "2021-03-30 21:07:18.037131",
       "approved": false
     }
@@ -2732,6 +2705,348 @@
     "en": {
       "text": "Activities",
       "date": "2021-03-30 21:07:27.657453",
+      "approved": false
+    }
+  },
+  "2498050214782124513": {
+    "text": "Clique na aba Flow na barra de navegação",
+    "source_language": "pt-br",
+    "en": {
+      "text": "Click on the Flow tab in the navigation bar",
+      "date": "2021-03-31 15:29:49.199725",
+      "approved": false
+    }
+  },
+  "20274641408725236": {
+    "text": "Abrirá a tela para carregar um Flow ou Criar um novo. Ao clicar em **Novo Flow** irá abrir uma tela para entrar com os dados. É só preencher os dados e pronto, o Flow será criado.",
+    "source_language": "pt-br",
+    "en": {
+      "text": "It will open the screen to load a Flow or Create a new one. Clicking on **New Flow** will open a screen to enter the data. Just fill in the data and that&#39;s it, Flow will be created.",
+      "date": "2021-03-31 15:29:49.499161",
+      "approved": false
+    }
+  },
+  "16372080711376410208": {
+    "text": "O principal objetivo de um treinamento de rede neural é garantir que o modelo final irá **generalizar**, significa que irá aprender com os exemplos o padrão para assim poder extrapolar para novos exemplos em situações reais. Muitas vezes o resultado fica bom no treino, mas ruim em produção, indicando que o modelo não generalizou bem. Nessas situações deve-se coletar mais exemplos de erro em produção para adicionar ao dataset. ",
+    "source_language": "pt-br",
+    "en": {
+      "text": "The main objective of a neural network training is to ensure that the final model will **generalize**, it means that you will learn from the pattern the examples so that you can extrapolate to new examples in real situations. Often the result is good in training, but poor in production, indicating that the model did not generalize well. In these situations, you should collect more examples of errors in production to add to the dataset.",
+      "date": "2021-03-31 15:29:49.719155",
+      "approved": false
+    }
+  },
+  "11017110424464797409": {
+    "text": "**Este treinamento será baseado em um caso de uso, para este caso, está disponível um vídeo para ser utilizado para treinamento da rede neural, que terá o objetivo de detecção do elemento Porca, identificando suas faces (face lisa e face prospecção)**",
+    "source_language": "pt-br",
+    "en": {
+      "text": "**This training will be based on a use case, for this case, a video is available to be used for training the neural network, which will have the objective of detecting the Nut element, identifying its faces (smooth face and prospecting face)**",
+      "date": "2021-03-31 15:29:50.041592",
+      "approved": false
+    }
+  },
+  "8748217132344282871": {
+    "text": "Para este treinamento foi disponibilizado um vídeo teste: Endereço do vídeo para Download   ",
+    "source_language": "pt-br",
+    "en": {
+      "text": "A video test was made available for this training: Download video address",
+      "date": "2021-03-31 15:29:50.281361",
+      "approved": false
+    }
+  },
+  "2741160258271025174": {
+    "text": "Veja seu projeto em ação!",
+    "source_language": "pt-br",
+    "en": {
+      "text": "See your project in action!",
+      "date": "2021-04-01 09:24:48.823936",
+      "approved": false
+    }
+  },
+  "12165457220585160558": {
+    "text": "Entenda todos os elementos que irá utilizar para construir sua aplicação",
+    "source_language": "pt-br",
+    "en": {
+      "text": "Understand all the elements you will use to build your application",
+      "date": "2021-04-01 09:24:49.118808",
+      "approved": false
+    }
+  },
+  "10432672040457736148": {
+    "text": "Diagrama de fluxos para processamento das imagens e tomadas de decisões",
+    "source_language": "pt-br",
+    "en": {
+      "text": "Flow diagram for image processing and decision making",
+      "date": "2021-04-01 09:24:49.398250",
+      "approved": false
+    }
+  },
+  "16243394252526554439": {
+    "text": "Principais conceitos do Eyeflow.AI",
+    "source_language": "pt-br",
+    "en": {
+      "text": "Main concepts of Eyeflow.AI",
+      "date": "2021-04-01 09:24:49.687238",
+      "approved": false
+    }
+  },
+  "5285618163492042095": {
+    "text": "Principais conceitos do Eyeflow e Vídeo Analytics",
+    "source_language": "pt-br",
+    "en": {
+      "text": "Main concepts of Eyeflow and Video Analytics",
+      "date": "2021-04-01 09:24:49.967266",
+      "approved": false
+    }
+  },
+  "14718914268544919340": {
+    "text": "Conjunto de exemplos anotados para treinamento das redes neurais",
+    "source_language": "pt-br",
+    "en": {
+      "text": "Set of annotated examples for training neural networks",
+      "date": "2021-04-01 09:24:50.216919",
+      "approved": false
+    }
+  },
+  "5517923637697274201": {
+    "text": "Controle das redes neurais",
+    "source_language": "pt-br",
+    "en": {
+      "text": "Control of neural networks",
+      "date": "2021-04-01 09:24:50.498975",
+      "approved": false
+    }
+  },
+  "16584392093551288813": {
+    "text": "Visão geral do treinamento",
+    "source_language": "pt-br",
+    "en": {
+      "text": "Training overview",
+      "date": "2021-04-01 09:24:50.787339",
+      "approved": false
+    }
+  },
+  "5124956361017107880": {
+    "text": "Controle do treinamento",
+    "source_language": "pt-br",
+    "en": {
+      "text": "Training control",
+      "date": "2021-04-01 09:24:51.057441",
+      "approved": false
+    }
+  },
+  "6512897583715275904": {
+    "text": "Processo de aprendizado das redes neurais",
+    "source_language": "pt-br",
+    "en": {
+      "text": "Learning process of neural networks",
+      "date": "2021-04-01 09:24:51.307080",
+      "approved": false
+    }
+  },
+  "17247598721174732133": {
+    "text": "Expansão de exemplos nos treinamentos",
+    "source_language": "pt-br",
+    "en": {
+      "text": "Expanding training examples",
+      "date": "2021-04-01 09:24:51.566992",
+      "approved": false
+    }
+  },
+  "313960682280959692": {
+    "text": "Visão geral dos treinamentos",
+    "source_language": "pt-br",
+    "en": {
+      "text": "Training overview",
+      "date": "2021-04-01 09:24:51.817651",
+      "approved": false
+    }
+  },
+  "15591398736655314155": {
+    "text": "Aprenda a criar aplicações seguindo nossos exemplos",
+    "source_language": "pt-br",
+    "en": {
+      "text": "Learn how to create applications by following our examples",
+      "date": "2021-04-01 09:24:52.098042",
+      "approved": false
+    }
+  },
+  "4995400002122704955": {
+    "text": "Tutorial 1 - Construa seu primeiro flow",
+    "source_language": "pt-br",
+    "en": {
+      "text": "Tutorial 1 - Build your first flow",
+      "date": "2021-04-01 09:24:52.377073",
+      "approved": false
+    }
+  },
+  "5746045860483903523": {
+    "text": "Guia de referência",
+    "source_language": "pt-br",
+    "en": {
+      "text": "Reference Guide",
+      "date": "2021-04-01 09:24:52.617332",
+      "approved": false
+    }
+  },
+  "5144674910796101354": {
+    "text": "Atividades comuns no processo de desenvolvimento de uma aplicação",
+    "source_language": "pt-br",
+    "en": {
+      "text": "Common activities in the application development process",
+      "date": "2021-04-01 09:24:52.856989",
+      "approved": false
+    }
+  },
+  "3231341072204210280": {
+    "text": "As anotações são diferentes para cada tipo de dataset. Em um dataset  ObjectDetection  o usuário clica e arrasta o mouse para desenhar uma caixa ao redor do objeto, e depois define a qual classe esse objeto pertence.",
+    "source_language": "pt-br",
+    "en": {
+      "text": "The annotations are different for each type of dataset. In an ObjectDetection dataset, the user clicks and drags the mouse to draw a box around the object, and then defines which class that object belongs to.",
+      "date": "2021-04-01 19:29:04.608428",
+      "approved": false
+    }
+  },
+  "5781360496427188776": {
+    "text": "As anotações são diferentes para cada tipo de dataset. Em um dataset ",
+    "source_language": "pt-br",
+    "en": {
+      "text": "The annotations are different for each type of dataset. In a dataset",
+      "date": "2021-04-01 19:45:19.150659",
+      "approved": false
+    }
+  },
+  "14354987147036033285": {
+    "text": "o usuário clica e arrasta o mouse para desenhar uma caixa ao redor do objeto, e depois define a qual classe esse objeto pertence.",
+    "source_language": "pt-br",
+    "en": {
+      "text": "the user clicks and drags the mouse to draw a box around the object, and then defines which class that object belongs to.",
+      "date": "2021-04-01 19:45:19.451213",
+      "approved": false
+    }
+  },
+  "205148231572826936": {
+    "text": "Facilidade de integração de componentes de software aberto, novos algoritmos de AI ou com serviços de nuvem - Configuração de diversos tipos de alarmes e relatórios - Integração com *Data Lake* corporativo",
+    "source_language": "pt-br",
+    "en": {
+      "text": "Easy integration of open software components, new AI algorithms or with cloud services - Configuration of different types of alarms and reports - Integration with corporate * Data Lake *",
+      "date": "2021-04-02 00:14:03.052781",
+      "approved": false
+    }
+  },
+  "1448133030120241394": {
+    "text": "Então, o processo de desenvolvimento envolve um ciclo de atividades:",
+    "source_language": "pt-br",
+    "en": {
+      "text": "So, the development process involves a cycle of activities:",
+      "date": "2021-04-02 00:14:03.992573",
+      "approved": false
+    }
+  },
+  "13233371138173844700": {
+    "text": "1. Testa o vídeo no Flow observando se a aplicação está marcando o vídeo corretamente",
+    "source_language": "pt-br",
+    "en": {
+      "text": "1. Test the video in Flow by checking if the application is marking the video correctly",
+      "date": "2021-04-02 00:14:04.290817",
+      "approved": false
+    }
+  },
+  "3544000690214390254": {
+    "text": "2. Identifica os erros que a aplicação está cometendo e vai nos datasets",
+    "source_language": "pt-br",
+    "en": {
+      "text": "2. Identify the errors that the application is making and go in the datasets",
+      "date": "2021-04-02 00:14:04.615090",
+      "approved": false
+    }
+  },
+  "267259218012182572": {
+    "text": "3. Na tela de **Novos Exemplos** procura por quadros onde a rede neural não identificou o objeto corretamente",
+    "source_language": "pt-br",
+    "en": {
+      "text": "3. On the ** New Examples ** screen, look for frames where the neural network did not correctly identify the object",
+      "date": "2021-04-02 00:14:04.902518",
+      "approved": false
+    }
+  },
+  "5072338175335311086": {
+    "text": "4. Adiciona vários exemplos de erro (de 30 a 50 em cada ciclo é um bom número)",
+    "source_language": "pt-br",
+    "en": {
+      "text": "4. Add several examples of error (30 to 50 in each cycle is a good number)",
+      "date": "2021-04-02 00:14:05.172409",
+      "approved": false
+    }
+  },
+  "13170151374049103649": {
+    "text": "5. Anota os novos exemplos corrigindo os erros",
+    "source_language": "pt-br",
+    "en": {
+      "text": "5. Note the new examples by correcting errors",
+      "date": "2021-04-02 00:14:05.442348",
+      "approved": false
+    }
+  },
+  "11298250656630039307": {
+    "text": "6. Treina a rede neural e verifica os indicadores de assertividade para ver se a rede está aprendendo bem",
+    "source_language": "pt-br",
+    "en": {
+      "text": "6. Train the neural network and check the assertiveness indicators to see if the network is learning well",
+      "date": "2021-04-02 00:14:05.732909",
+      "approved": false
+    }
+  },
+  "14172155066715609303": {
+    "text": "7. Após os treinamentos volta para testar novamente o vídeo",
+    "source_language": "pt-br",
+    "en": {
+      "text": "7. After training, go back to test the video again",
+      "date": "2021-04-02 00:14:06.011119",
+      "approved": false
+    }
+  },
+  "6985837171054523777": {
+    "text": "Para que uma rede neural aprenda bem é importante que haja uma boa diversidade de exemplos. Inserir várias imagens muito parecidas, ou inserir muitas imagens de uma classe e poucas das outras irá fazer com que o dataset fique desbalanceado e a rede não aprende bem",
+    "source_language": "pt-br",
+    "en": {
+      "text": "For a neural network to learn well it is important that there is a good diversity of examples. Inserting several very similar images, or inserting many images of a class and few of the others will cause the dataset to become unbalanced and the network will not learn well",
+      "date": "2021-04-02 00:24:41.386396",
+      "approved": false
+    }
+  },
+  "10691735397582824467": {
+    "text": "O objeto a ser detectado deve estar bem visível na imagem. Se houver dúvidas para anotar o exemplo então a própria rede neural terá dificuldades em aprender com esse exemplo. - Para um dataset do tipo ObjectDetection as caixas não podem ser muito pequenas, nem grandes demais. Os testes de augmentation vão indicar se as caixas estão sendo bem detectadas. - Para um dataset Classification os exemplos precisam ser bem diferentes entre as classes. Será difícil detectar uma diferença entre as classes se tal diferença for somente um pequeno detalhe na imagem total. - Deve-se ter uma boa variedade nos exemplos. A adição de muitos exemplos muito parecidos irá fazer o modelo ficar enviesado para detectar só esse tipo de imagem ou classe.",
+    "source_language": "pt-br",
+    "en": {
+      "text": "The object to be detected must be clearly visible in the image. If there are doubts to note the example then the neural network itself will have difficulties in learning from that example. - For an ObjectDetection dataset, the boxes cannot be too small or too large. The augmentation tests will indicate whether the boxes are being well detected. - For a Classification dataset, the examples need to be quite different between classes. It will be difficult to detect a difference between classes if that difference is just a small detail in the total image. - There should be a good variety in the examples. The addition of many very similar examples will cause the model to be skewed to detect only that type of image or class.",
+      "date": "2021-04-02 00:24:41.604332",
+      "approved": false
+    }
+  },
+  "7547811069849966256": {
+    "text": "Datasets *ObjectDetection* costumam utilizar o **mAP** (*Mean Average Precision*) como indicador de assertividade, pois mede o quanto a box de saída engloba bem o objeto, indicando a classe correta, pela média de todas as classes. * Datasets *Classification* costumam utilizar a **Accuracy**, que é o percentual de exemplos em que a rede neural previu corretamente a qual classe o objeto pertence.",
+    "source_language": "pt-br",
+    "en": {
+      "text": "Datasets * ObjectDetection * usually use ** mAP ** (* Mean Average Precision *) as an assertiveness indicator, as it measures how much the output box encompasses the object well, indicating the correct class, by the average of all classes. * Datasets * Classification * usually use ** Accuracy **, which is the percentage of examples in which the neural network correctly predicted which class the object belongs to.",
+      "date": "2021-04-02 00:24:41.824450",
+      "approved": false
+    }
+  },
+  "12405091201444604877": {
+    "text": "As alterações nas imagens não podem ser muito altas a ponto de o objeto de interesse não poder ser mais reconhecido. Para isso o Eyeflow.AI disponibiliza um exemplo dessas alterações para que o operador verifique se as alterações não estão exageradas. O que não puder ser visto nesses exemplos, não poderá ser aprendido pela rede neural.",
+    "source_language": "pt-br",
+    "en": {
+      "text": "The changes in the images cannot be so high that the object of interest can no longer be recognized. For this, Eyeflow.AI provides an example of these changes for the operator to verify that the changes are not exaggerated. What cannot be seen in these examples, cannot be learned by the neural network.",
+      "date": "2021-04-02 00:24:42.034663",
+      "approved": false
+    }
+  },
+  "13405770920188521443": {
+    "text": "Também não adianta estressar as mudanças e gerar casos que não acontecem na operação real. De nada adianta apresentar pro aprendizado da rede neural uma imagem invertida, de cabeça para baixo, por exemplo, se na operação real essa situação nunca irá acontecer.",
+    "source_language": "pt-br",
+    "en": {
+      "text": "It is also useless to stress the changes and generate cases that do not happen in the real operation. It is useless to present an inverted image for the learning of the neural network, upside down, for example, if in real operation this situation will never happen.",
+      "date": "2021-04-02 00:24:42.245223",
       "approved": false
     }
   }

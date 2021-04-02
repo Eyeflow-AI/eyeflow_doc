@@ -3,108 +3,83 @@ title: "Dataset"
 linkTitle: "Dataset"
 weight: 3
 description: >
-  Conjunto de exemplos anotados para treinamento das redes neurais
+ Set of annotated examples for training neural networks
 ---
 
 <!-- {{< note >}}  {{< /note >}} -->
-Um dataset é um conjunto de exemplos anotados que servem para instruir uma rede neural sobre o que é desejado
-que seja reconhecido nas imagens.
-No conjunto de imagens do dataset iremos ter vários exemplos diferentes dos objetos que desejamos identificar
-ou reconhecer. Esses exemplos irão alimentar o treinamento da rede neural para que possa ser identificado o padrão
-comum entre eles.
+A dataset is a set of annotated examples that serve to instruct a neural network about what is desired to be recognized in the images. In the dataset set of images, we will have several different examples of the objects we want to identify or recognize. These examples will feed the training of the neural network so that the common pattern between them can be identified.
 
-## Tipos de dataset
-Os datasets podem ser de vários tipos. Os mais utilizados no Eyeflow são:
+## Dataset types
+Datasets can be of several types. The most used in Eyeflow are:
 * [ObjectDetection](#objectdetection)
 * [Classification](#classification)
 * [AnomallyDetection](#anomallydetection)
 * [InstanceSegmentation](#instancesegmentation)
 
-Cada tipo de dataset possui uma anotação diferente, e um diferente tipo de saída.
+Each type of dataset has a different annotation, and a different type of output.
 
 ### ObjectDetection
-Os datasets ObjectDetection costumam ser os mais utilizados pela sua versatilidade e facilidade de anotação.
-O objetivo é identificar um objeto específico em uma imagem ampla, delimitando uma área retangular ao redor do objeto.
-Sua anotação costuma ser bem simples e rápida, pois basta clicar e arrastar um retângulo (*box*) e definir qual a
-classe do objeto.
-É executado por um tipo de rede neural que pode ser bastante otimizada para execução na borda, podendo chegar a
-centenas de FPS em tempo real.
+ObjectDetection datasets are often the most used for their versatility and ease of annotation. The objective is to identify a specific object in a large image, delimiting a rectangular area around the object. Your annotation is usually very simple and quick, as you just click and drag a rectangle (*box*) and define which class of the object. It is executed by a type of neural network that can be quite optimized for execution at the edge, reaching hundreds of FPS in real time.
 
 ### Classification
-Os datasets de Classification são os mais comuns, e foram os primeiros a surgir no universo de DeepLearning.
-Basicamente identifica uma imagem como sendo uma de N classes. Por exemplo, se tiver uma lista de imagens de gato
-pode-se definir qual a raça de cada um, e a rede neural irá aprender a identificar a raça em qualquer imagem.
+Classification datasets are the most common, and were the first to appear in the DeepLearning universe. It basically identifies an image as being one of N classes. For example, if you have a list of cat images, you can define the breed of each one, and the neural network will learn to identify the breed in any image.
 
 ### AnomallyDetection
-{{< note >}} Este é um dataset ainda em fase experimental. {{< /note >}}
-O dataset AnomallyDetection é orientado para identificar anomalias em imagens de um mesmo objeto. A ideia é
-alimentar o dataset com muitas imagens do objeto "correto" e assim a rede neural aprender o padrão bom.
-Quando a rede neural for apresentada a uma imagem de um objeto que tem uma diferença do padrão bom (anomalia),
-ela irá apontar a anomalia.
+{{< note >}}
+This is a dataset still in the experimental phase.
+{{< /note >}}
+
+The AnomallyDetection dataset is designed to identify anomalies in images of the same object. The idea is to feed the dataset with many images of the &quot;correct&quot; object and thus the neural network learn the good pattern. When the neural network is presented to an image of an object that has a difference from the good pattern (anomaly), it will point out the anomaly.
 
 ### InstanceSegmentation
-{{< note >}} Este é um dataset ainda em fase experimental. {{< /note >}}
-InstanceSegmentation é um dataset que se popularizou nos últimos anos devido a sua intensa utilização nos sistemas
-de veículos autônomos e sistemas de IA para medicina. Trata-de de identificar o objeto, juntamente com todo seu contorno
-pixel a pixel. Sua saída é bastante impressionante, pois permite "recortar" detalhadamente o objeto do fundo da imagem,
-porém, sua anotação é extremamente trabalhosa, geralmente demandando uma grande equipe de pessoas para gerar um
-conjunto adequado de imagens anotadas para treinamento.
+{{< note >}}
+This is a dataset still in the experimental phase.
+{{< /note >}}
 
-## Criando um dataset
-#### Criar dataset é uma tarefa bem simples. Basta clicar no menu lateral em **Novo Dataset**.
+InstanceSegmentation is a dataset that has become popular in recent years due to its intense use in autonomous vehicle systems and AI systems for medicine. It is about identifying the object, along with all its outline pixel by pixel. Its output is quite impressive, since it allows you to &quot;cut&quot; the object in detail in the background of the image, however, its annotation is extremely laborious, usually requiring a large team of people to generate an adequate set of annotated images for training.
+
+## Creating a dataset
+#### Creating a dataset is a very simple task. Just click on the side menu in **New Dataset**.
 
 ![Criar Dataset](/screenshots/pt-br_create_dataset.jpg#bordered "Criar Dataset")
 
-#### Irá abrir uma tela para entrar com os dados do dataset.
+#### A screen will open to enter data from the dataset.
 
 ![Criar Dataset](/screenshots/pt-br_create_dataset_modal.jpg#bordered "Criar Dataset")
 
-É só preencher o Nome e Descrição, escolher o tipo e definir a qual Aplicação o dataset pertence.
-Depois é preciso adicionar pelo menos uma classe.
+Just fill in the Name and Description, choose the type and define which Application the dataset belongs to. Then you need to add at least one class.
 
 ## Classes
-O objetivo da rede neural será identificar um padrão na imagem, e dar saída disso em formato de dados. Assim, criamos
-classes no dataset para poder usarmos para marcar as imagens, e assim ensinar a rede neural a reconhecer esses padrões
-e nos informar qual foi a classe reconhecida.
-Por exemplo, se temos várias imagens de exemplos de cachorros e gatos, e queremos saber se trata-se de um ou outro na
-imagem, criamos duas classes:
+The goal of the neural network will be to identify a pattern in the image, and output it in data format. Thus, we created classes in the dataset to be able to use to mark the images, and thus teach the neural network to recognize these patterns and inform us which class was recognized. For example, if we have several images of examples of dogs and cats, and we want to know if it is one or the other in the image, we have created two classes:
 
 ![Criar Classes](/screenshots/pt-br_create_classes_modal.jpg#bordered "Criar Classes")
 
-As cores escolhidas servirão para ajudar na anotação do dataset, e irão aparecer na anotação dos vídeos.
+The colors chosen will help to annotate the dataset, and will appear in the annotation of the videos.
 
-## Exemplos
-Exemplos são imagens anotadas que irão instruir a rede neural no aprendizado do reconhecimento dos padrões. Inserimos
-várias imagens no dataset a partir de quadros de um video ou fotos, e depois anotamos em cada uma dessas imagens
-aquilo que é desejado ser reconhecido.
-A maneira mais simples e rápida de adicionar novos exemplos é extraindo de vídeos de exemplo. Ao passar um vídeo em
-um Flow a ferramenta extrai alguns dos quadros do vídeo e os disponibiliza na tela de Novos Exemplos.
+## Examples
+Examples are annotated images that will instruct the neural network in learning pattern recognition. We insert several images in the dataset from frames of a video or photos, and then write down in each of these images what is desired to be recognized. The simplest and fastest way to add new examples is to extract sample videos. When playing a video in a Flow, the tool extracts some of the frames from the video and makes them available on the New Examples screen.
 
 ![Menu Novos Exemplos](/screenshots/pt-br_menu_new_examples.jpg#bordered "Menu Novos Exemplos")
 
-Nessa tela também é possivel subir novos exemplos a partir de imagens localizadas no computador.
+On this screen it is also possible to upload new examples from images located on the computer.
 
 ![Inserir Novos Exemplos](/screenshots/pt-br_insert_new_examples.jpg#bordered "Inserir Novos Exemplos")
 
 {{< tooltip >}}
-Para que uma rede neural aprenda bem é importante que haja uma boa diversidade
-de exemplos. Inserir várias imagens muito parecidas, ou inserir muitas imagens de uma classe e poucas das outras
-irá fazer com que o dataset fique desbalanceado e a rede não aprende bem
+For a neural network to learn well it is important that there is a good diversity of examples. Inserting several very similar images, or inserting many images of a class and few of the others will cause the dataset to become unbalanced and the network will not learn well
 {{< /tooltip >}}
 
-## Anotação
-Anotação é o processo onde o usuário marca na imagem o objeto que deseja que seja identificado, gerando assim um exemplo
-que será utilizado no treinamento da rede neural.
+## Annotation
+Annotation is the process where the user marks the object in the image that he wants to be identified, thus generating an example that will be used in the training of the neural network.
 
-As anotações são diferentes para cada tipo de dataset. Em um dataset [ObjectDetection](#objectdetection) o usuário clica e
-arrasta o mouse para desenhar uma caixa ao redor do objeto, e depois define a qual classe esse objeto pertence.
+The annotations are different for each type of dataset. In a dataset [ObjectDetection](#objectdetection)
 
 ![Anotar Exemplo](/screenshots/pt-br_annotate_example.jpg#bordered "Anotar Exemplo")
 
 
 
 
-## Para onde devo ir agora?
+## Where should I go now?
 
-* [Treinamento](/docs/concepts/training/): Treinando a rede neural
-* [Flow](/docs/concepts/flow/): Criando o Flow
+* [Training](/docs/concepts/training/)
+* [Flow](/docs/concepts/flow/)

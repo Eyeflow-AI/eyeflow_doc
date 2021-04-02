@@ -1,10 +1,16 @@
 ---
-title: "Parâmetros das Redes Neurais"
-linkTitle: "Parâmetros das Redes Neurais"
+title: "Parameters of Neural Networks"
+linkTitle: "Parameters of Neural Networks"
 weight: 4
 description: >
-  Controle das redes neurais
+ Control of neural networks
 ---
+
+In this set of parameters, aspects related to the architecture of neural networks that will learn from the dataset examples in training are controlled.
+
+Each type of neural network has its own architecture, weight and performance parameters. Eyeflow.AI is an extensible platform that allows you to work with the most diverse architectures. However, our experience of several projects has already taught us about various architectures that work well in production, and it is this experience that we seek to bring to the platform, and thus simplify the lives of users.
+
+In this Beta phase we have 2 main components that we use to solve all the problems that we have encountered.
 
 <!-- <parm_table> -->
 
@@ -65,7 +71,8 @@ description: >
 <!-- </parm_table> -->
 
 
-## Para onde devo ir agora?
+## Where should I go now?
 
-* [Dataset](/docs/concepts/dataset/): Anotando Datasets
-* [Treinamento](/docs/concepts/training/): Treinando a rede neural
+* [Training Parameters](/docs/concepts/training/train_parms)
+* [Parameters of Neural Networks](/docs/concepts/training/dnn_parms)
+* [Data Expansion Parameters](/docs/concepts/training/data_augmentation_parms)

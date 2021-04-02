@@ -1,53 +1,44 @@
 ---
-title: "Dashboard de Treinamento"
-linkTitle: "Dashboard de Treinamento"
+title: "Training Dashboard"
+linkTitle: "Training Dashboard"
 weight: 2
 description: >
-  Visão geral dos treinamentos
+ Training overview
 ---
 
-O Dashboard de Treinamentos dá uma visão geral de todo processo de treinamento. Nessa tela podemos acompanhar os
-treinamentos em tempo real, bem como avaliar o histórico dos treinamentos anteriores e editar vários parâmetros.
+The Training Dashboard gives an overview of the entire training process. On this screen we can monitor the training in real time, as well as evaluate the history of previous training and edit various parameters.
 
-![Visão Geral](/screenshots/pt-br_dashboard_overview.jpg#bordered "Visão Geral")
+![Overview](/screenshots/pt-br_dashboard_overview.jpg#bordered "Visão Geral")
 
-## Indicadores
-Nesses quadros estão os indicadores do treinamento selecionado. A data que foi realizado, duração, e resultados
-finais do treino.
-Temos também uma barra de botões com ações como *Download* e *Publicação* do modelo, visualização dos parâmetros
-e visualização das imagens de teste.
+## Indicators
+In these tables are the indicators of the selected training. The date that was performed, duration, and final results of the training. We also have a button bar with actions such as *Download*and* Publication * of the model, visualization of parameters and visualization of test images.
 
-![Indicadores](/screenshots/pt-br_dashboard_kpis.jpg#bordered "Indicadores")
+![Indicators](/screenshots/pt-br_dashboard_kpis.jpg#bordered "Indicadores")
 
-### Resultados finais do treino
+### Final training results
 ![Resultados Finais](/screenshots/pt-br_dashboard_final_results.jpg#bordered "Resultados Finais")
-
-### Imagem de teste de expansão de exemplos - Data Augmentation
+### Sample expansion test image - Data Augmentation
 ![Teste de Expansão](/screenshots/pt-br_dashboard_test_augmentation.jpg#bordered "Teste de Expansão")
-
-### Imagem de teste do final do treino
+### End of training test image
 ![Teste Final](/screenshots/pt-br_dashboard_test_final.jpg#bordered "Teste Final")
+## Graphics
+The graphs give an idea of the training progression, either in real time or in history.
 
-## Gráficos
-Os gráficos dão uma ideia da progressão do treino, seja em tempo real ou histórico.
+**Loss**and**Val Loss** indicate the error measured in the training, and are common indicators for all training. They must be descending curves that approach 0. The lower the Loss, the less the neural network is missing.
 
-**Loss** e **Val Loss** indicam o erro medido no treino, e são indicadores comuns a todos os treinos. Devem ser curvas
-descendentes que se aproximam de 0. Quanto menor o Loss menos a rede neural está errando.
+![Graphics](/screenshots/pt-br_dashboard_graphs.jpg#bordered "Gráficos")
 
-![Gráficos](/screenshots/pt-br_dashboard_graphs.jpg#bordered "Gráficos")
+There are also graphs of neural network efficacy, and for these, the bigger the better.
+- **mAP**for*ObjectDetection* datasets. It is generally considered good above 0.6.
+- **Accuracy**for*Classification* datasets. It is considered good above 90%.
 
-Existem também gráficos de eficácia da rede neural, e para esses quanto maior melhor.
-- **mAP** para datasets *ObjectDetection*. Geralmente já é considerado bom acima de 0.6.
-- **Accuracy** para datasets de *Classification*. É considerado bom acima de 90%.
-
-## Histórico de Treinamentos
-É possível também verificar os treinamentos anteriores e assim ter insights sobre se as ações que foram tomadas na
-construção do dataset e parametrização dos treinos surtiram efeitos positivos ou negativos.
+## Training History
+It is also possible to check the previous trainings and thus have insights on whether the actions that were taken in the construction of the dataset and parameterization of the training had positive or negative effects.
 
 ![Histórico](/screenshots/pt-br_dashboard_history.jpg#bordered "Histórico")
 
 
-## Para onde devo ir agora?
+## Where should I go now?
 
-* [Dataset](/docs/concepts/dataset/): Anotando Datasets
-* [Treinamento](/docs/concepts/training/): Treinando a rede neural
+* [Dataset](/docs/concepts/dataset/)
+* [Training](/docs/concepts/training/)

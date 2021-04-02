@@ -1,7 +1,7 @@
 ---
-title: "Treinamento"
-linkTitle: "Treinamento"
+title: "Training"
+linkTitle: "Training"
 weight: 4
 description: >
-  Processo de aprendizado das redes neurais
+ Learning process of neural networks
 ---

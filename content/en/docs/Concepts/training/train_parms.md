@@ -1,23 +1,21 @@
 ---
-title: "Parâmetros do Treinamento"
-linkTitle: "Parâmetros do Treinamento"
+title: "Training Parameters"
+linkTitle: "Training Parameters"
 weight: 3
 description: >
-  Controle do treinamento
+ Training control
 ---
 
-## Iterações
-O processo de treinamento é iterativo, ou seja, realizado em ciclos. Cada ciclo é chamado de **Época**.
-Em cada época todos os exemplos são apresentados para a rede neural, para que sejam aprendidos os padrões. O
-algoritmo de treinamento vai então medindo o erro (*Loss*) e ajustando a rede neural para ir minizando o mesmo.
+## Iterations
+The training process is iterative, that is, carried out in cycles. Each cycle is called **Season**. In each epoch all examples are presented for the neural network, so that the patterns are learned. The training algorithm will then measure the error (*Loss*) and adjust the neural network to minimize it.
 
-É comum se pensar de que com mais épocas a rede irá aprender mais, mas na prática não é exatamente assim. De acordo
-com a quantidade/qualidade dos exemplos chega-se a um ponto em que o erro não diminui mais e o aprendizado estagna. Outra
-ocorrência comum é o erro (*Loss*) continuar diminuindo, mas o *Val Loss* começar a aumentar. Esse fenômeno é conhecido
-como *Overfitting* e significa que a rede neural ficou viciada nos exemplos do treinamento e não está mais conseguindo
-generalizar para novos exemplos.
+It is common to think that with more times the network will learn more, but in practice it is not exactly like that. Depending on the quantity / quality of the examples, a point is reached where the error no longer decreases and learning stagnates. Another common occurrence is that the error (*Loss*) continues to decrease, but the *Val Loss*starts to increase. This phenomenon is known as* Overfitting * and it means that the neural network has become addicted to the training examples and is no longer able to generalize to new examples.
 
-A recomendação é no início setar 5 épocas para o treino enquanto o dataset tiver menos de 100 exemplos, e daí ir subindo.
+The recommendation is to set 5 training periods in the beginning while the dataset has less than 100 examples, and then go up.
+
+In the sequence, we have several other parameters that govern the training process and all can influence positively or negatively on the final result of the network learning. Do not be frightened by the quantity, nor by the complexity of them, it is natural to take a long time to acquire mastery over the whole process.
+
+Rest assured, Eyeflow.AI has a great set of defaults for the parameters that solve the needs of most of the needs. In addition, our team is available to answer questions and give tips in our Forum.
 
 <!-- <parm_table> -->
 
@@ -109,7 +107,8 @@ A recomendação é no início setar 5 épocas para o treino enquanto o dataset 
 
 <!-- </parm_table> -->
 
-## Para onde devo ir agora?
+## Where should I go now?
 
-* [Dataset](/docs/concepts/dataset/): Anotando Datasets
-* [Treinamento](/docs/concepts/training/): Treinando a rede neural
+* [Training Parameters](/docs/concepts/training/train_parms)
+* [Parameters of Neural Networks](/docs/concepts/training/dnn_parms)
+* [Data Expansion Parameters](/docs/concepts/training/data_augmentation_parms)

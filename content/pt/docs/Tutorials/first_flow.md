@@ -6,10 +6,10 @@ description: >
   Tutorial 1 - Construa seu primeiro flow
 ---
 
->   **Este treinamento será baseado em um caso de uso, para este caso, está
+>   Este treinamento será baseado em um caso de uso, para este caso, está
 >   disponível um vídeo para ser utilizado para treinamento da rede neural, que
 >   terá o objetivo de detecção do elemento Porca, identificando suas faces
->   (face lisa e face prospecção)**,
+>   (face lisa e face prospecção)
 
 ## Caso Uso: Detecção e Identificação da Face das Porcas
 
@@ -139,8 +139,8 @@ Aparecerá a imagem abaixo, nesta etapa estaremos adicionando duas novas classes
 
 Para este treinamento foi disponibilizado um vídeo teste:
 Endereço do vídeo para Download
-![Upload Icon 3738519](/screenshots/13526a42e6cba74c2ca123581f41d23d.png)
-![flow Icon 3672795](/screenshots/036889fd1c08813042e32d9fe50439a9.png)
+![Upload](/screenshots/13526a42e6cba74c2ca123581f41d23d.png)
+![Flow](/screenshots/036889fd1c08813042e32d9fe50439a9.png)
 ![](/screenshots/8f54bde44fd3300b8923ce16c7d6bafc.png)
 
 ## Carregue o vídeo
@@ -166,9 +166,9 @@ Neste momento aparecerá uma barra demonstrando a carga do vídeo na ferramenta
 Neste momento a solução estará executando o seu fluxo criado e disponibilizando novos exemplos (frames) para seu Dataset.
 
 ## Dataset
-![pictures Icon 2518756](/screenshots/e11aa076d81124afd80c34d4cdfe8d09.png)
-![Upload Icon 3738519](/screenshots/13526a42e6cba74c2ca123581f41d23d.png)
-![flow Icon 3672795](/screenshots/036889fd1c08813042e32d9fe50439a9.png)
+![Dataset](/screenshots/e11aa076d81124afd80c34d4cdfe8d09.png)
+![Upload](/screenshots/13526a42e6cba74c2ca123581f41d23d.png)
+![Flow](/screenshots/036889fd1c08813042e32d9fe50439a9.png)
 
 ![](/screenshots/8f54bde44fd3300b8923ce16c7d6bafc.png)
 
@@ -228,11 +228,11 @@ Aparecerá a imagem abaixo
 
 ## Treinamento da rede neural
 ![](/screenshots/8f54bde44fd3300b8923ce16c7d6bafc.png)
-![Upload Icon 3738519](/screenshots/13526a42e6cba74c2ca123581f41d23d.png)
-![flow Icon 3672795](/screenshots/036889fd1c08813042e32d9fe50439a9.png)
+![Upload](/screenshots/13526a42e6cba74c2ca123581f41d23d.png)
+![Flow](/screenshots/036889fd1c08813042e32d9fe50439a9.png)
 
-![pictures Icon 2518756](/screenshots/e11aa076d81124afd80c34d4cdfe8d09.png)
-![Running Man Icon 429544](/screenshots/3b897c90fad29c16aea0f2675bbe949b.png)
+![Dataset](/screenshots/e11aa076d81124afd80c34d4cdfe8d09.png)
+![Training](/screenshots/3b897c90fad29c16aea0f2675bbe949b.png)
 
 Após edição dos parâmetros da rede neural, vamos submeter os seus frames marcados para treinamento, onde executará o fluxo criado.
 

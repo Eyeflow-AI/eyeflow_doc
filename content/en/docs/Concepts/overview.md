@@ -1,74 +1,51 @@
 ---
-title: "Visão Geral"
-linkTitle: "Visão Geral"
+title: "Overview"
+linkTitle: "Overview"
 weight: 1
 description: >
-  Principais conceitos do Eyeflow.AI
+ Main concepts of Eyeflow.AI
 ---
 
-## Aplicação
-Conjunto de elementos que implementam um processo completo de Video Analytics.
+## Application
+Set of elements that implement a complete Video Analytics process.
 
-Quando a gente se depara com um problema que envolve visão começamos a pensar em como podemos resolvê-lo
-utilizando o Eyeflow. Na entrada temos a captura de imagens por uma câmera industrial ou um celular, e na saída
-queremos ter essas imagens analisadas e interpretadas, para que ações possam ser tomadas em resposta.
-Essa solução do problema é que chamamos de Aplicação.
+When we are faced with a problem that involves vision we start to think about how we can solve it using Eyeflow. At the entrance we have the capture of images by an industrial camera or a cell phone, and at the exit we want to have these images analyzed and interpreted, so that actions can be taken in response. This solution to the problem is what we call Application.
 
 ## Flow
-Conjunto de componentes encadeados que implementam uma aplicação.
+Set of chained components that implement an application.
 
-No processo de construir uma aplicação o objetivo é transformar uma entrada de vídeo (*dados não estruturados*)
-em uma ação programada (*dados estruturados*). Nesse processo iremos usar redes neurais e outros componentes de
-software encadeados para poder decompor e interpretar as imagens de entrada e gerar as saídas desejadas.
+In the process of building an application the goal is to transform a video input (*unstructured data*) into a programmed action (*structured data*). In this process we will use neural networks and other chained software components to be able to decompose and interpret the input images and generate the desired outputs.
 
-## Rede Neural
-Algorítmo matemático avançado que permite a computação de dados não estruturados.
+## Neural Network
+Advanced mathematical algorithm that allows the computation of unstructured data.
 
-As redes neurais são elementos computacionais que vêm sendo desenvolvidos desde os anos 60, inspiradas
-nas pesquisas científicas sobre o funcionamento do cérebro (*neurônios*).
+Neural networks are computational elements that have been developed since the 1960s, inspired by scientific research on the functioning of the brain (*neurons*).
 
-A partir de 2010, com avanços nos
-algoritmos de processamento matemático e aproximação de funções algébricas, juntamente com o aumento de
-capacidade dos processadores matemáticos e barateamento pela popularização dos mesmos nas placas gráficas
-para jogos (*GPU*), as redes neurais evoluíram para utilização de várias camadas (*Deep Neural Network*).
-Dessa forma começaram a surgir várias novas aplicações dessa tecnologia na solução de problemas complexos,
-em sua maioria relacionados a dados não estruturados, como sons e imagens.
-As redes neurais são os componentes fundamentais do Flow, pois permitem a solução de problemas de visão
-computacional complexos, que antes não eram passíveis de serem resolvidos utilizando algorítmos tradicionais.
+As of 2010, with advances in mathematical processing algorithms and approximation of algebraic functions, together with the increase in the capacity of mathematical processors and lower prices due to their popularization in graphics cards for games (*GPU*), neural networks have evolved to be used multilayer (*Deep Neural Network*). In this way, several new applications of this technology began to emerge in the solution of complex problems, mostly related to unstructured data, such as sounds and images. Neural networks are the fundamental components of Flow, as they allow the solution of complex computer vision problems, which previously were not amenable to being solved using traditional algorithms.
 
-As redes neurais possuem uma capacidade de convergir matematicamente para um modelo computacional que
-identifica os padrões nos dados. Essa capacidade permitiu o surgimento de soluções de Inteligência Artificial
-que aprendem com exemplos que o usuário entrega para a rede.
+Neural networks have the ability to converge mathematically to a computational model that identifies patterns in the data. This ability allowed the emergence of Artificial Intelligence solutions that learn from examples that the user delivers to the network.
 
 ## Dataset
-Conjunto de exemplos que instruem o aprendizado da rede neural.
+Set of examples that instruct the learning of the neural network.
 
-Uma rede neural é como uma caixa preta onde vamos inserindo exemplos na entrada e vamos dizendo o que queremos
-ter na saída. Assim, o usuário deve gerar um conjunto desses exemplos, anotados com a saída desejada, que servirão
-de dados para treinamento da rede neural na execução da tarefa.
+A neural network is like a black box where we insert examples at the entrance and say what we want to have at the exit. Thus, the user must generate a set of these examples, annotated with the desired output, which will serve as data for training the neural network in the execution of the task.
 
-## Treinamento
-Processo computacional para convergir uma rede neural para o aprendizado dos padrões.
+## Training
+Computational process to converge a neural network for learning patterns.
 
-Depois que temos um dataset anotado colocamos os algorítmos de redes neurais para processar esses exemplos
-até ela aprender a gerar a saída desejada. O treinamento busca reduzir o erro medido entre o que a rede neural
-apresentou na saída em relação à anotação do exemplo feita pelo usuário. Quando esse erro é bem reduzido a
-rede neural estará pronta para processar novos dados.
+After we have an annotated dataset we put the neural network algorithms to process these examples until it learns how to generate the desired output. The training seeks to reduce the error measured between what the neural network presented in the output in relation to the example annotation made by the user. When this error is reduced, the neural network will be ready to process new data.
 
-## Modelo
-Rede neural treinada com um dataset.
+## Model
+Neural network trained with a dataset.
 
-Após o processo de treinamento é gerado um modelo, que poderá então ser utilizado no Flow para processamento
-das imagens e geração das saídas desejadas.
+After the training process, a model is generated, which can then be used in Flow to process the images and generate the desired outputs.
 
-## Edge / Borda
-Dispositivo computacional que executa um flow em produção.
+## Edge
+Computational device that performs a flow in production.
 
-Depois que um flow está desenvolvido, testado e apresentando bons resultados ele pode ser publicado para
-execução em um dispositivo que passará a funcionar em produção, como por exemplo a detecção de um defeito
-na linha de manufatura.
+After a flow is developed, tested and showing good results, it can be published for execution on a device that will start to work in production, such as the detection of a defect in the manufacturing line.
 
-## Para onde devo ir agora?
+## Where should I go now?
 
-* [Dataset](/docs/Concepts/dataset/): Anotando Datasets
-* [Flow](/docs/Concepts/flow/): Criando o Flow
+* [Dataset](/docs/Concepts/dataset/)
+* [Flow](/docs/Concepts/flow/)

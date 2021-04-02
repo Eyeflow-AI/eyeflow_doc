@@ -1,7 +1,7 @@
 ---
-title: "Conceitos"
-linkTitle: "Conceitos"
+title: "Concepts"
+linkTitle: "Concepts"
 weight: 4
 description: >
-  Principais conceitos do Eyeflow e Vídeo Analytics
+ Main concepts of Eyeflow and Video Analytics
 ---

@@ -1,139 +1,85 @@
 ---
-title: "Visão Geral"
-linkTitle: "Visão Geral"
+title: "Overview"
+linkTitle: "Overview"
 weight: 1
 description: >
-  Visão geral do treinamento
+ Training overview
 ---
 
-Treinamento é o processo onde os exemplos do dataset são alimentados na rede neural para aprendizado dos
-padrões e geração do modelo.
-É um processo matemático/algorítmico complexo, que exige uma grande capacidade computacional e necessita
-rodar em servidores com placas gráficas GPU ou TPU no caso da cloud Google.
+Training is the process where the examples from the dataset are fed into the neural network to learn the patterns and generate the model. It is a complex mathematical / algorithmic process, which requires a large computational capacity and needs to run on servers with GPU or TPU graphics cards in the case of the Google cloud.
 
-Esse processo é executado de forma iterativa buscando minimizar o erro medido entre o que a rede neural
-apresentou na saída e a anotação feita no exemplo pelo usuário.
-Ao longo do processo de minimização do erro é medida a assertividade da rede neural, e assim o usuário
-pode verificar se a rede neural realmente aprendeu a identificar os padrões.
+This process is performed in an iterative way, seeking to minimize the error measured between what the neural network presented in the output and the annotation made in the example by the user. Throughout the error minimization process, the neural network&#39;s assertiveness is measured, so that the user can verify if the neural network has really learned to identify the patterns.
 
-O processo de treinamento das redes neurais é bastante complexo, e dominar bem esse processo costuma demandar
-bastante tempo, estudo e experimentação.
+The process of training neural networks is quite complex, and mastering this process well takes a lot of time, study and experimentation.
 
-Felizmente, o Eyeflow.AI oferece um ambiente completo para acelerar e automatizar todas as tarefas para o desenvolvimento
-de redes neurais, e possui sugestões de construção e parametrização, fruto de longos anos de experiência de uso
-de redes neurais para solução de problemas reais.
+Fortunately, Eyeflow.AI offers a complete environment to accelerate and automate all tasks for the development of neural networks, and has suggestions for construction and parameterization, the result of long years of experience using neural networks to solve real problems.
 
-## Conceitos importantes
+## Important concepts
 
-### Quantidade de exemplos
-A quantidade de exemplos de um dataset é um item muito importante para a eficácia das detecções. Para realizar
-um treinamento de uma rede neural é necessário no mínimo 10 exemplos, sendo que um bom dataset para produção
-vai demandar cerca de 1000 exemplos. Contudo, não adianta simplesmente lotar um dataset de exemplos sem testar
-sua eficácia com casos reais, pois um excesso de exemplos semelhantes pode desbalancear o aprendizado e fazer com que seu
-modelo fique enviesado e não tenha boa performance em produção.
+### Number of examples
+The number of examples of a dataset is a very important item for the effectiveness of the detections. To perform a training of a neural network it is necessary at least 10 examples, and a good dataset for production will require about 1000 examples. However, there is no point in simply filling up a dataset of examples without testing its effectiveness with real cases, as an excess of similar examples can unbalance learning and cause your model to be biased and not perform well in production.
 
-Outro ponto importante é que deve-se manter uma quantidade similar de exemplos de cada classe, também para evitar
-o desbalanceamento, e consequentemente enviesamento, do modelo. Se o dataset tiver muitos exemplos de uma só
-classe e poucos das outras ele irá tender a detectar tudo como a classe dominante.
+Another important point is that a similar number of examples from each class must be maintained, also to avoid imbalance, and consequently bias, of the model. If the dataset has many examples of a single class and few of the others, it will tend to detect everything as the dominant class.
 
-A melhor estratégia para adição de novos exemplos no dataset é testar o mesmo após o treinamento e verificar
-os erros, para adicionar somente os novos exemplos que apresentaram erro, e daí corrigí-los e fazer um novo treinamento.
-A cada iteração dessas o ideal é adicionar de 30 a 50 novos exemplos, e daí rapidamente o treinamento irá aumentar
-a assertividade da detecção.
+The best strategy for adding new examples to the dataset is to test it after training and check for errors, to add only the new examples that showed errors, and then correct them and do a new training. At each of these iterations, the ideal is to add 30 to 50 new examples, and from there the training will quickly increase the assertiveness of detection.
 
-Após os testes com vídeos e publicação em produção o Eyeflow oferece um mecanismo para coleta de novos exemplos a
-partir da borda, o que servirá para verificar se o modelo está tendo uma boa assertividade nos casos reais, e daí
-podem ser adicionados os erros para continuar o processo de melhoria do dataset.
+After testing with videos and publishing in production, Eyeflow offers a mechanism for collecting new examples from the edge, which will serve to check if the model is having a good assertiveness in real cases, and then errors can be added to continue the process of improving the dataset.
 
-### Qualidade dos exemplos
-Se a quantidade é importante, a qualidade é fundamental para garantir que a rede neural irá aprender a detectar os
-padrões.
+### Quality of the examples
+If quantity is important, quality is critical to ensuring that the neural network will learn to detect patterns.
 
-Para garantir a qualidade dos exemplos alguns pontos devem ser observados:
-- O objeto a ser detectado deve estar bem visível na imagem. Se houver dúvidas para anotar o exemplo então a própria
-rede neural terá dificuldades em aprender com esse exemplo.
-- Para um dataset do tipo ObjectDetection as caixas não podem ser muito pequenas, nem grandes demais. Os testes de augmentation
-vão indicar se as caixas estão sendo bem detectadas.
-- Para um dataset Classification os exemplos precisam ser bem diferentes entre as classes. Será difícil detectar uma diferença
-entre as classes se tal diferença for somente um pequeno detalhe na imagem total.
-- Deve-se ter uma boa variedade nos exemplos. A adição de muitos exemplos muito parecidos irá fazer o modelo ficar enviesado
-para detectar só esse tipo de imagem ou classe.
+To guarantee the quality of the examples, some points must be observed:
+- The object to be detected must be clearly visible in the image. If there are doubts to note the example then the neural network itself will have difficulties in learning from that example. - For an ObjectDetection dataset, the boxes cannot be too small or too large. The augmentation tests will indicate whether the boxes are being well detected. - For a Classification dataset, the examples need to be quite different between classes. It will be difficult to detect a difference between classes if that difference is just a small detail in the total image. - There should be a good variety in the examples. The addition of many very similar examples will cause the model to be skewed to detect only that type of image or class.
 
-### Validação e Teste
-No processo de treinamento o dataset é dividido em 3 grupos:
-- Treino
-- Validação
-- Teste
+### Validation and Testing
+In the training process, the dataset is divided into 3 groups:
+- Training
+- Validation
+- Test
 
-A separação dos exemplos para os grupos é feita de forma aleatória, baseada nos parâmetros definidos para o treinamento.
+The separation of the examples for the groups is done at random, based on the parameters defined for the training.
 
-O grupo de **Treino** é o que será efetivamente usado para treinar a rede neural. Ele deve ter a maior quantidade de exemplos,
-sendo recomendado pelo menos 80% dos exemplos.
+The **Training** group is what will be effectively used to train the neural network. It should have the largest number of examples, with at least 80% of the examples recommended.
 
-O grupo de **Validação** é usado para testar o modelo a cada final de época, e serve para verificar se o treino está evoluindo,
-ou se estagnou ou viciou (*overfitting*). É recomendado que seja 10% dos exemplos até um máximo de 100 exemplos.
+The **Validation** group is used to test the model at each end of the season, and is used to check if the training is evolving, or has become stagnant or addictive (*overfitting*). It is recommended that 10% of the examples be up to a maximum of 100 examples.
 
-O grupo de **Teste** é usado para testar o modelo ao final do treinamento. Como esses exemplos nunca foram apresentados ao
-dataset então servem como uma avaliação final do aprendizado, definindo qual a assertividade que o modelo apresenta. É o indicador
-se a rede neural efetivamente aprendeu a reconhecer os padrões. É recomendado que seja 10% dos exemplos até um máximo de 100 exemplos.
+The **Test** group is used to test the model at the end of training. As these examples were never presented to the dataset, they serve as a final assessment of learning, defining the assertiveness that the model presents. It is an indicator of whether the neural network has effectively learned to recognize patterns. It is recommended that 10% of the examples be up to a maximum of 100 examples.
 
 {{< note >}}
-O principal objetivo de um treinamento de rede neural é garantir que o modelo final irá **generalizar**, significa que irá
-aprender com os exemplos o padrão para assim poder extrapolar para novos exemplos em situações reais. Muitas vezes o resultado
-fica bom no treino, mas ruim em produção, indicando que o modelo não generalizou bem. Nessas situações deve-se coletar mais
-exemplos de erro em produção para adicionar ao dataset.
+The main objective of a neural network training is to ensure that the final model will **generalize**, it means that you will learn from the pattern the examples so that you can extrapolate to new examples in real situations. Often the result is good in training, but poor in production, indicating that the model did not generalize well. In these situations, you should collect more examples of errors in production to add to the dataset.
 {{< /note >}}
 
-### Loss e Val Loss
-Loss é a medida de erro que no processo de treinamento foi observado entre o que a rede neural detectou (*predict*) e o que deveria
-ser a saída correta segundo a anotação (*ground thruth*). O processo matemático/algorítmico de treinamento das redes neurais busca
-a minimização desse erro.
+### Loss and Val Loss
+Loss is the measure of error observed in the training process between what the neural network detected (*predict*) and what should be the correct output according to the annotation (*ground thruth*). The mathematical / algorithmic training process of neural networks seeks to minimize this error.
 
-O Val Loss é a mesma medida, só que feita no grupo de validação ao final de uma época. Serve para acompanhar a evolução do treino
-a cada ciclo de treinamento.
+Val Loss is the same measure, only done in the validation group at the end of a season. It serves to monitor the evolution of training at each training cycle.
 
-### mAP e Accuracy
-O indicador de qualidade do treino é uma medida de acerto que leva em consideração todos os elementos de saída. Cada tipo de
-dataset tem sua medida padrão de assertividade.
+### mAP and Accuracy
+The training quality indicator is a measure of correctness that takes into account all the elements of output. Each type of dataset has its standard measure of assertiveness.
 
-* Datasets *ObjectDetection* costumam utilizar o **mAP** (*Mean Average Precision*) como indicador de assertividade, pois mede o quanto a
-box de saída engloba bem o objeto, indicando a classe correta, pela média de todas as classes.
-* Datasets *Classification* costumam utilizar a **Accuracy**, que é o percentual de exemplos em que a rede neural previu corretamente
-a qual classe o objeto pertence.
+*Datasets* ObjectDetection *usually use**mAP**(* Mean Average Precision*) as an assertiveness indicator, as it measures how much the output box encompasses the object well, indicating the correct class, by the average of all classes. *Datasets* Classification *usually use**Accuracy**, which is the percentage of examples in which the neural network correctly predicted which class the object belongs to.
 
 ### Overfitting
-É um fenômeno que ocorre comumento nos treinamentos. Ocorre no treinamento quando vemos o *Loss* continuar caindo, mas o *Val Loss* subir
-ao invés de descer. Isso indica que a rede neural ficou "viciada" nos exemplos do treinamento e parou de generalizar para novos exemplos,
-ou seja, ela aprendeu muito sobre os exemplos do treino, mas não consegue acertar exemplos novos.
+It is a phenomenon that occurs with an increase in training. It occurs in training when we see *Loss*continue to fall, but* Val Loss * goes up instead of going down. This indicates that the neural network has become &quot;addicted&quot; to the training examples and has stopped generalizing to new examples, that is, it has learned a lot about the training examples, but is unable to get new examples right.
 
-### Expansão dos exemplos - Data Augmentation
-É um trabalho demorado e repetitivo anotar os exemplos de um dataset, sendo porém a tarefa mais importante para poder usar uma
-rede neural em uma aplicação real. Muitos projetos de AI estagnam na parte em que precisam reunir muitos milhares de exemplos anotados
-para começar a ter bons resultados com redes neurais, mas a experiência com o Eyeflow.AI indica que é possível ter bons resultados apenas
-com 300 exemplos em um dataset, e ótimos resultados com apenas 1000 exemplos.
-Um dos aspectos chaves dessa performance está no Data Augmentation.
+### Expanding examples - Data Augmentation
+It is a long and repetitive job to write down the examples of a dataset, but it is the most important task to be able to use a neural network in a real application. Many AI projects stagnate in the part where they need to gather many thousands of annotated examples to start having good results with neural networks, but the experience with Eyeflow.AI indicates that it is possible to have good results with just 300 examples in a dataset, and great results with just 1000 examples. One of the key aspects of this performance is in Data Augmentation.
 
-Data Augmentation é o processo de inserir perturbações nas imagens dos exemplos, no momento do treinamento, para forçar a rede neural
-a aprender os padrões dos objetos, e não ficar "viciada" nos poucos exemplos que foram apresentados.
+Data Augmentation is the process of inserting disturbances in the images of the examples, at the time of training, to force the neural network to learn the patterns of the objects, and not to be &quot;addicted&quot; to the few examples that were presented.
 
-O Eyeflow.AI oferece uma ampla gama de algoritmos para Data Augmentation, que vão desde distorções geométricas e fotométricas nas imagens
-até inserção de ruidos ou elementos estranhos.
+Eyeflow.AI offers a wide range of algorithms for Data Augmentation, ranging from geometric and photometric distortions in images to the insertion of noise or strange elements.
 
-O ponto importante a observar aqui é que não deve-se usar o Data Augumentation para modificar os exemplos deixando-os muito diferentes
-das situação que serão encontradas no ambiente real, pois isto irá dificultar desnecessariamente o aprendizado da rede. Por exemplo, não
-faria sentido em um dataset de carros inserir o *Flip Vertical*, pois não encontraremos uma situação com o carro de cabeça para baixo.
+The important point to note here is that Data Augumentation should not be used to modify the examples, leaving them very different from the situations that will be encountered in the real environment, as this will unnecessarily hamper the learning of the network. For example, it would not make sense in a car dataset to insert the *Flip Vertical*, as we will not find a situation with the car upside down.
 
-### Datasets sintéticos
-Da mesma forma que o Data Augumentation ajuda a melhorar o aprendizado da rede com poucos exemplos, um Dataset Sintético ajuda a gerar
-exemplos automaticamente para o treinamento da rede.
+### Synthetic Datasets
+In the same way that Data Augumentation helps to improve the learning of the network with few examples, a Synthetic Dataset helps to generate examples automatically for the training of the network.
 
-São poucas situação em que dá pra usar datasets sintéticos, uma delas é para reconhecimento de caracteres (*OCR*) por exemplo, mas quando
-é possível os ganhos são enormes, pois dá pra gerar um modelo extremamente robusto e eficaz.
+There are few situations in which you can use synthetic datasets, one of them is for character recognition (*OCR*) for example, but when it is possible the gains are enormous, as you can generate an extremely robust and effective model.
 
-O Eyeflow.AI é uma plataforma expansível, que permite ao usuário a criação de seus próprios componentes de redes neurais e geração de datasets
-sintéticos.
+Eyeflow.AI is an expandable platform, which allows the user to create their own neural network components and generate synthetic datasets.
 
-## Para onde devo ir agora?
+## Where should I go now?
 
-* [Dataset](/docs/concepts/dataset/): Anotando Datasets
-* [Treinamento](/docs/concepts/training/): Treinando a rede neural
+* [Training Parameters](/docs/concepts/training/train_parms)
+* [Parameters of Neural Networks](/docs/concepts/training/dnn_parms)
+* [Data Expansion Parameters](/docs/concepts/training/data_augmentation_parms)

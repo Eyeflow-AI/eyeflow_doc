@@ -49,25 +49,43 @@ class TextTranslate():
         if update:
             del self.text_ids[self.text_id]
 
-        re_links = re.compile(r'!*\[(.*)\]\((.*)\s*"*(.*)"*\)\S*')
+        if len(text) < 1:
+            return
+
+        re_links = re.compile(r'!*\[(.*?)\]\(.*?\)\S*')
         search = re_links.search(text)
-        if search:
+        while search:
             if len(search.group(1)):
                 self.upsert_text(search.group(1))
 
-            if len(search.group(3)):
-                self.upsert_text(search.group(3))
+            re_desc = re.compile(r'\((.*?)\s+"(.*?)"\)')
+            search_desc = re_desc.search(text)
+            if search_desc and len(search_desc.group(2)):
+                self.upsert_text(search_desc.group(2))
 
-            text = (text[0:search.regs[0][0]] + text[search.regs[0][1]:]).lstrip()
-            if len(text) < 1:
+            if search.group(0) == text:
                 return
+
+            if search.group(0).startswith('!') or search.group(0).endswith(':'):
+                text = (text[0:search.regs[0][0]] + text[search.regs[0][1]:]).lstrip()
+            else:
+                if len(text[0:search.regs[0][0]]):
+                    self.upsert_text(text[0:search.regs[0][0]])
+                text = text[search.regs[0][1]:].lstrip()
+
+            search = re_links.search(text)
+
+        if len(text) < 1:
+            return
 
         re_links = re.compile(r'```.*```')
         search = re_links.search(text)
-        if search:
+        while search:
             text = (text[0:search.regs[0][0]] + text[search.regs[0][1]:]).lstrip()
-            if len(text) < 1:
-                return
+            search = re_links.search(text)
+
+        if len(text) < 1:
+            return
 
         self.text_id = self.get_text_hash(text)
         self.upsert_text(text)
@@ -107,6 +125,101 @@ class TextTranslate():
 
 # ---------------------------------------------------------------------------------------------------------------------------------
 
+def flatten_text(file_content):
+    idx = 0
+    state = None
+    while idx < len(file_content) - 1:
+        line = file_content[idx].lstrip().replace('\n', '')
+        if line == "---":
+            if state is None:
+                state = "header"
+                idx += 1
+                continue
+            elif state == "header":
+                state = "body"
+                idx += 1
+                continue
+
+        if state == "header":
+            re_links = re.compile(r'^description:\s*>*"*(.*)"*')
+            search = re_links.search(line)
+            if search:
+                text = f'description: {search.group(1)}'
+                next_line = file_content[idx + 1].replace('\n', '')
+                while next_line.startswith(' '):
+                    text += next_line
+                    del file_content[idx + 1]
+                    if idx < len(file_content) - 1:
+                        next_line = file_content[idx + 1].replace('\n', '').lstrip()
+
+                file_content[idx] = text + '\n'
+
+            idx += 1
+            continue
+
+        if len(line) < 1 or line.startswith('#') or line.startswith('|') or line.startswith('{'):
+            state = "body"
+            idx += 1
+            continue
+
+        if state == "code":
+            if line.startswith('```'):
+                state = "body"
+
+            idx += 1
+            continue
+
+        if line.startswith('```'):
+            state = "code"
+            idx += 1
+            continue
+
+        re_search = re.compile(r'^(\s*[\-*\d]+\.*\s+)(.*)')
+        search = re_search.search(line)
+        if search:
+        # if line.startswith('- ') or line.startswith('* '):
+            text = file_content[idx].replace('\n', '')
+            next_line = file_content[idx + 1].replace('\n', '').lstrip()
+            next_search = re_search.search(next_line)
+            while len(next_line) > 0 and not next_search and idx < len(file_content) - 1:
+                text += ' ' + next_line
+                del file_content[idx + 1]
+                if idx < len(file_content) - 1:
+                    next_line = file_content[idx + 1].replace('\n', '').lstrip()
+
+            file_content[idx] = text + '\n'
+            idx += 1
+            continue
+
+        if line.startswith('> '):
+            text = line
+            next_line = file_content[idx + 1].replace('\n', '').lstrip()
+            while len(next_line) > 0 and next_line[0] == '>' and idx < len(file_content) - 1:
+                text += ' ' + next_line[1:].lstrip()
+                del file_content[idx + 1]
+                if idx < len(file_content) - 1:
+                    next_line = file_content[idx + 1].replace('\n', '').lstrip()
+
+            file_content[idx] = text + '\n'
+            idx += 1
+            continue
+
+        if state == "body":
+            text = line
+            next_line = file_content[idx + 1].replace('\n', '').lstrip()
+            # next_search = re_search.search(next_line)
+            while len(next_line) > 0 and next_line[0] not in ['-', '*', '#', '>', '1', '{'] and idx < len(file_content) - 1:
+                text += ' ' + next_line
+                del file_content[idx + 1]
+                if idx < len(file_content) - 1:
+                    next_line = file_content[idx + 1].replace('\n', '').lstrip()
+
+            file_content[idx] = text + '\n'
+            idx += 1
+            continue
+
+    return file_content
+# ---------------------------------------------------------------------------------------------------------------------------------
 
 def extract_text(file_content, text_trans):
     state = None
@@ -115,12 +228,8 @@ def extract_text(file_content, text_trans):
         if line == "---":
             if state is None:
                 state = "header"
-                description = None
                 continue
             elif state == "header":
-                if description:
-                    text_trans.add_text(description)
-
                 state = "body"
                 continue
 
@@ -137,18 +246,26 @@ def extract_text(file_content, text_trans):
                 text_trans.add_text(search.group(1))
                 continue
 
-            re_links = re.compile(r'^description:\s*>*"(.*?)"')
+            re_links = re.compile(r'^description:\s*>*"*(.*)"*')
             search = re_links.search(line)
             if search:
-                description = search.group(1)
+                text_trans.add_text(search.group(1))
                 continue
 
-            if description is not None:
-                description += line
             continue
 
         if len(line) < 1:
             state = "body"
+            continue
+
+        if state == "code":
+            if line.startswith('```'):
+                state = "body"
+
+            continue
+
+        if line.startswith('```'):
+            state = "code"
             continue
 
         re_links = re.compile(r'<!--(.*?)-->')
@@ -166,55 +283,47 @@ def extract_text(file_content, text_trans):
         if len(line) < 1:
             continue
 
+        re_links = re.compile(r'\{\{< /?tooltip >\}\}')
+        search = re_links.search(line)
+        while search:
+            line = (line[0:search.regs[0][0]] + line[search.regs[0][1]:]).lstrip()
+            search = re_links.search(line)
+        if len(line) < 1:
+            continue
+
         if line[0] in ['!', '[', '|']:
             state = "body"
             continue
-
-        if line[0] == '```':
-            if state != "code":
-                state = "code"
-                continue
-            else:
-                state = "body"
-                continue
 
         if line[0] == '#':
             text = line[line.find(' ') + 1:].lstrip()
             text_trans.add_text(text)
             continue
 
-        if line.startswith('- ') or line.startswith('* '):
+        if line.startswith('- ') or line.startswith('* ') or line.startswith('> '):
             text = line[line.find(' ') + 1:].lstrip()
             text_trans.add_text(text)
-            state = "text"
             continue
-
-        if line.startswith('> '):
-            line = line[line.find(' ') + 1:].lstrip()
 
         if state == "body":
             text = line
             text_trans.add_text(text)
-            state = "text"
             continue
 
-        if state == "text":
-            text += ' ' + line
-            text_trans.add_text(text, True)
-            state = "text"
-            continue
-
+        raise Exception(f"Unknow state: {state}")
 # ---------------------------------------------------------------------------------------------------------------------------------
 
-def extract_ids(base_path, text_trans):
-    for root, dirs, files in os.walk(base_path):
+def extract_ids(source_language, text_trans):
+    source_path = os.path.join(os.path.dirname(__file__), f'content/{source_language}/docs')
+    for root, dirs, files in os.walk(source_path):
         for filename in files:
             if filename.endswith('.md'):
-                print(f'Converting file: {os.path.join(root, filename)}')
+                print(f'Extracting file: {os.path.join(root, filename)}')
 
                 with open(os.path.join(root, filename), 'r', encoding='utf-8') as fp:
                     file_text = fp.readlines()
 
+                flatten_text(file_text)
                 extract_text(file_text, text_trans)
 # ---------------------------------------------------------------------------------------------------------------------------------
 
@@ -227,14 +336,10 @@ def translate_text(file_content, target_language, text_trans):
         if line == "---":
             if state is None:
                 state = "header"
-                description = None
                 dest_content.append(input_line)
                 continue
             elif state == "header":
-                if description:
-                    trans_text = text_trans.get_translated_text(description, target_language)
-                    dest_content.append(f"description: >\n {trans_text}\n")
-
+                dest_content.append(input_line)
                 state = "body"
                 continue
 
@@ -253,14 +358,15 @@ def translate_text(file_content, target_language, text_trans):
                 dest_content.append(f'linkTitle: "{trans_text}"\n')
                 continue
 
-            re_links = re.compile(r'^description:\s*>*"(.*?)"')
+            re_links = re.compile(r'^description:\s*"*(.*)"*')
             search = re_links.search(line)
             if search:
-                description = search.group(1)
+                trans_text = text_trans.get_translated_text(search.group(1), target_language)
+                dest_content.append(f"description: >\n")
+                dest_content.append(f" {trans_text}\n")
                 continue
 
-            if description is not None:
-                description += line
+            dest_content.append(input_line)
             continue
 
         if len(line) < 1:
@@ -270,84 +376,168 @@ def translate_text(file_content, target_language, text_trans):
 
         re_links = re.compile(r'<!--(.*?)-->')
         search = re_links.search(line)
-        if search:
-            line = (line[0:search.regs[0][0]] + line[search.regs[0][1]:]).lstrip()
-            if len(line) < 1:
-                continue
-
-        re_links = re.compile(r'\{\{< /?note >\}\}')
-        search = re_links.search(line)
         while search:
-            dest_content.append('line[search.regs[0][0]:search.regs[0][1]]\n')
+            dest_content.append(f'{line[search.regs[0][0]:search.regs[0][1]]}\n')
             line = (line[0:search.regs[0][0]] + line[search.regs[0][1]:]).lstrip()
             search = re_links.search(line)
+
         if len(line) < 1:
             continue
 
-        if line[0] in ['!', '[', '|']:
+        re_links = re.compile(r'\{\{< note >\}\}')
+        search = re_links.search(line)
+        if search:
+            if search.regs[0][0] != 0:
+                raise Exception("Note not first position")
+
+            dest_content.append(f'{line[search.regs[0][0]:search.regs[0][1]]}\n')
+            line = (line[0:search.regs[0][0]] + line[search.regs[0][1]:]).lstrip()
+
+        re_links = re.compile(r'\{\{< /note >\}\}')
+        search = re_links.search(line)
+        if search:
+            text = line[0:search.regs[0][0]]
+            trans_text = text_trans.get_translated_text(text, target_language)
+            if trans_text:
+                dest_content.append(f'{trans_text}\n')
+            dest_content.append(f'{line[search.regs[0][0]:search.regs[0][1]]}\n')
+
+            line = (line[search.regs[0][1]:]).lstrip()
+            if line:
+                raise Exception("End Note not last position")
+
+        re_links = re.compile(r'\{\{< tooltip >\}\}')
+        search = re_links.search(line)
+        if search:
+            if search.regs[0][0] != 0:
+                raise Exception("Note not first position")
+
+            dest_content.append(f'{line[search.regs[0][0]:search.regs[0][1]]}\n')
+            line = (line[0:search.regs[0][0]] + line[search.regs[0][1]:]).lstrip()
+
+        re_links = re.compile(r'\{\{< /tooltip >\}\}')
+        search = re_links.search(line)
+        if search:
+            text = line[0:search.regs[0][0]]
+            trans_text = text_trans.get_translated_text(text, target_language)
+            if trans_text:
+                dest_content.append(f'{trans_text}\n')
+            dest_content.append(f'{line[search.regs[0][0]:search.regs[0][1]]}\n')
+
+            line = (line[search.regs[0][1]:]).lstrip()
+            if line:
+                raise Exception("End Note not last position")
+
+
+        if len(line) < 1:
+            continue
+
+        if line[0] in ['|']:
             dest_content.append(input_line)
             state = "body"
             continue
 
         if state == "code":
             dest_content.append(input_line)
-            if line[0] == '```':
+            if line.startswith('```'):
                 state = "body"
-                continue
+            continue
 
-        if line[0] == '```':
+        if line.startswith('```'):
             dest_content.append(input_line)
-            if state != "code":
-                state = "code"
-                continue
+            state = "code"
+            continue
+
+        re_search = re.compile(r'^(\s*[\-*>#]+\s+)(.*)')
+        search = re_search.search(input_line)
+        if search:
+            dest_content.append(search.group(1))
+            line = search.group(2)
+            state = "continue"
+
+        re_links = re.compile(r'(!*)\[(.*?)\]\((.*?)\)')
+        search = re_links.search(line)
+        links = []
+        while search:
+            alt_text = search.group(2)
+            if len(alt_text):
+                trans_text = text_trans.get_translated_text(alt_text, target_language)
+                if trans_text:
+                    alt_text = trans_text
+
+            desc = ''
+            re_desc = re.compile(r'\((.*)\s"(.*)"\)')
+            search_desc = re_desc.search(search.group(3))
+            if search_desc and len(search_desc.group(2)):
+                desc = search_desc.group(2)
+                trans_text = text_trans.get_translated_text(desc, target_language)
+                if trans_text:
+                    desc = trans_text
+
+                links.append(search.group(1) + '[' + alt_text + '](' + search_desc.group(1) + ' "' + desc + '")')
             else:
-                state = "body"
-                continue
+                links.append(search.group(1) + '[' + alt_text + '](' + search.group(3) + ')')
 
-        if line[0] == '#':
-            idx = line.find(' ') + 1
-            text = line[idx:].lstrip()
+            if search.group(0).startswith('!') or search.group(0).endswith(':'):
+                line = (line[0:search.regs[0][0]] + line[search.regs[0][1]:]).lstrip()
+                search = re_links.search(line, search.regs[0][1])
+            else:
+                if len(line[0:search.regs[0][0]]):
+                    trans_text = text_trans.get_translated_text(line[0:search.regs[0][0]], target_language)
+                    if trans_text:
+                        if state == 'body':
+                            dest_content.append(f'{trans_text} ')
+                            state = "continue"
+                        elif state == 'continue':
+                            dest_content[-1] += trans_text
 
-            trans_text = text_trans.get_translated_text(text, target_language)
-            dest_content.append(f'{line[:idx]}{trans_text}\n')
+                line = links[-1] + ' ' + line[search.regs[0][1]:].lstrip()
+                search = re_links.search(line, len(links[-1]))
 
+        while links:
+            if state == "body":
+                dest_content.append(f'{links.pop()}\n')
+            elif state == 'continue':
+                dest_content[-1] += links.pop()
+
+        if len(line) < 1:
             continue
-
-        if line.startswith('- ') or line.startswith('* '):
-            idx = line.find(' ') + 1
-            text = line[idx:].lstrip()
-
-            trans_text = text_trans.get_translated_text(text, target_language)
-            dest_content.append(f'{line[:idx]}{trans_text}\n')
-
-            state = "text"
-            continue
-
-        if line.startswith('> '):
-            idx = line.find(' ') + 1
-            line = line[idx:].lstrip()
 
         if state == "body":
             text = line
             trans_text = text_trans.get_translated_text(text, target_language)
             if trans_text:
                 dest_content.append(f'{trans_text}\n')
-            state = "text"
             continue
-
-        if state == "text":
-            text += ' ' + line
+        elif state == 'continue':
+            text = line
             trans_text = text_trans.get_translated_text(text, target_language)
             if trans_text:
-                dest_content.append(f'{trans_text}\n')
-            state = "text"
-            continue
+                dest_content[-1] += trans_text
 
+            dest_content[-1] += '\n'
+
+    re_bold = re.compile(r'\*\s(.*?)\s\*')
+    for idx, lin in enumerate(dest_content):
+        dest_content[idx] = re_bold.sub(r'*\1*', lin)
     return dest_content
 # ---------------------------------------------------------------------------------------------------------------------------------
 
-def translate_lang(base_path, target_language, text_trans):
-    for root, dirs, files in os.walk(base_path):
+def translate_lang(source_language, target_language, text_trans):
+    source_path = os.path.join(os.path.dirname(__file__), f'content/{source_language}/docs')
+    target_path = os.path.join(os.path.dirname(__file__), f'content/{target_language}/docs')
+
+    # with open(os.path.join(os.path.join(os.path.dirname(__file__), f'content/{source_language}/docs/Concepts/flow.md')), 'r', encoding='utf-8') as fp:
+    #     file_text = fp.readlines()
+
+    # flatten_text(file_text)
+    # dest_text = translate_text(file_text, target_language, text_trans)
+
+    # with open(os.path.join(os.path.join(os.path.dirname(__file__), f'content/{target_language}/docs/Overview/_index.md')), 'w', encoding='utf-8') as fp:
+        # fp.writelines(dest_text)
+
+
+    for root, dirs, files in os.walk(source_path):
         for filename in files:
             if filename.endswith('.md'):
                 print(f'Converting file: {os.path.join(root, filename)}')
@@ -355,18 +545,17 @@ def translate_lang(base_path, target_language, text_trans):
                 with open(os.path.join(root, filename), 'r', encoding='utf-8') as fp:
                     file_text = fp.readlines()
 
+                flatten_text(file_text)
                 dest_text = translate_text(file_text, target_language, text_trans)
 
-                with open(os.path.join(root, filename + '_dest.md'), 'w', encoding='utf-8') as fp:
+                dest_path = root.replace(source_path, target_path)
+                with open(os.path.join(dest_path, filename), 'w', encoding='utf-8') as fp:
                     fp.writelines(dest_text)
-
-                break
 # ---------------------------------------------------------------------------------------------------------------------------------
 
 text_trans = TextTranslate('pt-br')
-base_path = os.path.join(os.path.dirname(__file__), 'content/pt/docs')
-# extract_ids(base_path, text_trans)
-# text_trans.translate_text('en')
-# text_trans.save_proj()
+extract_ids('pt', text_trans)
+text_trans.translate_text('en')
+text_trans.save_proj()
 
-translate_lang(base_path, 'en', text_trans)
+translate_lang('pt', 'en', text_trans)

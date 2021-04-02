@@ -3,79 +3,71 @@ title: "Flow"
 linkTitle: "Flow"
 weight: 2
 description: >
-  Diagrama de fluxos para processamento das imagens e tomadas de decisões
+ Flow diagram for image processing and decision making
 ---
 
-O Flow é um programa no formato low-code, construído com componentes de código, orientado para a decomposição de dados de imagens
-(*não estruturados*) em dados de saída (*estruturados*).
+Flow is a program in low-code format, built with code components, oriented to the decomposition of image data (*unstructured*) into output data (*structured*).
 
-**O Flow é estruturado como um processo de entrada-saída.**
+**Flow is structured as an input-output process.**
 
-A entrada é um fluxo de imagens, como por exemplo:
-- Câmera: Industrial, Segurança, IP
-- Celular
-- Arquivo de Vídeo
+The input is a stream of images, such as:
+- Camera: Industrial, Security, IP
+- Cell
+- Video Archive
 
-A saída pode ser para qualquer outro sistema de dados como:
-- Arquivos: JSON, CSV, TXT
-- Bancos de dados: MongoDB, Postgres
-- Filas de mensagem: RabbitMQ, AMQP
-- Controladores: CLP, IC, TCP, RS-232
-- Envio de alarmes: E-mail, SMS, Notificações
+The output can be for any other data system such as:
+- Files: JSON, CSV, TXT
+- Databases: MongoDB, Postgres
+- Message queues: RabbitMQ, AMQP
+- Controllers: PLC, IC, TCP, RS-232
+- Sending alarms: E-mail, SMS, Notifications
 
-Como o Eyeflow é uma plataforma extensível, não existe limites para criação de componentes. É possível criar rapidamente um componente
-em Python e usá-lo no Flow para executar a função desejada.
+As Eyeflow is an extensible platform, there are no limits to component creation. It is possible to quickly create a Python component and use it in Flow to perform the desired function.
 
-Entre a entrada e a saída o processamento das imagens é feito em componentes de Redes Neurais. Cada componente desses estará ligado a
-um dataset, e irá usar o modelo treinado com o dataset para executar em produção.
+Between input and output, image processing is done in Neural Network components. Each of these components will be linked to a dataset, and will use the model trained with the dataset to run in production.
 
-É possível também utilizar componentes que enviam as imagens para processamento em serviços de provedores de cloud. Por exemplo, usar um
-componente que pega a imagem de um documento e envia para o reconhecimento de caracteres do Google, e daí processar a resposta para
-digitalizar esse documento.
+It is also possible to use components that send the images for processing in services of cloud providers. For example, using a component that takes the image of a document and sends it to Google's character recognition API, and then processes the response to scan that document.
 
-Criar um Flow é um processo bem simples.
-#### Clique na aba Flow na barra de navegação
-Abrirá a tela para carregar um Flow ou Criar um novo.
-Ao clicar em **Novo Flow** irá abrir uma tela para entrar com os dados. É só preencher os dados e pronto, o Flow será criado.
+Creating a Flow is a very simple process.
+#### Click on the Flow tab in the navigation bar
+It will open the screen to load a Flow or Create a new one. Clicking on **New Flow** will open a screen to enter the data. Just fill in the data and that&#39;s it, Flow will be created.
 
 ![Criar Flow](/screenshots/pt-br_create_flow.jpg#bordered "Criar Flow")
 
-Após a criação do Flow vamos adicionar alguns componentes para criar um flow simples que identifica de o Pet na imagem.
-### Vamos adicionar 3 componentes nesse Flow:
-#### Input Câmera IP - Coloque ```localhost``` como URL
+After creating the Flow we will add some components to create a simple flow that identifies the Pet in the image.
+### Let's add 3 components to this Flow:
+#### 
 
 ![Componente Camera IP](/screenshots/pt-br_flow_camera_ip.jpg#bordered "Componente Camera IP")
 
-#### ROI Cutter - Coloque o ```nome``` Identifica Pet e escolha o dataset ```Gatos e Cachorros```
+#### 
 
 ![Componente ROI Cutter](/screenshots/pt-br_flow_roi_cutter.jpg#bordered "Componente ROI Cutter")
 
-#### Output JSON File Save - Preencha ```filename``` como ```test.json```
+#### 
 
 ![Componente File Save](/screenshots/pt-br_flow_file_save.jpg#bordered "Componente File Save")
 
-#### Ligue as saídas de cada componente na entrada do próximo
+#### Connect the outputs of each component to the input of the next
 
 ![Flow Completo](/screenshots/pt-br_flow_basic.jpg#bordered "Flow Completo")
 
-**Pronto! O Flow está completo.**
+**Ready! Flow is complete.**
 
-Uma das grandes vantagens da plataforma EyeFlow.AI é que ela é um ambiente integrado completo para o desenvolvimento de aplicações
-de Video Analytics. O processo de redes neurais exige uma razoável quantidade de exemplos anotados para poder aprender, e a
-maneira mais fácil de conseguir esses exemplos é utilizando vídeos.
+One of the great advantages of the EyeFlow.AI platform is that it is a complete integrated environment for the development of Video Analytics applications. The process of neural networks requires a fair amount of annotated examples in order to learn, and the easiest way to get these examples is to use videos.
 
-Então, o processo de desenvolvimento envolve um ciclo de atividades:
-1. Testa o vídeo no Flow observando se a aplicação está marcando o vídeo corretamente
-2. Identifica os erros que a aplicação está cometendo e vai nos datasets
-3. Na tela de **Novos Exemplos** procura por quadros onde a rede neural não identificou o objeto corretamente
-4. Adiciona vários exemplos de erro (de 30 a 50 em cada ciclo é um bom número)
-5. Anota os novos exemplos corrigindo os erros
-6. Treina a rede neural e verifica os indicadores de assertividade para ver se a rede está aprendendo bem
-7. Após os treinamentos volta para testar novamente o vídeo
+So, the development process involves a cycle of activities:
+1. Test the video in Flow by checking if the application is marking the video correctly
+2. Identify the errors that the application is making and go in the datasets
+3. On the **New Examples** screen, look for frames where the neural network did not correctly identify the object
+4. Add several examples of error (30 to 50 in each cycle is a good number)
+5. Note the new examples by correcting errors
+6. Train the neural network and check the assertiveness indicators to see if the network is learning well
+7. After training, go back to test the video again
 
-Após termos bons resultados nas anotações dos vídeos nosso Flow já está pronto para publicarmos na borda.
+After having good results in the annotations of the videos, our Flow is ready to publish on the edge.
 
-## Para onde devo ir agora?
+## Where should I go now?
 
-* [Dataset](/docs/concepts/dataset/): Anotando Datasets
-* [Treinamento](/docs/concepts/training/): Treinando a rede neural
+* [Dataset](/docs/concepts/dataset/)
+* [Training](/docs/concepts/training/)

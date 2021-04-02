@@ -3,8 +3,25 @@ title: "Data Augmentation"
 linkTitle: "Data Augmentation"
 weight: 5
 description: >
-  Expansão de exemplos nos treinamentos
+ Expanding training examples
 ---
+
+For a good result in neural network training, the rule is to present a large number of different examples so that the neural network can learn the pattern in the data. However, getting and writing down thousands of examples is an arduous and time-consuming task, and can consume hundreds of hours of a project.
+
+To facilitate this process, Eyeflow.AI offers an extensive range of Data Expansion algorithms (*Data Augmentation*). It is about inserting disturbances in the images when they are being presented to the neural network in training, thus forcing the neural network to learn to recognize the patterns, without depending only on the static examples that exist in the dataset.
+
+These are several changes such as:
+- Changes in optics such as brightness, contrast, color, gamma
+- Changes in the way rotations, deformations, positions
+- Changes in quality such as blur and noise
+
+{{< tooltip >}}
+The changes in the images cannot be so high that the object of interest can no longer be recognized. For this, Eyeflow.AI provides an example of these changes for the operator to verify that the changes are not exaggerated. What cannot be seen in these examples, cannot be learned by the neural network.
+{{< /tooltip >}}
+
+{{< tooltip >}}
+It is also useless to stress the changes and generate cases that do not happen in the real operation. It is useless to present an inverted image for the learning of the neural network, upside down, for example, if in real operation this situation will never happen.
+{{< /tooltip >}}
 
 <!-- <parm_table> -->
 
@@ -168,7 +185,8 @@ description: >
 <!-- </parm_table> -->
 
 
-## Para onde devo ir agora?
+## Where should I go now?
 
-* [Dataset](/docs/concepts/dataset/): Anotando Datasets
-* [Treinamento](/docs/concepts/training/): Treinando a rede neural
+* [Training Parameters](/docs/concepts/training/train_parms)
+* [Parameters of Neural Networks](/docs/concepts/training/dnn_parms)
+* [Data Expansion Parameters](/docs/concepts/training/data_augmentation_parms)
