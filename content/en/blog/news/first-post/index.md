@@ -1,6 +1,6 @@
 ---
 date: 2021-04-02
-title: "Video Analytics with Deep Learning can be a easy task"
+title: "Video Analytics with Deep Learning can be an easy task"
 linkTitle: "Announcing Eyeflow.AI"
 description: "How 4 years of pitfalls drive us to developer a great tool for the job"
 author: Alex Sobral de Freitas ([@alexsobral](https://alexsobral.medium.com))
