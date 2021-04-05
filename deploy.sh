@@ -28,3 +28,8 @@ do
 done
 
 cp -r ./public/* ../eyeflow_doc_public/.
+
+cd ../eyeflow_doc_public
+git add .
+git commit -m "refresh"
+git push
