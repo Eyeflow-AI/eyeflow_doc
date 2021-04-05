@@ -19,7 +19,7 @@ Em 2016 fui convidado por um amigo para o desafio de desenvolver uma solução d
 
 > A tarefa parecia bastante complexa: capturar imagens de vagões de transporte de minério usando câmeras de vídeo para automatizar a inspeção dos componentes e detectar falhas.
 
-Eu sou desenvolvedor criança com 35 anos de experiência, quanto mais complexa a tarefa, mais animado eu fico.
+Eu sou desenvolvedor com 35 anos de experiência, quanto mais complexa a tarefa, mais animado eu fico.
 
 Escolhi o framework Theano e arquitetura SSD para Rede Neural, configurei o ambiente e testei se estava tudo funcionando. Então peguei um filme gravado de um celular, extraí alguns frames, fiz um pequeno programa python que me permitiria anotar as caixas desenhando nos frames e comecei a treinar a rede com meu dataset simples. Após duas semanas de muito trabalho e várias dificuldades sempre presentes nos programas de código aberto, pude ver o treinamento da rede e detectar os objetos em meu dataset.
 
