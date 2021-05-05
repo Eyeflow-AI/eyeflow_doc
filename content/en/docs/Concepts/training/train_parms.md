@@ -26,14 +26,14 @@ Rest assured, Eyeflow.AI has a great set of defaults for the parameters that sol
 
 |Parameter|Values|Default|Description|
 |---------|------|-------|-----------|
-|Epochs|int [1 - ]|5|Number of epochs for training|
-|Steps per Epoch|int [50 - ]|100|Number of Steps for training in each Epoch|
+|Epochs|int [1 - 200]|5|Number of epochs for training|
+|Steps per Epoch|int [50 - 2000]|100|Number of Steps for training in each Epoch|
 |Batch Size|int [1 - 64]|10|Number of examples in each step|
 |Val Size|number [0.01 - 0.9]|0.1|Percent of examples selected for Validation|
 |Test Size|number [0.01 - 0.9]|0.1|Percent of examples selected for Final Test|
 |Confidence Threshold|number [0.05 - 1.0]|0.6|Minimum confidence threshold for valid detection|
 |IoU Detection Threshold|number [0.05 - 1.0]|0.45|Minimum threshold for IoU detection|
-|Maximum Boxes|int [0 - 300]|30|Maximum number of boxes in detection|
+|Maximum Boxes|int [1 - 300]|30|Maximum number of boxes in detection|
 |Expand Boxes|number [0 - 2]|0|Percent to expand size of boxes in detection|
 
 
@@ -43,8 +43,8 @@ Rest assured, Eyeflow.AI has a great set of defaults for the parameters that sol
 
 |Parameter|Values|Default|Description|
 |---------|------|-------|-----------|
-|Minimum Side|int [20 - ]|50|Size of the smaller side|
-|Maximum Side|int [20 - ]|80|Size of the bigger side|
+|Minimum Side|int [20 - 800]|50|Size of the smaller side|
+|Maximum Side|int [20 - 1000]|80|Size of the bigger side|
 |Channels|choice [1, 3]|1|Color channels|
 
 
@@ -73,7 +73,7 @@ Rest assured, Eyeflow.AI has a great set of defaults for the parameters that sol
 |Patience|int [1 - ]|5|Num of epochs to wait for progress|
 |Monitor variable|choice ['val_loss', 'loss', 'categorical_accuracy', 'val_categorical_accuracy']|val_loss|Variable to monitor progress|
 |Minimum Delta|number [0 - ]|0.01|The minimum variantion in variable|
-|Evaluation mode|choice ['min', 'max', 'auto']|max|Monitor decrement or increment of variable value|
+|Evaluation mode|choice ['min', 'max', 'auto']|min|Monitor decrement or increment of variable value|
 
 
 

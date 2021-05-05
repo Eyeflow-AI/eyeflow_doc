@@ -35,14 +35,14 @@ necessidades. Além disso, nosso time está à disposição para tirar dúvidas 
 
 |Parameter|Values|Default|Description|
 |---------|------|-------|-----------|
-|Épocas|int [1 - ]|5|Número de épocas para treinamento|
-|Etapas por época|int [50 - ]|100|Número de passos para treinamento em cada época|
+|Épocas|int [1 - 200]|5|Número de épocas para treinamento|
+|Etapas por época|int [50 - 2000]|100|Número de passos para treinamento em cada época|
 |Tamanho do lote|int [1 - 64]|10|Número de exemplos em cada passo|
 |Tamanho do Val|number [0.01 - 0.9]|0.1|Porcentagem de exemplos selecionados para validação|
 |Tamanho do Teste|number [0.01 - 0.9]|0.1|Porcentagem de exemplos selecionados para o teste final|
 |Limiar de confiança|number [0.05 - 1.0]|0.6|Limite mínimo de confiança para detecção válida|
 |Limite de detecção de IoU|number [0.05 - 1.0]|0.45|Limite mínimo para detecção de IoU|
-|Máximo de caixas|int [0 - 300]|30|Número máximo de caixas em detecção|
+|Máximo de caixas|int [1 - 300]|30|Número máximo de caixas em detecção|
 |Caixas de expansão|number [0 - 2]|0|Porcentagem para expandir o tamanho das caixas na detecção|
 
 
@@ -52,8 +52,8 @@ necessidades. Além disso, nosso time está à disposição para tirar dúvidas 
 
 |Parameter|Values|Default|Description|
 |---------|------|-------|-----------|
-|Lado mínimo|int [20 - ]|50|Tamanho do lado menor|
-|Lado máximo|int [20 - ]|80|Tamanho do lado maior|
+|Lado mínimo|int [20 - 800]|50|Tamanho do lado menor|
+|Lado máximo|int [20 - 1000]|80|Tamanho do lado maior|
 |Canais|choice [1, 3]|1|Canais de cor|
 
 
@@ -82,7 +82,7 @@ necessidades. Além disso, nosso time está à disposição para tirar dúvidas 
 |Paciência|int [1 - ]|5|Número de épocas para esperar pelo progresso|
 |Variável de monitoramento|choice ['val_loss', 'loss', 'categorical_accuracy', 'val_categorical_accuracy']|val_loss|Variável para monitorar o progresso|
 |Delta Mínimo|number [0 - ]|0.01|A variação mínima na variável|
-|Modo de avaliação|choice ['min', 'max', 'auto']|max|Monitor do decréscimo ou incremento do valor da variável|
+|Modo de avaliação|choice ['min', 'max', 'auto']|min|Monitor do decréscimo ou incremento do valor da variável|
 
 
 

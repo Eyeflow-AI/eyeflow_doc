@@ -30,13 +30,19 @@ It is also useless to stress the changes and generate cases that do not happen i
 
 **Parameters for Images Data Augmentation**
 
+
+
+### Data augmentation general parameters
+
+**General Parameters for all transformations**
+
 |Parameter|Values|Default|Description|
 |---------|------|-------|-----------|
 |Interpolation|choice ['linear', 'nearest', 'cubic', 'area', 'lanczos4']|linear|Interpolation for resize operations|
 |Fill Mode|choice ['constant', 'nearest', 'reflect', 'wrap']|constant|Fill of null regions|
 |Border Value|int [0 - 255]|0|The color to fill border regions|
-|Horizontal flip of image|number [0 - 1.0]|0.3|Random horizontal flip of image|
-|Vertical flip of image|number [0 - 1.0]|0.3|Random vertical flip of image|
+
+
 
 
 ### Rotate image
@@ -45,9 +51,8 @@ It is also useless to stress the changes and generate cases that do not happen i
 
 |Parameter|Values|Default|Description|
 |---------|------|-------|-----------|
-|Probability|number [0 - 1.0]|0.3|Probability of random rotation|
-|Maximum angle|number [0 - 180]|60|Maximum angle for rotation clockwise|
-|Minimum angle|number [-180 - 0]|-60|Minimum angle for rotation counter-clockwise|
+|Probability|percent 0% - 100%|0.3|Probability of random rotation|
+|Random Rotation|range from -90 to 90]|-20 to 20|Random rotation of image|
 |Rescale image|bool [True - False]|True|If image must be reescaled in rotation|
 
 
@@ -59,10 +64,10 @@ It is also useless to stress the changes and generate cases that do not happen i
 
 |Parameter|Values|Default|Description|
 |---------|------|-------|-----------|
-|Probability|number [0 - 1.0]|0.3|Probability of random translation|
-|Horizontal translation|Array of number|[0.03, 0.2]|Minimum & Maximum for horizontal translation|
-|Vertical translation|Array of number|[0.03, 0.2]|Minimum & Maximum for vertical translation|
-|Number of trials|int [1 - ]|3|Maximum number of trials without degeneration boxes|
+|Probability|percent 0% - 100%|0.3|Probability of random translation|
+|Horizontal translation|range from -0.4 to 0.4]|-0.2 to 0.2|Minimum & Maximum for horizontal translation|
+|Vertical translation|range from -0.4 to 0.4]|-0.2 to 0.2|Minimum & Maximum for vertical translation|
+|Number of trials|int [1 - 6]|3|Maximum number of trials without degeneration boxes|
 
 
 
@@ -73,9 +78,8 @@ It is also useless to stress the changes and generate cases that do not happen i
 
 |Parameter|Values|Default|Description|
 |---------|------|-------|-----------|
-|Probability|number [0 - 1.0]|0.3|Probability of random shear|
-|Shear Minimum|number [-180 - 0]|-10|Minimum value for shear angle in degrees|
-|Shear Maximum|number [0 - 180]|10|Maximum value for shear angle in degrees|
+|Probability|percent 0% - 100%|0.3|Probability of random shear|
+|Shear image|range from -60 to 60]|-10 to 10|Random shear deformation of image|
 
 
 
@@ -86,9 +90,20 @@ It is also useless to stress the changes and generate cases that do not happen i
 
 |Parameter|Values|Default|Description|
 |---------|------|-------|-----------|
-|Probability|number [0 - 1.0]|0.3|Probability of random scale|
-|Minimum scale|number [0.1 - ]|0.8|Minimum proportion value for scale|
-|Maximum scale|number [1.0 - ]|1.2|Maximum proportion value for scale|
+|Probability|percent 0% - 100%|0.3|Probability of random scale|
+|Scale image|range from 0.4 to 1.6]|0.8 to 1.2|Random scale of image|
+
+
+
+
+### Random flip of image
+
+**Flip Parameters**
+
+|Parameter|Values|Default|Description|
+|---------|------|-------|-----------|
+|Horizontal flip of image|percent 0% - 100%|0.3|Random horizontal flip of image|
+|Vertical flip of image|percent 0% - 100%|0.3|Random vertical flip of image|
 
 
 
@@ -99,9 +114,8 @@ It is also useless to stress the changes and generate cases that do not happen i
 
 |Parameter|Values|Default|Description|
 |---------|------|-------|-----------|
-|Probability|number [0 - 1.0]|0.3|Probability of random contrast|
-|Minimum contrast|number [0.1 - 1.0]|0.8|Minimum contrast change|
-|Maximum contrast|number [1.0 - 2.0]|1.2|Maximum contrast change|
+|Probability|percent 0% - 100%|0.3|Probability of random contrast|
+|Random contrast|range from 0.4 to 2]|0.8 to 1.2|Random changes in contrast of image|
 
 
 
@@ -112,9 +126,8 @@ It is also useless to stress the changes and generate cases that do not happen i
 
 |Parameter|Values|Default|Description|
 |---------|------|-------|-----------|
-|Probability|number [0 - 1.0]|0.3|Probability of random brightness|
-|Minimum brightness|number [-1.0 - 0]|-0.2|Minimum brightness change|
-|Maximum brightness|number [0 - 1.0]|0.3|Maximum brightness change|
+|Probability|percent 0% - 100%|0.3|Probability of random brightness|
+|Random brightness|range from -0.6 to 0.6]|-0.2 to 0.3|Random changes in brightness of image|
 
 
 
@@ -125,9 +138,8 @@ It is also useless to stress the changes and generate cases that do not happen i
 
 |Parameter|Values|Default|Description|
 |---------|------|-------|-----------|
-|Probability|number [0 - 1.0]|0.3|Probability of random gamma|
-|Minimum gamma|number [0.1 - 1.0]|0.4|Minimum gamma change|
-|Maximum gamma|number [0 - 12.0]|1.6|Maximum gamma change|
+|Probability|percent 0% - 100%|0.3|Probability of random gamma|
+|Random gamma|range from 0.1 to 12]|0.4 to 1.6|Random changes in gamma of image|
 
 
 
@@ -138,9 +150,8 @@ It is also useless to stress the changes and generate cases that do not happen i
 
 |Parameter|Values|Default|Description|
 |---------|------|-------|-----------|
-|Probability|number [0 - 1.0]|0.3|Probability of random saturation|
-|Minimum saturation|number [0.1 - 1.0]|0.95|Minimum saturation change|
-|Maximum saturation|number [1.0 - 2.0]|1.05|Maximum saturation change|
+|Probability|percent 0% - 100%|0.3|Probability of random saturation|
+|Random saturation|range from 0.1 to 2]|0.5 to 1.5|Random changes in saturation of image|
 
 
 
@@ -151,9 +162,8 @@ It is also useless to stress the changes and generate cases that do not happen i
 
 |Parameter|Values|Default|Description|
 |---------|------|-------|-----------|
-|Probability|number [0 - 1.0]|0.3|Probability of random hue|
-|Minimum hue|number [-1.0 - 0]|-0.05|Minimum hue change|
-|Maximum hue|number [0 - 1.0]|0.05|Maximum hue change|
+|Probability|percent 0% - 100%|0.3|Probability of random hue|
+|Random hue|range from -1 to 1]|-0.05 to 0.05|Random changes in hue of image|
 
 
 
@@ -164,19 +174,19 @@ It is also useless to stress the changes and generate cases that do not happen i
 
 |Parameter|Values|Default|Description|
 |---------|------|-------|-----------|
-|Probability|number [0 - 1.0]|0.3|Probability of random noise|
+|Probability|percent 0% - 100%|0.3|Probability of random noise|
 |Noise method|choice ['gauss', 'poisson', 'speckle']|gauss|Method for noise insertion|
 
 
 
 
-### Random blur
+### Blur
 
 **Random blur of image**
 
 |Parameter|Values|Default|Description|
 |---------|------|-------|-----------|
-|Probability|number [0 - 1.0]|0.3|Probability of random blur|
+|Probability|percent 0% - 100%|0.3|Probability of random blur|
 |Kernel size|choice [3, 5, 7, 9]|5|The size of kernel to blur image|
 
 

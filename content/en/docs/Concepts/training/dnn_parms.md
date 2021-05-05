@@ -28,8 +28,8 @@ In this Beta phase we have 2 main components that we use to solve all the proble
 |Parameter|Values|Default|Description|
 |---------|------|-------|-----------|
 |Component|choice ['class_cnn']|class_cnn|The DNN component for train model|
-|Neural Network Depth|int [1 - ]|3|Depth (num layers) of Neural Network|
-|Neural Network Width|int [5 - ]|20|Wide (num features) of Neural Network|
+|Neural Network Depth|int [1 - 10]|3|Depth (num layers) of Neural Network|
+|Neural Network Width|int [5 - 128]|20|Wide (num features) of Neural Network|
 |Preprocess Mode|choice ['caffe', 'tf']|caffe|Function for image normalize|
 |Loss Function|choice ['categorical_crossentropy', 'binary_crossentropy']|categorical_crossentropy|Loss function for use in training|
 |Metrics Functions|Array of string|['categorical_accuracy']|Metrics functions for use in evaluation|
@@ -44,8 +44,8 @@ In this Beta phase we have 2 main components that we use to solve all the proble
 
 |Parameter|Values|Default|Description|
 |---------|------|-------|-----------|
-|Component|choice ['objdet', 'retinanet']|objdet|The DNN component for train model|
-|Neural Network Width|int [5 - ]|20|Wide (num features) of Neural Network|
+|Component|choice ['objdet']|objdet|The DNN component for train model|
+|Neural Network Width|int [5 - 128]|20|Wide (num features) of Neural Network|
 |Neural Network backbone|choice ['vgg7', 'vgg16', 'vgg19', 'resnet18', 'resnet34', 'resnet50', 'resnet101', 'resnet152', 'mobilenet128', 'mobilenet160', 'mobilenet192', 'mobilenet224', 'densenet121', 'densenet169', 'densenet201']|vgg7|Backbone architecture to Neural Network|
 |Preprocess Mode|choice ['caffe', 'tf']|caffe|Function for image normalize|
 |IoU negative overlap|number [0.05 - 1.0]|0.3|Value for minimum overlap of negative boxes|

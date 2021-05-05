@@ -32,8 +32,8 @@ Nessa fase Beta temos 2 principais componentes que usamos para solucionar todos 
 |Parameter|Values|Default|Description|
 |---------|------|-------|-----------|
 |Componente|choice ['class_cnn']|class_cnn|O componente DNN para o modelo de treinamento|
-|Profundidade da Rede Neural|int [1 - ]|3|Profundidade (núm camadas) da rede neural|
-|Largura da rede neural|int [5 - ]|20|Largura (núm features) da Rede Neural|
+|Profundidade da Rede Neural|int [1 - 10]|3|Profundidade (núm camadas) da rede neural|
+|Largura da rede neural|int [5 - 128]|20|Largura (núm features) da Rede Neural|
 |Modo de pré-processamento|choice ['caffe', 'tf']|caffe|Função para normalizar imagem|
 |Função de perda|choice ['categorical_crossentropy', 'binary_crossentropy']|categorical_crossentropy|Função de perda para uso em treinamento|
 |Funções de métricas|Array of string|['categorical_accuracy']|Funções de métricas para uso em avaliação|
@@ -48,8 +48,8 @@ Nessa fase Beta temos 2 principais componentes que usamos para solucionar todos 
 
 |Parameter|Values|Default|Description|
 |---------|------|-------|-----------|
-|Componente|choice ['objdet', 'retinanet']|objdet|O componente DNN para o modelo de treinamento|
-|Largura da rede neural|int [5 - ]|20|Largura (núm features) da Rede Neural|
+|Componente|choice ['objdet']|objdet|O componente DNN para o modelo de treinamento|
+|Largura da rede neural|int [5 - 128]|20|Largura (núm features) da Rede Neural|
 |Backbone de rede neural|choice ['vgg7', 'vgg16', 'vgg19', 'resnet18', 'resnet34', 'resnet50', 'resnet101', 'resnet152', 'mobilenet128', 'mobilenet160', 'mobilenet192', 'mobilenet224', 'densenet121', 'densenet169', 'densenet201']|vgg7|Arquitetura de backbone para rede neural|
 |Modo de pré-processamento|choice ['caffe', 'tf']|caffe|Função para normalizar imagem|
 |Sobreposição negativa IoU|number [0.05 - 1.0]|0.3|Valor para sobreposição mínima de caixas negativas|
