@@ -23,13 +23,13 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/docs/concepts/training/data_augmentation_parms/" /><meta property="article:section" content="docs" />
 
-<meta property="article:modified_time" content="2021-03-31T00:46:39-03:00" /><meta property="og:site_name" content="Eyeflow.AI Docs" />
+<meta property="article:modified_time" content="2021-05-05T17:43:06-03:00" /><meta property="og:site_name" content="Eyeflow.AI Docs" />
 
 <meta itemprop="name" content="Data Augmentation">
 <meta itemprop="description" content="Expansão de exemplos nos treinamentos
 ">
-<meta itemprop="dateModified" content="2021-03-31T00:46:39-03:00" />
-<meta itemprop="wordCount" content="882">
+<meta itemprop="dateModified" content="2021-05-05T17:43:06-03:00" />
+<meta itemprop="wordCount" content="838">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Data Augmentation"/>
 <meta name="twitter:description" content="Expansão de exemplos nos treinamentos
@@ -509,17 +509,19 @@ if (!doNotTrack) {
   <ul>
     <li><a href="#parâmetros-para-expansão-de-dataset">Parâmetros para expansão de dataset</a>
       <ul>
+        <li><a href="#parâmetros-gerais-de-aumento-de-dados">Parâmetros gerais de aumento de dados</a></li>
         <li><a href="#rotacionar-imagem">Rotacionar imagem</a></li>
         <li><a href="#transladar-imagem">Transladar imagem</a></li>
         <li><a href="#cortar-imagem">Cortar imagem</a></li>
         <li><a href="#imagem-em-escala">Imagem em escala</a></li>
+        <li><a href="#random-flip-of-image">Random flip of image</a></li>
         <li><a href="#contraste-aleatório">Contraste aleatório</a></li>
         <li><a href="#brilho-aleatório">Brilho aleatório</a></li>
         <li><a href="#gama-aleatória">Gama aleatória</a></li>
         <li><a href="#saturação-aleatória">Saturação aleatória</a></li>
         <li><a href="#matiz-aleatório">Matiz aleatório</a></li>
         <li><a href="#ruído-aleatório">Ruído aleatório</a></li>
-        <li><a href="#desfoque-aleatório">Desfoque aleatório</a></li>
+        <li><a href="#blur">Blur</a></li>
       </ul>
     </li>
     <li><a href="#para-onde-devo-ir-agora">Para onde devo ir agora?</a></li>
@@ -609,6 +611,8 @@ na operação real essa situação nunca irá acontecer.</div>
 <!-- <parm_table> -->
 <h2 id="parâmetros-para-expansão-de-dataset">Parâmetros para expansão de dataset</h2>
 <p><strong>Parâmetros para expansão de dataset</strong></p>
+<h3 id="parâmetros-gerais-de-aumento-de-dados">Parâmetros gerais de aumento de dados</h3>
+<p><strong>Parâmetros gerais para todas as transformações</strong></p>
 <table>
 <thead>
 <tr>
@@ -637,18 +641,6 @@ na operação real essa situação nunca irá acontecer.</div>
 <td>0</td>
 <td>A cor para preencher as regiões limítrofes</td>
 </tr>
-<tr>
-<td>Virada horizontal da imagem</td>
-<td>number [0 - 1.0]</td>
-<td>0.3</td>
-<td>Virada horizontal aleatória da imagem</td>
-</tr>
-<tr>
-<td>Virada vertical da imagem</td>
-<td>number [0 - 1.0]</td>
-<td>0.3</td>
-<td>Virada vertical aleatória da imagem</td>
-</tr>
 </tbody>
 </table>
 <h3 id="rotacionar-imagem">Rotacionar imagem</h3>
@@ -665,21 +657,15 @@ na operação real essa situação nunca irá acontecer.</div>
 <tbody>
 <tr>
 <td>Probabilidade</td>
-<td>number [0 - 1.0]</td>
+<td>percent 0% - 100%</td>
 <td>0.3</td>
 <td>Probabilidade de rotação aleatória</td>
 </tr>
 <tr>
-<td>Ângulo máximo</td>
-<td>number [0 - 180]</td>
-<td>60</td>
-<td>Ângulo máximo para rotação no sentido horário</td>
-</tr>
-<tr>
-<td>Angulo minimo</td>
-<td>number [-180 - 0]</td>
-<td>-60</td>
-<td>Ângulo mínimo para rotação no sentido anti-horário</td>
+<td>Rotação aleatória</td>
+<td>range from -90 to 90]</td>
+<td>-20 to 20</td>
+<td>Rotação aleatória da imagem</td>
 </tr>
 <tr>
 <td>Redimensionar imagem</td>
@@ -703,25 +689,25 @@ na operação real essa situação nunca irá acontecer.</div>
 <tbody>
 <tr>
 <td>Probabilidade</td>
-<td>number [0 - 1.0]</td>
+<td>percent 0% - 100%</td>
 <td>0.3</td>
 <td>Probabilidade de mudança de translação</td>
 </tr>
 <tr>
 <td>Translação horizontal</td>
-<td>Array of number</td>
-<td>[0.03, 0.2]</td>
+<td>range from -0.4 to 0.4]</td>
+<td>-0.2 to 0.2</td>
 <td>Mín. E Máx. Para translação horizontal</td>
 </tr>
 <tr>
 <td>Translação vertical</td>
-<td>Array of number</td>
-<td>[0.03, 0.2]</td>
+<td>range from -0.4 to 0.4]</td>
+<td>-0.2 to 0.2</td>
 <td>Mín. E Máx. Para translação vertical</td>
 </tr>
 <tr>
 <td>Número de Tentativas</td>
-<td>int [1 - ]</td>
+<td>int [1 - 6]</td>
 <td>3</td>
 <td>Número máximo de tentativas sem degenerar caixas</td>
 </tr>
@@ -741,21 +727,15 @@ na operação real essa situação nunca irá acontecer.</div>
 <tbody>
 <tr>
 <td>Probabilidade</td>
-<td>number [0 - 1.0]</td>
+<td>percent 0% - 100%</td>
 <td>0.3</td>
 <td>Probabilidade de mudança de cisalhamento</td>
 </tr>
 <tr>
-<td>Mínimo de cisalhamento</td>
-<td>number [-180 - 0]</td>
-<td>-10</td>
-<td>Valor mínimo para ângulo de cisalhamento em graus</td>
-</tr>
-<tr>
-<td>Cisalhamento máximo</td>
-<td>number [0 - 180]</td>
-<td>10</td>
-<td>Valor máximo para ângulo de cisalhamento em graus</td>
+<td>Cortar imagem</td>
+<td>range from -60 to 60]</td>
+<td>-10 to 10</td>
+<td>Deformação por cisalhamento aleatório da imagem</td>
 </tr>
 </tbody>
 </table>
@@ -773,21 +753,41 @@ na operação real essa situação nunca irá acontecer.</div>
 <tbody>
 <tr>
 <td>Probabilidade</td>
-<td>number [0 - 1.0]</td>
+<td>percent 0% - 100%</td>
 <td>0.3</td>
 <td>Probabilidade de escala aleatória</td>
 </tr>
 <tr>
-<td>Escala mínima</td>
-<td>number [0.1 - ]</td>
-<td>0.8</td>
-<td>Valor de proporção mínima para escala</td>
+<td>Imagem em escala</td>
+<td>range from 0.4 to 1.6]</td>
+<td>0.8 to 1.2</td>
+<td>Escala aleatória da imagem</td>
+</tr>
+</tbody>
+</table>
+<h3 id="random-flip-of-image">Random flip of image</h3>
+<p><strong>Flip Parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Values</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Virada horizontal da imagem</td>
+<td>percent 0% - 100%</td>
+<td>0.3</td>
+<td>Virada horizontal aleatória da imagem</td>
 </tr>
 <tr>
-<td>Escala máxima</td>
-<td>number [1.0 - ]</td>
-<td>1.2</td>
-<td>Valor de proporção máxima para escala</td>
+<td>Virada vertical da imagem</td>
+<td>percent 0% - 100%</td>
+<td>0.3</td>
+<td>Virada vertical aleatória da imagem</td>
 </tr>
 </tbody>
 </table>
@@ -805,21 +805,15 @@ na operação real essa situação nunca irá acontecer.</div>
 <tbody>
 <tr>
 <td>Probabilidade</td>
-<td>number [0 - 1.0]</td>
+<td>percent 0% - 100%</td>
 <td>0.3</td>
 <td>Probabilidade de mudança de contraste</td>
 </tr>
 <tr>
-<td>Contraste mínimo</td>
-<td>number [0.1 - 1.0]</td>
-<td>0.8</td>
-<td>Mudança mínima de contraste</td>
-</tr>
-<tr>
-<td>Contraste máximo</td>
-<td>number [1.0 - 2.0]</td>
-<td>1.2</td>
-<td>Mudança máxima de contraste</td>
+<td>Contraste aleatório</td>
+<td>range from 0.4 to 2]</td>
+<td>0.8 to 1.2</td>
+<td>Mudanças aleatórias no contraste da imagem</td>
 </tr>
 </tbody>
 </table>
@@ -837,21 +831,15 @@ na operação real essa situação nunca irá acontecer.</div>
 <tbody>
 <tr>
 <td>Probabilidade</td>
-<td>number [0 - 1.0]</td>
+<td>percent 0% - 100%</td>
 <td>0.3</td>
 <td>Probabilidade de mudança de brilho</td>
 </tr>
 <tr>
-<td>Brilho mínimo</td>
-<td>number [-1.0 - 0]</td>
-<td>-0.2</td>
-<td>Mudança mínima de brilho</td>
-</tr>
-<tr>
-<td>Brilho máximo</td>
-<td>number [0 - 1.0]</td>
-<td>0.3</td>
-<td>Mudança máxima de brilho</td>
+<td>Brilho aleatório</td>
+<td>range from -0.6 to 0.6]</td>
+<td>-0.2 to 0.3</td>
+<td>Cambiamenti casuali nella luminosità dell&rsquo;immagine</td>
 </tr>
 </tbody>
 </table>
@@ -869,21 +857,15 @@ na operação real essa situação nunca irá acontecer.</div>
 <tbody>
 <tr>
 <td>Probabilidade</td>
-<td>number [0 - 1.0]</td>
+<td>percent 0% - 100%</td>
 <td>0.3</td>
 <td>Probabilidade de gama aleatória</td>
 </tr>
 <tr>
-<td>Gama mínima</td>
-<td>number [0.1 - 1.0]</td>
-<td>0.4</td>
-<td>Mudança mínima de gama</td>
-</tr>
-<tr>
-<td>Gama máxima</td>
-<td>number [0 - 12.0]</td>
-<td>1.6</td>
-<td>Mudança máxima de gama</td>
+<td>Gama aleatória</td>
+<td>range from 0.1 to 12]</td>
+<td>0.4 to 1.6</td>
+<td>Mudanças aleatórias na gama da imagem</td>
 </tr>
 </tbody>
 </table>
@@ -901,21 +883,15 @@ na operação real essa situação nunca irá acontecer.</div>
 <tbody>
 <tr>
 <td>Probabilidade</td>
-<td>number [0 - 1.0]</td>
+<td>percent 0% - 100%</td>
 <td>0.3</td>
 <td>Probabilidade de mudança de saturação</td>
 </tr>
 <tr>
-<td>Saturação mínima</td>
-<td>number [0.1 - 1.0]</td>
-<td>0.95</td>
-<td>Mudança de saturação mínima</td>
-</tr>
-<tr>
-<td>Saturação máxima</td>
-<td>number [1.0 - 2.0]</td>
-<td>1.05</td>
-<td>Mudança máxima de saturação</td>
+<td>Saturação aleatória</td>
+<td>range from 0.1 to 2]</td>
+<td>0.5 to 1.5</td>
+<td>Mudanças aleatórias na saturação da imagem</td>
 </tr>
 </tbody>
 </table>
@@ -933,21 +909,15 @@ na operação real essa situação nunca irá acontecer.</div>
 <tbody>
 <tr>
 <td>Probabilidade</td>
-<td>number [0 - 1.0]</td>
+<td>percent 0% - 100%</td>
 <td>0.3</td>
 <td>Probabilidade de matiz aleatório</td>
 </tr>
 <tr>
-<td>Matiz mínimo</td>
-<td>number [-1.0 - 0]</td>
-<td>-0.05</td>
-<td>Mudança mínima de matiz</td>
-</tr>
-<tr>
-<td>Matiz máximo</td>
-<td>number [0 - 1.0]</td>
-<td>0.05</td>
-<td>Mudança máxima de matiz</td>
+<td>Matiz aleatório</td>
+<td>range from -1 to 1]</td>
+<td>-0.05 to 0.05</td>
+<td>Mudanças aleatórias no matiz da imagem</td>
 </tr>
 </tbody>
 </table>
@@ -965,7 +935,7 @@ na operação real essa situação nunca irá acontecer.</div>
 <tbody>
 <tr>
 <td>Probabilidade</td>
-<td>number [0 - 1.0]</td>
+<td>percent 0% - 100%</td>
 <td>0.3</td>
 <td>Probabilidade de inserção de ruído</td>
 </tr>
@@ -977,8 +947,8 @@ na operação real essa situação nunca irá acontecer.</div>
 </tr>
 </tbody>
 </table>
-<h3 id="desfoque-aleatório">Desfoque aleatório</h3>
-<p><strong>Desfoque aleatório da imagem</strong></p>
+<h3 id="blur">Blur</h3>
+<p><strong>Random blur of image</strong></p>
 <table>
 <thead>
 <tr>
@@ -991,7 +961,7 @@ na operação real essa situação nunca irá acontecer.</div>
 <tbody>
 <tr>
 <td>Probabilidade</td>
-<td>number [0 - 1.0]</td>
+<td>percent 0% - 100%</td>
 <td>0.3</td>
 <td>Probabilidade de desfoque aleatório</td>
 </tr>
@@ -1075,7 +1045,7 @@ na operação real essa situação nunca irá acontecer.</div>
 		<br />
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Última modificação 31/03/2021: <a  href="https://github.com/siliconlife-ai/eyeflow_doc/commit/e8e66062af65cd5c5844a2fa0708636e756fc86e">Início da tradução (e8e6606)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Última modificação 05/05/2021: <a  href="https://github.com/siliconlife-ai/eyeflow_doc/commit/540e32e33870dd2dc1e3e5f22927ee4c4ab07821">New parms (540e32e)</a>
 </div>
 </div>
 

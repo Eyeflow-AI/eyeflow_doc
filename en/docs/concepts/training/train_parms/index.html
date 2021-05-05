@@ -23,12 +23,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/en/docs/concepts/training/train_parms/" /><meta property="article:section" content="docs" />
 
-<meta property="article:modified_time" content="2021-04-02T00:34:21-03:00" /><meta property="og:site_name" content="Eyeflow.AI Docs" />
+<meta property="article:modified_time" content="2021-05-05T17:43:06-03:00" /><meta property="og:site_name" content="Eyeflow.AI Docs" />
 
 <meta itemprop="name" content="Training Parameters">
 <meta itemprop="description" content="Training control
 ">
-<meta itemprop="dateModified" content="2021-04-02T00:34:21-03:00" />
+<meta itemprop="dateModified" content="2021-05-05T17:43:06-03:00" />
 <meta itemprop="wordCount" content="660">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Training Parameters"/>
@@ -720,13 +720,13 @@ if (!doNotTrack) {
 <tbody>
 <tr>
 <td>Epochs</td>
-<td>int [1 - ]</td>
+<td>int [1 - 200]</td>
 <td>5</td>
 <td>Number of epochs for training</td>
 </tr>
 <tr>
 <td>Steps per Epoch</td>
-<td>int [50 - ]</td>
+<td>int [50 - 2000]</td>
 <td>100</td>
 <td>Number of Steps for training in each Epoch</td>
 </tr>
@@ -762,7 +762,7 @@ if (!doNotTrack) {
 </tr>
 <tr>
 <td>Maximum Boxes</td>
-<td>int [0 - 300]</td>
+<td>int [1 - 300]</td>
 <td>30</td>
 <td>Maximum number of boxes in detection</td>
 </tr>
@@ -788,13 +788,13 @@ if (!doNotTrack) {
 <tbody>
 <tr>
 <td>Minimum Side</td>
-<td>int [20 - ]</td>
+<td>int [20 - 800]</td>
 <td>50</td>
 <td>Size of the smaller side</td>
 </tr>
 <tr>
 <td>Maximum Side</td>
-<td>int [20 - ]</td>
+<td>int [20 - 1000]</td>
 <td>80</td>
 <td>Size of the bigger side</td>
 </tr>
@@ -877,7 +877,7 @@ if (!doNotTrack) {
 <tr>
 <td>Evaluation mode</td>
 <td>choice [&lsquo;min&rsquo;, &lsquo;max&rsquo;, &lsquo;auto&rsquo;]</td>
-<td>max</td>
+<td>min</td>
 <td>Monitor decrement or increment of variable value</td>
 </tr>
 </tbody>
@@ -1024,7 +1024,7 @@ if (!doNotTrack) {
 		<br />
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified April 2, 2021: <a  href="https://github.com/siliconlife-ai/eyeflow_doc/commit/8ee3b5de9d9f6351a586d92ceeee02ed15bcab08">Tradução automática inglês (8ee3b5d)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified May 5, 2021: <a  href="https://github.com/siliconlife-ai/eyeflow_doc/commit/540e32e33870dd2dc1e3e5f22927ee4c4ab07821">New parms (540e32e)</a>
 </div>
 </div>
 

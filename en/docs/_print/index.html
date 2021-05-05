@@ -1338,13 +1338,13 @@ bar := &quot;foo&quot;;
 <tbody>
 <tr>
 <td>Epochs</td>
-<td>int [1 - ]</td>
+<td>int [1 - 200]</td>
 <td>5</td>
 <td>Number of epochs for training</td>
 </tr>
 <tr>
 <td>Steps per Epoch</td>
-<td>int [50 - ]</td>
+<td>int [50 - 2000]</td>
 <td>100</td>
 <td>Number of Steps for training in each Epoch</td>
 </tr>
@@ -1380,7 +1380,7 @@ bar := &quot;foo&quot;;
 </tr>
 <tr>
 <td>Maximum Boxes</td>
-<td>int [0 - 300]</td>
+<td>int [1 - 300]</td>
 <td>30</td>
 <td>Maximum number of boxes in detection</td>
 </tr>
@@ -1406,13 +1406,13 @@ bar := &quot;foo&quot;;
 <tbody>
 <tr>
 <td>Minimum Side</td>
-<td>int [20 - ]</td>
+<td>int [20 - 800]</td>
 <td>50</td>
 <td>Size of the smaller side</td>
 </tr>
 <tr>
 <td>Maximum Side</td>
-<td>int [20 - ]</td>
+<td>int [20 - 1000]</td>
 <td>80</td>
 <td>Size of the bigger side</td>
 </tr>
@@ -1495,7 +1495,7 @@ bar := &quot;foo&quot;;
 <tr>
 <td>Evaluation mode</td>
 <td>choice [&lsquo;min&rsquo;, &lsquo;max&rsquo;, &lsquo;auto&rsquo;]</td>
-<td>max</td>
+<td>min</td>
 <td>Monitor decrement or increment of variable value</td>
 </tr>
 </tbody>
@@ -1620,13 +1620,13 @@ bar := &quot;foo&quot;;
 </tr>
 <tr>
 <td>Neural Network Depth</td>
-<td>int [1 - ]</td>
+<td>int [1 - 10]</td>
 <td>3</td>
 <td>Depth (num layers) of Neural Network</td>
 </tr>
 <tr>
 <td>Neural Network Width</td>
-<td>int [5 - ]</td>
+<td>int [5 - 128]</td>
 <td>20</td>
 <td>Wide (num features) of Neural Network</td>
 </tr>
@@ -1670,13 +1670,13 @@ bar := &quot;foo&quot;;
 <tbody>
 <tr>
 <td>Component</td>
-<td>choice [&lsquo;objdet&rsquo;, &lsquo;retinanet&rsquo;]</td>
+<td>choice [&lsquo;objdet&rsquo;]</td>
 <td>objdet</td>
 <td>The DNN component for train model</td>
 </tr>
 <tr>
 <td>Neural Network Width</td>
-<td>int [5 - ]</td>
+<td>int [5 - 128]</td>
 <td>20</td>
 <td>Wide (num features) of Neural Network</td>
 </tr>
@@ -1785,6 +1785,8 @@ bar := &quot;foo&quot;;
 <!-- <parm_table> -->
 <h2 id="data-augmentation-parameters">Data augmentation parameters</h2>
 <p><strong>Parameters for Images Data Augmentation</strong></p>
+<h3 id="data-augmentation-general-parameters">Data augmentation general parameters</h3>
+<p><strong>General Parameters for all transformations</strong></p>
 <table>
 <thead>
 <tr>
@@ -1813,18 +1815,6 @@ bar := &quot;foo&quot;;
 <td>0</td>
 <td>The color to fill border regions</td>
 </tr>
-<tr>
-<td>Horizontal flip of image</td>
-<td>number [0 - 1.0]</td>
-<td>0.3</td>
-<td>Random horizontal flip of image</td>
-</tr>
-<tr>
-<td>Vertical flip of image</td>
-<td>number [0 - 1.0]</td>
-<td>0.3</td>
-<td>Random vertical flip of image</td>
-</tr>
 </tbody>
 </table>
 <h3 id="rotate-image">Rotate image</h3>
@@ -1841,21 +1831,15 @@ bar := &quot;foo&quot;;
 <tbody>
 <tr>
 <td>Probability</td>
-<td>number [0 - 1.0]</td>
+<td>percent 0% - 100%</td>
 <td>0.3</td>
 <td>Probability of random rotation</td>
 </tr>
 <tr>
-<td>Maximum angle</td>
-<td>number [0 - 180]</td>
-<td>60</td>
-<td>Maximum angle for rotation clockwise</td>
-</tr>
-<tr>
-<td>Minimum angle</td>
-<td>number [-180 - 0]</td>
-<td>-60</td>
-<td>Minimum angle for rotation counter-clockwise</td>
+<td>Random Rotation</td>
+<td>range from -90 to 90]</td>
+<td>-20 to 20</td>
+<td>Random rotation of image</td>
 </tr>
 <tr>
 <td>Rescale image</td>
@@ -1879,25 +1863,25 @@ bar := &quot;foo&quot;;
 <tbody>
 <tr>
 <td>Probability</td>
-<td>number [0 - 1.0]</td>
+<td>percent 0% - 100%</td>
 <td>0.3</td>
 <td>Probability of random translation</td>
 </tr>
 <tr>
 <td>Horizontal translation</td>
-<td>Array of number</td>
-<td>[0.03, 0.2]</td>
+<td>range from -0.4 to 0.4]</td>
+<td>-0.2 to 0.2</td>
 <td>Minimum &amp; Maximum for horizontal translation</td>
 </tr>
 <tr>
 <td>Vertical translation</td>
-<td>Array of number</td>
-<td>[0.03, 0.2]</td>
+<td>range from -0.4 to 0.4]</td>
+<td>-0.2 to 0.2</td>
 <td>Minimum &amp; Maximum for vertical translation</td>
 </tr>
 <tr>
 <td>Number of trials</td>
-<td>int [1 - ]</td>
+<td>int [1 - 6]</td>
 <td>3</td>
 <td>Maximum number of trials without degeneration boxes</td>
 </tr>
@@ -1917,21 +1901,15 @@ bar := &quot;foo&quot;;
 <tbody>
 <tr>
 <td>Probability</td>
-<td>number [0 - 1.0]</td>
+<td>percent 0% - 100%</td>
 <td>0.3</td>
 <td>Probability of random shear</td>
 </tr>
 <tr>
-<td>Shear Minimum</td>
-<td>number [-180 - 0]</td>
-<td>-10</td>
-<td>Minimum value for shear angle in degrees</td>
-</tr>
-<tr>
-<td>Shear Maximum</td>
-<td>number [0 - 180]</td>
-<td>10</td>
-<td>Maximum value for shear angle in degrees</td>
+<td>Shear image</td>
+<td>range from -60 to 60]</td>
+<td>-10 to 10</td>
+<td>Random shear deformation of image</td>
 </tr>
 </tbody>
 </table>
@@ -1949,21 +1927,41 @@ bar := &quot;foo&quot;;
 <tbody>
 <tr>
 <td>Probability</td>
-<td>number [0 - 1.0]</td>
+<td>percent 0% - 100%</td>
 <td>0.3</td>
 <td>Probability of random scale</td>
 </tr>
 <tr>
-<td>Minimum scale</td>
-<td>number [0.1 - ]</td>
-<td>0.8</td>
-<td>Minimum proportion value for scale</td>
+<td>Scale image</td>
+<td>range from 0.4 to 1.6]</td>
+<td>0.8 to 1.2</td>
+<td>Random scale of image</td>
+</tr>
+</tbody>
+</table>
+<h3 id="random-flip-of-image">Random flip of image</h3>
+<p><strong>Flip Parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Values</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Horizontal flip of image</td>
+<td>percent 0% - 100%</td>
+<td>0.3</td>
+<td>Random horizontal flip of image</td>
 </tr>
 <tr>
-<td>Maximum scale</td>
-<td>number [1.0 - ]</td>
-<td>1.2</td>
-<td>Maximum proportion value for scale</td>
+<td>Vertical flip of image</td>
+<td>percent 0% - 100%</td>
+<td>0.3</td>
+<td>Random vertical flip of image</td>
 </tr>
 </tbody>
 </table>
@@ -1981,21 +1979,15 @@ bar := &quot;foo&quot;;
 <tbody>
 <tr>
 <td>Probability</td>
-<td>number [0 - 1.0]</td>
+<td>percent 0% - 100%</td>
 <td>0.3</td>
 <td>Probability of random contrast</td>
 </tr>
 <tr>
-<td>Minimum contrast</td>
-<td>number [0.1 - 1.0]</td>
-<td>0.8</td>
-<td>Minimum contrast change</td>
-</tr>
-<tr>
-<td>Maximum contrast</td>
-<td>number [1.0 - 2.0]</td>
-<td>1.2</td>
-<td>Maximum contrast change</td>
+<td>Random contrast</td>
+<td>range from 0.4 to 2]</td>
+<td>0.8 to 1.2</td>
+<td>Random changes in contrast of image</td>
 </tr>
 </tbody>
 </table>
@@ -2013,21 +2005,15 @@ bar := &quot;foo&quot;;
 <tbody>
 <tr>
 <td>Probability</td>
-<td>number [0 - 1.0]</td>
+<td>percent 0% - 100%</td>
 <td>0.3</td>
 <td>Probability of random brightness</td>
 </tr>
 <tr>
-<td>Minimum brightness</td>
-<td>number [-1.0 - 0]</td>
-<td>-0.2</td>
-<td>Minimum brightness change</td>
-</tr>
-<tr>
-<td>Maximum brightness</td>
-<td>number [0 - 1.0]</td>
-<td>0.3</td>
-<td>Maximum brightness change</td>
+<td>Random brightness</td>
+<td>range from -0.6 to 0.6]</td>
+<td>-0.2 to 0.3</td>
+<td>Random changes in brightness of image</td>
 </tr>
 </tbody>
 </table>
@@ -2045,21 +2031,15 @@ bar := &quot;foo&quot;;
 <tbody>
 <tr>
 <td>Probability</td>
-<td>number [0 - 1.0]</td>
+<td>percent 0% - 100%</td>
 <td>0.3</td>
 <td>Probability of random gamma</td>
 </tr>
 <tr>
-<td>Minimum gamma</td>
-<td>number [0.1 - 1.0]</td>
-<td>0.4</td>
-<td>Minimum gamma change</td>
-</tr>
-<tr>
-<td>Maximum gamma</td>
-<td>number [0 - 12.0]</td>
-<td>1.6</td>
-<td>Maximum gamma change</td>
+<td>Random gamma</td>
+<td>range from 0.1 to 12]</td>
+<td>0.4 to 1.6</td>
+<td>Random changes in gamma of image</td>
 </tr>
 </tbody>
 </table>
@@ -2077,21 +2057,15 @@ bar := &quot;foo&quot;;
 <tbody>
 <tr>
 <td>Probability</td>
-<td>number [0 - 1.0]</td>
+<td>percent 0% - 100%</td>
 <td>0.3</td>
 <td>Probability of random saturation</td>
 </tr>
 <tr>
-<td>Minimum saturation</td>
-<td>number [0.1 - 1.0]</td>
-<td>0.95</td>
-<td>Minimum saturation change</td>
-</tr>
-<tr>
-<td>Maximum saturation</td>
-<td>number [1.0 - 2.0]</td>
-<td>1.05</td>
-<td>Maximum saturation change</td>
+<td>Random saturation</td>
+<td>range from 0.1 to 2]</td>
+<td>0.5 to 1.5</td>
+<td>Random changes in saturation of image</td>
 </tr>
 </tbody>
 </table>
@@ -2109,21 +2083,15 @@ bar := &quot;foo&quot;;
 <tbody>
 <tr>
 <td>Probability</td>
-<td>number [0 - 1.0]</td>
+<td>percent 0% - 100%</td>
 <td>0.3</td>
 <td>Probability of random hue</td>
 </tr>
 <tr>
-<td>Minimum hue</td>
-<td>number [-1.0 - 0]</td>
-<td>-0.05</td>
-<td>Minimum hue change</td>
-</tr>
-<tr>
-<td>Maximum hue</td>
-<td>number [0 - 1.0]</td>
-<td>0.05</td>
-<td>Maximum hue change</td>
+<td>Random hue</td>
+<td>range from -1 to 1]</td>
+<td>-0.05 to 0.05</td>
+<td>Random changes in hue of image</td>
 </tr>
 </tbody>
 </table>
@@ -2141,7 +2109,7 @@ bar := &quot;foo&quot;;
 <tbody>
 <tr>
 <td>Probability</td>
-<td>number [0 - 1.0]</td>
+<td>percent 0% - 100%</td>
 <td>0.3</td>
 <td>Probability of random noise</td>
 </tr>
@@ -2153,7 +2121,7 @@ bar := &quot;foo&quot;;
 </tr>
 </tbody>
 </table>
-<h3 id="random-blur">Random blur</h3>
+<h3 id="blur">Blur</h3>
 <p><strong>Random blur of image</strong></p>
 <table>
 <thead>
@@ -2167,7 +2135,7 @@ bar := &quot;foo&quot;;
 <tbody>
 <tr>
 <td>Probability</td>
-<td>number [0 - 1.0]</td>
+<td>percent 0% - 100%</td>
 <td>0.3</td>
 <td>Probability of random blur</td>
 </tr>

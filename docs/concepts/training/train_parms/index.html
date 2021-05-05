@@ -23,12 +23,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/docs/concepts/training/train_parms/" /><meta property="article:section" content="docs" />
 
-<meta property="article:modified_time" content="2021-03-31T00:46:39-03:00" /><meta property="og:site_name" content="Eyeflow.AI Docs" />
+<meta property="article:modified_time" content="2021-05-05T17:43:06-03:00" /><meta property="og:site_name" content="Eyeflow.AI Docs" />
 
 <meta itemprop="name" content="Parâmetros do Treinamento">
 <meta itemprop="description" content="Controle do treinamento
 ">
-<meta itemprop="dateModified" content="2021-03-31T00:46:39-03:00" />
+<meta itemprop="dateModified" content="2021-05-05T17:43:06-03:00" />
 <meta itemprop="wordCount" content="712">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Parâmetros do Treinamento"/>
@@ -607,13 +607,13 @@ necessidades. Além disso, nosso time está à disposição para tirar dúvidas 
 <tbody>
 <tr>
 <td>Épocas</td>
-<td>int [1 - ]</td>
+<td>int [1 - 200]</td>
 <td>5</td>
 <td>Número de épocas para treinamento</td>
 </tr>
 <tr>
 <td>Etapas por época</td>
-<td>int [50 - ]</td>
+<td>int [50 - 2000]</td>
 <td>100</td>
 <td>Número de passos para treinamento em cada época</td>
 </tr>
@@ -649,7 +649,7 @@ necessidades. Além disso, nosso time está à disposição para tirar dúvidas 
 </tr>
 <tr>
 <td>Máximo de caixas</td>
-<td>int [0 - 300]</td>
+<td>int [1 - 300]</td>
 <td>30</td>
 <td>Número máximo de caixas em detecção</td>
 </tr>
@@ -675,13 +675,13 @@ necessidades. Além disso, nosso time está à disposição para tirar dúvidas 
 <tbody>
 <tr>
 <td>Lado mínimo</td>
-<td>int [20 - ]</td>
+<td>int [20 - 800]</td>
 <td>50</td>
 <td>Tamanho do lado menor</td>
 </tr>
 <tr>
 <td>Lado máximo</td>
-<td>int [20 - ]</td>
+<td>int [20 - 1000]</td>
 <td>80</td>
 <td>Tamanho do lado maior</td>
 </tr>
@@ -764,7 +764,7 @@ necessidades. Além disso, nosso time está à disposição para tirar dúvidas 
 <tr>
 <td>Modo de avaliação</td>
 <td>choice [&lsquo;min&rsquo;, &lsquo;max&rsquo;, &lsquo;auto&rsquo;]</td>
-<td>max</td>
+<td>min</td>
 <td>Monitor do decréscimo ou incremento do valor da variável</td>
 </tr>
 </tbody>
@@ -911,7 +911,7 @@ necessidades. Além disso, nosso time está à disposição para tirar dúvidas 
 		<br />
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Última modificação 31/03/2021: <a  href="https://github.com/siliconlife-ai/eyeflow_doc/commit/e8e66062af65cd5c5844a2fa0708636e756fc86e">Início da tradução (e8e6606)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Última modificação 05/05/2021: <a  href="https://github.com/siliconlife-ai/eyeflow_doc/commit/540e32e33870dd2dc1e3e5f22927ee4c4ab07821">New parms (540e32e)</a>
 </div>
 </div>
 
