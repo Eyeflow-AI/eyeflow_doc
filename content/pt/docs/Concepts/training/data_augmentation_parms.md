@@ -62,7 +62,7 @@ na operação real essa situação nunca irá acontecer.
 |Parameter|Values|Default|Description|
 |---------|------|-------|-----------|
 |Probabilidade|percent 0% - 100%|0.3|Probabilidade de rotação aleatória|
-|Rotação aleatória|range from -90 to 90]|-20 to 20|Rotação aleatória da imagem|
+|Ângulo mínimo e máximo para rotação|range from -90 to 90|-20 to 20|Rotação aleatória da imagem|
 |Redimensionar imagem|bool [True - False]|True|Se a imagem deve ser redimensionada em rotação|
 
 
@@ -75,21 +75,21 @@ na operação real essa situação nunca irá acontecer.
 |Parameter|Values|Default|Description|
 |---------|------|-------|-----------|
 |Probabilidade|percent 0% - 100%|0.3|Probabilidade de mudança de translação|
-|Translação horizontal|range from -0.4 to 0.4]|-0.2 to 0.2|Mín. E Máx. Para translação horizontal|
-|Translação vertical|range from -0.4 to 0.4]|-0.2 to 0.2|Mín. E Máx. Para translação vertical|
+|Translação horizontal|range from -0.4 to 0.4|-0.2 to 0.2|mín. e máx. Para translação horizontal|
+|Tradução vertical mínima e máxima|range from -0.4 to 0.4|-0.2 to 0.2|Porcentagem mínima e máxima para tradução vertical|
 |Número de Tentativas|int [1 - 6]|3|Número máximo de tentativas sem degenerar caixas|
 
 
 
 
-### Cortar imagem
+### Esticar imagem
 
 **Deformação por cisalhamento aleatório da imagem**
 
 |Parameter|Values|Default|Description|
 |---------|------|-------|-----------|
 |Probabilidade|percent 0% - 100%|0.3|Probabilidade de mudança de cisalhamento|
-|Cortar imagem|range from -60 to 60]|-10 to 10|Deformação por cisalhamento aleatório da imagem|
+|Imagem de cisalhamento mínimo e máximo|range from -60 to 60|-10 to 10|Valores mínimo e máximo para deformação por cisalhamento aleatório|
 
 
 
@@ -101,19 +101,19 @@ na operação real essa situação nunca irá acontecer.
 |Parameter|Values|Default|Description|
 |---------|------|-------|-----------|
 |Probabilidade|percent 0% - 100%|0.3|Probabilidade de escala aleatória|
-|Imagem em escala|range from 0.4 to 1.6]|0.8 to 1.2|Escala aleatória da imagem|
+|Imagem em escala mínima e máxima|range from 0.4 to 1.6|0.8 to 1.2|Valores mínimo e máximo para escala aleatória|
 
 
 
 
-### Random flip of image
+### Virada aleatória da imagem
 
 **Flip Parameters**
 
 |Parameter|Values|Default|Description|
 |---------|------|-------|-----------|
-|Virada horizontal da imagem|percent 0% - 100%|0.3|Virada horizontal aleatória da imagem|
-|Virada vertical da imagem|percent 0% - 100%|0.3|Virada vertical aleatória da imagem|
+|Probabilidade de inversão horizontal|percent 0% - 100%|0.3|Virada horizontal aleatória da imagem|
+|Probabilidade de inversão vertical|percent 0% - 100%|0.3|Virada vertical aleatória da imagem|
 
 
 
@@ -125,7 +125,7 @@ na operação real essa situação nunca irá acontecer.
 |Parameter|Values|Default|Description|
 |---------|------|-------|-----------|
 |Probabilidade|percent 0% - 100%|0.3|Probabilidade de mudança de contraste|
-|Contraste aleatório|range from 0.4 to 2]|0.8 to 1.2|Mudanças aleatórias no contraste da imagem|
+|Contraste mínimo e máximo|range from 0.4 to 2|0.8 to 1.2|Valores mínimo e máximo para mudanças no contraste da imagem|
 
 
 
@@ -137,7 +137,7 @@ na operação real essa situação nunca irá acontecer.
 |Parameter|Values|Default|Description|
 |---------|------|-------|-----------|
 |Probabilidade|percent 0% - 100%|0.3|Probabilidade de mudança de brilho|
-|Brilho aleatório|range from -0.6 to 0.6]|-0.2 to 0.3|Cambiamenti casuali nella luminosità dell'immagine|
+|Brilho mínimo e máximo|range from -0.6 to 0.6|-0.2 to 0.3|Valores mínimo e máximo para mudanças no brilho da imagem|
 
 
 
@@ -149,7 +149,7 @@ na operação real essa situação nunca irá acontecer.
 |Parameter|Values|Default|Description|
 |---------|------|-------|-----------|
 |Probabilidade|percent 0% - 100%|0.3|Probabilidade de gama aleatória|
-|Gama aleatória|range from 0.1 to 12]|0.4 to 1.6|Mudanças aleatórias na gama da imagem|
+|Gama mín. e máx.|range from 0.1 to 12|0.4 to 1.6|Valores mínimo e máximo para mudanças na gama da imagem|
 
 
 
@@ -161,7 +161,7 @@ na operação real essa situação nunca irá acontecer.
 |Parameter|Values|Default|Description|
 |---------|------|-------|-----------|
 |Probabilidade|percent 0% - 100%|0.3|Probabilidade de mudança de saturação|
-|Saturação aleatória|range from 0.1 to 2]|0.5 to 1.5|Mudanças aleatórias na saturação da imagem|
+|Saturação mínima e máxima|range from 0.1 to 2|0.5 to 1.5|Valores mínimo e máximo para mudanças na saturação da imagem|
 
 
 
@@ -173,7 +173,7 @@ na operação real essa situação nunca irá acontecer.
 |Parameter|Values|Default|Description|
 |---------|------|-------|-----------|
 |Probabilidade|percent 0% - 100%|0.3|Probabilidade de matiz aleatório|
-|Matiz aleatório|range from -1 to 1]|-0.05 to 0.05|Mudanças aleatórias no matiz da imagem|
+|Matiz mín. e máx.|range from -1 to 1|-0.05 to 0.05|Valores mínimo e máximo para mudanças no matiz da imagem|
 
 
 
@@ -190,9 +190,9 @@ na operação real essa situação nunca irá acontecer.
 
 
 
-### Blur
+### Desfoque aleatório
 
-**Random blur of image**
+**Desfoque aleatório da imagem**
 
 |Parameter|Values|Default|Description|
 |---------|------|-------|-----------|
