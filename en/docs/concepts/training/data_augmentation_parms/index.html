@@ -29,7 +29,7 @@
 <meta itemprop="description" content="Expanding training examples
 ">
 <meta itemprop="dateModified" content="2021-05-05T17:43:06-03:00" />
-<meta itemprop="wordCount" content="797">
+<meta itemprop="wordCount" content="798">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Data Augmentation"/>
 <meta name="twitter:description" content="Expanding training examples
@@ -643,7 +643,7 @@ if (!doNotTrack) {
         <li><a href="#random-saturation">Random saturation</a></li>
         <li><a href="#random-hue">Random hue</a></li>
         <li><a href="#random-noise">Random noise</a></li>
-        <li><a href="#blur">Blur</a></li>
+        <li><a href="#random-blur">Random blur</a></li>
       </ul>
     </li>
     <li><a href="#where-should-i-go-now">Where should I go now?</a></li>
@@ -890,13 +890,13 @@ if (!doNotTrack) {
 </thead>
 <tbody>
 <tr>
-<td>Horizontal flip of image</td>
+<td>Probability of Horizontal flip</td>
 <td>percent 0% - 100%</td>
 <td>0.3</td>
 <td>Random horizontal flip of image</td>
 </tr>
 <tr>
-<td>Vertical flip of image</td>
+<td>Probability of Vertical flip</td>
 <td>percent 0% - 100%</td>
 <td>0.3</td>
 <td>Random vertical flip of image</td>
@@ -1059,7 +1059,7 @@ if (!doNotTrack) {
 </tr>
 </tbody>
 </table>
-<h3 id="blur">Blur</h3>
+<h3 id="random-blur">Random blur</h3>
 <p><strong>Random blur of image</strong></p>
 <table>
 <thead>
